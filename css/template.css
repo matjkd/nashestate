@@ -1,0 +1,163 @@
+body {
+	background:#ffffff;
+	
+	font: 11px/1.1 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	
+	margin:0px;
+}
+img {
+	border:0px;
+}
+label {
+	float:left;
+	width:100px;
+}
+#property_forms {
+	
+}
+#property_forms:input {
+	float:left;
+}
+#property_info {
+	float:left;
+}
+.login {
+	height:0px;
+	background:#fdbc5f;
+	width:960px;
+	margin: 0 auto;
+}
+.mainwrap {
+	background:#ffffff;
+	width:940px;
+	margin: 0 auto;
+	border: 0px solid #dddddd;
+	padding:10px;
+	position: relative;
+	display:block;
+}
+
+.header {
+	height: 90px;
+	background:transparent;
+	
+}
+.logo {
+	height: 70px;
+	width:340px;
+	background:url('/~nh001/images/logo2.png') no-repeat;
+	
+}
+.adminlogo {
+	height: 70px;
+	width:340px;
+	background:url('/~nh001/images/adminlogo.png') no-repeat;
+	
+}
+.topmenu {
+	height: 25px;
+	background:none;
+	border-bottom:1px solid #000000;
+	
+}
+
+.main_content {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.left_content {
+	width:330px;
+	min-height:200px;
+	background: #eaeaea;
+	float:left;
+}
+.full_content {
+	width:910px;
+	min-height:200px;
+
+	float:left;
+}
+.left_admin {
+	width:330px;
+	
+	background: #eaeaea;
+	float:left;
+}
+.right_content {
+	width:600px;
+	float:left;
+	
+	margin: 0 0 0 10px;
+	border:0px solid #000000;
+}
+.footer {
+	height: 50px;
+	background: #f15c22;
+	margin-top:10px;
+	
+}
+#slideshow {
+	width:600px;
+	height:200px;
+	background:#c0b290;
+}
+#wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    text-align: center;
+     position: relative;
+     display: block;
+}
+#toppanel {
+    position: relative;
+    top: 0px;
+    width: 960px;
+    z-index: 25;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#panel {
+    width: 960px;
+    position: relative;
+ 
+    height: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    overflow: hidden;
+    text-align: left;
+}
+#panel_contents {
+    background:#fcb034;
+    height: 100%;
+    width: 904px;
+    position: absolute;
+    z-index: -1;
+    color:#ffffff;
+    padding:5px 30px;
+}
+
+.form {
+	padding:10px;
+}
+
+.edit_nationality, .edit_language, .editcompany, .editclient, .editcompanytype{
+	width:150px;
+	padding:2px;
+	margin:2px;
+	background:#ffffff;
+	float:left;
+	display: inline;
+}
+.leftcolumn {
+	background:#fcdfa3;
+	padding:2px;
+	width:100px;
+	float:left;
+}
+.ui-widget { font-family:Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
+.ui-widget .ui-widget { font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
+
