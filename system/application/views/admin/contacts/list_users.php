@@ -23,8 +23,8 @@ function confirmation(id) {
 <table id="contacts"  width="100%" style="clear:both;">
 	<thead>
 		<tr>
-			<th>User</th>
-			<th>Company Name</th>
+			<th>Individual</th>
+			<th>Group</th>
 			<th>Type</th>
 			<th>Actions</th>
 		</tr>

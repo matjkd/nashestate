@@ -67,12 +67,12 @@ $(".editcompanytype").editable("<?=site_url('/admin/contacts/edit_company')?>",
 
 
 <div class='leftcolumn'>
-			Company Name:
+			Group Name:
 			</div>
 			
 			 	<div class='editcompany' id='company_name'><?=$row['company_name']?></div>
 <div class='leftcolumn'>
-			Company Type:
+			Group Type:
 			</div>
 			
 			 	<div class='editcompanytype' id='company_type_id'><?=$row['company_type']?></div>			 	
@@ -91,7 +91,7 @@ else
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Email</th>
+			
 			
 			<th>Actions</th>
 		</tr>
@@ -107,7 +107,7 @@ foreach($company_users as $key => $row):
 		<tr>
 			<td style="padding:5px;"><?=$row['firstname']?> <?=$row['lastname']?></td>
 					
-			<td style="padding:5px;"><?=$row['email_address']?> </td>
+			
 			
 		
 				

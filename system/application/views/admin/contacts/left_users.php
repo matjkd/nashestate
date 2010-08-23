@@ -25,7 +25,7 @@
 
 
 <div id="accordion1">
-	<h3><a href="#">User Detail</a></h3>
+	<h3><a href="#">Individual Detail</a></h3>
 	<div>
 		<p>
 		<?php  $this->load->view($left_main); ?>
