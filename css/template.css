@@ -1,7 +1,7 @@
 body {
 	background:#ffffff;
 	
-	font: 11px/1.1 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
 	
 	margin:0px;
 }
@@ -46,7 +46,19 @@ label {
 	height: 70px;
 	width:340px;
 	background:url('/~nh001/images/logo2.png') no-repeat;
+	float:left;
 	
+}
+.tagline {
+	float:left;
+	padding: 20px 0 0 220px;
+	font-size: 1.25em;
+	font-weight: bolder;
+	text-align: right;
+}
+.tagline strong {
+	color: #f15c22;
+	font-size: 1.4em;
 }
 .adminlogo {
 	height: 70px;
@@ -100,6 +112,7 @@ label {
 	width:600px;
 	height:200px;
 	background:#c0b290;
+	margin: 0 0 10px 0;
 }
 #wrapper{
     margin-left: auto;

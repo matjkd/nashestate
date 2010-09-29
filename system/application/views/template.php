@@ -13,6 +13,10 @@
 
 <div class="header">
 <div class="logo"></div>
+<div class="tagline"><strong>Tel. +34 971 67 59 69</strong><br/>
+Property Sales &amp; Rentals in South West Mallorca
+
+</div>
 </div>
 
 <div class="topmenu"><?php $this->load->view('global/top_menu'); ?></div>
@@ -20,8 +24,7 @@
 
 <div class="main_content">
 <div class="left_content">
-
-
+<?php $this->load->view('search/searchbox'); ?></div>
 </div>
 <div class="right_content">
 <?php $this->load->view('slideshow/frontpage'); ?>
@@ -32,6 +35,6 @@
 </div>
 <div style="clear:both;"></div>
 <div class="footer"></div>
-</div>
+
 </body>
 </html>
