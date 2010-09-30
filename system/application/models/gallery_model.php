@@ -25,6 +25,8 @@ class Gallery_model extends Model {
 		$this->upload->do_upload();
 		$image_data = $this->upload->data();
 		
+		
+		
 		$config = array(
 			'source_image' => $image_data['full_path'],
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
@@ -36,13 +38,23 @@ class Gallery_model extends Model {
 		$this->load->library('image_lib', $config);
 		$this->image_lib->resize();
 		
+		$config2 = array(
+			'source_image' => $image_data['full_path'],
+			'new_image' => $this->gallery_path . '/'.$id.'/medium',
+			'maintain_ratio' => true,
+			'width' => 300,
+			'height' => 200
+		);
+		
+		$this->load->library('image_lib', $config2);
+		$this->image_lib->resize();
 		
 		
 	}
 function get_images($id) {
 		
 		$files = scandir('./images/properties/'.$id.'');
-		$files = array_diff($files, array('.', '..', 'thumbs'));
+		$files = array_diff($files, array('.', '..', 'thumbs', 'medium', 'large'));
 		
 		$images = array();
 		

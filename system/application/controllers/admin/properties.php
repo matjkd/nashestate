@@ -177,6 +177,8 @@ class Properties extends MY_Controller {
 				$this->ftp->connect($config);
 				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/');
 				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/thumbs/');
+				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/medium/');
+				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/large/');
 				$this->ftp->close();
 				
 				redirect('admin/properties/update/'.$ref.'#tabs-1');   // or whatever logic needs to occur
