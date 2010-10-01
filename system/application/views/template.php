@@ -27,9 +27,15 @@ Property Sales &amp; Rentals in South West Mallorca
 <?php $this->load->view('search/searchbox'); ?></div>
 </div>
 <div class="right_content">
-<?php $this->load->view('slideshow/frontpage'); ?>
 
-<?php echo $main_text;?>
+<?php 
+		if(isset($slideshow))
+		{
+		$this->load->view('slideshow/frontpage'); 
+		}
+?>
+
+<?php $this->load->view($content); ?>
 </div>
 
 </div>

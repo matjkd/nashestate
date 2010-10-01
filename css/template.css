@@ -12,6 +12,8 @@ label {
 	float:left;
 	width:100px;
 }
+
+
 #property_forms {
 	
 }
@@ -169,6 +171,27 @@ label {
 	padding:2px;
 	width:100px;
 	float:left;
+}
+#search_box {
+	padding:10px;
+	background-color:#fcb034;
+}
+#search_box input {
+	
+	margin-top:10px;
+}
+#search_holder {
+	padding:1px 10px 10px 10px;
+	margin-bottom:5px;
+	background-color:#fcb034;
+	border:solid 1px #fc8034;
+}
+fieldset { border:1px solid #fc8034; }
+#search_title {
+	margin: 0px;
+	color:#000000;
+	font-size: 1.25em;
+	font-weight:bold;
 }
 .ui-widget { font-family:Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
 .ui-widget .ui-widget { font-size: 1em; }

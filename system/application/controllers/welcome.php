@@ -37,8 +37,9 @@ function content()
 					
 				endforeach;		
 				
+			$data['slideshow'] = "1";
 			$data['menu'] =	$this->content_model->get_menus();
-		
+			$data['content'] = "content/standard";
 			$this->load->vars($data);
 		
 			$this->load->view('template');
