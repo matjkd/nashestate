@@ -37,6 +37,8 @@ class Gallery_model extends Model {
 		
 		$this->load->library('image_lib', $config);
 		$this->image_lib->resize();
+		$this->image_lib->clear();
+		
 		
 		$config2 = array(
 			'source_image' => $image_data['full_path'],
@@ -46,11 +48,12 @@ class Gallery_model extends Model {
 			'height' => 200
 		);
 		
-		$this->load->library('image_lib', $config2);
+		$this->image_lib->initialize($config2);
 		$this->image_lib->resize();
 		
 		
 	}
+	
 function get_images($id) {
 		
 		$files = scandir('./images/properties/'.$id.'');
