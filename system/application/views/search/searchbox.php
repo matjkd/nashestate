@@ -1,3 +1,21 @@
+<?php 
+	if(!isset($buyto))
+			{
+				$buyfrom = 0;
+				$buyto = 0;
+			}
+			
+	if(!isset($rentto))
+			{
+				$rentfrom = 0;
+				$rentto = 0;
+			}
+	if(!isset($beds))
+			{
+				$beds = 0;
+			}
+?>
+
 <script type="text/javascript">
 	$(function() {
 		$("#slider-range").slider({
@@ -5,7 +23,7 @@
 			min: 0,
 			max: 1000000,
 			step: 25000,
-			values: [0, 0],
+			values: [<?=$buyfrom?>, <?=$buyto?>],
 			slide: function(event, ui) {
 				$("#amount").val('€' + ui.values[0] + ' - €' + ui.values[1]);
 			}
@@ -19,7 +37,7 @@
 			min: 0,
 			max: 1000,
 			step: 25,
-			values: [0, 0],
+			values: [<?=$rentfrom?>, <?=$rentto?>],
 			slide: function(event, ui) {
 				$("#rent").val('€' + ui.values[0] + ' - €' + ui.values[1]);
 			}
@@ -30,9 +48,9 @@
 	$(function() {
 		$("#slider-range-beds").slider({
 			range: "max",
-			min: 1,
+			min: 0,
 			max: 10,
-			value: 2,
+			value: <?=$beds?>,
 			slide: function(event, ui) {
 				$("#beds").val(ui.value);
 			}
@@ -42,15 +60,14 @@
 	</script>
 <div id="search_box">
 <form name="search" action="<?=base_url()?>search/content" method="post">
-<span id="search_title">Property Search</span><br/>
-Use the sliders below to select criteria
+<span id="search_title">Property Search</span>
 
 <fieldset>
 <legend>Minimum number of bedrooms:</legend>
 
 
 <div id="slider-range-beds"></div>
-<input type="text" id="beds" style="border:0; " />
+<input type="text" name="beds" id="beds" style="border:0; " />
 </fieldset>
 
 <fieldset>
@@ -59,7 +76,7 @@ Use the sliders below to select criteria
 
 
 <div id="slider-range"></div>
-<input type="text" id="amount" style="border:0;  " />
+<input type="text" name="amount" id="amount" style="border:0;  " />
 </fieldset>
 
 <fieldset>
@@ -68,25 +85,29 @@ Use the sliders below to select criteria
 
 
 <div id="slider-range-rent"></div>
-<input type="text" id="rent" style="border:0; " />
+<input type="text" name="rent" id="rent" style="border:0; " />
 </fieldset>
 
 <fieldset>
-<legend>Location</legend>
-<div style="width:130px; float:left;">
-Location:<br/><select name="location">
-<option value="location">Locations here</option>
-</select>
-</div>
+	<legend>Other (still working on these bits)</legend>
+	<div style="width:120px; float:left;">
+	Location:<br/><select name="location">
+	<option value="location">Locations here</option>
+	</select>
+	</div>
 
-<div style="width:130px; float:left;">
-Category:<br/><select name="category">
-<option value="category">1</option>
-</select>
-</div>
+	<div style="width:80px; float:left;">
+	Category:<br/><select name="category">
+	<option value="category">1</option>
+	</select>
+	</div>
+
+
+	<div style="width:80px; float:left;">
+	<input type="submit" value="Submit" />
+	</div>
 </fieldset>
-
-
-<input type="submit" value="Submit" />
 </form>
+
+
 </div>
