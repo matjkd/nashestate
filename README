@@ -1,1 +1,4 @@
-I will write this later, the site is still in real early stages.
+This is built on codeigniter 1.7.2, I've removed the database file for security reasons, but you should be able to copy all files over a codeigniter install. 
+The config file will need changing to suit your setup.
+
+When it's nearer a workable state I'll add a SQL file with the database info.
