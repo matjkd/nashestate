@@ -1,10 +1,19 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * @name 		Search controller
+ * @author 		Mat Sadler - Redstudio Design Limited
+ * @package 	Nash Estate Agents
+ * @subpackage 	Controllers
+ */
+
 
 class Search extends Controller {
 
 	function Search()
 	{
-		parent::Controller();	
+		parent::Controller();
+		$this->load->model('ajax_model');	
+		$this->load->model('search_model');		
 	}
 	
 	function index()
@@ -20,6 +29,8 @@ class Search extends Controller {
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['main_text'] = "searchpage";
 			$data['content'] = "search/searchlist";
+			$data['general_areas'] = $this->ajax_model->get_general_area();	
+			
 			
 			// Deal with data sent from search form
 			$data['beds'] = $this->input->post('beds');
@@ -36,26 +47,37 @@ class Search extends Controller {
 			$data['rentfrom']  = substr($rent, 0, strpos($rent, "-") );
 			$data['rentto'] = substr($rent, strpos($rent, "-")+strlen('-'));
 			
+			
+			// Purchase Only
 			if($data['buyto'] > 0 AND $data['rentto'] == 0)
 			{
 				$data['list'] = 'purchase only';
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto']);	
+				
 			}
 			
+			// Rent Only
 			if($data['rentto'] > 0 AND $data['buyto'] == 0)
 			{
 				$data['list'] = 'rent only';
+				$data['properties'] = $this->search_model->search_rentals();	
 			}
 			
+			// Search Both rental and purchase limited by price
 			if($data['rentto'] > 0 AND $data['buyto'] > 0)
 			{
 				$data['list'] = 'both limited';
+				$data['properties'] = $this->search_model->search_both();	
 			}
 			
+			// Search Both rent and purchase with no limit on price
 			if($data['rentto'] == 0 AND $data['buyto'] == 0)
 			{
 				$data['list'] = 'both unlimited';
+				$data['properties'] = $this->search_model->search_both();	
 			}
 			
+			// Load Template
 			$this->load->vars($data);
 			$this->load->view('template');
 			

@@ -92,7 +92,10 @@
 	<legend>Other (still working on these bits)</legend>
 	<div style="width:120px; float:left;">
 	Location:<br/><select name="location">
-	<option value="location">Locations here</option>
+	<?php  foreach($general_areas as $area):?>
+	<option value="<?=$area['general_area_id']?>"><?=$area['area']?></option>
+	<?php endforeach; ?>
+	
 	</select>
 	</div>
 

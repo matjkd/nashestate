@@ -1,10 +1,17 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * @name 		Main site controller
+ * @author 		Mat Sadler - Redstudio Design Limited
+ * @package 	Nash Estate Agents
+ * @subpackage 	Controllers
+ */
 
 class Welcome extends Controller {
 
 	function Welcome()
 	{
-		parent::Controller();	
+		parent::Controller();
+		$this->load->model('ajax_model');	
 	}
 	
 	function index()
@@ -36,7 +43,7 @@ function content()
 					$data['main_text'] = $row['content'];
 					
 				endforeach;		
-				
+			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			$data['slideshow'] = "1";
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['content'] = "content/standard";

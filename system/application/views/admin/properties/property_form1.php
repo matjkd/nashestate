@@ -40,7 +40,7 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 
 
         <label for="sale_rent">For Sale/Rent*</label>
-       	<select id="sale_rent" type="text" name="sale_rent" <?=$readonly?>/>
+       	<select id="sale_rent"  name="sale_rent" <?=$readonly?>/>
 		<option <?php if($row->sale_rent==1){echo "selected";} ?>value="1">For Sale</option>
 		<option <?php if($row->sale_rent==2){echo "selected";} ?> value="2">For Rent</option>
 		</select>
@@ -50,7 +50,7 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 
        <br/> <label for="property_type">Property Type*</label>
         
-      	<select id="property_type" type="text" name="property_type" maxlength="45"  />
+      	<select id="property_type"  name="property_type" />
 		<?php foreach($property_types as $types):?>
 		<option <?php if($row->property_type==$types['property_type_id']){echo "selected";} ?> value="<?=$types['property_type_id'];?>"><?=$types['property_type_name'];?></option>
 		<?php endforeach;?>

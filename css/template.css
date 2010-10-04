@@ -112,7 +112,7 @@ label {
 }
 #slideshow {
 	width:600px;
-	height:200px;
+	height:300px;
 	background:#c0b290;
 	margin: 0 0 10px 0;
 }
@@ -173,7 +173,8 @@ label {
 	float:left;
 }
 #search_box {
-	padding:10px;
+	padding:10px 10px 0;
+	height: 290px;
 	background-color:#fcb034;
 }
 #search_box input {
@@ -187,12 +188,22 @@ label {
 	border:solid 1px #fc8034;
 }
 fieldset { border:1px solid #fc8034; }
+
 #search_title {
 	margin: 0px;
 	color:#000000;
 	font-size: 1.25em;
 	font-weight:bold;
 }
+
+#search_heading {
+	background: #bbbbbb;
+}
+
+#search_list {
+	border: 1px solid #fcb034;
+}
+
 .ui-widget { font-family:Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }

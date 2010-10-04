@@ -16,13 +16,69 @@ class Search_model extends Model {
 		);
 	}
 	
-	function search_sales()
+	function search_sales($from, $to)
 	{
+		$data = array();
+		$this->db->from('property_main');
+		$this->db->where('sale_rent', 1);
 		
+		$search = "sale_price <= $to AND $from <= sale_price";
+		$this->db->where($search);
+		
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
 	}
 	
-	function search_rentals()
+	function search_rentals($from, $to)
 	{
 		
+		
+		
+		$data = array();
+		$this->db->from('property_main');
+		$this->db->where('sale_rent', 2);
+		
+		$search = "rent_price <= $to AND $from <= rent_price";
+		$this->db->where($search);
+		
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result($from, $to);
+		return $data;
+	}
+	
+	
+	function search_both()
+	{
+		$data = array();
+		$this->db->from('property_main');
+		
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
 	}
 }
