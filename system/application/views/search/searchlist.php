@@ -34,5 +34,14 @@
 				<div id="search_list">
 						<h3><?=$property['property_title']?></h3>
 						<?=$property['sale_price']?><br/>
+					
+				</div>
+		<?php endforeach;?>
+		
+		<?php foreach($rentals as $rentals):?>
+				<div id="search_list">
+						<h3><?=$rentals['property_title']?></h3>
+				
+						<?=$rentals['rent_price']?>  <?=$rentals['rent_period']?><br/>
 				</div>
 		<?php endforeach;?>

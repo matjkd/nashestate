@@ -232,6 +232,9 @@ class Properties extends MY_Controller {
 	}
 	function editable_property1()
 	{
+	
+		
+		
 		$data['id'] = $this->input->post('id');
 		$data['field'] = $this->input->post('elementid');
 		$data['value'] = $this->input->post('value');
@@ -259,6 +262,7 @@ class Properties extends MY_Controller {
 			endforeach;	
 		
 		}
+		
 		
 		
 		

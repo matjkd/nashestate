@@ -22,8 +22,11 @@ class Search_model extends Model {
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 1);
 		
-		$search = "sale_price <= $to AND $from <= sale_price";
-		$this->db->where($search);
+		if ($to > 0)
+				{
+						$search = "sale_price <= $to AND $from <= sale_price";
+						$this->db->where($search);
+				}
 		
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
@@ -47,8 +50,11 @@ class Search_model extends Model {
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 2);
 		
-		$search = "rent_price <= $to AND $from <= rent_price";
-		$this->db->where($search);
+		if ($to > 0)
+				{
+					$search = "rent_price <= $to AND $from <= rent_price";
+					$this->db->where($search);
+				}
 		
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
@@ -64,21 +70,5 @@ class Search_model extends Model {
 	}
 	
 	
-	function search_both()
-	{
-		$data = array();
-		$this->db->from('property_main');
-		
-		$Q = $this->db->get();
-		if ($Q->num_rows() > 0)
-		{
-			foreach ($Q->result_array() as $row)
-			
-			$data[] = $row;
-			
-		}
-		
-		$Q->free_result();
-		return $data;
-	}
+
 }

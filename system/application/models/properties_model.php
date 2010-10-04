@@ -171,6 +171,91 @@ class Properties_model extends Model {
 	
 	function edit_property1($id, $field, $value)
 	{
+		
+	if($field == 'rent_price')
+		{
+			$this->db->from('property_main');
+			$this->db->where('property_ref_no', $id);
+			$Q = $this->db->get();
+			if ($Q->num_rows() == 1)
+				{
+					foreach ($Q->result_array() as $row)
+					
+					if($row['rent_period'] == "Yearly")
+					{
+						$monthly_rent = $value/12;
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+					
+					if($row['rent_period'] == "Monthly")
+					{
+						$monthly_rent = $value;
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+					
+					
+					if($row['rent_period'] == "Weekly")
+					{
+						$monthly_rent = ($value*52)/12;
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+				}
+		}
+		
+	if($field == 'rent_period')
+		{
+			$this->db->from('property_main');
+			$this->db->where('property_ref_no', $id);
+			$Q = $this->db->get();
+			if ($Q->num_rows() == 1)
+				{
+					foreach ($Q->result_array() as $row)
+					
+					if($value == "Yearly")
+					{
+						$monthly_rent = $row['rent_price']/12;
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+					
+					if($value == "Monthly")
+					{
+						$monthly_rent =  $row['rent_price'];
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+					
+					
+					if($value == "Weekly")
+					{
+						$monthly_rent = ($row['rent_price']*52)/12;;
+						$rent_update = array(
+											'monthly_rent' => $monthly_rent
+											);
+								$this->db->where('property_ref_no', $id);
+								$update = $this->db->update('property_main', $rent_update);
+					}
+				}
+		}
+		
 		$user_update_data = array(
 					$field => $value
 					);
@@ -250,6 +335,42 @@ class Properties_model extends Model {
 		$Q->free_result();
 		return $data;
 	}
+
+	function list_all_features()
+	{
+		$data = array();
+		$this->db->from('features');
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
+	}
+	
+	function list_features_property($id)
+	{
+		$data = array();
+	
+		$this->db->where('property_id', $id);
+		$this->db->join('features', 'features.features_id=property_features.features_id', 'left');
+		$Q = $this->db->get('property_features');
+		if ($Q->num_rows() > 0) {
+			
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			}
+		
+		$Q->free_result();
+		return $data;
+	}
+	
 	function list_rooms()
 	{
 		$data = array();
@@ -366,12 +487,50 @@ class Properties_model extends Model {
 		$Q->free_result();
 		return $data;
 	}
+	function add_feature($id)
+	{
+		$feature = $this->input->post('feature');
+		$data = array();
+		$this->db->from('features');
+		$this->db->where('features', $feature);
+		$Q = $this->db->get();
+		// check if feature exists, if not add it to database
+		if ($Q->num_rows() < 1)
+			{
+				$new_feature_data = array(
+				'features' => $feature,
+				'features_category' => 0
+			);
+		
+			$this->db->insert('features', $new_feature_data);
+			}
+			$Q->free_result();
+			
+		//now add feature to list of property features.	
+		$this->db->from('features');
+		$this->db->where('features', $feature);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)	
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$new_property_feature_data = array(
+				'features_id' => $row['features_id'],
+				'property_id' => $id
+		);
+		$this->db->insert('property_features', $new_property_feature_data);
+		}
+			
+		return;
+	}
+	
 	
 	function get_assigned_features($id)
 	{
 		$data = array();
 		$this->db->select('features_id');
 		$this->db->where('property_id', $id);
+		
 		$Q = $this->db->get('property_features');
 		if ($Q->num_rows() > 0) {
 			foreach ($Q->result_array() as $row) {
@@ -379,6 +538,26 @@ class Properties_model extends Model {
 			}
 		}
 		$Q->free_result();
+		return $data;
+	}
+	function delete_assigned_feature($id)
+	{
+		//grab the property id before deleting feature, and return property id to controller
+		$data = array();
+		$this->db->select('property_id');
+		$this->db->where('pf_id', $id);
+		
+		$Q = $this->db->get('property_features');
+		if ($Q->num_rows() > 0) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+			}
+		}
+		$Q->free_result();
+		
+		$this->db->where('pf_id', $id);
+		$this->db->delete('ignite_property_features');
+		
 		return $data;
 	}
 }

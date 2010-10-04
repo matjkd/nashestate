@@ -60,21 +60,23 @@ class Search extends Controller {
 			if($data['rentto'] > 0 AND $data['buyto'] == 0)
 			{
 				$data['list'] = 'rent only';
-				$data['properties'] = $this->search_model->search_rentals();	
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto']);	
 			}
 			
 			// Search Both rental and purchase limited by price
 			if($data['rentto'] > 0 AND $data['buyto'] > 0)
 			{
 				$data['list'] = 'both limited';
-				$data['properties'] = $this->search_model->search_both();	
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto']);	
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto']);	
 			}
 			
 			// Search Both rent and purchase with no limit on price
 			if($data['rentto'] == 0 AND $data['buyto'] == 0)
 			{
 				$data['list'] = 'both unlimited';
-				$data['properties'] = $this->search_model->search_both();	
+				$data['properties'] = $this->search_model->search_sales(0,0);	
+				$data['rentals'] = $this->search_model->search_rentals(0,0);		
 			}
 			
 			// Load Template
