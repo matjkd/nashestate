@@ -52,7 +52,7 @@ class Search_model extends Model {
 		
 		if ($to > 0)
 				{
-					$search = "rent_price <= $to AND $from <= rent_price";
+					$search = "monthly_rent <= $to AND $from <= monthly_rent";
 					$this->db->where($search);
 				}
 		

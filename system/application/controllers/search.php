@@ -53,7 +53,7 @@ class Search extends Controller {
 			{
 				$data['list'] = 'purchase only';
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto']);	
-				
+				$data['rentals'] = NULL;
 			}
 			
 			// Rent Only
@@ -61,6 +61,7 @@ class Search extends Controller {
 			{
 				$data['list'] = 'rent only';
 				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto']);	
+				$data['properties'] = NULL;
 			}
 			
 			// Search Both rental and purchase limited by price

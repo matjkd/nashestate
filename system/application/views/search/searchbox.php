@@ -35,7 +35,7 @@
 		$("#slider-range-rent").slider({
 			range: true,
 			min: 0,
-			max: 1000,
+			max: 5000,
 			step: 25,
 			values: [<?=$rentfrom?>, <?=$rentto?>],
 			slide: function(event, ui) {
