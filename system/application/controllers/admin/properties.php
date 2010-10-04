@@ -1,4 +1,11 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * @name 		Properties Admin
+ * @author 		Mat Sadler - Redstudio Design Limited
+ * @package 	Nash Estate Agents
+ * @subpackage 	Controllers
+ */
+
 
 class Properties extends MY_Controller {
 
@@ -97,7 +104,7 @@ class Properties extends MY_Controller {
 				
 			endforeach;
 		
-		$data['assigned_features'] = $this->properties_model->get_assigned_features($id);
+		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
 		$data['images'] = $this->Gallery_model->get_images($id);
 		
@@ -314,6 +321,31 @@ function rooms_table()
 		
 		$this->output->set_output($update);
 	}
+	function add_feature()
+	{
+	$segment_active = $this->uri->segment(4);
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->properties_model->add_feature($segment_active);
+			
+			redirect('admin/properties/update/'.$segment_active.'#tabs-2');   
+		}
+	}
+	function delete_property_feature($id)
+	{
+	
+	$data['property_id'] = $this->properties_model->delete_assigned_feature($id);
+	foreach($data['property_id'] as $key => $row):
+	$property = $row['property_id'];
+	endforeach;
+	
+	redirect('admin/properties/update/'.$property.'#tabs-2', 'refresh');
+	
+	}
 	
 	function is_logged_in()
 	{
@@ -329,5 +361,5 @@ function rooms_table()
 	}	
 }
 
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/welcome.php */
+/* End of file properties.php */
+/* Location: ./system/application/controllers/admin/properties.php */
