@@ -204,8 +204,20 @@ fieldset { border:1px solid #fc8034; }
 
 #search_list {
 	border: 1px solid #fcb034;
+	margin-bottom: 3px;
+	padding: 5px 0 5px 5px;
+	
 }
 
+#search_thumb {
+	float: left;
+}
+#search_content {
+	width: 450px;
+	
+	margin-right: 5px;
+	float: left;
+}
 .ui-widget { font-family:Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }

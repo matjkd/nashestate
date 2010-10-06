@@ -35,10 +35,34 @@
 			  	foreach($properties as $property):?>
 					
 					<div id="search_list">
-							<h3><?=$property['property_title']?></h3>
-							<?=$property['sale_price']?><br/>
-						<img src="<?=base_url()?>images/properties/<?=$property['property_id']?>/thumbs/<?=$property['filename']?>">
+							
+							<div id="search_content">
+							<div style="height:85px;">
+							<strong><?=$property['property_title']?></strong><br/>
+							<p>
+								<?php 
+								$description = strip_tags($property['description']);
+								$description = substr($description, 0, 180);
+								echo "".$description."...";
+								
+								?>Read More<br/>
+							</p>	
+							</div>	
+								
+								
+							
+							<div style="float:left;"><strong>Ref: &#35;<?=$property['property_ref_no']?> 	Price: &euro;<?=$property['sale_price']?></strong></div>
+							
+							</div>
+							
+							<div id="search_thumb">
+							<?php if(isset($property['filename'])) { ?>
+							<img src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/thumbs/<?=$property['filename']?>">
+							<?php  }?>
+							</div>
+					<div style="clear:both;"></div>
 					</div>
+					
 		<?php 
 				endforeach;
 		}
@@ -48,10 +72,28 @@
 		{
 				foreach($rentals as $rentals):?>
 				<div id="search_list">
-						<h3><?=$rentals['property_title']?></h3>
-				
-						<?=$rentals['rent_price']?>  <?=$rentals['rent_period']?><br/>
+						<div id="search_content">
+						<div style="height:85px;">
+						<strong><?=$rentals['property_title']?></strong></br>
+						<p>
+								<?php 
+								$description = strip_tags($rentals['description']);
+								$description = substr($description, 0, 180);
+								echo "".$description."...";
+								
+								?>Read More<br/>
+						</p>
+						</div>	
+						<div style="float:left;"><strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: &euro;<?=$rentals['rent_price']?>  <?=$rentals['rent_period']?></strong></div>
+						
 				</div>
+				<div id="search_thumb">
+							<?php if(isset($rentals['filename'])) { ?>
+							<img src="<?=base_url()?>images/properties/<?=$rentals['property_ref_no']?>/thumbs/<?=$rentals['filename']?>">
+							<?php  }?>
+							</div>
+					<div style="clear:both;"></div>
+					</div>
 		<?php 
 				endforeach;
 		}

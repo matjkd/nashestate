@@ -210,10 +210,10 @@ class Properties extends MY_Controller {
 		redirect('admin/properties/update/'.$id.'/#tabs-1');  
 		
 	}
-	function update_property2()
+	function update_property2($id)
 	{
 		
-		$id = $this->input->post('property_id');
+		
 		$this->properties_model->update_property2($id); 
 		
 		redirect('admin/properties/update/'.$id.'/#tabs-2');  

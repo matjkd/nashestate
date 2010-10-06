@@ -31,8 +31,9 @@ class Gallery_model extends Model {
 			'source_image' => $image_data['full_path'],
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
 			'maintain_ratio' => true,
-			'width' => 150,
-			'height' => 100
+			'height' => 100,
+			'width' => 150
+		
 		);
 		
 		$this->load->library('image_lib', $config);

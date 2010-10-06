@@ -52,6 +52,8 @@ class Search_model extends Model {
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 2);
 		$this->db->where('active', 1);
+		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left');
+		$this->db->group_by('property_main.property_ref_no');
 		
 		if ($to > 0)
 				{

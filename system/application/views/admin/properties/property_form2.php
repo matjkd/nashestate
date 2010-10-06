@@ -33,10 +33,9 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 $this->load->view('admin/properties/features_autocomplete');?>
 <?php 
 
-echo form_open('admin/properties/update_property2', $attributes);
-echo form_hidden('property_id', $property_id); 	
-$readonly = "DISABLED";
+echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes);
 
+$readonly = "DISABLED";
 
 
 ?>

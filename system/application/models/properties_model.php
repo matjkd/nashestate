@@ -135,20 +135,7 @@ class Properties_model extends Model {
 	function update_property2($id)
 	{
 		
-		$this->db->where('property_id', $id);
-		$this->db->delete('property_features');
-		
-		if (count($_POST['features'])){
-			foreach ($_POST['features'] as $value)
-			{
-				$data = array(
-					'property_id' => $id,
-					'features_id' => $value
-				);
-				$this->db->insert('property_features', $data);
-			}
-		}
-	
+			
 		$form_data = array(
     					'description' => $this->input->post('description'),
     					);
