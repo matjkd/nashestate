@@ -19,7 +19,8 @@ function confirmation(id) {
 }
 //-->
 </script>
-<?php $this->load->view('admin/contacts/quick_add_company');?>
+<div id="search_heading"><?php $this->load->view('admin/contacts/quick_add_company');?></div>
+<div id="search_heading"><?php $this->load->view('admin/contacts/quick_add_user');?></div>
 <table id="contacts"  width="100%" style="clear:both;">
 	<thead>
 		<tr>

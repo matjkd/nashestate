@@ -97,7 +97,8 @@ class Properties_model extends Model {
 		'property_address2' => '',
 		'property_address3' => '',
 		'property_address4' => '',
-		'property_address5' => ''
+		'property_address5' => '',
+		'user_id' => ''
 		);
 		return $new_array;
 	}
@@ -107,13 +108,14 @@ class Properties_model extends Model {
 		$property_id = $this->input->post('property_id');
 			
     				$form_data = array(
-    			
+    				
 					'property_address1' => $this->input->post('property_address1'),
     				'property_address2' => $this->input->post('property_address2'),
     				'property_address3' => $this->input->post('property_address3'),
     				'property_address4' => $this->input->post('property_address4'),
     				'property_address5' => $this->input->post('property_address5'),
-    				'property_type' => $this->input->post('property_type')
+    				'property_type' => $this->input->post('property_type'),
+    				'user_id' => $this->input->post('individuals')
     				
     				
 					);

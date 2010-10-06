@@ -21,6 +21,7 @@ class Search_model extends Model {
 		$data = array();
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 1);
+		$this->db->where('active', 1);
 		
 		if ($to > 0)
 				{
@@ -49,6 +50,7 @@ class Search_model extends Model {
 		$data = array();
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 2);
+		$this->db->where('active', 1);
 		
 		if ($to > 0)
 				{

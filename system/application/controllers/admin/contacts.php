@@ -54,6 +54,7 @@ class Contacts extends MY_Controller {
 		$data['right_main'] = 'admin/contacts/list_users';
 		$data['page'] = 'contacts';
 		$data['title'] = 'Nash Homes Contacts';
+		$data['heading'] = 'Individual Details';
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
@@ -186,6 +187,34 @@ function view_company()
 				
 				$this->session->set_flashdata('message', 'New Company Created');
 				redirect('admin/contacts/view_company/'.$company_id);
+	}
+	
+	function quick_add_user()
+	{
+		$this->form_validation->set_rules('firstname', 'firstname', 'trim|required');
+		$this->form_validation->set_rules('lastname', 'lastname', 'trim|required');
+		
+		if($this->form_validation->run() == FALSE)
+			{
+			$this->session->set_flashdata('message', 'Enter a Firstname and Lastname');
+			redirect('/admin/contacts/view_company');
+			}
+			
+			// Create the company called N/A
+			$companydata['company_id'] = $this->contacts_model->add_company();
+				
+				foreach($companydata['company_id'] as $row2):
+				$company_id = $row2['company_id'];
+				endforeach;
+			
+			// Add the user to above company
+			$newuserdata['user_id'] = $this->contacts_model->quick_add_user($company_id);	
+				foreach($newuserdata['user_id'] as $row3):
+				$user_id = $row3['user_id'];
+				endforeach;
+			
+			$this->session->set_flashdata('message', 'New Person Created');
+			redirect('admin/contacts/view/'.$user_id);
 	}
 	
 	function address_table()

@@ -20,26 +20,38 @@ if(isset($company))
 
 <div id="property_forms">
 
-<?php if(!isset($update)) { 
-echo form_open('admin/properties/create_property', $attributes); 
-$readonly = "";
-
-echo form_hidden('company_id', $company_id); 
-}
-else
-{
-	
-echo form_open('admin/properties/update_property1', $attributes);
-echo form_hidden('property_id', $property_id); 	
-$readonly = "DISABLED";
-echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
-
-}
+<?php if(!isset($update)) 
+			{ 
+					echo form_open('admin/properties/create_property', $attributes); 
+					$readonly = "";
+					
+					echo form_hidden('company_id', $company_id); 
+			}
+		else
+			{
+						
+					echo form_open('admin/properties/update_property1', $attributes);
+					echo form_hidden('property_id', $property_id); 	
+					$readonly = "DISABLED";
+					echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
+			
+			}
 ?>
 
+		<label for="individuals">Individual</label>
+        
+      	<select id="individuals"  name="individuals" />
+		<?php foreach($company_users as $company_users):?>
+		<option 
+		<?php 
+		$individual_id = $company_users->user_id;
+		if($row->user_id==$individual_id){echo "selected";} ?>
+		value="<?=$company_users->user_id;?>">
+		<?=$company_users->firstname;?> <?=$company_users->lastname;?></option>
+		<?php endforeach;?>
+		</select>
 
-
-        <label for="sale_rent">For Sale/Rent*</label>
+        <br/><label for="sale_rent">For Sale/Rent*</label>
        	<select id="sale_rent"  name="sale_rent" <?=$readonly?>/>
 		<option <?php if($row->sale_rent==1){echo "selected";} ?>value="1">For Sale</option>
 		<option <?php if($row->sale_rent==2){echo "selected";} ?> value="2">For Rent</option>

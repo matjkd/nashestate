@@ -197,7 +197,9 @@ fieldset { border:1px solid #fc8034; }
 }
 
 #search_heading {
-	background: #bbbbbb;
+	background: #fcdfa3;
+	margin: 0 0 3px;
+	padding:3px;
 }
 
 #search_list {

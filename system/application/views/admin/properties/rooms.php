@@ -1,4 +1,6 @@
-<p>This table will be where you add rooms, you will be able to pick the room type (bedroom, kitchen, roof terrace etc) and enter the size. It saves the information as you go, so no need for a submit button on this table.</p>
+<p>This table is where you add rooms. First click the "Click to add a Room" button, you then pick the room type (bedroom, kitchen, roof terrace etc) and enter the size. 
+If applicable you can select additional info, such as whether the room is private or shared (eg a shared garden)
+ It saves the information as you go, so no need for a submit button on this table.</p>
 <script type="text/javascript" charset="utf-8"> 
 		function fnClickAddRow() {
 				

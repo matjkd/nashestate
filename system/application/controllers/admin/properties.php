@@ -42,7 +42,8 @@ class Properties extends MY_Controller {
 		//$data['left_main'] = 'admin/contacts/view_user';
 		$data['right_main'] = 'admin/properties/list_properties';
 		$data['page'] = 'sales';
-		$data['title'] = 'Nash Homes Properties For Sale';
+		$data['title'] = 'Nash Homes: Properties For Sale';
+		$data['heading'] = 'Properties For Sale';
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
@@ -66,7 +67,8 @@ class Properties extends MY_Controller {
 		$data['right_main'] = 'admin/properties/list_properties';
 		$data['property_type'] = 'r';
 		$data['page'] = 'rentals';
-		$data['title'] = 'Nash Homes Add Property';
+		$data['title'] = 'Nash Homes: Rental Properties';
+		$data['heading'] = 'Rental Properties';
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
@@ -78,7 +80,7 @@ class Properties extends MY_Controller {
 			$data['company'] = $this->contacts_model->get_company($segment_active);
 			
 		}
-		
+		$data['company_users'] = $this->contacts_model->get_users($segment_active);
 		$data['property_types'] = $this->properties_model->property_types();
 		$data['property_details'] = $this->properties_model->get_empty_property();
 		$data['page'] = 'properties';

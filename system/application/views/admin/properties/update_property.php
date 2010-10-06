@@ -3,7 +3,6 @@
 		$("#tabs").tabs();
 	});
 	</script>
-Please Note, all these pages are looking messy for the moment while I populate the fields and get the functionality working. It will be all neat and tidy by the time of completion.
 <h2>Property ID: <?php echo $property_id;?></h2>
 <div id="tabs">
 	<ul>

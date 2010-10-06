@@ -107,39 +107,69 @@ function edit_company($id, $field, $value)
 		$update = $this->db->update('company', $company_update_data);
 		return $update;
 	}
-function edit_address($id, $field, $value)
-	{
-		$address_update_data = array(
-					$field => $value
-					);
-		$this->db->where('company_address_id', $id);
-		$update = $this->db->update('company_address', $address_update_data);
-		return $update;
-	}
-function edit_contact_detail($id, $field, $value)
-	{
-		$contact_update_data = array(
-					$field => $value
-					);
-		$this->db->where('company_contact_id', $id);
-		$update = $this->db->update('company_contact', $contact_update_data);
-		return $update;
-	}
+	function edit_address($id, $field, $value)
+		{
+			$address_update_data = array(
+						$field => $value
+						);
+			$this->db->where('company_address_id', $id);
+			$update = $this->db->update('company_address', $address_update_data);
+			return $update;
+		}
+	function edit_contact_detail($id, $field, $value)
+		{
+			$contact_update_data = array(
+						$field => $value
+						);
+			$this->db->where('company_contact_id', $id);
+			$update = $this->db->update('company_contact', $contact_update_data);
+			return $update;
+		}
 	function add_user()
-	{
-		//add validation here
-		$id_company = $this->input->post('id_company');
-		
-		$new_user_insert_data = array(
-			'company_id' => $id_company,
-			'firstname' => $this->input->post('first_name'),
-			'lastname' => $this->input->post('last_name')
-		);
-		
-		$this->db->insert('users', $new_user_insert_data);
-		
-	}
-function add_company()
+		{
+			//add validation here
+			$id_company = $this->input->post('id_company');
+			
+			$new_user_insert_data = array(
+				'company_id' => $id_company,
+				'firstname' => $this->input->post('first_name'),
+				'lastname' => $this->input->post('last_name')
+			);
+			
+			$this->db->insert('users', $new_user_insert_data);
+			
+		}
+	
+	function quick_add_user($id)
+		{
+			//add validation here
+			$id_company = $id;
+			
+			$new_user_insert_data = array(
+				'company_id' => $id_company,
+				'firstname' => $this->input->post('firstname'),
+				'lastname' => $this->input->post('lastname')
+			);
+			
+			$this->db->insert('users', $new_user_insert_data);
+			
+			$results['user_id'] = $this->db->insert_id();
+			
+			$data[] = $results;
+			
+			return $data;
+			
+		}
+	function get_users($id)
+		{
+			$this->db->where('company_id', $id);
+			$query = $this->db->get('users');
+			if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+		}
+	function add_company()
 	{
 		
 		$new_company_insert_data = array(

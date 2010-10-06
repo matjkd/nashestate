@@ -106,6 +106,7 @@ $attributes = array('class' => 'form', 'id' => 'form');
 	foreach($property_details as $key => $row):
 echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 ?>
+
       <div style="clear:both;"></div>
 
 
@@ -117,7 +118,7 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 
 
         <label for="sale_rent">For Sale/Rent*</label>
-       	<select id="sale_rent" type="text" name="sale_rent" DISABLED/>
+       	<select id="sale_rent" name="sale_rent" DISABLED/>
 		<option <?php if($row->sale_rent==1){echo "selected";} ?>value="1">For Sale</option>
 		<option <?php if($row->sale_rent==2){echo "selected";} ?> value="2">For Rent</option>
 		</select>
@@ -129,20 +130,21 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
  <table>
  	<tr>
 	        <td class='leftcolumn'>
-	        	Property Type
-	        </td>
-			<td>
-				<div class="edittype" id="property_type" style="width:150px; float:left;"><?php echo $row->property_type_name; ?></div>
-			</td>
-	</tr>
-	<tr>
-	        <td class='leftcolumn'>
 	        	Title
 	        </td>
 			<td>
 				<div class="editdetails" id="property_title" style="width:150px; float:left;"><?php echo $row->property_title; ?></div>
 			</td>
 	</tr>
+ 	<tr>
+	        <td class='leftcolumn'>
+	        	Property Type
+	        </td>
+			<td>
+				<div class="edittype" id="property_type" style="width:150px; float:left;"><?php echo $row->property_type_name; ?></div>
+			</td>
+	</tr>
+	
 	<tr>
 	        <td class='leftcolumn'>
 	        	Address 1

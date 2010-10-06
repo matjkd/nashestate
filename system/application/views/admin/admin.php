@@ -27,6 +27,12 @@ if(isset($user_name)) { echo  "".$user_name.": "; }
 
 <div class="main_content">
 
+<?php if(isset($heading)) { ?>
+
+<h2><?=$heading?></h2>
+
+<?php } ?>
+
 <?php if(!isset($left_section))
 	{?>
 		
