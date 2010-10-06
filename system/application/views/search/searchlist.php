@@ -33,11 +33,12 @@
 		<?php if($properties != NULL)
 		{
 			  	foreach($properties as $property):?>
-				<div id="search_list">
-						<h3><?=$property['property_title']?></h3>
-						<?=$property['sale_price']?><br/>
 					
-				</div>
+					<div id="search_list">
+							<h3><?=$property['property_title']?></h3>
+							<?=$property['sale_price']?><br/>
+						<img src="<?=base_url()?>images/properties/<?=$property['property_id']?>/thumbs/<?=$property['filename']?>">
+					</div>
 		<?php 
 				endforeach;
 		}

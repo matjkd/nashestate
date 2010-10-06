@@ -168,7 +168,8 @@ class Properties extends MY_Controller {
 					       	'property_address3' => set_value('property_address3'),
 							'property_address4' => set_value('property_address4'),
 							'property_address5' => set_value('property_address5'),
-							'sale_rent' => set_value('sale_rent')
+							'sale_rent' => set_value('sale_rent'),
+							'user_id' => set_value('user_id')
 						);
 					
 			// run insert model to write data to db
@@ -227,6 +228,7 @@ class Properties extends MY_Controller {
 		{
 			$this->Gallery_model->do_upload($id);
 		}
+		
 		
 		
 		redirect('admin/properties/update/'.$id.'#tabs-3');   // or whatever logic needs to occur

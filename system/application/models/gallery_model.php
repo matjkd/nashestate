@@ -51,6 +51,21 @@ class Gallery_model extends Model {
 		$this->image_lib->initialize($config2);
 		$this->image_lib->resize();
 		
+		$upload_data = array($this->upload->data());
+		
+		foreach($upload_data as $row):
+		
+		// add this to database $row['file_name'];
+		$new_image_data = array(
+				'filename' => $row['file_name'],
+				'property_id' => $id
+		);
+		
+		$this->db->insert('property_images', $new_image_data);
+		
+		endforeach;
+		
+		
 		
 	}
 	
