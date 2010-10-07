@@ -59,7 +59,7 @@
 							
 							<div id="search_thumb">
 							<?php if(isset($property['filename'])) { ?>
-							<img src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/thumbs/<?=$property['filename']?>">
+							<img width="134px" height="100px" src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/thumbs/<?=$property['filename']?>">
 							<?php  }?>
 							</div>
 					<div style="clear:both;"></div>
@@ -93,7 +93,7 @@
 				</div>
 				<div id="search_thumb">
 							<?php if(isset($rentals['filename'])) { ?>
-							<img src="<?=base_url()?>images/properties/<?=$rentals['property_ref_no']?>/thumbs/<?=$rentals['filename']?>">
+							<img width="134px" height="100px" src="<?=base_url()?>images/properties/<?=$rentals['property_ref_no']?>/thumbs/<?=$rentals['filename']?>">
 							<?php  }?>
 							</div>
 					<div style="clear:both;"></div>

@@ -17,27 +17,25 @@
 				});
 				
 			-->
-		</script>
+</script>
 		
 		
-<div style="width:400px; height: 300px; background:#333333;">
+<div >
+
+<ul id="pikame" class="jcarousel-skin-pika">
+<?php foreach($property_images as $image):?>
+
+<li><a alt="an image" href="<?=base_url()?>images/properties/<?=$image->property_id?>/<?=$image->filename?>" target="_blank"><img src="<?=base_url()?>/images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>"/></a>
+
+<?php if(isset($image->image_description)) { echo "<span>".$image->image_description."</span>"; }?></li>
 
 
-
-	<ul id="pikame" class="jcarousel-skin-pika">
-		<li><a href="http://www.pikachoose.com"><img src="../1.jpg"/></a><span>Thanks to <a href="http://web.cara-jo.net">Cara Jo</a> for the awesome new themes!</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../2.jpg"/></a><span>jCarousel is supported and integrated with PikaChoose!</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../3.jpg"/></a><span>Let me know at jeremy.m.fry@gmail.com if you find any bugs!</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../4.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../5.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../1.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../2.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../3.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../4.jpg"/></a><span>Caption</span></li>
-		<li><a href="http://www.pikachoose.com"><img src="../5.jpg"/></a><span>Caption</span></li>
-
-	</ul>
+<?php endforeach;?>
+	
+	
+</ul>
 
 
 
 </div>
+<div style="clear:both;"></div>

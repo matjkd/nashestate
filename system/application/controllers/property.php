@@ -15,6 +15,7 @@ class Property extends Controller {
 		$this->load->model('ajax_model');	
 		$this->load->model('search_model');		
 		$this->load->model('properties_model');	
+		$this->load->model('gallery_model');	
 	}
 
 	function index()
@@ -27,6 +28,7 @@ class Property extends Controller {
 			
 			
 			$data['property_details'] = $this->properties_model->get_property($id);
+			$data['property_images'] = $this->gallery_model->get_property_images($id);
 			$data['leftbox'] = 'property/gallery';	
 			$data['page'] = 'search';	
 			$data['menu'] =	$this->content_model->get_menus();

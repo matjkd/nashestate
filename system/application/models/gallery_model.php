@@ -31,8 +31,8 @@ class Gallery_model extends Model {
 			'source_image' => $image_data['full_path'],
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
 			'maintain_ratio' => true,
-			'height' => 100,
-			'width' => 150
+			'width' => 134,
+			'height' => 100
 		
 		);
 		
@@ -86,6 +86,21 @@ function get_images($id) {
 		
 		return $images;
 	}
+	
+	function get_property_images($id)
+	{
+		$this->db->from('property_images');
+		$this->db->where('property_id', $id);
+		$query = $this->db->get();
+		
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+	}
+	
 	
 	
 }

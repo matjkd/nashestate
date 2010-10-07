@@ -28,11 +28,11 @@
      * @param o {Hash|String} A set of key/value pairs to set as configuration properties or a method name to call on a formerly created instance.
      */
  	var defaults = {
-		autoPlay: true,
+		autoPlay: false,
 		speed: 5000,
 		text: { play: "", stop: "", previous: "Previous", next: "Next" },
 		transition:[0],
-		showCaption: true,
+		showCaption: false,
 		IESafe: true
 	};
    
