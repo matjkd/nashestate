@@ -226,6 +226,20 @@ fieldset { border:1px solid #fc8034; }
 	margin-right: 5px;
 	float: left;
 }
+#property_features {
+	border-bottom:solid 1px #bbbbbb;
+	clear:both;
+	height: 15px;
+	padding: 4px 0;
+}
+#property_features_L {
+	float:left;
+	width: 45%;
+}
+#property_features_R {
+	float:left;
+	width: 45%;
+}
 .ui-widget { font-family:Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }

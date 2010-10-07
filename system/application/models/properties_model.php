@@ -7,16 +7,6 @@ class Properties_model extends Model {
 		parent::Model();
 	}
 	
-	// --------------------------------------------------------------------
-
-      /** 
-       * function SaveForm()
-       *
-       * insert form data
-       * @param $form_data - array
-       * @return Bool - TRUE or FALSE
-       */
-
 	function create_property($form_data)
 	{
 		$this->db->insert('property_main', $form_data);
@@ -58,6 +48,7 @@ class Properties_model extends Model {
 			
 		return FALSE;
 	}
+	
 	function list_properties($type)
     {
     	
@@ -517,13 +508,14 @@ class Properties_model extends Model {
 	function get_assigned_features($id)
 	{
 		$data = array();
-		$this->db->select('features_id');
-		$this->db->where('property_id', $id);
 		
+		$this->db->where('property_id', $id);
+		$this->db->join('features', 'features.features_id = property_features.features_id', 'left');
 		$Q = $this->db->get('property_features');
+		
 		if ($Q->num_rows() > 0) {
 			foreach ($Q->result_array() as $row) {
-				$data[] = $row['features_id'];
+				$data[] = $row;
 			}
 		}
 		$Q->free_result();

@@ -100,6 +100,7 @@ function view_company()
 		$data['right_main'] = 'admin/contacts/list_users';
 		$data['page'] = 'contacts';
 		$data['title'] = 'Nash Homes Contacts';
+			$data['heading'] = 'Group Details';
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
