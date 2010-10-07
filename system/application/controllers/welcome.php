@@ -43,6 +43,7 @@ function content()
 					$data['main_text'] = $row['content'];
 					
 				endforeach;		
+			$data['leftbox'] = 'search/searchbox';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			$data['slideshow'] = "1";
 			$data['menu'] =	$this->content_model->get_menus();

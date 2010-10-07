@@ -45,7 +45,9 @@
 								$description = substr($description, 0, 180);
 								echo "".$description."...";
 								
-								?>Read More<br/>
+								?>
+									<a href="<?=base_url()?>property/display/<?=$property['property_ref_no']?>">Read More</a>
+								<br/>
 							</p>	
 							</div>	
 								
@@ -74,14 +76,16 @@
 				<div id="search_list">
 						<div id="search_content">
 						<div style="height:85px;">
-						<strong><?=$rentals['property_title']?></strong></br>
+						<strong><?=$rentals['property_title']?></strong><br/>
 						<p>
 								<?php 
 								$description = strip_tags($rentals['description']);
 								$description = substr($description, 0, 180);
 								echo "".$description."...";
 								
-								?>Read More<br/>
+								?>
+								<a href="<?=base_url()?>property/display/<?=$rentals['property_ref_no']?>">Read More</a>
+								<br/>
 						</p>
 						</div>	
 						<div style="float:left;"><strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: &euro;<?=$rentals['rent_price']?>  <?=$rentals['rent_period']?></strong></div>

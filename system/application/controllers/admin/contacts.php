@@ -12,9 +12,9 @@ class Contacts extends MY_Controller {
 	
 	function index()
 	{
-		redirect('admin/contacts/view');
+		redirect('admin/contacts/details');
 	}
-	function view()
+	function details()
 	{
 		
 		

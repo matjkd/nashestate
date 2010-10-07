@@ -24,9 +24,29 @@ Property Sales &amp; Rentals in South West Mallorca
 
 <div class="main_content">
 <div class="left_content">
-<?php $this->load->view('search/searchbox'); ?></div>
+
+
+<?php $this->load->view($leftbox); ?></div>
 </div>
-<div class="right_content">
+
+<!--
+Determine whether to have wide or narrow text, narrow is for the gallery on a property
+-->
+		<?php 
+		if(isset($narrow)) 
+			{ ?>
+					<div class="right_content_narrow"> 
+			<?php 
+			}
+			else
+			{
+			?>
+					<div class="right_content">
+		<?php } ?>
+
+<!--
+end of narrow/wide check
+-->
 
 <?php 
 		if(isset($slideshow))

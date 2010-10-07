@@ -31,6 +31,7 @@ class Search extends Controller {
 			$data['content'] = "search/searchlist";
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			
+			$data['leftbox'] = 'search/searchbox';
 			
 			// Deal with data sent from search form
 			$data['beds'] = $this->input->post('beds');
