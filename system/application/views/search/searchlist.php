@@ -33,12 +33,20 @@
 		<?php if($properties != NULL)
 		{
 			  	foreach($properties as $property):?>
+				
+				<?php 
+				
+				if($beds <= $property['rooms'] )
+				{
 					
+				
+				?>
 					<div id="search_list">
 							
 							<div id="search_content">
 							<div style="height:85px;">
-							<strong><?=$property['property_title']?></strong><br/>
+							<strong><?=$property['property_title']?> </strong><br/>
+							Bedrooms: <?=$property['rooms']?><br/>
 							<p>
 								<?php 
 								$description = strip_tags($property['description']);
@@ -66,6 +74,10 @@
 					</div>
 					
 		<?php 
+		}
+				else
+				{
+				}
 				endforeach;
 		}
 		?>
@@ -73,10 +85,18 @@
 		<?php 	if($rentals != NULL)
 		{
 				foreach($rentals as $rentals):?>
+				
+				<?php 
+				
+				if($beds <= $rentals['rooms'] )
+				{
+				
+				?>
 				<div id="search_list">
 						<div id="search_content">
 						<div style="height:85px;">
 						<strong><?=$rentals['property_title']?></strong><br/>
+						Bedrooms: <?=$rentals['rooms']?><br/>
 						<p>
 								<?php 
 								$description = strip_tags($rentals['description']);
@@ -99,6 +119,10 @@
 					<div style="clear:both;"></div>
 					</div>
 		<?php 
+				}
+				else
+				{
+				}
 				endforeach;
 		}
 		?>

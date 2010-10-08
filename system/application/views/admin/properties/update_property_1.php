@@ -136,6 +136,17 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 				<div class="editdetails" id="property_title" style="width:150px; float:left;"><?php echo $row->property_title; ?></div>
 			</td>
 	</tr>
+	
+	<tr>
+	        <td class='leftcolumn'>
+	        	Date of Instruction:
+	        </td>
+			<td>
+				<div class="editdate" id="date_of_instruction" style="width:150px; float:left;"><?php echo $row->date_of_instruction; ?></div>
+			</td>
+	</tr>
+	
+	
  	<tr>
 	        <td class='leftcolumn'>
 	        	Property Type

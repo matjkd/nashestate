@@ -1,7 +1,6 @@
 h1. Ignite Estates Version 0.0.1(development)
 
-This is built on codeigniter 1.7.2, I've removed the database file for security reasons, but you should be able to copy all files over a codeigniter install. 
-The config file will need changing to suit your setup.
+This is built on codeigniter 1.7.2, I've removed the database file for security reasons.
 
 When it's nearer a workable state I'll add a SQL file with the database info. Then eventually an installer folder
 
@@ -13,4 +12,5 @@ h2. Author
 
 h2. Description
 
-Ignite Estates is a CMS for Estate Agents using the Codeigniter PHP framework. Initially it is being built for some very specific requirements but eventually I'd like it to be fairly flexible
+Ignite Estates is a CMS for Estate Agents using the Codeigniter PHP framework. The main purpose is to create a fully functional Estate Agent website that is simple to use. 
+Initially it is being built for some very specific requirements, though the long term goal is flexibility.
