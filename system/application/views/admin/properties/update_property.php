@@ -1,8 +1,5 @@
-<script type="text/javascript">
-	$(function() {
-		$("#tabs").tabs();
-	});
-	</script>
+<?=$this->load->view('admin/properties/property_details_js')?>
+
 <h2>Property ID: <?php echo $property_id;?></h2>
 <div id="tabs">
 	<ul>

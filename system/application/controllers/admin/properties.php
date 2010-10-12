@@ -103,7 +103,7 @@ class Properties extends MY_Controller {
 			foreach($data['property_details'] as $row):
 			
 				$data['features'] = $this->properties_model->features($row->sale_rent);
-				
+				$company_id = $row->company_id;
 			endforeach;
 		
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
@@ -113,7 +113,7 @@ class Properties extends MY_Controller {
 		$data['room_table'] = $this->properties_model->get_rooms_table($id);
 		$data['rooms'] =$this->properties_model->list_rooms();
 		$data['additional'] = $this->properties_model->list_additional();
-		
+		$data['company_users'] = $this->contacts_model->get_users($company_id);
 		$data['page'] = 'properties';
 		$data['property_id'] = $id;
 		$data['title'] = 'Nash Homes Edit Property';
@@ -133,6 +133,7 @@ class Properties extends MY_Controller {
 		$this->form_validation->set_rules('property_address4','Address4','max_length[45]');
 		$this->form_validation->set_rules('property_address5','Postcode','max_length[45]');
 		$this->form_validation->set_rules('company_id','company_id','max_length[45]');
+		$this->form_validation->set_rules('user_id','user_id','max_length[45]');
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 	
 		if ($this->form_validation->run() == FALSE) // validation hasn'\t been passed
@@ -156,7 +157,7 @@ class Properties extends MY_Controller {
 					$ref = $this->db->insert_id();
 				}
 				
-			
+			$this->properties_model->create_sales_data($ref);
 			
 			// build array for the model
 			$form_data = array(
@@ -266,10 +267,45 @@ class Properties extends MY_Controller {
 			endforeach;	
 		
 		}
+		if($data['field'] == 'user_id')
+		{
+						
+			$data['data'] = $this->contacts_model->get_contact($data['value']);
+			
+			foreach($data['data'] as  $row2):
+					$update = "".$row2['firstname']." ".$row2['lastname']."";
+			endforeach;	
+		
+		}
+		
+		if($data['field'] == 'active')
+		{
+						
+			if($data['value'] == 0 ) {$update = 'No';}
+					
+			if($data['value'] == 1 ) {$update = 'Yes';}
+		
+		}
 		
 		
+		$this->output->set_output($update);
+	}
+	
+	function editable_salesdata()
+	{
+		$data['id'] = $this->input->post('id');
+		$data['field'] = $this->input->post('elementid');
+		$data['value'] = $this->input->post('value');
+		$this->properties_model->edit_sales_data($data['id'], $data['field'], $data['value']);
 		
+		$update = $this->input->post('value');
 		
+						
+		if($data['value'] == 0 ) {$update = 'No';}
+					
+		if($data['value'] == 1 ) {$update = 'Yes';}
+		
+				
 		$this->output->set_output($update);
 	}
 function rooms_add_row($id)

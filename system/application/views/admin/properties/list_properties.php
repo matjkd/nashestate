@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	oTable = $('#contacts').dataTable({
 		"bJQueryUI": true,
-		"aoColumns": [null, null, null, null, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}],
+		"aoColumns": [null, null, null, null, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}],
 		"sPaginationType": "full_numbers"
 	});
 } );
@@ -29,6 +29,7 @@ function confirmation(id) {
 			<th>Type</th>
 			<th>Price</th>
 			<th>Date Available</th>
+			<th>Active</th>
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -52,6 +53,7 @@ if($row['sale_rent'] == 2)
 			<td style="padding:5px;"><?=$row['property_type_name']?></td>
 			<td style="padding:5px;">&euro;<?=$price?></td>
 			<td style="padding:5px;"><?=$row['available_from']?></td>
+			<td style="padding:5px;"><?php if($row['active']==0) {echo "No";};	if($row['active']==1) {echo "Yes";};?></td>
 			<td style="padding:5px;"><?="<a href='#' onclick='confirmation(".$row['property_id'].")'>Delete</a> | <a href='".base_url()."admin/properties/update/".$row['property_ref_no']."'>View Property"?></a></td>
 		</tr>
 		<?php endforeach;  ?>

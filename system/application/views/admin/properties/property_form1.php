@@ -40,14 +40,16 @@ if(isset($company))
 
 		<label for="individuals">Individual</label>
         
-      	<select id="individuals"  name="individuals" />
+      	<select id="user_id"  name="user_id" />
 		<?php foreach($company_users as $company_users):?>
 		<option 
 		<?php 
+		
 		$individual_id = $company_users->user_id;
+		
 		if($row->user_id==$individual_id){echo "selected";} ?>
-		value="<?=$company_users->user_id;?>">
-		<?=$company_users->firstname;?> <?=$company_users->lastname;?></option>
+		
+		value="<?=$company_users->user_id;?>"><?=$company_users->firstname;?> <?=$company_users->lastname;?></option>
 		<?php endforeach;?>
 		</select>
 

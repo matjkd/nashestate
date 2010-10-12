@@ -1,102 +1,4 @@
-<script>
-$(document).ready(function() {
-	var uid = "<?=$property_id?>";
 
-	
-    $(".editdetails").editable("<?=site_url('admin/properties/editable_property1')?>", 
-    	    {
-    	    	indicator : 'Saving...',
-    	    	id   : 'elementid',
-    	    	onblur : 'submit',
-    	        tooltip   : 'Click to edit...',
-    	        submitdata : function() 
-    	        {
-    	            return {id : uid};
-    }
-    
-        	        
-    	    });
-    
-
-    $(".edittype").editable("<?=site_url('admin/properties/editable_property1')?>", 
-    	    {
-   	 data : <?php $this->load->view('ajax/property_types'); ?>,
-     	    type   : "select",
-     	    onblur : "submit",
-     	    style  : "inherit",
-     	    id   : 'elementid',     
-     	        submitdata : function() 
-     	        {
-     	        return {id : uid};
-    }
-    
-        	        
-    	    });
-
-    $(".editarea").editable("<?=site_url('admin/properties/editable_property1')?>", 
-    	    {
-   	 data : <?php $this->load->view('ajax/general_areas'); ?>,
-     	    type   : "select",
-     	    onblur : "submit",
-     	    style  : "inherit",
-     	    id   : 'elementid',     
-     	        submitdata : function() 
-     	        {
-     	        return {id : uid};
-    }
-    
-        	        
-    	    });
-    $(".editperiod").editable("<?=site_url('admin/properties/editable_property1')?>", 
-    	    {
-   	 data : <?php $this->load->view('ajax/rent_period'); ?>,
-     	    type   : "select",
-     	    onblur : "submit",
-     	    style  : "inherit",
-     	    id   : 'elementid',     
-     	        submitdata : function() 
-     	        {
-     	        return {id : uid};
-    }
-    
-        	        
-    	    });
-
-    $(".editpayment").editable("<?=site_url('admin/properties/editable_property1')?>", 
-    	    {
-   	 data : <?php $this->load->view('ajax/sale_payment'); ?>,
-     	    type   : "select",
-     	    onblur : "submit",
-     	    style  : "inherit",
-     	    id   : 'elementid',     
-     	        submitdata : function() 
-     	        {
-     	        return {id : uid};
-    }
-    
-        	        
-    	    });
-
-    
-    $(".editdate").editable('<?=site_url('admin/properties/editable_property1')?>', {
-        type: 'datepicker',
-        tooltip: 'click to edit...',
-        event: 'click',
-        submit: 'OK',
-        id   : 'elementid',
-        cancel: 'Cancel',
-        width: '200px',
-        submitdata : function() 
-        {
-            return {id : uid};
-}
-   });
-    
-
-   
-    
-});
-</script>	
 <?php // Change the css classes to suit your needs    
 
 $attributes = array('class' => 'form', 'id' => 'form');
@@ -124,9 +26,6 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 		</select>
 
 
-
-
-
  <table>
  	<tr>
 	        <td class='leftcolumn'>
@@ -136,7 +35,14 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 				<div class="editdetails" id="property_title" style="width:150px; float:left;"><?php echo $row->property_title; ?></div>
 			</td>
 	</tr>
-	
+	<tr>
+	        <td class='leftcolumn'>
+	        	Individual:
+	        </td>
+			<td>
+				<div class="editmembers" id="user_id" style="width:150px; float:left;"><?php echo $row->user_id; ?></div>
+			</td>
+	</tr>
 	<tr>
 	        <td class='leftcolumn'>
 	        	Date of Instruction:

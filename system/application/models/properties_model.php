@@ -32,12 +32,25 @@ class Properties_model extends Model {
 		
 		return FALSE;
 	}
+	
+	function create_sales_data($id)
+	{
+		$new_sales_data = array(
+				'property_id' => $id
+		);
+		$this->db->insert('sales_data', $new_sales_data);
+		
+			
+		return;
+	}
+	
 	function get_property($id)
 	{
 	$this->db->from('property_main');
 	$this->db->join('company', 'company.company_id=property_main.company_id', 'left');	
 	$this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');	
 	$this->db->join('general_area', 'general_area.general_area_id=property_main.general_area', 'left');	
+	$this->db->join('sales_data', 'sales_data.property_id=property_main.property_ref_no', 'left');	
 	$this->db->where('property_ref_no', $id);
 	$query = $this->db->get();
 		
@@ -431,6 +444,15 @@ class Properties_model extends Model {
 					);
 		$this->db->where('property_room_id', $id);
 		$update = $this->db->update('property_rooms', $update_data);
+		return $update;
+	}
+function edit_sales_data($id, $field, $value)
+	{
+		$update_data = array(
+					$field => $value
+					);
+		$this->db->where('property_id', $id);
+		$update = $this->db->update('sales_data', $update_data);
 		return $update;
 	}
 	function get_room_type($id)

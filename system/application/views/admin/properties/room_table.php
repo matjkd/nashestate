@@ -94,6 +94,12 @@
 	<tbody>
 <?php 
 $rollingtotal = 0;
+if (!isset($room_table))
+{
+	
+}
+else
+{
 foreach($room_table as $key => $row):?>	
 		
 
@@ -109,7 +115,9 @@ foreach($room_table as $key => $row):?>
 					
 		<td><a href='#' onclick="roomconfirm(<?=$row['property_room_id']?>)">Delete Room</a></td>
 		</tr>
-		<?php endforeach;?>	
+		<?php endforeach;
+}
+?>	
 		
 	</tbody>
 </table>
