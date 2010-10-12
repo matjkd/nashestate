@@ -20,23 +20,18 @@ if(isset($company))
 
 <div id="property_forms">
 
-<?php if(!isset($update)) 
-			{ 
+<?php  
 					echo form_open('admin/properties/create_property', $attributes); 
 					$readonly = "";
 					
 					echo form_hidden('company_id', $company_id); 
-			}
-		else
-			{
-						
-					echo form_open('admin/properties/update_property1', $attributes);
-					echo form_hidden('property_id', $property_id); 	
-					$readonly = "DISABLED";
-					echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 			
-			}
 ?>
+ <div id="search_heading" ><strong>ONLY USE IF ADDING OLD PROPERTIES:</strong> (also this feature is still in progress)<br/>
+<fieldset><label for="property_ref">Property Ref</label>
+<input id="property_ref" type="text" name="property_ref" maxlength="45" value=""  /></fieldset><br/>
+</div>
+
 
 		<label for="individuals">Individual</label>
         

@@ -145,6 +145,18 @@ class Properties extends MY_Controller {
 			
 			$id_data = array('property_name' => set_value('property_type'));
 			
+			// If user enters id it must remove any letters if they've added them
+			// It must then check if they selected sale or rent, if rent add R at the start
+			// It must then check if the ID already exists
+			// if not create it and  skip the id creation process
+			$add_id = $this->input->post('property_ref');
+			if($add_id > 0)
+			{
+				echo $add_id;
+				redirect('admin/properties/add/', 'refresh');
+			}
+			
+			
 			$sale_rent = set_value('sale_rent');
 			if($sale_rent==2)
 				{
