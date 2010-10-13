@@ -111,7 +111,7 @@ foreach($company_users as $key => $row):
 			
 		
 				
-			<td style="padding:5px;"><a href="../view/<?=$row['user_id']?>">edit</a> | <?="<a href='#' onclick='userconfirm(".$row['user_id'].")'>Delete</a>"?></td>
+			<td style="padding:5px;"><a href="../details/<?=$row['user_id']?>">edit</a> | <?="<a href='#' onclick='userconfirm(".$row['user_id'].")'>Delete</a>"?></td>
 		
 		</tr>
 		<?php

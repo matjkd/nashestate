@@ -26,8 +26,8 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 <div style="clear:both;"></div>
 
 <div class="admin_title">Title</div>
-	<div class="admin_field" style="width:600px">
-		<div class="editdetails" id="property_title" style="width:600px"  ><?php echo $row->property_title; ?></div>
+	<div class="admin_field" style="width:645px">
+		<div class="editdetails" id="property_title" style="width:645px"  ><?php echo $row->property_title; ?></div>
 	</div>
 <div style="clear:both;"></div>
 

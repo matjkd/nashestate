@@ -41,7 +41,7 @@ if($row['company_name']==NULL)
 
 ?>
 		<tr>
-			<td style="padding:5px;"><?="<a href='".base_url()."admin/contacts/view/".$row['user_id']."'>".$row['firstname']?> <?=$row['lastname']?></a></td>
+			<td style="padding:5px;"><?="<a href='".base_url()."admin/contacts/details/".$row['user_id']."'>".$row['firstname']?> <?=$row['lastname']?></a></td>
 			<td style="padding:5px;"><?="<a href='".base_url()."admin/contacts/view_company/".$row['company_id']."'>".$row['company_name']?></td>
 					
 			<td style="padding:5px;"><?=$row['company_type']?></td>
