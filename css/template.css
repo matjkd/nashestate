@@ -244,3 +244,38 @@ fieldset { border:1px solid #fc8034; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Tahoma, Lucida Grande, Verdana, Geneva, Sans-serif; }
 
+.admin_left {
+	width:50%;
+	border:solid 0px #000000;
+	float:left;
+	min-height: 100px;
+	margin: 5px 0 0 0;
+}
+
+.admin_right {
+	width:49%;
+	border:solid 0px #000000;
+	float:left;
+	min-height: 100px;
+	margin: 5px 0 0 0;
+}
+.admin_title {
+	width:150px;
+	background:#fcdfa3;
+	padding: 2px;
+	border:solid 1px #fdbc5f;
+	font-weight: bold;
+	margin: 0 0 0px 0;
+	float:left;
+	
+}
+.admin_field {
+	float:left;
+	width:50%;
+	padding:0px 0 0 3px;
+	margin: 0px 0px 0px 3px;
+	
+	border:solid 1px #dddddd;
+	min-height: 20px;
+	
+}
