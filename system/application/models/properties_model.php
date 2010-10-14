@@ -33,6 +33,22 @@ class Properties_model extends Model {
 		return FALSE;
 	}
 	
+	function check_id($table, $column, $id)
+	{
+		$this->db->where($column, $id);
+		$query = $this->db->get($table);
+		
+		
+		if($query->num_rows > 0);
+		{
+			//not sure what to do here
+		}
+			
+		//or here
+		
+		
+	}
+	
 	function create_sales_data($id)
 	{
 		$new_sales_data = array(

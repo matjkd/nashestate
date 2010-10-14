@@ -144,7 +144,7 @@ class Properties extends MY_Controller {
 		{
 			
 			$id_data = array('property_name' => set_value('property_type'));
-			
+			$sale_rent = set_value('sale_rent');
 			// If user enters id it must remove any letters if they've added them
 			// It must then check if they selected sale or rent, if rent add R at the start
 			// It must then check if the ID already exists
@@ -152,12 +152,33 @@ class Properties extends MY_Controller {
 			$add_id = $this->input->post('property_ref');
 			if($add_id > 0)
 			{
-				echo $add_id;
-				redirect('admin/properties/add/', 'refresh');
+				
+				//remove letters from $add_id
+				$id_result = preg_replace("/\D/","",$add_id);
+				
+				//if Rental property, add an R at the beginning
+				if($sale_rent==2)
+						{
+							$id_result = "R".$id_result."";
+							$table = "rental_id";
+							$column = "rental_id";
+						}
+						else
+						{
+							$table = "sale_id";
+							$column = "sale_id";
+						}
+				
+				//check if $id_result already exists
+				$data['check_id'] = $this->properties_model->check_id($table, $column, $id_result);
+				
+				//not sure what to do here
 			}
 			
+			else
 			
-			$sale_rent = set_value('sale_rent');
+			{
+		
 			if($sale_rent==2)
 				{
 					$this->properties_model->create_property_id('rental_id', $id_data);
@@ -170,7 +191,7 @@ class Properties extends MY_Controller {
 				}
 				
 			$this->properties_model->create_sales_data($ref);
-			
+			}
 			// build array for the model
 			$form_data = array(
 							'property_ref_no' => $ref,

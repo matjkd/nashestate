@@ -98,7 +98,7 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 	<div class="admin_field">
 		<div class="editdetails" id="rent_price"><?php echo $row->rent_price; ?></div>
 	</div>
-				<div class="editdetails" id="rent_price" style="width:150px; float:left;"><?php echo $row->rent_price; ?></div>
+				
 	
 	
 	<div class="admin_title">Rent Period</div>
