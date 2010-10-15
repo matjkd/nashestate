@@ -50,9 +50,9 @@ end of narrow/wide check
 
 <?php 
 		if(isset($slideshow))
-		{
-		$this->load->view('slideshow/frontpage'); 
-		}
+			{
+				$this->load->view('slideshow/frontpage'); 
+			}
 ?>
 
 <?php $this->load->view($content); ?>
