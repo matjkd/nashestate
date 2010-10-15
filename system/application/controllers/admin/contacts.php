@@ -474,7 +474,7 @@ function user_detail_table()
 		$role = $this->session->userdata('role');
 		if(!isset($is_logged_in) || $role != 1)
 		{
-			$data['message'] = "You are not logged in";
+			$this->session->set_flashdata('message', 'You are not logged in');
 			redirect('welcome', 'refresh');
                        
 		}	

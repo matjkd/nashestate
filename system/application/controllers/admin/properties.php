@@ -135,7 +135,7 @@ class Properties extends MY_Controller {
 		$this->form_validation->set_rules('company_id','company_id','max_length[45]');
 		$this->form_validation->set_rules('user_id','user_id','max_length[45]');
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-	
+		
 		if ($this->form_validation->run() == FALSE) // validation hasn'\t been passed
 		{
 			echo "failure of validation";
@@ -149,7 +149,10 @@ class Properties extends MY_Controller {
 			// It must then check if they selected sale or rent, if rent add R at the start
 			// It must then check if the ID already exists
 			// if not create it and  skip the id creation process
+			
 			$add_id = $this->input->post('property_ref');
+			$user_id =  $this->input->post('user_id');
+			
 			if($add_id > 0)
 			{
 				
@@ -160,19 +163,26 @@ class Properties extends MY_Controller {
 				if($sale_rent==2)
 						{
 							$id_result = "R".$id_result."";
-							$table = "rental_id";
-							$column = "rental_id";
+							
 						}
 						else
 						{
-							$table = "sale_id";
-							$column = "sale_id";
+							
 						}
 				
 				//check if $id_result already exists
-				$data['check_id'] = $this->properties_model->check_id($table, $column, $id_result);
+				$check = $this->properties_model->check_id($id_result);
 				
-				//not sure what to do here
+				
+					if($check == 1)
+					{
+					$this->session->set_flashdata('message', 'ID exists '.$check.'  '.$id_result.'');
+					redirect('admin/properties/add/'.$user_id.'', 'refresh');
+					}
+				
+				
+				$ref = $id_result;
+				
 			}
 			
 			else
@@ -251,6 +261,11 @@ class Properties extends MY_Controller {
 		$this->properties_model->update_property2($id); 
 		
 		redirect('admin/properties/update/'.$id.'/#tabs-2');  
+		
+	}
+	
+	function delete_property($id)
+	{
 		
 	}
 	
@@ -430,7 +445,7 @@ function rooms_table()
 		$role = $this->session->userdata('role');
 		if(!isset($is_logged_in) || $role != 1)
 		{
-			$data['message'] = "You are not logged in";
+			$this->session->set_flashdata('message', 'You are not logged in');
 			redirect('welcome', 'refresh');
                        
 		}	

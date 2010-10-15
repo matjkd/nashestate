@@ -33,18 +33,17 @@ class Properties_model extends Model {
 		return FALSE;
 	}
 	
-	function check_id($table, $column, $id)
+	function check_id($id)
 	{
-		$this->db->where($column, $id);
-		$query = $this->db->get($table);
+		
+		$this->db->where('property_ref_no', $id);
+		$this->db->from('property_main');
+		
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
 		
 		
-		if($query->num_rows > 0);
-		{
-			//not sure what to do here
-		}
-			
-		//or here
 		
 		
 	}
