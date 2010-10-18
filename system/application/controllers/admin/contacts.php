@@ -2,9 +2,9 @@
 
 class Contacts extends MY_Controller {
 
-	function Contacts()
+	function __construct()
 	{
-		parent::MY_Controller();
+		parent::__construct();
 		$this->is_logged_in();	
 		$this->load->model('contacts_model');
 		$this->load->model('ajax_model');

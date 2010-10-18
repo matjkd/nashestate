@@ -7,11 +7,12 @@
  */
 
 
-class Search extends Controller {
+class Search extends MY_Controller 
+{
 
-	function Search()
+	function __construct()
 	{
-		parent::Controller();
+		parent::__construct();
 		$this->load->model('ajax_model');	
 		$this->load->model('search_model');		
 	}
@@ -30,7 +31,7 @@ class Search extends Controller {
 			$data['main_text'] = "searchpage";
 			$data['content'] = "search/searchlist";
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
-			
+			$data['side2'] = 'sidebar/refine';
 			$data['leftbox'] = 'search/searchbox';
 			
 			// Deal with data sent from search form

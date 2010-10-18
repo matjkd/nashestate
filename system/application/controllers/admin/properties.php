@@ -7,11 +7,12 @@
  */
 
 
-class Properties extends MY_Controller {
+class Properties extends MY_Controller 
+{
 
-	function Properties()
+	function __construct()
 	{
-		parent::MY_Controller();
+		parent::__construct();
 		$this->is_logged_in();	
 		$this->load->model('contacts_model');
 		$this->load->model('properties_model');

@@ -6,11 +6,12 @@
  * @subpackage 	Controllers
  */
 
-class Welcome extends Controller {
+class Welcome extends MY_Controller  
+{
 
-	function Welcome()
+	function __construct()
 	{
-		parent::Controller();
+		parent::__construct();
 		$this->load->model('ajax_model');	
 	}
 	
@@ -44,8 +45,9 @@ function content()
 					
 				endforeach;		
 			$data['leftbox'] = 'search/searchbox';
+			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
-			$data['slideshow'] = "1";
+			$data['slideshow'] = "slideshow/frontpage";
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['content'] = "content/standard";
 			$this->load->vars($data);

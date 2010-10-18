@@ -7,11 +7,11 @@
  */
 
 
-class Property extends Controller {
+class Property extends MY_Controller {
 
-	function Property()
+	function __construct()
 	{
-		parent::Controller();
+		parent::__construct();
 		$this->load->model('ajax_model');	
 		$this->load->model('search_model');		
 		$this->load->model('properties_model');	

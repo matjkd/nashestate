@@ -2,7 +2,7 @@ body {
 	background:#ffffff;
 	
 	font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-	
+	color:#4d4d4d;
 	margin:0px;
 }
 img {
@@ -53,7 +53,7 @@ label {
 }
 .tagline {
 	float:left;
-	padding: 20px 0 0 220px;
+	padding: 20px 0 0 255px;
 	font-size: 1.25em;
 	font-weight: bolder;
 	text-align: right;
@@ -112,10 +112,16 @@ label {
 	border:0px solid #000000;
 }
 .footer {
-	height: 50px;
+	height: 15px;
 	background: #f15c22;
-	margin-top:10px;
-	
+	width:920px;
+	margin: 10px auto;
+	color:#ffffff;
+	padding: 20px 10px;
+}
+.footer a {
+	color:#ffe0ae;
+	text-decoration:none;
 }
 #slideshow {
 	width:600px;
@@ -179,10 +185,27 @@ label {
 	width:100px;
 	float:left;
 }
+#property_box {
+	padding:10px 10px;
+	margin-top:10px;
+	min-height: 50px;
+	width: 310px;
+	background-color:#cccccc;
+}
+#property_box_text {
+	height: 20px;
+	width:290px;
+	padding:5px 10px;
+	background:url('/~nh001/images/trans.png') repeat;
+	position:relative;
+	margin-bottom: -30px;
+	color: #ffffff;
+	bottom:30px;
+}
 #search_box {
 	padding:10px 10px 0;
 	height: 290px;
-	min-width: 310px;
+	width: 310px;
 	background-color:#fcb034;
 }
 #search_box input {

@@ -26,7 +26,10 @@ Property Sales &amp; Rentals in South West Mallorca
 <div class="left_content">
 
 
-<?php $this->load->view($leftbox); ?></div>
+<?php $this->load->view($leftbox); ?>
+<?php if(isset($side2)) { $this->load->view($side2); } ?>
+
+</div>
 </div>
 
 <!--
@@ -51,7 +54,7 @@ end of narrow/wide check
 <?php 
 		if(isset($slideshow))
 			{
-				$this->load->view('slideshow/frontpage'); 
+				$this->load->view($slideshow); 
 			}
 ?>
 
@@ -60,7 +63,7 @@ end of narrow/wide check
 
 </div>
 <div style="clear:both;"></div>
-<div class="footer"></div>
+<div class="footer"><?=$this->load->view('global/footer')?></div>
 
 </body>
 </html>
