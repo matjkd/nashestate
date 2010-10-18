@@ -45,6 +45,7 @@ function content()
 					
 				endforeach;		
 			$data['leftbox'] = 'search/searchbox';
+			$data['side1'] = 'sidebar/property_menu';
 			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			$data['slideshow'] = "slideshow/frontpage";

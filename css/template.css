@@ -13,7 +13,9 @@ label {
 	width:100px;
 }
 
-
+a {
+	text-decoration:none;
+}
 #property_forms {
 	
 }
@@ -82,8 +84,26 @@ label {
 .left_content {
 	
 	min-height:200px;
-	background: #eaeaea;
+	
 	float:left;
+}
+.left_button {
+	padding:5px;
+	margin: 5px 0;
+	border: solid 1px #fcb034;
+	color: #f15c22;
+	font-weight:bold;
+	text-decoration:none;
+}
+.left_button a {
+	color:#f15c22;
+	
+	text-decoration:none;
+}
+.left_button:hover {
+	color:#000000;
+	text-decoration:none;
+	background: #fcdfa3;
 }
 .full_content {
 	width:910px;
