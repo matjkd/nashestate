@@ -1,11 +1,6 @@
 <script type="text/javascript">
-tinyMCE.init({
-	mode : "textareas",
-	theme : "advanced"
-	
-
-		
-	
+jQuery(function() {
+    jQuery('.wymeditor').wymeditor();
 });
 </script>
 <?php // Change the css classes to suit your needs    
@@ -50,21 +45,21 @@ $textarea_data = array(
               'name'        => 'description',
               'id'          => 'description',
               'value'       => $row->description,
-          
+          		'class' => 'wymeditor',
             
               'style'       => 'width:100%',
             );
-		echo form_fieldset('Description');
+	
 		
 		echo form_textarea($textarea_data);
 		
-		echo form_fieldset_close();
+	
 ?>
 
 
     
 
-       <br/> <?php echo form_submit( 'submit', 'Submit');  ?>
+       <br/> <input type="submit" class="wymupdate" />
 
 
 <?php 
