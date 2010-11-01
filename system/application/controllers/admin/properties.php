@@ -225,9 +225,9 @@ class Properties extends MY_Controller
 				
 				$id = $this->db->insert_id();
 				
-				$config['hostname'] = '213.229.86.110';
-				$config['username'] = 'nh001';
-				$config['password'] = 'l33t523';
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
 				$config['debug'] = TRUE;
 				$this->ftp->connect($config);
 				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/');

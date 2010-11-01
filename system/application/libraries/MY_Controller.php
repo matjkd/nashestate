@@ -22,6 +22,9 @@ class MY_Controller extends Controller {
 	$this->config_smtp_user = 'email@email.com';
 	$this->config_smtp_pass = 'password';
 	$this->config_company_name = 'Company';
+	$this->config_ftp_host = '213.229.86.110';
+	$this->config_ftp_user = 'nh001';
+	$this->config_ftp_password = 'l33t523';
 	$this->load->vars($config_data);
 	
 	}
