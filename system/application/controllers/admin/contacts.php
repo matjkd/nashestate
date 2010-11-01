@@ -32,7 +32,7 @@ class Contacts extends MY_Controller {
 		$data['contact_table'] = "contactconfirm";
 		$data['add_contact_table'] = "contact_detail_table";
 		$data['address_table'] = "address_table";
-	
+		$data['update_id'] = $data['user_id'];
 		$data['segment_id'] = $segment_active;
 		$data['data'] = $this->ajax_model->get_nationalities();
 		$data['contact_detail'] = $this->contacts_model->get_contact($data['user_id']);
@@ -78,7 +78,7 @@ function view_company()
 		$data['contact_table'] = "companycontactconfirm";
 		$data['add_contact_table'] = "company_contact_detail_table";
 		$data['address_table'] = "company_address_table";
-		
+		$data['update_id'] = $data['company_id'];
 		
 		$data['data'] = $this->ajax_model->get_nationalities();
 		$data['contact_detail'] = $this->contacts_model->get_company($data['company_id']);
@@ -215,7 +215,7 @@ function view_company()
 				endforeach;
 			
 			$this->session->set_flashdata('message', 'New Person Created');
-			redirect('admin/contacts/view/'.$user_id);
+			redirect('admin/contacts/details/'.$user_id);
 	}
 	
 	function address_table()
@@ -316,18 +316,18 @@ function view_company()
 		//set variable for what table to view for contact details
 		$data['contact_table'] = "contactconfirm";
 		$data['add_contact_table'] = "contact_detail_table";
-		
+		$data['update_id'] = $data['user_id'];
 		
 		
 		$data['contact_detail'] = $this->contacts_model->get_contact($segment_active);
 			
 			foreach($data['contact_detail'] as $row):
 				
-				$data['company_id'] = $row['company_id'];
+				$data['company_id'] = $row['user_id'];
 			
 			endforeach;
 		
-		$id = $data['company_id'];	
+		$id = $data['user_id'];	
 
 		$data['contact_details'] = $this->contacts_model->get_contact_details($data['user_id'], 'company_userid');
 		if ($data['contact_details'] == NULL)
@@ -368,7 +368,7 @@ function company_contact_detail_table()
 			
 			endforeach;
 		$id = $data['company_id'];	
-
+		
 		$data['contact_details'] = $this->contacts_model->get_contact_details($id, 'company_id');
 		if ($data['contact_details'] == NULL)
 			{

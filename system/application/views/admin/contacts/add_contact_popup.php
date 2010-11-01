@@ -8,6 +8,8 @@
 			tips = $(".validateTips");
 		
 		var companyid = "<?=$company_id?>";
+		
+		
 
 		function updateTips(t) {
 			tips
@@ -67,7 +69,7 @@
 							});
 						
 						$(this).dialog('close');
-						$('#ajax_contacts').load('<?=base_url()?>admin/contacts/<?=$add_contact_table?>/<?=$company_id?>');
+						$('#ajax_contacts').load('<?=base_url()?>admin/contacts/<?=$add_contact_table?>/<?=$update_id?>');
 					}
 				},
 				Cancel: function() {
