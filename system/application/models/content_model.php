@@ -23,6 +23,23 @@ class Content_model extends Model {
 		
 		return $data;
 		}
+	
+	function get_all_content()
+		{
+			$data = array();
+				
+			$query = $this->db->get('content');
+			if ($query->num_rows() == 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 		
 	function get_menus()
 		{
