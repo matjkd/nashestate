@@ -25,6 +25,12 @@ a {
 #property_info {
 	float:left;
 }
+h1 {
+	margin: 5px 0px 0px 0px;
+	color:#f15c22;
+	font-size: 1.5em;
+	
+}
 .login {
 	height:0px;
 	background:#fdbc5f;
@@ -147,7 +153,7 @@ a {
 	width:600px;
 	height:300px;
 	
-	margin: 0 0 10px 0;
+	margin: 0 0 0px 0;
 }
 #wrapper{
     margin-left: auto;

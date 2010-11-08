@@ -43,12 +43,16 @@ function content()
 					$data['title'] = $row['content_title'];
 					$data['main_text'] = $row['content'];
 					
+					if($row['slideshow'] != NULL)
+					{
+					$data['slideshow'] = $row['slideshow'];
+					}
 				endforeach;		
 			$data['leftbox'] = 'search/searchbox';
 			$data['side1'] = 'sidebar/property_menu';
 			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
-			$data['slideshow'] = "slideshow/frontpage";
+		
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['content'] = "content/standard";
 			$this->load->vars($data);

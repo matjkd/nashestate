@@ -55,7 +55,7 @@ end of narrow/wide check
 <?php 
 		if(isset($slideshow))
 			{
-				$this->load->view($slideshow); 
+				$this->load->view('slideshow/'.$slideshow.''); 
 			}
 ?>
 
@@ -65,6 +65,6 @@ end of narrow/wide check
 </div>
 <div style="clear:both;"></div>
 <div class="footer"><?=$this->load->view('global/footer')?></div>
-
+</div>
 </body>
 </html>

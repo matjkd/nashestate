@@ -1,1 +1,2 @@
-<?php echo $main_text;?>
+<h1><?=$title?></h1>
+<?=$main_text?>
