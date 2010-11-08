@@ -29,6 +29,22 @@ class Content_model extends Model {
 			$data = array();
 				
 			$query = $this->db->get('content');
+			if ($query->num_rows() > 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
+	function get_content_edit($id)
+		{
+			$data = array();
+			$this->db->where('content_id', $id);
+			$query = $this->db->get('content');
 			if ($query->num_rows() == 1)
 			{
 				foreach ($query->result_array() as $row)
@@ -40,7 +56,31 @@ class Content_model extends Model {
 		
 		return $data;
 		}
+	
+	function update_content($id)
+	{
+			
+		$content_id = $id;
+			
+    				$form_data = array(
+    				
+					'content' => $this->input->post('content')    				
+    				
+					);
 		
+		
+		$this->db->where('content_id', $content_id);
+		$this->db->update('content', $form_data);
+		
+		if ($this->db->affected_rows() == '1')
+		{
+			
+			return TRUE;
+		}
+		
+		return FALSE;
+	}	
+	
 	function get_menus()
 		{
 			$data = array();

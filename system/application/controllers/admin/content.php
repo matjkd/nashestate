@@ -15,9 +15,10 @@ class Content extends MY_Controller
 		parent::__construct();
 		$this->is_logged_in();	
 		$this->load->model('contacts_model');
-		$this->load->model('properties_model');
+		$this->load->model('content_model');
 		$this->load->model('ajax_model');
 		$this->load->model('Gallery_model');
+		
 	}
 		
 	function index()
@@ -26,8 +27,36 @@ class Content extends MY_Controller
 	}
 	function list_content()
 	{
-		
+		$data['list_content'] = $this->content_model->get_all_content();
+		$data['page'] = 'content';
+		$data['title'] = 'Nash Homes: Edit Content';
+		$data['right_main'] = 'admin/content/list_content';
+		$data['heading'] = 'Edit Content';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
 	}
+	
+	
+	function edit_content($id)
+	{
+		$data['content_id'] = $id;
+		$data['edit_content'] = $this->content_model->get_content_edit($id);
+		$data['page'] = 'content';
+		$data['title'] = 'Nash Homes: Edit Content';
+		$data['right_main'] = 'admin/content/edit_content';
+		$data['heading'] = 'Edit Content';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+	}
+	
+	function update_content($id)
+	{
+		
+		$this->content_model->update_content($id); 
+		
+		redirect('admin/content/edit_content/'.$id.'');  
+	}
+	
 	function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');

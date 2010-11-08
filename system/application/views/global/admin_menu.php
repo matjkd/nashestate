@@ -15,7 +15,7 @@
        	
        	
        	 <li <?php if($page=='content'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?admin/properties"><span>Content</span></a></li>
+        <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a></li>
 		
        </ul>
    </div>
