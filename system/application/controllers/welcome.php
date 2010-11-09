@@ -27,13 +27,13 @@ function content()
 			{
 				$id = "home";
 				$data['main'] = "pages/dynamic";
-				$data['page'] = 'home';
+			
 			}
 		else
 			{
 				$id = $this->uri->segment(3);
 				$data['main'] = "pages/dynamic";
-				$data['page'] = $this->uri->segment(3);
+			
 			}
 		
 			$data['content'] =	$this->content_model->get_content($id);
@@ -42,6 +42,7 @@ function content()
 				
 					$data['title'] = $row['content_title'];
 					$data['main_text'] = $row['content'];
+					$data['page'] = $row['menu_top'];
 					
 					if($row['slideshow'] != NULL)
 					{
