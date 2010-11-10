@@ -66,7 +66,7 @@ if($property->sale_rent == 2) {?>
 	<strong>Number of floors</strong>
 	</div>
 	<div id="property_features_L">
-	2
+	<?=$property->floors?>
 	</div>
 </div>
 

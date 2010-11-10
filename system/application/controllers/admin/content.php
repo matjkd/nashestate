@@ -53,7 +53,6 @@ class Content extends MY_Controller
 	{
 		
 		$this->content_model->update_content($id); 
-		
 		redirect('admin/content/edit_content/'.$id.'');  
 	}
 	

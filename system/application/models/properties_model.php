@@ -84,6 +84,7 @@ class Properties_model extends Model {
 		$this->db->from('property_main');
 		$this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');
 		$this->db->join('company', 'company.company_id=property_main.company_id', 'left');
+		$this->db->where('archived', '0');
 		
 		if($type==1)
 			{
@@ -577,5 +578,24 @@ function edit_sales_data($id, $field, $value)
 		$this->db->delete('ignite_property_features');
 		
 		return $data;
+	}
+	function archive_property($id)
+	{
+		
+		$archive = array(
+						'archived' => '1'
+						);
+								
+		
+		$this->db->where('property_ref_no', $id);
+		$this->db->update('property_main', $archive);
+			
+		if ($this->db->affected_rows() == '1')
+		{
+			
+			return TRUE;
+		}
+		
+		return FALSE;
 	}
 }

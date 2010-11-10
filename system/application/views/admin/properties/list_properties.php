@@ -11,7 +11,7 @@ function confirmation(id) {
 	var answer = confirm("are you sure you want to delete this property?")
 	if (answer){
 		
-		window.location = "<?=base_url()?>admin/properties/delete_property/"+ id;
+		window.location = "<?=base_url()?>admin/properties/archive_property/"+ id;
 	}
 	else{
 		alert("nothing deleted!")
@@ -54,7 +54,7 @@ if($row['sale_rent'] == 2)
 			<td style="padding:5px;">&euro;<?=$price?></td>
 			<td style="padding:5px;"><?=$row['available_from']?></td>
 			<td style="padding:5px;"><?php if($row['active']==0) {echo "No";};	if($row['active']==1) {echo "Yes";};?></td>
-			<td style="padding:5px;"><?="<a href='#' onclick='confirmation(".$row['property_id'].")'>Delete</a> | <a href='".base_url()."admin/properties/update/".$row['property_ref_no']."'>View Property"?></a></td>
+			<td style="padding:5px;"><?="<a href='#' onclick='confirmation(".$row['property_ref_no'].")'>Delete</a> | <a href='".base_url()."admin/properties/update/".$row['property_ref_no']."'>View Property"?></a></td>
 		</tr>
 		<?php endforeach;  ?>
 	</tbody>

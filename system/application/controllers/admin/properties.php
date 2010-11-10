@@ -431,13 +431,19 @@ function rooms_table()
 	function delete_property_feature($id)
 	{
 	
-	$data['property_id'] = $this->properties_model->delete_assigned_feature($id);
-	foreach($data['property_id'] as $key => $row):
-	$property = $row['property_id'];
-	endforeach;
+		$data['property_id'] = $this->properties_model->delete_assigned_feature($id);
+		foreach($data['property_id'] as $key => $row):
+		$property = $row['property_id'];
+		endforeach;
+		
+		redirect('admin/properties/update/'.$property.'#tabs-2', 'refresh');
+		
+	}
 	
-	redirect('admin/properties/update/'.$property.'#tabs-2', 'refresh');
-	
+	function archive_property($id)
+	{
+		$this->properties_model->archive_property($id);
+		redirect('admin/properties/view_sales');
 	}
 	
 	function is_logged_in()
