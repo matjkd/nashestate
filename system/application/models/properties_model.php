@@ -81,7 +81,8 @@ class Properties_model extends Model {
 	{
 		$this->db->from('property_main');
 		$this->db->where("property_main.".$type."", $id);
-		$this->db->join('users', 'users.user_id = property_main.user_id', 'left');
+		$this->db->join('users', 'users.user_id=property_main.user_id', 'right');
+		$this->db->where('archived', '0');
 		$query = $this->db->get();
 		if($query->num_rows > 0)
 			{

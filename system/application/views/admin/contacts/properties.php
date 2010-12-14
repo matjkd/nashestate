@@ -14,7 +14,7 @@ $(document).ready(function() {
 </script>
 	
 <?php 
-if ($contact_details == NULL)
+if ($properties == NULL)
 {
 	echo "There are no property details listed here.";
 }
@@ -40,7 +40,7 @@ foreach($properties as $key => $row):
 ?>
 		<tr>
 			<td style="padding:5px;"><a href="<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>"><?=$row['property_ref_no']?></a></td>
-			<td style="padding:5px;"><?=$row['firstname']?> <?=$row['lastname']?></td>
+			<td style="padding:5px;"><a href="<?=base_url()?>admin/contacts/details/<?=$row['user_id']?>"><?=$row['firstname']?> <?=$row['lastname']?></a></td>
 			<td style="padding:5px;"><?=$row['property_title']?></td>
 			
 			
