@@ -91,7 +91,7 @@ else
 	<thead>
 		<tr>
 			<th>Name</th>
-			
+			<th>Description</th>
 			
 			<th>Actions</th>
 		</tr>
@@ -108,7 +108,7 @@ foreach($company_users as $key => $row):
 			<td style="padding:5px;"><?=$row['firstname']?> <?=$row['lastname']?></td>
 					
 			
-			
+			<td style="padding:5px;"><?=$row['short_desc']?></td>
 		
 				
 			<td style="padding:5px;"><a href="../details/<?=$row['user_id']?>">edit</a> | <?="<a href='#' onclick='userconfirm(".$row['user_id'].")'>Delete</a>"?></td>

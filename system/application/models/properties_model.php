@@ -616,7 +616,8 @@ function edit_sales_data($id, $field, $value)
 	{
 		
 		$archive = array(
-						'archived' => '1'
+						'archived' => '1',
+						'active' => '0'
 						);
 								
 		

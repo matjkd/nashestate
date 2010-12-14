@@ -71,6 +71,12 @@ $(document).ready(function() {
 			</div>
 			
 			 	<div class='editclient' id='lastname'><?=$row['lastname']?></div>
+	
+	<div class='leftcolumn'>
+			Short Description:
+			</div>
+			
+			 	<div class='editclient' id='short_desc'><?=$row['short_desc']?></div>
 		
 	<div  class='leftcolumn'>
 			Nationality:
