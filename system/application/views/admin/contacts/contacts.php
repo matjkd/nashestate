@@ -61,6 +61,7 @@ else
 	<thead>
 		<tr>
 			<th>Type</th>
+			<th>Contact</th>
 			<th>Detail</th>
 			
 			<th>&nbsp;</th>
@@ -76,7 +77,7 @@ foreach($contact_details as $key => $row):
 ?>
 		<tr>
 			<td style="padding:5px;"><?="<a href='#' onclick='showcontact(".$row['company_contact_id'].")'>" ?><?=$row['company_contact_type']?></a> </td>
-					
+			<td style="padding:5px;"><?=$row['firstname']?> <?=$row['lastname']?></td>
 			<td style="padding:5px;"><?=$row['company_contact_detail']?></td>
 			
 			

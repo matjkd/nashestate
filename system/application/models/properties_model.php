@@ -77,6 +77,26 @@ class Properties_model extends Model {
 		return FALSE;
 	}
 	
+	function get_contact_properties($id, $type)
+	{
+		$this->db->from('property_main');
+		$this->db->where("property_main.".$type."", $id);
+		$this->db->join('users', 'users.user_id = property_main.user_id', 'left');
+		$query = $this->db->get();
+		if($query->num_rows > 0)
+			{
+				foreach ($query->result_array() as $row)
+			
+			$data[] = $row;
+			}
+			else
+			{
+				$data = NULL;
+			}
+		$query->free_result();
+		return $data;
+	}
+	
 	function list_properties($type)
     {
     	

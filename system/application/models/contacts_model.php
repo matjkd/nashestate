@@ -253,7 +253,7 @@ function get_contact_details($id, $type)
 	{
 		$this->db->from('company_contact');
 		$this->db->where("company_contact.".$type."", $id);
-		
+		$this->db->join('users', 'users.user_id = company_contact.company_userid', 'left');
 		$query = $this->db->get();
 		if($query->num_rows > 0)
 			{

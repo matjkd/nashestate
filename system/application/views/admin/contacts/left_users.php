@@ -57,7 +57,7 @@
 	<h3><a href="#">Properties</a></h3>
 	<div>
 		<p>
-		Table of properties this contact has for rent or sale, plus sold
+		<?php  $this->load->view('admin/contacts/properties'); ?>
 		</p>
 		<br/><button>Add Property</button>
 			</div>

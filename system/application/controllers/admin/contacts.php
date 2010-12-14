@@ -7,6 +7,7 @@ class Contacts extends MY_Controller {
 		parent::__construct();
 		$this->is_logged_in();	
 		$this->load->model('contacts_model');
+		$this->load->model('properties_model');
 		$this->load->model('ajax_model');
 	}
 	
@@ -48,7 +49,7 @@ class Contacts extends MY_Controller {
 		$data['contacts'] = $this->contacts_model->list_contacts();
 		$data['addresses'] = $this->contacts_model->get_addresses($data['user_id'], 'company_userid');
 		$data['contact_details'] = $this->contacts_model->get_contact_details($data['user_id'], 'company_userid');
-		
+		$data['properties'] = $this->properties_model->get_contact_properties($data['user_id'], 'user_id');
 		$data['left_section'] = 'admin/contacts/left_users';
 		$data['left_main'] = 'admin/contacts/view_user';
 		$data['right_main'] = 'admin/contacts/list_users';
@@ -92,7 +93,10 @@ function view_company()
 		
 		$data['contacts'] = $this->contacts_model->list_contacts();
 		$data['addresses'] = $this->contacts_model->get_addresses($id, 'company_id');
+		
 		$data['contact_details'] = $this->contacts_model->get_contact_details($id, 'company_id');
+		$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
+		
 		$data['company_users'] =  $this->contacts_model->get_company_users($id);
 		
 		$data['left_section'] = 'admin/contacts/left_company';
