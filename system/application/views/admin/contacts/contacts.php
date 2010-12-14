@@ -76,24 +76,24 @@ foreach($contact_details as $key => $row):
 
 ?>
 		<tr>
-			<td style="padding:5px;"><?="<a href='#' onclick='showcontact(".$row['company_contact_id'].")'>" ?><?=$row['company_contact_type']?></a> </td>
+			<td style="padding:5px;"><a href='#' onclick='showcontact(<?=$row['company_contact_id']?>)'><?=$row['company_contact_type']?></a> </td>
 			<td style="padding:5px;"><?=$row['firstname']?> <?=$row['lastname']?></td>
 			<td style="padding:5px;"><?=$row['company_contact_detail']?></td>
 			
 			
 				
-			<td style="padding:5px;"><?="<a href='#' onclick='".$contact_table."(".$row['company_contact_id'].")'>"?><span class="ui-icon ui-icon-close"></span></a></td>
+			<td style="padding:5px;"><a href='#' onclick='<?=$contact_table?>(<?=$row['company_contact_id']?>)'><span class="ui-icon ui-icon-close"></span></a> <a href='#' onclick='showcontact(<?=$row['company_contact_id']?>)'><span class="ui-icon ui-icon-pencil"></span></a></td>
 		
 		</tr>
 		<?php
 
 		endforeach;
+?>
 
-}?>
 	</tbody>
 </table>
-
-
+You may have to click "update" after adding or deleting something in order to refresh the table
+<?php }?>
 
 	
 		

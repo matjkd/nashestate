@@ -69,19 +69,28 @@ class Properties extends MY_Controller
 		$data['segment_id'] = $segment_active;
 		
 		$data['contact_detail'] = $this->contacts_model->get_contact($segment_active);
-		foreach($data['contact_detail'] as $row):
-		$data['company_id'] = $row['company_id'];
-		endforeach;
+		
+			foreach($data['contact_detail'] as $row):
+			
+				$data['company_id'] = $row['company_id'];
+			
+			endforeach;
 		$data['contacts'] = $this->contacts_model->list_contacts();
+		
 		$data['properties'] = $this->properties_model->list_properties(2);
-		//$data['left_section'] = 'admin/properties/left_property';
-		//$data['left_main'] = 'admin/contacts/view_user';
+	
 		$data['right_main'] = 'admin/properties/list_properties';
+		
 		$data['property_type'] = 'r';
+		
 		$data['page'] = 'properties';
+		
 		$data['title'] = 'Nash Homes: Rental Properties';
+		
 		$data['heading'] = 'Rental Properties';
+		
 		$this->load->vars($data);
+		
 		$this->load->view('admin/admin');
 	}
 	function view_all()
@@ -520,7 +529,16 @@ function rooms_table()
 	function archive_property($id)
 	{
 		$this->properties_model->archive_property($id);
+		
+		$check = strpos($id, 'R');
+		if($check !== false)
+		{
+			redirect('admin/properties/view_rentals');	
+		}
+		else
+		{
 		redirect('admin/properties/view_sales');
+		}
 	}
 	
 	function is_logged_in()
