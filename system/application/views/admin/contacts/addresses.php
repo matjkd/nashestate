@@ -47,7 +47,7 @@ else
 			<th>Address 1</th>
 			<th>Address 2</th>
 			<th>Postcode</th>
-			<th>Actions</th>
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -65,7 +65,7 @@ foreach($addresses as $key => $row):
 			
 			<td style="padding:5px;"><?=$row['company_address5']?></td>
 				
-			<td style="padding:5px;"><?="<a href='#' onclick='showaddress(".$row['company_address_id'].")'>edit</a> | <a href='#' onclick='addressconfirm(".$row['company_address_id'].")'>Delete</a>"?></td>
+			<td style="padding:5px;"><a href='#' onclick='showaddress(<?=$row['company_address_id']?>)'><span class="ui-icon ui-icon-pencil"></span></a><a href='#' onclick='addressconfirm(<?=$row['company_address_id']?>)'><span class="ui-icon ui-icon-close"></span></a></td>
 		
 		</tr>
 		<?php
