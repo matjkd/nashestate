@@ -6,14 +6,23 @@
            
         <li <?php if($page=='contacts'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?admin/contacts"><span>Contacts</span></a></li>
-           
-        <li <?php if($page=='sales'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?admin/properties/view_sales"><span>For Sale</span></a></li>
-       	
-       	 <li <?php if($page=='rentals'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?admin/properties/view_rentals"><span>Rentals</span></a></li>
-       	
-       	
+         
+        <li <?php if($page=='properties'){echo "class='current'";}?>> <a href="<?=base_url()?>index.php?admin/properties/view_all"><span>Properties</span></a>
+	        <ul>
+	        <li>
+	        <a href="<?=base_url()?>index.php?admin/properties/view_sales"><span>For Sale</span></a></li>
+	       	
+	       	 <li>
+	        <a href="<?=base_url()?>index.php?admin/properties/view_rentals"><span>Rentals</span></a></li>
+	       	
+	       	 <li>
+	        <a href="<?=base_url()?>index.php?admin/properties/view_all"><span>All Properties</span></a></li>
+	        	
+	       	 <li>
+	        <a href="<?=base_url()?>index.php?admin/properties/view_deleted"><span>Deleted Properties</span></a></li>
+            </ul>
+          </li>  
+            
        	 <li <?php if($page=='content'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a></li>
 		

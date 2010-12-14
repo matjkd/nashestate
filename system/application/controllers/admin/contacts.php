@@ -47,16 +47,27 @@ class Contacts extends MY_Controller {
 		$id = $data['company_id'];	
 		
 		$data['contacts'] = $this->contacts_model->list_contacts();
+		
 		$data['addresses'] = $this->contacts_model->get_addresses($data['user_id'], 'company_userid');
+		
 		$data['contact_details'] = $this->contacts_model->get_contact_details($data['user_id'], 'company_userid');
+		
 		$data['properties'] = $this->properties_model->get_contact_properties($data['user_id'], 'user_id');
+		
 		$data['left_section'] = 'admin/contacts/left_users';
+		
 		$data['left_main'] = 'admin/contacts/view_user';
+		
 		$data['right_main'] = 'admin/contacts/list_users';
+		
 		$data['page'] = 'contacts';
+		
 		$data['title'] = 'Nash Homes Contacts';
+		
 		$data['heading'] = 'Individual Details';
+		
 		$this->load->vars($data);
+		
 		$this->load->view('admin/admin');
 	}
 function view_company()

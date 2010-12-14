@@ -27,25 +27,36 @@ class Properties extends MY_Controller
 	function view_sales()
 	{
 		$segment_active = $this->uri->segment(4);
-		if($segment_active==NULL)
-		{
-			$segment_active=1;
-		}
-		$data['segment_id'] = $segment_active;
+		
+			if($segment_active==NULL)
+				{
+					$segment_active=1;
+				}
+		
+				$data['segment_id'] = $segment_active;
 		
 		$data['contact_detail'] = $this->contacts_model->get_contact($segment_active);
-		foreach($data['contact_detail'] as $row):
-		$data['company_id'] = $row['company_id'];
-		endforeach;
+		
+			foreach($data['contact_detail'] as $row):
+			
+				$data['company_id'] = $row['company_id'];
+			
+			endforeach;
+		
 		$data['contacts'] = $this->contacts_model->list_contacts();
+		
 		$data['properties'] = $this->properties_model->list_properties(1);
-		//$data['left_section'] = 'admin/properties/left_property';
-		//$data['left_main'] = 'admin/contacts/view_user';
+		
 		$data['right_main'] = 'admin/properties/list_properties';
-		$data['page'] = 'sales';
+		
+		$data['page'] = 'properties';
+		
 		$data['title'] = 'Nash Homes: Properties For Sale';
+		
 		$data['heading'] = 'Properties For Sale';
+		
 		$this->load->vars($data);
+		
 		$this->load->view('admin/admin');
 	}
 	function view_rentals()
@@ -67,10 +78,76 @@ class Properties extends MY_Controller
 		//$data['left_main'] = 'admin/contacts/view_user';
 		$data['right_main'] = 'admin/properties/list_properties';
 		$data['property_type'] = 'r';
-		$data['page'] = 'rentals';
+		$data['page'] = 'properties';
 		$data['title'] = 'Nash Homes: Rental Properties';
 		$data['heading'] = 'Rental Properties';
 		$this->load->vars($data);
+		$this->load->view('admin/admin');
+	}
+	function view_all()
+	{
+		$segment_active = $this->uri->segment(4);
+		if($segment_active==NULL)
+		{
+			$segment_active=1;
+		}
+		$data['segment_id'] = $segment_active;
+		
+		$data['contact_detail'] = $this->contacts_model->get_contact($segment_active);
+		
+			foreach($data['contact_detail'] as $row):
+			
+				$data['company_id'] = $row['company_id'];
+				
+			endforeach;
+			
+		$data['contacts'] = $this->contacts_model->list_contacts();
+		
+		$data['properties'] = $this->properties_model->list_properties(0);
+		
+		$data['right_main'] = 'admin/properties/list_properties';
+		
+		$data['page'] = 'properties';
+		
+		$data['title'] = 'Nash Homes: All Properties';
+		
+		$data['heading'] = 'All Properties';
+		
+		$this->load->vars($data);
+		
+		$this->load->view('admin/admin');
+	}
+	function view_deleted()
+	{
+		$segment_active = $this->uri->segment(4);
+		if($segment_active==NULL)
+		{
+			$segment_active=1;
+		}
+		$data['segment_id'] = $segment_active;
+		
+		$data['contact_detail'] = $this->contacts_model->get_contact($segment_active);
+		
+			foreach($data['contact_detail'] as $row):
+			
+				$data['company_id'] = $row['company_id'];
+				
+			endforeach;
+			
+		$data['contacts'] = $this->contacts_model->list_contacts();
+		
+		$data['properties'] = $this->properties_model->list_properties(99);
+		
+		$data['right_main'] = 'admin/properties/list_properties';
+		
+		$data['page'] = 'properties';
+		
+		$data['title'] = 'Nash Homes: Deleted Properties';
+		
+		$data['heading'] = 'Deleted Properties';
+		
+		$this->load->vars($data);
+		
 		$this->load->view('admin/admin');
 	}
 	function add()

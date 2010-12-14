@@ -105,16 +105,28 @@ class Properties_model extends Model {
 		$this->db->from('property_main');
 		$this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');
 		$this->db->join('company', 'company.company_id=property_main.company_id', 'left');
-		$this->db->where('archived', '0');
+		
+		
+   		 if($type==99)
+			{
+				$this->db->where('archived', '1');
+			}
 		
 		if($type==1)
 			{
 				$this->db->where('sale_rent', $type);
+				$this->db->where('archived', '0');
 			}
     	if($type==2)
 			{
 				$this->db->where('sale_rent', $type);
+				$this->db->where('archived', '0');
 			}
+		if($type==0)
+			{
+				$this->db->where('archived', '0');
+			}
+   		
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
 		{
