@@ -2,6 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <?php $this->load->view('global/header'); ?>
+<?php 
+
+$this->js_array = array(); 
+
+$js_array[] = "test 2";
+$js_array[] = "test 3";
+
+?>
 
 <body>
 <div class="login"></div>
@@ -51,7 +59,11 @@ else
 	} ?>
 </div>
 <div style="clear:both;"></div>
-<div class="footer"></div>
+<div class="footer">
+
+<?php print_r($js_array); ?>
+
+</div>
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel='stylesheet' href='<?=base_url()?>css/menu2.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/gallery.css' type='text/css' />
 
-<script src="<?=base_url()?>js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.pikachoose.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.jcarousel.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>

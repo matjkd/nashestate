@@ -1,4 +1,9 @@
+<?php 
 
+
+$js_array[] = "test 1";
+
+?>
 <script type="text/javascript">
 var oContactTable;
 $(document).ready(function() {
@@ -60,7 +65,7 @@ else
 <table id="contact_details"  width="100%" style="clear:both; ">
 	<thead>
 		<tr>
-			<th>Type</th>
+			<th>Type.</th>
 			<th>Contact</th>
 			<th>Detail</th>
 			

@@ -1,8 +1,10 @@
 <script type="text/javascript">
 jQuery(function() {
-    jQuery('.wymeditor').wymeditor();
+    jQuery('.wymeditor2').wymeditor();
 });
 </script>
+
+
 <?php // Change the css classes to suit your needs    
 
 $attributes = array('class' => 'form', 'id' => 'form');
@@ -22,16 +24,18 @@ if(isset($company))
 
 ?>
 
-<div id="property_forms">
+
 <?php 
 echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 $this->load->view('admin/properties/features_autocomplete');?>
 <?php 
+$description = $row->description;
 
-echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes);
-
+endforeach;
 $readonly = "DISABLED";
 
+
+echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes);
 
 ?>
 
@@ -40,29 +44,15 @@ $readonly = "DISABLED";
 
 <br/><br/>
 
-<?php 
-$textarea_data = array(
-              'name'        => 'description',
-              'id'          => 'description',
-              'value'       => $row->description,
-          		'class' => 'wymeditor',
-            
-              'style'       => 'width:100%',
-            );
-	
-		
-		echo form_textarea($textarea_data);
+<textarea name="description" id="description"  class="wymeditor2" style="width:100%;"><?=$description?></textarea>
 		
 	
-?>
+
 
 
     
 
-       <br/> <input type="submit" class="wymupdate" />
+<br/><input type="submit" class="wymupdate" />
 
 
-<?php 
-endforeach;
-echo form_close(); ?>
-</div>
+<?php echo form_close(); ?>
