@@ -46,11 +46,7 @@ echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes
 
 <textarea name="description" id="description"  class="wymeditor2" style="width:100%;"><?=$description?></textarea>
 		
-	
-
-
-
-    
+ 
 
 <br/><input type="submit" class="wymupdate" />
 
