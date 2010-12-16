@@ -40,6 +40,7 @@ function __construct()
     {
     	$data = array();
 		$this->db->from('general_area');
+		$this->db->order_by('general_area.area', 'asc');
 		$this->db->join('general_area_link', 'general_area_link.area_id = general_area.general_area_id', 'left');
 		$this->db->group_by('general_area.general_area_id');
 		$Q = $this->db->get();
@@ -59,6 +60,7 @@ function __construct()
     {
     	$data = array();
 		$this->db->from('general_area');
+		$this->db->order_by('general_area.area', 'asc');
 		$this->db->join('general_area_link', 'general_area_link.area_id = general_area.general_area_id', 'left');
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
@@ -85,6 +87,37 @@ function __construct()
 		
 			
 		return;
+    }
+    
+    function remove_area($id)
+    {
+    	$this->db->where('link_id', $id);
+    	$this->db->delete('general_area_link');
+    }
+ function delete_group($id)
+    {
+    	$this->db->where('general_area_group_id', $id);
+    	$this->db->delete('general_area_group');
+    	
+    	$this->db->where('group_id', $id);
+    	$this->db->delete('general_area_link');
+    }
+ function delete_area($id)
+    {
+    	$this->db->where('area_id', $id);
+    	$this->db->delete('general_area_link');
+    	
+    	$this->db->where('general_area_id', $id);
+    	$this->db->delete('general_area');
+    	
+    	$area_remove = array(
+					'general_area' => ''
+					);
+		$this->db->where('general_area', $id);
+		$update = $this->db->update('property_main', $area_remove);
+	
+    	
+    
     }
     
  	function list_groups()

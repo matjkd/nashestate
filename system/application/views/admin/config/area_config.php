@@ -1,14 +1,25 @@
 <style>
 #area_group {
-width:170px;
+width:190px;
 float:left;
-padding: 5px;
+margin: 8px;
+padding:5px;
+background: #dddddd;
 
+}
+#scroller {
+height: 150px;
+overflow:auto;
+}
+#area_list {
+float:left;
+display:block;
+margin: 5px;
+padding:5px;
+background: #dddddd;
 }
 	#sortable { list-style-type: none; margin: 0; padding: 0;  }
 	
-	#sortable li { list-style-type: none; margin: 0 2px 3px 2px; padding: 0.2em; padding-left: 1.2em; float: left; }
-	#sortable li span { position: absolute; margin-left: -1.3em; }
 </style>
 
 <?php echo form_open('admin/areas/add_area/');?>
@@ -21,27 +32,23 @@ padding: 5px;
 <?php echo form_submit( 'submit', 'Add Group');  ?>
 <?php echo form_close();?>
 	
-	
-	<div id="sortable">
-		<ul>
-			<?php foreach($areas as $row):?>
-					
-						<li class="ui-state-default">
-						<span></span><?=$row['area']?><div style="float:right;" class="ui-icon ui-icon-circle-close"></div>
-						</li>
-					
-			<?php endforeach;?>
-		</ul>
-	</div>	
+
 	
 	<div style="clear:both;"></div>
 	<?php foreach($groups as $row):?>
 	
 					<div id="area_group"> 
-					<h1 class="ui-widget-header"><?=$row['group_name']?></h1> 
-					<div class="ui-widget-content"> 
+					<div><strong><?=$row['group_name']?></strong>
+					
+					<a href="<?=base_url()?>admin/areas/delete_group/<?=$row['general_area_group_id']?>" >
+					<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
+					</a>
+					</div> 
+					<br/>
+					<div  class="ui-widget-content"> 
 						
 					<?php echo form_open('admin/areas/assign_area/'.$row['general_area_group_id'].'');?>
+					
 					
 					<?php $options = array();
 					foreach ($areas as $row2):
@@ -60,27 +67,45 @@ padding: 5px;
 					<?php echo form_close();?>
 					
 					
-						<ul>
-						<?php foreach($areas_groups as $row3):?>
+						<div id="scroller">
+							<?php foreach($areas_groups as $row3):?>
+							
+							<?php if($row3['group_id'] == $row['general_area_group_id']) {?>
 						
-						<?php if($row3['group_id'] == $row['general_area_group_id']) {?>
-					
-							<li>
+								<div >
+										<?=$row3['area']?> 
+										<a href="<?=base_url()?>admin/areas/remove_area/<?=$row3['link_id']?>" >
+										<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
+										</a>
+								</div>	<br/>
 							
-								<?=$row3['area']?>
-							
-							</li>
-							
-						<?php } ?>
+								
+							<?php } ?>
+						
+							<?php endforeach;?>
+						</div>
+					</div> 
 					
-						<?php endforeach;?>
-		</ul>
-						</div> 
-					
-						</div> 
+					</div> 
 	<?php endforeach;?>
 	
-
+	<div style="clear:both;"></div>	
+	
+	<div id="sortable">
+		
+			<?php foreach($areas as $row):?>
+					
+					<div id="area_list">
+						<div style="float:left;"><?=$row['area']?></div>
+						<a href="<?=base_url()?>admin/areas/delete_area/<?=$row['general_area_id']?>" >
+							<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
+						</a>
+					</div>
+					
+					
+			<?php endforeach;?>
+		
+	</div>	
 
  
  

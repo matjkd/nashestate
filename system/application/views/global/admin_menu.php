@@ -25,6 +25,9 @@
             
        	 <li <?php if($page=='content'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a></li>
+        
+         	 <li <?php if($page=='config'){echo "class='current'";}?>>
+        <a href="<?=base_url()?>index.php?admin/areas/area_config"><span>Config</span></a></li>
 		
        </ul>
    </div>

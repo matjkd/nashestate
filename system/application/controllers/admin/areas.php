@@ -68,6 +68,25 @@ class Areas extends MY_Controller {
 				redirect('admin/areas/area_config', 'refresh');  
 			}
 	}
+	function remove_area($id)
+	{
+		$this->area_model->remove_area($id);
+				
+		redirect('admin/areas/area_config', 'refresh');  
+	}
+	
+	function delete_group($id)
+	{
+		$this->area_model->delete_group($id);
+				
+		redirect('admin/areas/area_config', 'refresh');  
+	}
+	function delete_area($id)
+	{
+		$this->area_model->delete_area($id);
+				
+		redirect('admin/areas/area_config', 'refresh');  
+	}
 	
 	function add_group()
 	{
