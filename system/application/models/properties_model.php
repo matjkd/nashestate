@@ -632,4 +632,24 @@ function edit_sales_data($id, $field, $value)
 		
 		return FALSE;
 	}
+	function unarchive_property($id)
+	{
+		
+		$archive = array(
+						'archived' => '0',
+						'active' => '0'
+						);
+								
+		
+		$this->db->where('property_ref_no', $id);
+		$this->db->update('property_main', $archive);
+			
+		if ($this->db->affected_rows() == '1')
+		{
+			
+			return TRUE;
+		}
+		
+		return FALSE;
+	}
 }

@@ -541,6 +541,21 @@ function rooms_table()
 		}
 	}
 	
+	function unarchive_property($id)
+	{
+		$this->properties_model->unarchive_property($id);
+		
+		$check = strpos($id, 'R');
+		if($check !== false)
+		{
+			redirect('admin/properties/view_rentals');	
+		}
+		else
+		{
+		redirect('admin/properties/view_sales');
+		}
+	}
+	
 	function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');

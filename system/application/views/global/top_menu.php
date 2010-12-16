@@ -70,7 +70,7 @@
 						
 						<ul>
 						<li><a href="<?=base_url()?>admin/contacts"><span>Contacts</span></a></li>
-						<li><a href="<?=base_url()?>admin/properties"><span>Properties</span></a></li>
+						<li><a href="<?=base_url()?>admin/properties/view_all"><span>Properties</span></a></li>
 						
 						
 						

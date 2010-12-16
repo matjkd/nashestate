@@ -6,9 +6,9 @@ $(document).ready(function() {
 		"sPaginationType": "full_numbers"
 	});
 } );
-<!--
+
 function confirmation(id) {
-	var answer = confirm("are you sure you want to delete this property?")
+	var answer = confirm("are you sure you want to archive this property?")
 	if (answer){
 		
 		window.location = "<?=base_url()?>admin/properties/archive_property/"+ id;
@@ -17,7 +17,18 @@ function confirmation(id) {
 		alert("nothing deleted!")
 	}
 }
-//-->
+
+function undelete(id) {
+	var answer = confirm("are you sure you want to unarchive this property?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/properties/unarchive_property/"+ id;
+	}
+	else{
+		alert("nothing changed!")
+	}
+}
+
 </script>
 
 <table id="contacts"  width="100%" style="clear:both;">
@@ -54,7 +65,15 @@ if($row['sale_rent'] == 2)
 			<td style="padding:5px;">&euro;<?=$price?></td>
 			<td style="padding:5px;"><?=$row['available_from']?></td>
 			<td style="padding:5px;"><?php if($row['active']==0) {echo "No";};	if($row['active']==1) {echo "Yes";};?></td>
-			<td style="padding:5px;"><a href='#' onclick='confirmation("<?=$row['property_ref_no']?>")'>Delete</a> | <a href='<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>'>View Property</a></td>
+			<?php if($row['archived'] == 1)
+			 { ?>
+			<td style="padding:5px;"><a href='#' onclick='undelete("<?=$row['property_ref_no']?>")'>Unarchive</a> | <a href='<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>'>View Property</a></td>
+			<?php }
+			 if($row['archived'] == 0) 
+			 { ?>
+			<td style="padding:5px;"><a href='#' onclick='confirmation("<?=$row['property_ref_no']?>")'>Archive</a> | <a href='<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>'>View Property</a></td>
+			<?php }?>
+		
 		</tr>
 		<?php endforeach;  ?>
 	</tbody>
