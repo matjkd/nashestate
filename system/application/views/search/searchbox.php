@@ -90,20 +90,17 @@
 
 <fieldset>
 	<legend>Other (still working on these bits)</legend>
-	<div style="width:120px; float:left;">
+	<div style="width:190px; float:left;">
 	Location:<br/><select name="location">
+	<option value="any">Any</option>
 	<?php  foreach($general_areas as $area):?>
-	<option value="<?=$area['general_area_id']?>"><?=$area['area']?></option>
+	<option value="1"><?=$area['area']?></option>
 	<?php endforeach; ?>
 	
 	</select>
 	</div>
 
-	<div style="width:80px; float:left;">
-	Category:<br/><select name="category">
-	<option value="category">1</option>
-	</select>
-	</div>
+	
 
 
 	<div style="width:80px; float:left;">
