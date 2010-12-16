@@ -68,6 +68,8 @@ $(document).ready(function() {
     
         	        
     	    });
+
+    
     $(".editperiod").editable("<?=site_url('admin/properties/editable_property1')?>", 
     	    {
    	 data : <?php $this->load->view('ajax/rent_period'); ?>,
