@@ -652,4 +652,30 @@ function edit_sales_data($id, $field, $value)
 		
 		return FALSE;
 	}
+	function make_featured($id)
+	{
+
+		
+		$new_featured_property = array(
+				'date_featured' => $this->input->post('date'),
+				'property_ref' => $id
+		);
+		$this->db->insert('featured_properties', $new_featured_property);
+		
+			
+		
+		return;
+	}
+	
+	function list_featured_properties($id)
+	{
+		return;
+	}
+	function delete_featured_property($id)
+	{
+		return;
+	}
+	
+	
+	
 }

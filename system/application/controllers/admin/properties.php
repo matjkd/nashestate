@@ -555,6 +555,24 @@ function rooms_table()
 		redirect('admin/properties/view_sales');
 		}
 	}
+	function featured_property($id)
+	{
+		$this->form_validation->set_rules('date','date','required');		
+		
+		if ($this->form_validation->run() == FALSE) 
+			{
+				$this->session->set_flashdata('message', 'You must enter a date');
+				redirect('admin/properties/update/'.$id.'/#tabs-4');
+			}
+		
+			
+		$date =strtotime($this->input->post('date'));
+		
+		
+		$this->properties_model->make_featured($id);
+		$this->session->set_flashdata('message', 'Feature Property Added '.$date.'');
+		redirect('admin/properties/update/'.$id.'/#tabs-4');
+	}
 	
 	function is_logged_in()
 	{

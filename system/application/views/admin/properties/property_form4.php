@@ -1,6 +1,6 @@
 <?=$this->load->view('admin/properties/sales_data_js')?>
 	<?php foreach($property_details as $key => $row): ?>
-
+<div class="admin_left">
  <table>
  
  	<tr>
@@ -72,6 +72,10 @@
 	</tr>
 
 </table>	
+</div>
+<div class="admin_left">
+<?=$this->load->view('admin/properties/featured_property_form')?>
+</div>
 	<?php endforeach; ?>
 <div style="clear:both;"></div>
 

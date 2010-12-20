@@ -45,7 +45,7 @@
 <?php echo form_submit( 'submit', 'Add Feature');  ?>
 <?php echo form_close();?>
 <div id='features' style="padding-top:10px;">
-Sorting doesn't work yet, I'll add this in future.
+This is where you add features such "Air Conditioning" "Potential to Extend" or any additional info that isn't included in other areas of the form. Use the "Room Table" for adding rooms.
 <ul id='sortable'>
 <?php foreach($assigned_features as $key => $featurerow):?>
 <li class="ui-state-default">
