@@ -652,14 +652,15 @@ function edit_sales_data($id, $field, $value)
 		
 		return FALSE;
 	}
-	function make_featured($id)
+	function make_featured($id, $date)
 	{
 
 		
 		$new_featured_property = array(
-				'date_featured' => $this->input->post('date'),
+				'date_featured' => $date,
 				'property_ref' => $id
 		);
+		
 		$this->db->insert('featured_properties', $new_featured_property);
 		
 			
@@ -669,11 +670,34 @@ function edit_sales_data($id, $field, $value)
 	
 	function list_featured_properties($id)
 	{
-		return;
+		
+		$data = array();
+		
+		$this->db->where('property_ref', $id);
+		$Q = $this->db->get('featured_properties');
+		
+		if ($Q->num_rows() > 0) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+			}
+		}
+		$Q->free_result();
+		return $data;
 	}
 	function delete_featured_property($id)
 	{
-		return;
+		$this->db->where('featured_property_id', $id);
+		$Q = $this->db->get('featured_properties');
+			if ($Q->num_rows() > 0) 
+				{
+					foreach ($Q->result_array() as $row)
+						{
+							$data[] = $row;
+						}
+				}
+		$Q->free_result();
+		$this->db->delete('featured_properties', array('featured_property_id' => $id)); 	
+		return $data;
 	}
 	
 	

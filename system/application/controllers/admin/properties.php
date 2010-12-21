@@ -196,7 +196,7 @@ class Properties extends MY_Controller
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
 		$data['images'] = $this->Gallery_model->get_images($id);
-		
+		$data['featured_properties'] = $this->properties_model->list_featured_properties($id);
 		$data['room_table'] = $this->properties_model->get_rooms_table($id);
 		$data['rooms'] =$this->properties_model->list_rooms();
 		$data['additional'] = $this->properties_model->list_additional();
@@ -569,9 +569,20 @@ function rooms_table()
 		$date =strtotime($this->input->post('date'));
 		
 		
-		$this->properties_model->make_featured($id);
+		$this->properties_model->make_featured($id, $date);
 		$this->session->set_flashdata('message', 'Feature Property Added '.$date.'');
 		redirect('admin/properties/update/'.$id.'/#tabs-4');
+	}
+	
+	function delete_featured_property($id)
+	{
+		$data['property'] = $this->properties_model->delete_featured_property($id);
+			
+			foreach($data['property'] as $row):
+				$propertyref = $row['property_ref'];
+			endforeach;
+		
+		redirect('admin/properties/update/'.$propertyref.'/#tabs-4');
 	}
 	
 	function is_logged_in()
