@@ -75,6 +75,7 @@
 </div>
 <div class="admin_left">
 <?=$this->load->view('admin/properties/featured_property_form')?>
+<?=$this->load->view('admin/properties/premiere_property_form')?>
 </div>
 	<?php endforeach; ?>
 <div style="clear:both;"></div>

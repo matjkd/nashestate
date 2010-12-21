@@ -700,6 +700,55 @@ function edit_sales_data($id, $field, $value)
 		return $data;
 	}
 	
+	function make_premiere($id, $datestart, $dateend)
+	{
+
+		
+		$new_premiere_property = array(
+				'date_featured' => $datestart,
+				'date_ends' => $dateend,
+				'property_ref' => $id
+		);
+		
+		$this->db->insert('premiere_properties', $new_premiere_property);
+		
+			
+		
+		return;
+	}
+	
+	function list_premiere_properties($id)
+	{
+		
+		$data = array();
+		
+		$this->db->where('property_ref', $id);
+		$Q = $this->db->get('premiere_properties');
+		
+		if ($Q->num_rows() > 0) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+			}
+		}
+		$Q->free_result();
+		return $data;
+	}
+	function delete_premiere_property($id)
+	{
+		$this->db->where('premiere_property_id', $id);
+		$Q = $this->db->get('premiere_properties');
+			if ($Q->num_rows() > 0) 
+				{
+					foreach ($Q->result_array() as $row)
+						{
+							$data[] = $row;
+						}
+				}
+		$Q->free_result();
+		$this->db->delete('premiere_properties', array('premiere_property_id' => $id)); 	
+		return $data;
+	}
+	
 	
 	
 }

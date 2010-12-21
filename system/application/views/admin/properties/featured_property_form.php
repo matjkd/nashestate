@@ -16,9 +16,13 @@ Date to commence featured property:<br/>
 <?php
 $dateformatted = date('l jS \of F Y', $row['date_featured']);
 
-echo $dateformatted;
 
 
-?> - <a href="<?=base_url()?>admin/properties/delete_featured_property/<?=$row['featured_property_id']?>">Delete</a> 
-<br/>
+
+?>
+<div id="featured_list">
+ <div style="float:left;"><?=$dateformatted?></div> <a href="<?=base_url()?>admin/properties/delete_featured_property/<?=$row['featured_property_id']?>"><span style="float:right;" class="ui-icon ui-icon-close"></span></a> 
+</div>
+<div style="clear:both;"></div>
+
 <?php endforeach;?>

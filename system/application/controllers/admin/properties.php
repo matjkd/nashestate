@@ -197,6 +197,7 @@ class Properties extends MY_Controller
 		
 		$data['images'] = $this->Gallery_model->get_images($id);
 		$data['featured_properties'] = $this->properties_model->list_featured_properties($id);
+		$data['premiere_properties'] = $this->properties_model->list_premiere_properties($id);
 		$data['room_table'] = $this->properties_model->get_rooms_table($id);
 		$data['rooms'] =$this->properties_model->list_rooms();
 		$data['additional'] = $this->properties_model->list_additional();
@@ -577,6 +578,37 @@ function rooms_table()
 	function delete_featured_property($id)
 	{
 		$data['property'] = $this->properties_model->delete_featured_property($id);
+			
+			foreach($data['property'] as $row):
+				$propertyref = $row['property_ref'];
+			endforeach;
+		
+		redirect('admin/properties/update/'.$propertyref.'/#tabs-4');
+	}
+	
+	
+	function premiere_property($id)
+	{
+		$this->form_validation->set_rules('datestart','datestart','required');		
+		$this->form_validation->set_rules('dateend','dateend','required');		
+		if ($this->form_validation->run() == FALSE) 
+			{
+				$this->session->set_flashdata('message', 'You must enter a date');
+				redirect('admin/properties/update/'.$id.'/#tabs-4');
+			}
+		
+			
+		$datestart =strtotime($this->input->post('datestart'));
+		$dateend =strtotime($this->input->post('dateend'));
+		
+		$this->properties_model->make_premiere($id, $datestart, $dateend);
+		$this->session->set_flashdata('message', 'Premiere Property Added '.$datestart.'');
+		redirect('admin/properties/update/'.$id.'/#tabs-4');
+	}
+	
+	function delete_premiere_property($id)
+	{
+		$data['property'] = $this->properties_model->delete_premiere_property($id);
 			
 			foreach($data['property'] as $row):
 				$propertyref = $row['property_ref'];
