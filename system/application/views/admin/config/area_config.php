@@ -1,3 +1,19 @@
+<script type="text/javascript">
+function userconfirm(id) {
+	var answer = confirm("are you sure you want to delete this area?" + id)
+	if (answer){
+		
+		$.post('<?=base_url()?>admin/areas/delete_area/' + id);
+			
+	}
+	else{
+		alert("nothing deleted!")
+	}
+	
+}
+
+
+</script>
 <style>
 #area_group {
 width:190px;
@@ -65,9 +81,7 @@ background: #dddddd;
 					
 					<?php echo form_submit( 'submit', 'Assign Area');  ?>
 					<?php echo form_close();?>
-					
-					
-						<div id="scroller">
+					<div id="scroller">
 							<?php foreach($areas_groups as $row3):?>
 							
 							<?php if($row3['group_id'] == $row['general_area_group_id']) {?>
@@ -85,7 +99,6 @@ background: #dddddd;
 							<?php endforeach;?>
 						</div>
 					</div> 
-					
 					</div> 
 	<?php endforeach;?>
 	
@@ -93,20 +106,22 @@ background: #dddddd;
 	
 	<div id="sortable">
 		
-			<?php foreach($areas as $row):?>
+<?php foreach($areas as $row):?>
+		<div id="area_list">
 					
-					<div id="area_list">
-						<div style="float:left;"><?=$row['area']?></div>
-						<a href="<?=base_url()?>admin/areas/delete_area/<?=$row['general_area_id']?>" >
-							<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
-						</a>
+					<div class="tooltip" style="float:left;">
+							<a href="#" title="<?=$row['area_alt']?>">
+								<?=$row['area']?>
+							</a>
 					</div>
 					
+					<a href="#" onclick='userconfirm("<?=$row['general_area_id']?>")'>
+						<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
+					</a>
+		</div>
+<?php endforeach;?>
 					
-			<?php endforeach;?>
+					
 		
 	</div>	
 
- 
- 
- 

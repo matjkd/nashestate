@@ -686,6 +686,7 @@ function edit_sales_data($id, $field, $value)
 	}
 	function delete_featured_property($id)
 	{
+		
 		$this->db->where('featured_property_id', $id);
 		$Q = $this->db->get('featured_properties');
 			if ($Q->num_rows() > 0) 
@@ -698,6 +699,27 @@ function edit_sales_data($id, $field, $value)
 		$Q->free_result();
 		$this->db->delete('featured_properties', array('featured_property_id' => $id)); 	
 		return $data;
+	}
+	function get_featured_property()
+	{
+		$time = time();
+		$this->db->from('featured_properties');
+		$this->db->order_by('date_featured', 'desc');
+		$this->db->where('date_featured <', $time);
+		$this->db->limit('1');
+		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
+		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
+		$this->db->where('property_main.active', 1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() == 1) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+				$Q->free_result();
+				return $data;
+			}
+		}
+		
+		
 	}
 	
 	function make_premiere($id, $datestart, $dateend)

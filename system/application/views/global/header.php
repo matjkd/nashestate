@@ -13,6 +13,7 @@
 <script src="<?=base_url()?>js/jquery.jcarousel.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery-ui-1.8.7.custom.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.cycle.all.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>js/jquery.simpletip.js" type="text/javascript"></script>
 
 <script src="<?=base_url()?>js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jeditable.js" type="text/javascript"></script>

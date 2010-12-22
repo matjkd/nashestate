@@ -13,6 +13,7 @@ class Welcome extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('ajax_model');	
+		$this->load->model('properties_model');	
 	}
 	
 	function index()
@@ -53,6 +54,7 @@ function content()
 			//data['side1'] = 'sidebar/property_menu';
 			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
+			$data['featured_property'] = $this->properties_model->get_featured_property();
 		
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['content'] = "content/standard";
