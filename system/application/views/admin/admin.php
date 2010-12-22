@@ -52,7 +52,7 @@ else
 </div>
 <div style="clear:both;"></div>
 <div class="footer">
-
+Page rendered in {elapsed_time} seconds, {memory_usage}
 
 
 </div>
