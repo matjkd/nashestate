@@ -13,7 +13,17 @@
         <a href="<?=base_url()?>index.php?welcome/content/home"><span>Home</span></a></li>
 		
         <li <?php if($page=='1'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?welcome/content/about_us"><span>About Us</span></a></li>   
+        <a href="<?=base_url()?>index.php?welcome/content/about_us"><span>About Us</span></a>
+        
+       					<ul>
+						
+						<li><a href="<?=base_url()?>index.php?welcome/content/property_management"><span>Property Management</span></a></li>
+						<li><a href="<?=base_url()?>index.php?welcome/content/project_management"><span>Project Management</span></a></li>
+												
+						</ul>
+        
+        
+        </li>   
        
        <li <?php if($page=='2'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?welcome/content/what_we_can_do_for_you"><span>What we can do for you</span></a>
