@@ -136,3 +136,5 @@ if($property->sale_rent == 2) {?>
 </div>
 
 <?php endforeach; ?>
+<br/>
+<a href="<?=base_url()?>property/pdf/<?=$property_id?>">pdf</a>

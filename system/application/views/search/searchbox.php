@@ -89,12 +89,12 @@
 </fieldset>
 
 <fieldset>
-	<legend>Other (still working on these bits)</legend>
+	<legend>Other</legend>
 	<div style="width:190px; float:left;">
 	Location:<br/><select name="location">
 	<option value="any">Any</option>
 	<?php  foreach($general_areas as $area):?>
-	<option value="0"><?=$area['area']?></option>
+	<option value="<?=$area['general_area_id']?>"><?=$area['area']?></option>
 	<?php endforeach; ?>
 	
 	</select>

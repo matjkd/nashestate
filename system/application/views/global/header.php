@@ -29,6 +29,7 @@
 		});
 	</script>
 
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAo44bloMTDYnLwRZTm304PxQh_Ytr1GqVXW-fsJC4NQ6h-tLSDBRmgPM5OldMPUZBxfoE58RMo9tlvw" type="text/javascript"></script>
 
 <title><?=$title?></title>
 </head>
