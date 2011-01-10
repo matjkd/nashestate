@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){	
 			
-			 $(".printable").editable("<?=site_url('admin/properties/editable_images')?>", 
+			 $(".printable").editable("<?=site_url('admin/images/editable_images')?>", 
 			    	    {
 			    	data   : " {'1':'Yes','0':'No'}",
 			     	    type   : "select",
@@ -16,7 +16,7 @@ $(document).ready(function(){
 			        	        
 			    	    });
 
-			 $(".image_order").editable("<?=site_url('admin/properties/image_order')?>", 
+			 $(".image_order").editable("<?=site_url('admin/images/image_order')?>", 
 			    	    {
 			    	
 					 indicator : 'Saving...',
@@ -52,7 +52,7 @@ $(document).ready(function(){
 				?>
 				</div>
 				
-				<div style="clear:both; float:left;">Order:</div> 	<div  style="float:left;" class="image_order" id="<?=$image->image_id?>" style="width:150px; float:left;"></div>
+				<div style="clear:both; float:left;">Order:</div> 	<div  style="float:left;" class="image_order" id="<?=$image->image_id?>" style="width:150px; float:left;"><?=$image->print_order?></div>
 				<div style="clear:both; float:left;">Delete</div> 		
 			</div>
 		

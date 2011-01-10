@@ -498,6 +498,7 @@ class Properties_model extends Model {
 	
 	function edit_images($id, $field, $value)
 	{
+		//move this to gallery model
 		$update_data = array(
 					$field => $value
 					);

@@ -22,7 +22,7 @@ class Properties extends MY_Controller
 	
 	function index()
 	{
-		redirect('admin/properties/view');
+		redirect('admin/properties/view_all');
 	}
 	function view_sales()
 	{
@@ -359,7 +359,7 @@ class Properties extends MY_Controller
 	
 	function upload_image()
 	{
-		
+		//Move this function to the images model
 		$id = $this->input->post('id');
 		if($this->input->post('upload'))
 		{
@@ -429,7 +429,7 @@ class Properties extends MY_Controller
 
 	function editable_images()
 	{
-			
+		//Move this function to the images model
 		$data['id'] = $this->input->post('elementid');
 		$data['field'] = 'printable';
 		$data['value'] = $this->input->post('value');
@@ -447,7 +447,7 @@ class Properties extends MY_Controller
 	}
 	function image_order()
 	{
-			
+		//Move this function to the images model	
 		$data['id'] = $this->input->post('elementid');
 		$data['field'] = 'print_order';
 		$data['value'] = $this->input->post('value');

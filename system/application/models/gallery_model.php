@@ -101,6 +101,16 @@ function get_images($id) {
 		return FALSE;
 	}
 	
+	function edit_images($id, $field, $value)
+	{
+		$update_data = array(
+					$field => $value
+					);
+		$this->db->where('image_id', $id);
+		$update2 = $this->db->update('property_images', $update_data);
+		return $update2;
+	}
+	
 	
 	
 }
