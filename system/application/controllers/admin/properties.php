@@ -195,7 +195,7 @@ class Properties extends MY_Controller
 		
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
-		$data['images'] = $this->Gallery_model->get_images($id);
+		$data['images'] = $this->Gallery_model->get_property_images($id);
 		$data['featured_properties'] = $this->properties_model->list_featured_properties($id);
 		$data['premiere_properties'] = $this->properties_model->list_premiere_properties($id);
 		$data['room_table'] = $this->properties_model->get_rooms_table($id);
@@ -423,6 +423,37 @@ class Properties extends MY_Controller
 		
 		}
 		
+		
+		$this->output->set_output($update);
+	}
+
+	function editable_images()
+	{
+			
+		$data['id'] = $this->input->post('elementid');
+		$data['field'] = 'printable';
+		$data['value'] = $this->input->post('value');
+		$this->properties_model->edit_images($data['id'], $data['field'], $data['value']);
+		
+	
+					
+			if($data['value'] == 0 ) {$update = 'No';}
+					
+			if($data['value'] == 1 ) {$update = 'Yes';}
+		
+		
+		
+		$this->output->set_output($update);
+	}
+	function image_order()
+	{
+			
+		$data['id'] = $this->input->post('elementid');
+		$data['field'] = 'print_order';
+		$data['value'] = $this->input->post('value');
+		$this->properties_model->edit_images($data['id'], $data['field'], $data['value']);
+			
+		$update = $this->input->post('value');
 		
 		$this->output->set_output($update);
 	}

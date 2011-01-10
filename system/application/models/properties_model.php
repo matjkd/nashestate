@@ -495,7 +495,18 @@ class Properties_model extends Model {
 		$update = $this->db->update('property_rooms', $update_data);
 		return $update;
 	}
-function edit_sales_data($id, $field, $value)
+	
+	function edit_images($id, $field, $value)
+	{
+		$update_data = array(
+					$field => $value
+					);
+		$this->db->where('image_id', $id);
+		$update2 = $this->db->update('property_images', $update_data);
+		return $update2;
+	}
+	
+	function edit_sales_data($id, $field, $value)
 	{
 		$update_data = array(
 					$field => $value

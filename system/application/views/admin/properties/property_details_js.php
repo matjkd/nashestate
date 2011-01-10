@@ -53,6 +53,7 @@ $(document).ready(function() {
     
         	        
     	    });
+   
     
     $(".editarea").editable("<?=site_url('admin/properties/editable_property1')?>", 
     	    {
