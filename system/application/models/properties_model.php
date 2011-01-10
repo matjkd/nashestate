@@ -706,6 +706,30 @@ function edit_sales_data($id, $field, $value)
 		$this->db->from('featured_properties');
 		$this->db->order_by('date_featured', 'desc');
 		$this->db->where('date_featured <', $time);
+		$this->db->where('sale_rent', 1);
+		$this->db->limit('1');
+		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
+		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
+		$this->db->where('property_main.active', 1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() == 1) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+				$Q->free_result();
+				return $data;
+			}
+		}
+		
+		
+	}
+	
+	function get_featured_rental()
+	{
+		$time = time();
+		$this->db->from('featured_properties');
+		$this->db->order_by('date_featured', 'desc');
+		$this->db->where('date_featured <', $time);
+		$this->db->where('sale_rent', 2);
 		$this->db->limit('1');
 		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
 		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
