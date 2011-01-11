@@ -49,9 +49,45 @@ class Features_model extends Model {
 		);
 		$this->db->insert('property_features', $new_property_feature_data);
     }
+    
+    function get_feature($id)
+    {
+    	$this->db->from('features');
+    	$this->db->where('features_id', $id);
+    	$Q = $this->db->get();
+    	if ($Q->num_rows() == 1)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
+    }
     function update_feature()
     {
-    	
+    	$features_id = $this->input->post('id');
+			
+    				$form_data = array(
+    				
+					'features' => $this->input->post('features')
+    				
+    				    				
+					);
+		
+		
+		$this->db->where('features_id', $features_id);
+		$this->db->update('features', $form_data);
+		
+		if ($this->db->affected_rows() == '1')
+		{
+			
+			return TRUE;
+		}
+		
+		return FALSE;
     }
     
     function toggle_default($id, $value)

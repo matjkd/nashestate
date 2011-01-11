@@ -39,6 +39,7 @@ function deleteFeature(id) {
 		alert("nothing changed!")
 	}
 }
+
 </script>
 
 
@@ -79,7 +80,7 @@ else { ?>
 						<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
 					</a>
 					
-					<a href="#" onclick='edit("<?=$row['features_id']?>")'>
+					<a href="<?=base_url()?>admin/features/view_features/<?=$row['features_id']?>">
 						<span style="float:right;" class="ui-icon ui-icon-pencil"></span>
 					</a>
 	</td>
@@ -89,5 +90,14 @@ else { ?>
 </table>
 </div>
 <div style="float:left; padding-left:20px; width:460px;">
-forms
+<?php if(isset($feature_id)) {?>
+				
+				<?=form_open('admin/features/update_feature')?>
+				<?=form_hidden('id', $feature_id)?>
+				<?=form_input('features', $feature_name)?>
+				<?=form_submit('update', 'update')?>
+				<?=form_close()?>
+<?=$feature_id?>
+
+<?php }?>
 </div>

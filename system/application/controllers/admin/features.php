@@ -24,6 +24,16 @@ class Features extends MY_Controller {
 		
 		$data['heading'] = 'Features Config';
 		
+		$segment_active = $this->uri->segment(4);
+		if(isset($segment_active))
+		{
+			$data['feature_id'] = $segment_active;
+			$data['feature_data'] = $this->features_model->get_feature($segment_active);
+			foreach($data['feature_data'] as $row):
+			
+			$data['feature_name'] = $row['features'];
+			endforeach;
+		}
 		
 		$data['features'] = $this->features_model->list_features();
 		$this->load->vars($data);
@@ -33,9 +43,11 @@ class Features extends MY_Controller {
 	
 	
 	
-	function edit_feature()
+	function update_feature()
 	{
-		
+		$id = $this->input->post('id');
+		$this->features_model->update_feature();
+		redirect('admin/features/view_features/'.$id);
 	}
 	
 	function make_default($id)
