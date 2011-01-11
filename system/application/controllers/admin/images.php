@@ -70,9 +70,13 @@ class Images extends MY_Controller
 		$this->output->set_output($update);
 	}
 	
-	function delete_image($id)
+	function delete_image()
 	{
+		$property_id = $this->input->post('id');
+		$image_id = $this->input->post('image_id');
+		$this->gallery_model->delete_image($image_id);
 		
+		redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
 	}
 	
 	function is_logged_in()
