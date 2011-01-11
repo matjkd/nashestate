@@ -25,7 +25,8 @@ class Features extends MY_Controller {
 		$data['heading'] = 'Features Config';
 		
 		$segment_active = $this->uri->segment(4);
-		if(isset($segment_active))
+		
+		if($segment_active > 0)
 		{
 			$data['feature_id'] = $segment_active;
 			$data['feature_data'] = $this->features_model->get_feature($segment_active);

@@ -60,11 +60,11 @@ class Features_model extends Model {
 			foreach ($Q->result_array() as $row)
 			
 			$data[] = $row;
-			
+			$Q->free_result();
+		return $data;
 		}
 		
-		$Q->free_result();
-		return $data;
+		
     }
     function update_feature()
     {

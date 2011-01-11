@@ -3,7 +3,7 @@
 $(document).ready(function() {
 	oTable = $('#features').dataTable({
 		"bJQueryUI": true,
-		
+		"bStateSave": true,
 		"sPaginationType": "full_numbers"
 	});
 } );
@@ -61,12 +61,12 @@ function deleteFeature(id) {
 <td>
 <?php if($row['default_feature'] == 1) { ?>
 <a href="#" onclick='defaultRemove("<?=$row['features_id']?>")'>
-<span  class="ui-icon ui-state-error ui-icon-circle-check"></span>
+<span  class="ui-icon ui-state-error ui-icon-circle-check"><hidden>a</hidden></span>
 </a>
 <?php }
 else { ?>
 <a href="#" onclick='makeDefault("<?=$row['features_id']?>")'>
-<span  class="ui-icon ui-state-highlight ui-icon-circle-check"></span>
+<span  class="ui-icon ui-state-highlight ui-icon-circle-check"><hidden>b</hidden></span>
 </a>
 <?php }?>
 </td>
