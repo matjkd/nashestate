@@ -70,7 +70,7 @@ class Gallery_model extends Model {
 		
 	}
 	
-function get_images($id) {
+	function get_images($id) {
 		
 		$files = scandir('./images/properties/'.$id.'');
 		$files = array_diff($files, array('.', '..', 'thumbs', 'medium', 'large'));
@@ -99,6 +99,58 @@ function get_images($id) {
 			}
 			
 		return FALSE;
+	}
+	
+	function edit_images($id, $field, $value)
+	{
+		$update_data = array(
+					$field => $value
+					);
+		$this->db->where('image_id', $id);
+		$update2 = $this->db->update('property_images', $update_data);
+		return $update2;
+	}
+	
+	function delete_image($id)
+	{
+		$this->db->from('property_images');
+		$this->db->where('image_id', $id);
+		$query = $this->db->get();
+		
+		if($query->num_rows == 1);
+			{
+				
+				foreach($query->result_array() as $row):
+				
+					$filename = $row['filename'];
+					$property_id = $row['property_id'];
+				
+				endforeach; 
+				
+				
+				//delete image from database
+				$this->db->where('image_id', $id);
+				$delete = $this->db->delete('property_images');
+				
+				//delete images from server
+				$this->load->library('ftp');
+
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['port']     = 21;
+				$config['passive']  = FALSE;
+				$config['debug']    = TRUE;
+
+				$this->ftp->connect($config);
+				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/'.$filename.'');
+				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/medium/'.$filename.'');
+				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/thumbs/'.$filename.'');
+			}
+		
+		
+		
+		
 	}
 	
 	

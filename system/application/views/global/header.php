@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
-<link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.2.custom.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.7.custom.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table_jui.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/menu2.css' type='text/css' />

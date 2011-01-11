@@ -6,7 +6,7 @@
 			text-align: center;
 		}
 		.thumb {
-			float: left; width: 150px; height: 100px; padding: 10px; margin: 10px; background-color: #ddd;
+			float: left; width: 135px; height: 160px; padding: 10px; margin: 10px; background-color: #ddd;
 		}
 		.thumb:hover {
 			outline: 1px solid #999;

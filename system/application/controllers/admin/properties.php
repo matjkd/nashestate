@@ -22,7 +22,7 @@ class Properties extends MY_Controller
 	
 	function index()
 	{
-		redirect('admin/properties/view');
+		redirect('admin/properties/view_all');
 	}
 	function view_sales()
 	{
@@ -191,11 +191,21 @@ class Properties extends MY_Controller
 			
 				$data['features'] = $this->properties_model->features($row->sale_rent);
 				$company_id = $row->company_id;
+				$user_id = $row->user_id;
 			endforeach;
 		
+		//get user name
+		$data['contact_data'] = $this->contacts_model->get_contact($user_id);
+			
+			foreach($data['contact_data'] as  $row2):
+					$data['individual'] = "".$row2['firstname']." ".$row2['lastname']."";
+			endforeach;	
+			
+			
+			
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
-		$data['images'] = $this->Gallery_model->get_images($id);
+		$data['images'] = $this->Gallery_model->get_property_images($id);
 		$data['featured_properties'] = $this->properties_model->list_featured_properties($id);
 		$data['premiere_properties'] = $this->properties_model->list_premiere_properties($id);
 		$data['room_table'] = $this->properties_model->get_rooms_table($id);
@@ -359,7 +369,7 @@ class Properties extends MY_Controller
 	
 	function upload_image()
 	{
-		
+		//Move this function to the images model
 		$id = $this->input->post('id');
 		if($this->input->post('upload'))
 		{
@@ -423,6 +433,37 @@ class Properties extends MY_Controller
 		
 		}
 		
+		
+		$this->output->set_output($update);
+	}
+
+	function editable_images()
+	{
+		//Move this function to the images model
+		$data['id'] = $this->input->post('elementid');
+		$data['field'] = 'printable';
+		$data['value'] = $this->input->post('value');
+		$this->properties_model->edit_images($data['id'], $data['field'], $data['value']);
+		
+	
+					
+			if($data['value'] == 0 ) {$update = 'No';}
+					
+			if($data['value'] == 1 ) {$update = 'Yes';}
+		
+		
+		
+		$this->output->set_output($update);
+	}
+	function image_order()
+	{
+		//Move this function to the images model	
+		$data['id'] = $this->input->post('elementid');
+		$data['field'] = 'print_order';
+		$data['value'] = $this->input->post('value');
+		$this->properties_model->edit_images($data['id'], $data['field'], $data['value']);
+			
+		$update = $this->input->post('value');
 		
 		$this->output->set_output($update);
 	}

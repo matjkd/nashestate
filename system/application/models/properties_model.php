@@ -380,6 +380,7 @@ class Properties_model extends Model {
 
 	function list_all_features()
 	{
+		//move this and reference to it to features model
 		$data = array();
 		$this->db->from('features');
 		$Q = $this->db->get();
@@ -495,7 +496,19 @@ class Properties_model extends Model {
 		$update = $this->db->update('property_rooms', $update_data);
 		return $update;
 	}
-function edit_sales_data($id, $field, $value)
+	
+	function edit_images($id, $field, $value)
+	{
+		//move this to gallery model
+		$update_data = array(
+					$field => $value
+					);
+		$this->db->where('image_id', $id);
+		$update2 = $this->db->update('property_images', $update_data);
+		return $update2;
+	}
+	
+	function edit_sales_data($id, $field, $value)
 	{
 		$update_data = array(
 					$field => $value
@@ -706,6 +719,30 @@ function edit_sales_data($id, $field, $value)
 		$this->db->from('featured_properties');
 		$this->db->order_by('date_featured', 'desc');
 		$this->db->where('date_featured <', $time);
+		$this->db->where('sale_rent', 1);
+		$this->db->limit('1');
+		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
+		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
+		$this->db->where('property_main.active', 1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() == 1) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+				$Q->free_result();
+				return $data;
+			}
+		}
+		
+		
+	}
+	
+	function get_featured_rental()
+	{
+		$time = time();
+		$this->db->from('featured_properties');
+		$this->db->order_by('date_featured', 'desc');
+		$this->db->where('date_featured <', $time);
+		$this->db->where('sale_rent', 2);
 		$this->db->limit('1');
 		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
 		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
