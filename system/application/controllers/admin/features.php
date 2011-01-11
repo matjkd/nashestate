@@ -31,25 +31,30 @@ class Features extends MY_Controller {
 		$this->load->view('admin/admin');
 	}
 	
+	
+	
 	function edit_feature()
 	{
 		
 	}
 	
-	function make_default()
+	function make_default($id)
 	{
-		
+		$this->features_model->toggle_default($id, 1);
+		redirect('admin/features/view_features');
 	}
 	
-	function remove_default()
+	function remove_default($id)
 	{
-		
+		$this->features_model->toggle_default($id, 0);
+		redirect('admin/features/view_features');
 	}
 	
 	
-	function delete_feature()
+	function delete_feature($id)
 	{
-		$feature_id = $this->input->post('id');
+		$this->features_model->delete_feature($id);
+		redirect('admin/features/view_features');
 		
 	}
 	function is_logged_in()

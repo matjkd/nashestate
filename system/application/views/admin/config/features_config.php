@@ -8,7 +8,37 @@ $(document).ready(function() {
 	});
 } );
 
+function makeDefault(id) {
+	var answer = confirm("are you sure you want to make this a default feature?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/features/make_default/"+ id;
+	}
+	else{
+		alert("nothing changed!")
+	}
+}
 
+function defaultRemove(id) {
+	var answer = confirm("Are you sure you want to remove from default features?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/features/remove_default/"+ id;
+	}
+	else{
+		alert("nothing changed!")
+	}
+}
+function deleteFeature(id) {
+	var answer = confirm("Are you sure you want to delete this feature?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/features/delete_feature/"+ id;
+	}
+	else{
+		alert("nothing changed!")
+	}
+}
 </script>
 
 
@@ -29,12 +59,12 @@ $(document).ready(function() {
 <tr>
 <td>
 <?php if($row['default_feature'] == 1) { ?>
-<a href="#" onclick='default("<?=$row['features_id']?>")'>
+<a href="#" onclick='defaultRemove("<?=$row['features_id']?>")'>
 <span  class="ui-icon ui-state-error ui-icon-circle-check"></span>
 </a>
 <?php }
 else { ?>
-<a href="#" onclick='undefault("<?=$row['features_id']?>")'>
+<a href="#" onclick='makeDefault("<?=$row['features_id']?>")'>
 <span  class="ui-icon ui-state-highlight ui-icon-circle-check"></span>
 </a>
 <?php }?>
@@ -45,7 +75,7 @@ else { ?>
 </td>
 
 	<td>
-					<a href="#" onclick='delete("<?=$row['features_id']?>")'>
+					<a href="#" onclick='deleteFeature("<?=$row['features_id']?>")'>
 						<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>
 					</a>
 					

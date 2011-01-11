@@ -333,6 +333,20 @@ class Properties extends MY_Controller
 				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/large/');
 				$this->ftp->close();
 				
+				
+				
+			//add default features to property
+
+				$this->load->model('features_model');
+				$default_features = $this->features_model->list_default_features();
+				
+				foreach($default_features as $row):
+				
+				$this->features_model->add_default_features($ref, $row['features_id']);
+				
+				endforeach;
+				
+				
 				redirect('admin/properties/update/'.$ref.'#tabs-1');   // or whatever logic needs to occur
 			}
 			else
