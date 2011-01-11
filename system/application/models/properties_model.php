@@ -380,6 +380,7 @@ class Properties_model extends Model {
 
 	function list_all_features()
 	{
+		//move this and reference to it to features model
 		$data = array();
 		$this->db->from('features');
 		$Q = $this->db->get();

@@ -38,7 +38,7 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 	
 	<div class="admin_title">Individual:</div>
 	<div class="admin_field">
-		<div class="editmembers" id="user_id" ><?php echo $row->user_id; ?></div>
+		<div class="editmembers" id="user_id" ><?php echo $individual; ?></div>
 	</div>
 	
 	<div class="admin_title">Date of Instruction:</div>

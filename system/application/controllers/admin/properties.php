@@ -191,8 +191,18 @@ class Properties extends MY_Controller
 			
 				$data['features'] = $this->properties_model->features($row->sale_rent);
 				$company_id = $row->company_id;
+				$user_id = $row->user_id;
 			endforeach;
 		
+		//get user name
+		$data['contact_data'] = $this->contacts_model->get_contact($user_id);
+			
+			foreach($data['contact_data'] as  $row2):
+					$data['individual'] = "".$row2['firstname']." ".$row2['lastname']."";
+			endforeach;	
+			
+			
+			
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
 		$data['images'] = $this->Gallery_model->get_property_images($id);
