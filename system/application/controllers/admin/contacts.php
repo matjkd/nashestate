@@ -217,6 +217,7 @@ function view_company()
 			}
 			
 			// Create the company called N/A
+			
 			$companydata['company_id'] = $this->contacts_model->add_company();
 				
 				foreach($companydata['company_id'] as $row2):

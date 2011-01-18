@@ -7,7 +7,31 @@ $attributes = array('class' => 'form', 'id' => 'form');
 
 	foreach($property_details as $key => $row):
 echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
+
 ?>
+<!--
+dropdown for selecting different company
+-->
+
+<?php echo form_open('admin/properties/change_owner/'.$property_id.'');?>
+<?php
+$options = array(
+                  $row->company_id  => $row->company_name
+                );
+
+                
+foreach($list_groups as $groups):  
+
+	$group_id = $groups['company_id'];        
+	$options[$group_id] = $groups['company_name'];
+	
+endforeach;
+echo form_dropdown('groups', $options, $row->company_name); 
+ 
+?>
+<?php echo form_submit( 'submit', 'change group');  ?>
+<?php echo form_close();?>
+
 
 <div style="clear:both;"></div>
 <div id='property_info'>
@@ -58,22 +82,22 @@ echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
 
 	<div class="admin_title">	Address 2:</div>
 	<div class="admin_field">
-		<div class="editdetails" id="property_address1"><?php echo $row->property_address2; ?></div>
+		<div class="editdetails" id="property_address2"><?php echo $row->property_address2; ?></div>
 	</div>
 	
 	<div class="admin_title">	Address 3:</div>
 	<div class="admin_field">
-		<div class="editdetails" id="property_address1"><?php echo $row->property_address3; ?></div>
+		<div class="editdetails" id="property_address3"><?php echo $row->property_address3; ?></div>
 	</div>
 	
 	<div class="admin_title">	Address 4:</div>
 	<div class="admin_field">
-		<div class="editdetails" id="property_address1"><?php echo $row->property_address4; ?></div>
+		<div class="editdetails" id="property_address4"><?php echo $row->property_address4; ?></div>
 	</div>
 	
 	<div class="admin_title">	Postcode:</div>
 	<div class="admin_field">
-		<div class="editdetails" id="property_address1"><?php echo $row->property_address5; ?></div>
+		<div class="editdetails" id="property_address5"><?php echo $row->property_address5; ?></div>
 	</div>
 
 

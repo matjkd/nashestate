@@ -155,6 +155,20 @@ class Properties_model extends Model {
 		);
 		return $new_array;
 	}
+	function change_owner($id)
+	{
+		$new_owner = $this->input->post('groups');
+				
+				$form_data = array(
+				
+				'company_id' => $new_owner,
+				'user_id' => NULL
+				
+				);
+		
+		$this->db->where('property_ref_no', $id);
+		$this->db->update('property_main', $form_data);
+	}
 	function update_property1()
 	{
 		

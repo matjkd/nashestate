@@ -183,6 +183,8 @@ class Properties extends MY_Controller
 		
 		$data['property_types'] = $this->ajax_model->get_property_types();
 		
+		$data['list_groups'] = $this->contacts_model->list_contacts();
+		
 		$data['general_areas'] = $this->ajax_model->get_general_area();
 	
 		$data['property_details'] = $this->properties_model->get_property($id);
@@ -374,6 +376,12 @@ class Properties extends MY_Controller
 		
 		redirect('admin/properties/update/'.$id.'/#tabs-2');  
 		
+	}
+	
+	function change_owner($id)
+	{
+		$this->properties_model->change_owner($id);
+		redirect('admin/properties/update/'.$id.'/#tabs-1');  
 	}
 	
 	function delete_property($id)

@@ -171,9 +171,19 @@ function edit_company($id, $field, $value)
 		}
 	function add_company()
 	{
+
+		$company_name = $this->input->post('company_name');
 		
+		if($company_name == "N/A")
+		{
+			$company_name =  "".$this->input->post('firstname')." ".$this->input->post('lastname')."s Group";
+		}
+		else
+		{
+			$company_name = $this->input->post('company_name');
+		}
 		$new_company_insert_data = array(
-			'company_name' =>  $this->input->post('company_name'),
+			'company_name' =>  $company_name,
 			'company_type_id' =>  $this->input->post('company_type'),
 			'added_by' => $this->session->userdata('user_id'),
 			'date_added' => unix_to_human(now(), TRUE, 'eu')
