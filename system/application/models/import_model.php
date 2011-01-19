@@ -27,6 +27,9 @@ class Import_model extends Model {
 	
 	function add_rooms($room_id, $number_of_rooms, $property_id)
 	{
+		//add something to check rooms haven't already been added
+		
+		
 		// add room to property_rooms
 		// room_type is $room_id, property_id is $property_id.
 		// Repeat $number_of_rooms times
@@ -51,6 +54,17 @@ class Import_model extends Model {
 				$form_data = array(
 				
 				'address' => $address
+			
+				);
+		
+		$this->db->where('id_property', $id);
+		$this->db->update('Propiedades', $form_data);
+	}
+	function mark_imported($id)
+	{
+		$form_data = array(
+				
+				'imported' => 2
 			
 				);
 		

@@ -37,7 +37,17 @@
 		?>
 		
 		<br/>
-		
+		<?php 
+		if($row->Activo == "Si")
+		{
+			$active = 1;
+		}
+		if($row->Activo == "No")
+		{
+			$active = 0;
+		}
+		?>
+		<strong>Active:</strong><br/><?=form_input('active', $active)?><br/>
 		<strong>Title:</strong><br/><?=form_input('title', $row->name)?><br/>
 		<strong>Description:</strong><br/><?=form_textarea('description', $row->description)?><br/>
 		<strong>Size (m2):</strong><br/><?=form_input('size', $row->sq_m)?><br/>
@@ -77,12 +87,12 @@ echo form_input('view', $viewing);	?>
 //convert swimming pool into a string
 $pool = $row->s_pool;
 if($pool == 1){	$pooltype = "None";}
-if($pool == 2){	$pooltype = "Private (indoor)";}
-if($pool == 3){	$pooltype = "Private (outdoor)"; }
-if($pool == 4){	$pooltype = "Private (outdoor and indoor)";}
-if($pool == 5){	$pooltype = "Community (indoor)";}
-if($pool == 6){	$pooltype = "Community (outdoor)";}
-if($pool == 7){	$pooltype = "Community (outdoor and indoor)";}
+if($pool == 2){	$pooltype = "Pool, Private (indoor)";}
+if($pool == 3){	$pooltype = "Pool, Private (outdoor)"; }
+if($pool == 7){	$pooltype = "Pool, Private (outdoor and indoor)";}
+if($pool == 4){	$pooltype = "Pool, Community (indoor)";}
+if($pool == 5){	$pooltype = "Pool, Community (outdoor)";}
+if($pool == 6){	$pooltype = "Pool, Community (outdoor and indoor)";}
 //display view as form input
 echo form_input('pool', $pooltype);	?>
 		<br/>

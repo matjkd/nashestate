@@ -36,6 +36,7 @@ class Import extends MY_Controller {
 		//declare variables
 		
 		$property_id = $this->input->post('property_id');
+		$active = $this->input->post('active');
 		$title = $this->input->post('title');
 		$property_type = $this->input->post('property_type');
 		$price = $this->input->post('price');
@@ -46,6 +47,12 @@ class Import extends MY_Controller {
 		$number_of_bathrooms = $this->input->post('number_of_bathrooms');
 		$number_of_parking = $this->input->post('number_of_parking');
 		$sale_rent = $this->input->post('sale_rent');
+		$sold_rented = $this->input->post('sold_rented');
+		
+		$view = $this->input->post('view');;
+		$pool = $this->input->post('pool');;
+		
+		
 		$area = $this->input->post('areas');
 		
 		//check area is selected
@@ -80,6 +87,7 @@ class Import extends MY_Controller {
 		//Create Property
 		$form_data = array(
 							'property_ref_no' => $property_id,
+							'active' => $active,
 					       	'property_type' => $property_type,
 							'company_id' => 1,
 					       	'sale_rent' => $sale_rent,
@@ -89,9 +97,10 @@ class Import extends MY_Controller {
 							'plot_size' => $plot_size,
 							'description' => $description,
 							'property_title' => $title,
-							'general_area' => $area
+							'general_area' => $area,
+							'sold_rented' => $sold_rented
 						);
-						
+		$this->properties_model->create_property($form_data);				
 						
 		
 		//import number of bedrooms
@@ -103,15 +112,18 @@ class Import extends MY_Controller {
 		
 		
 		//add features
-						
-		//mark old property as imported
+		//add pool
+		$this->features_model->add_feature($property_id, $pool);
+		$this->features_model->add_feature($property_id, $view);
 		
+		//mark old property as imported
+		$this->import_model->mark_imported($property_id);
 		
 	
 		
 		$this->session->set_flashdata('message', 'Property '.$property_id.' has been imported');
-		print_r($form_data);
-		//redirect('admin/import/import_properties', 'refresh');
+		//print_r($form_data);
+		redirect('admin/import/import_properties', 'refresh');
 		//
 	}
 	function is_logged_in()
