@@ -22,6 +22,43 @@ class Features_model extends Model {
 		$Q->free_result();
 		return $data;
     }
+	
+    function add_feature($id, $feature)
+	{
+		
+		$data = array();
+		$this->db->from('features');
+		$this->db->where('features', $feature);
+		$Q = $this->db->get();
+		// check if feature exists, if not add it to database
+		if ($Q->num_rows() < 1)
+			{
+				$new_feature_data = array(
+				'features' => $feature,
+				'features_category' => 0
+			);
+		
+			$this->db->insert('features', $new_feature_data);
+			}
+			$Q->free_result();
+			
+		//now add feature to list of property features.	
+		$this->db->from('features');
+		$this->db->where('features', $feature);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)	
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$new_property_feature_data = array(
+				'features_id' => $row['features_id'],
+				'property_id' => $id
+		);
+		$this->db->insert('property_features', $new_property_feature_data);
+		}
+			
+		return;
+	}
     
     function list_default_features()
     {
