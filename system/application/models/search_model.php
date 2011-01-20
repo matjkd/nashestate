@@ -36,10 +36,9 @@ class Search_model extends Model {
 		{
 			foreach ($Q->result_array() as $row):
 				
-				
 				$this->db->from('property_rooms'); 
 				$this->db->where('property_id', $row['property_ref_no']);
-				$this->db->like('room_type', 1);
+				$this->db->where('room_type', 1);
 				$room_count = $this->db->count_all_results();
 				
 				$row2 = array(
@@ -84,7 +83,7 @@ class Search_model extends Model {
 				
 				$this->db->from('property_rooms'); 
 				$this->db->where('property_id', $row['property_ref_no']);
-				$this->db->like('room_type', 1);
+				$this->db->where('room_type', 1);
 				$room_count = $this->db->count_all_results();
 				
 				$row2 = array(

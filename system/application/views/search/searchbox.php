@@ -21,7 +21,7 @@
 		$("#slider-range").slider({
 			range: true,
 			min: 0,
-			max: 1000000,
+			max: 10000000,
 			step: 25000,
 			values: [<?=$buyfrom?>, <?=$buyto?>],
 			slide: function(event, ui) {
