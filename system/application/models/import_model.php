@@ -13,10 +13,22 @@ class Import_model extends Model {
 		
 		$this->db->where('Propiedades.imported', NULL);
 		$this->db->or_where('Propiedades.imported', '1');
+		$this->db->or_where('Propiedades.imported', '2');
 		$this->db->join('general_area', 'general_area.area = Propiedades.address', 'left');	
 		$this->db->limit(20);
 		$query = $this->db->get();
 		
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+	}
+	function get_old_areas()
+	{
+		$this->db->from('Localidades');
+		$query = $this->db->get();
 		if($query->num_rows > 0);
 			{
 				return $query->result();
@@ -64,7 +76,7 @@ class Import_model extends Model {
 	{
 		$form_data = array(
 				
-				'imported' => 2
+				'imported' => 4
 			
 				);
 		

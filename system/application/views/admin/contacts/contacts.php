@@ -10,6 +10,7 @@ $(document).ready(function() {
 	oContactTable = $('#contact_details').dataTable({
 		"bPaginate": false,
 		"bInfo": false,
+		"bStateSave": true,
 		"bJQueryUI": false,
 		"bAutoWidth": false,
 		"sDom": 't'

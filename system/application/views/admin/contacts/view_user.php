@@ -2,6 +2,23 @@
 $(document).ready(function() {
 	var uid = "<?=$segment_id?>";
 	var cid = "<?=$company_id?>";
+	
+$(".editcompany").editable("<?=site_url('/admin/contacts/edit_company')?>", 
+	    {
+	
+	    	indicator : 'Saving...',
+	    	id   : 'elementid',
+	    	onblur : 'submit',
+	        tooltip   : 'Click to edit...',
+	        submitdata : function() 
+	        {
+	        return {id : cid};
+}
+
+    	        
+	    });
+
+	
     $(".editclient").editable("<?=site_url('/admin/contacts/edit_user')?>", 
     	    {
     	    	indicator : 'Saving...',
@@ -92,7 +109,7 @@ $(document).ready(function() {
 			
 	
 			<div class='leftcolumn'>
-			Company Name:
+			Group Name:
 			</div>
 			
 			 	<div class='editcompany' id='company_name' style="color:#666666;"><?=$row['company_name']?></div>

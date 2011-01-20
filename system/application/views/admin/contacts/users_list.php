@@ -4,6 +4,7 @@ var oUsersTable;
 $(document).ready(function() {
 	oUsersTable = $('#users_table').dataTable({
 		"bPaginate": false,
+		"bStateSave": true,
 		"bInfo": false,
 		"bJQueryUI": false,
 		"bAutoWidth": false,

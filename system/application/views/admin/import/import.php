@@ -10,29 +10,52 @@
 		<?php foreach($old_properties as $row):?>
 		
 <?=form_open('admin/import/import_property')?>
+
 		<div style="background:#dddddd; margin:5px; padding:5px;">
 		<?php $x = $x + 1;?>
-		
+		<?=form_submit('submit', 'Import')?>
 		<?php $address = $row->address; ?>
 		
 		 <span style="color:#bbbbbb;"><?=$x?></span><br/> 
 		<strong>Property ID:</strong><?=form_input('property_id', $row->id_property)?><br/>
-		<strong>Old Area:</strong> <?=form_input('old_area', $address)?> <br/>
 		
+		<?php 
+		$locality = $row->locality;
+		foreach($old_areas as $row2): ?>
+			
+			<?php 
+			$localid = $row2->Id;
+			if($localid == $locality) {
+			
+			?>
+			
+			<?php $localname = $row2->Nombre; ?>
+			
+			<?php }?>
+	
+		
+		<?php endforeach; ?>
+		<strong>Old-Area:</strong> <?=form_input('old_area', $localname)?> <?=$address?><br/>
 		<strong>New Area:</strong>
 		<?php
 		$options = array(
 		                  $row->general_area_id  => $row->area
 		                );
-		
+		 
+		$selected = "";
 		                
 		foreach($list_areas as $areas):  
 		
+		if($areas['area'] == $localname)
+			{
+				$selected = $areas['general_area_id'];
+			}
 			$area_id = $areas['general_area_id'];        
 			$options[$area_id] = $areas['area'];
 			
+			
 		endforeach;
-		echo form_dropdown('areas', $options, $row->area); 
+		echo form_dropdown('areas', $options, $selected); 
 		 
 		?>
 		
@@ -48,6 +71,7 @@
 		}
 		?>
 		<strong>Active:</strong><br/><?=form_input('active', $active)?><br/>
+		<strong>Number of floors:</strong><br/><?=form_input('floors', $row->n_floors)?><br/>
 		<strong>Title:</strong><br/><?=form_input('title', $row->name)?><br/>
 		<strong>Description:</strong><br/><?=form_textarea('description', $row->description)?><br/>
 		<strong>Size (m2):</strong><br/><?=form_input('size', $row->sq_m)?><br/>

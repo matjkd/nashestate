@@ -28,7 +28,16 @@ function undelete(id) {
 		alert("nothing changed!")
 	}
 }
-
+function wipe(id) {
+	var answer = confirm("are you sure you want to delete this property. This cannot be undone and will remove all images and other references to this property?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/properties/delete_property/"+ id;
+	}
+	else{
+		alert("nothing changed!")
+	}
+}
 </script>
 
 <table id="contacts"  width="100%" style="clear:both;">
@@ -67,7 +76,7 @@ if($row['sale_rent'] == 2)
 			<td style="padding:5px;"><?php if($row['active']==0) {echo "No";};	if($row['active']==1) {echo "Yes";};?></td>
 			<?php if($row['archived'] == 1)
 			 { ?>
-			<td style="padding:5px;"><a href='#' onclick='undelete("<?=$row['property_ref_no']?>")'>Unarchive</a> | <a href='<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>'>View Property</a></td>
+			<td style="padding:5px;"><a href='#' onclick='undelete("<?=$row['property_ref_no']?>")'>Unarchive</a> | <a href='#' onclick='wipe("<?=$row['property_ref_no']?>")'>DELETE(can't undo)</a> | <a href='<?=base_url()?>admin/properties/update/<?=$row['property_ref_no']?>'>View Property</a></td>
 			<?php }
 			 if($row['archived'] == 0) 
 			 { ?>

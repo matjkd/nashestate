@@ -50,18 +50,7 @@ class Properties_model extends Model {
 		$this->db->where('property_id', $id);
 		$this->db->delete('property_images');
 		
-		//delete images from server
-				$this->load->library('ftp');
-
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
-				$config['port']     = 21;
-				$config['passive']  = FALSE;
-				$config['debug']    = TRUE;
-
-				$this->ftp->connect($config);
-				$this->ftp->delete_dir('/public_html/images/properties/'.$id.'/');
+		
 				
 		
 		//delete featured properties with $id

@@ -19,7 +19,9 @@ class Import extends MY_Controller {
 	function import_properties()
 	{
 		$data['old_properties'] = $this->import_model->get_old_properties();
+		$data['old_areas'] = $this->import_model->get_old_areas();
 		$data['list_areas'] = $this->area_model->list_areas();
+		$data['title'] = "Import Properties from old site";
 		//remove space at start of locations.
 		//foreach($data['old_properties'] as $row):
 		//$id = $row->id_property;
@@ -49,9 +51,9 @@ class Import extends MY_Controller {
 		$sale_rent = $this->input->post('sale_rent');
 		$sold_rented = $this->input->post('sold_rented');
 		$old_area = $this->input->post('old_area');
-		$view = $this->input->post('view');;
-		$pool = $this->input->post('pool');;
-		
+		$view = $this->input->post('view');
+		$pool = $this->input->post('pool');
+		$floors = $this->input->post('floors');
 		
 		$area = $this->input->post('areas');
 		
@@ -105,10 +107,21 @@ class Import extends MY_Controller {
 							'property_title' => $title,
 							'general_area' => $area,
 							'old_area' => $old_area,
+							'floors' => $floors,
 							'sold_rented' => $sold_rented
 						);
 		$this->properties_model->create_property($form_data);				
-						
+
+		$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['debug'] = TRUE;
+				$this->ftp->connect($config);
+				$this->ftp->mkdir('/public_html/images/properties/'.$property_id.'/');
+				$this->ftp->mkdir('/public_html/images/properties/'.$property_id.'/thumbs/');
+				$this->ftp->mkdir('/public_html/images/properties/'.$property_id.'/medium/');
+				$this->ftp->mkdir('/public_html/images/properties/'.$property_id.'/large/');
+				$this->ftp->close();
 		
 		//import number of bedrooms
 		$this->import_model->add_rooms(1, $number_of_bedrooms, $property_id);

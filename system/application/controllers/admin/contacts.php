@@ -440,11 +440,11 @@ function user_detail_table()
 		$this->contacts_model->delete_contact_detail($id); 
 		
 	}
-	function delete_user()
+	function delete_user($id)
 	{
-		$id = $this->input->post('id');
-		$this->contacts_model->delete_user($id); 
 		
+		$this->contacts_model->delete_user($id); 
+		redirect('admin/contacts/details');
 	}
 	
 	function delete_company()

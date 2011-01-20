@@ -23,6 +23,7 @@ class Properties extends MY_Controller
 	function index()
 	{
 		redirect('admin/properties/view_all');
+		
 	}
 	function view_sales()
 	{
@@ -176,6 +177,30 @@ class Properties extends MY_Controller
 		$data['right_main'] = 'admin/properties/create_property';
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
+	}
+	
+	function delete_property($id)
+	{
+			
+		
+		
+		//delete images dir from server
+				
+
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['debug'] = TRUE;
+				$this->ftp->connect($config);
+				
+				$this->ftp->rename('/public_html/images/properties/'.$id.'/','/public_html/images/properties/deleted/'.$id.'/');
+				
+				$this->ftp->close();
+			//rmdir('/public_html/images/properties/'.$id.'/');	
+				
+			$this->properties_model->delete_property($id);
+				
+		//redirect('admin/properties/view_deleted');  
 	}
 	function update($id)
 	{
@@ -384,10 +409,7 @@ class Properties extends MY_Controller
 		redirect('admin/properties/update/'.$id.'/#tabs-1');  
 	}
 	
-	function delete_property($id)
-	{
-		
-	}
+
 	
 	function upload_image()
 	{

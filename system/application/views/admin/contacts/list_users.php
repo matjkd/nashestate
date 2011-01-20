@@ -2,6 +2,7 @@
 $(document).ready(function() {
 	oTable = $('#contacts').dataTable({
 		"bJQueryUI": true,
+		"bStateSave": true,
 		"aoColumns": [null, null, null, {"bSearchable": false}],
 		"sPaginationType": "full_numbers"
 	});
@@ -46,7 +47,7 @@ if($row['company_name']==NULL)
 					
 			<td style="padding:5px;"><?=$row['company_type']?></td>
 			
-			<td style="padding:5px;"><?="<a href='#' onclick='confirmation(".$row['user_id'].")'>Delete</a> | <a href='".base_url()."admin/properties/add/".$row['company_id']."'>Add Property"?></a></td>
+			<td style="padding:5px;"><?=$row['user_id']?> <?="<a href='#' onclick='confirmation(".$row['user_id'].")'>Delete</a> | <a href='".base_url()."admin/properties/add/".$row['company_id']."'>Add Property"?></a></td>
 		</tr>
 		<?php endforeach;  ?>
 	</tbody>
