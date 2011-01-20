@@ -35,7 +35,7 @@
 	
 		
 		<?php endforeach; ?>
-		<strong>Old-Area:</strong> <?=form_input('old_area', $localname)?> <?=$address?><br/>
+		<strong>Old-Area:</strong> <?=form_hidden('old_area', $localname)?><?=$localname?>, <?=$address?><br/>
 		<strong>New Area:</strong>
 		<?php
 		$options = array(
