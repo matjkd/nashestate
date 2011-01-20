@@ -17,9 +17,9 @@
 		
 		 <span style="color:#bbbbbb;"><?=$x?></span><br/> 
 		<strong>Property ID:</strong><?=form_input('property_id', $row->id_property)?><br/>
-		<strong>Area:</strong> "<?=$address?>" - 
+		<strong>Old Area:</strong> <?=form_input('old_area', $address)?> <br/>
 		
-		<span style="color:red;"> <?=$row->general_area_id?>. "<?=$row->area?>"</span><br/>
+		<strong>New Area:</strong>
 		<?php
 		$options = array(
 		                  $row->general_area_id  => $row->area
@@ -86,7 +86,7 @@ echo form_input('view', $viewing);	?>
 		<?php 
 //convert swimming pool into a string
 $pool = $row->s_pool;
-if($pool == 1){	$pooltype = "None";}
+if($pool == 1){	$pooltype = "";}
 if($pool == 2){	$pooltype = "Pool, Private (indoor)";}
 if($pool == 3){	$pooltype = "Pool, Private (outdoor)"; }
 if($pool == 7){	$pooltype = "Pool, Private (outdoor and indoor)";}
@@ -119,6 +119,7 @@ echo form_input('property_type', $propertytype);	?>
 		<?php 
 //convert status into a string
 $status = $row->id_status;
+if($status == 0){	$sale_rent = "0"; $sold_rented = 0;}
 if($status == 1){	$sale_rent = "2"; $sold_rented = 0;}
 if($status == 2){	$sale_rent = "1"; $sold_rented = 0;}
 if($status == 3){	$sale_rent = "2"; $sold_rented = 1;}

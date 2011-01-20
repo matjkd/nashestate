@@ -48,7 +48,7 @@ class Import extends MY_Controller {
 		$number_of_parking = $this->input->post('number_of_parking');
 		$sale_rent = $this->input->post('sale_rent');
 		$sold_rented = $this->input->post('sold_rented');
-		
+		$old_area = $this->input->post('old_area');
 		$view = $this->input->post('view');;
 		$pool = $this->input->post('pool');;
 		
@@ -63,6 +63,12 @@ class Import extends MY_Controller {
 			redirect('admin/import/import_properties', 'refresh');
 		}
 		// if property is for sale
+		if ($sale_rent == 0)
+		{
+			$pricetype = 'sale_price';
+			$monthly = 0;
+		}
+		
 		if ($sale_rent == 1)
 		{
 			$pricetype = 'sale_price';
@@ -98,6 +104,7 @@ class Import extends MY_Controller {
 							'description' => $description,
 							'property_title' => $title,
 							'general_area' => $area,
+							'old_area' => $old_area,
 							'sold_rented' => $sold_rented
 						);
 		$this->properties_model->create_property($form_data);				

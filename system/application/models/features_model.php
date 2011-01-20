@@ -25,7 +25,10 @@ class Features_model extends Model {
 	
     function add_feature($id, $feature)
 	{
-		
+		if($feature == NULL) 
+		{
+			return;
+		}
 		$data = array();
 		$this->db->from('features');
 		$this->db->where('features', $feature);

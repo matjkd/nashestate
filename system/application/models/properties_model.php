@@ -32,7 +32,46 @@ class Properties_model extends Model {
 		
 		return FALSE;
 	}
-	
+	function delete_property($id)
+	{
+		//Delete Property
+		$this->db->where('property_ref_no', $id);
+		$this->db->delete('property_main');
+		
+		//Delete features with $id
+		$this->db->where('property_id', $id);
+		$this->db->delete('property_features');
+		
+		//Delete rooms with $id
+		$this->db->where('property_id', $id);
+		$this->db->delete('property_rooms');
+		
+		//Delete images with $id and remove from server
+		$this->db->where('property_id', $id);
+		$this->db->delete('property_images');
+		
+		//delete images from server
+				$this->load->library('ftp');
+
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['port']     = 21;
+				$config['passive']  = FALSE;
+				$config['debug']    = TRUE;
+
+				$this->ftp->connect($config);
+				$this->ftp->delete_dir('/public_html/images/properties/'.$id.'/');
+				
+		
+		//delete featured properties with $id
+		$this->db->where('property_ref', $id);
+		$this->db->delete('featured_properties');
+		
+		//delete premiere properties with $id
+		$this->db->where('property_ref', $id);
+		$this->db->delete('premiere_properties');
+	}
 	function check_id($id)
 	{
 		
