@@ -112,7 +112,7 @@ h1 {
 	background: #fcdfa3;
 }
 .full_content {
-	width:910px;
+	width:100%;
 	min-height:200px;
 
 	float:left;

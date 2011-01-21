@@ -817,6 +817,43 @@ class Properties_model extends Model {
 		
 		return;
 	}
+	function next_property($id)
+	{
+		$this->db->select('property_ref_no');
+		$this->db->from('property_main');
+		$this->db->order_by('property_ref_no', 'asc');
+		$this->db->where('property_ref_no >', $id);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() == 1)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data = $row['property_ref_no'];
+			return $data;
+		}
+		$Q->free_result();
+		
+	}
+	
+	function previous_property($id)
+	{
+		$this->db->select('property_ref_no');
+		$this->db->from('property_main');
+		$this->db->order_by('property_ref_no', 'desc');
+		$this->db->where('property_ref_no <', $id);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() == 1)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data = $row['property_ref_no'];
+			return $data;
+		}
+		$Q->free_result();
+		
+	}
 	
 	function list_premiere_properties($id)
 	{

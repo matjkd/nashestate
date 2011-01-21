@@ -228,8 +228,10 @@ class Properties extends MY_Controller
 					$data['individual'] = "".$row2['firstname']." ".$row2['lastname']."";
 			endforeach;	
 			
-			
-			
+		$data['next_id'] = $this->properties_model->next_property($id);
+		$data['previous_id'] = $this->properties_model->previous_property($id);
+
+		
 		$data['assigned_features'] = $this->properties_model->list_features_property($id);
 		
 		$data['images'] = $this->Gallery_model->get_property_images($id);

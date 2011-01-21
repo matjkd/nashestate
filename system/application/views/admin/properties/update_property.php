@@ -1,5 +1,8 @@
 <?=$this->load->view('admin/properties/property_details_js')?>
 
+
+
+
 <h2>Property ID: <?php echo $property_id;?></h2>
 <div id="tabs">
 	<ul>
@@ -26,4 +29,6 @@
 <div style="clear:both;"></div>
 
 		<?=$this->load->view('admin/properties/rooms')?>
+	<div style="clear:both;"></div>	
+		<?=$this->load->view('admin/controls/property_controls')?>
 
