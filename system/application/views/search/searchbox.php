@@ -62,6 +62,7 @@
 <form name="search" action="<?=base_url()?>search/content" method="post">
 <span id="search_title">Property Search</span>
 
+
 <fieldset>
 <legend>Minimum number of bedrooms:</legend>
 
@@ -70,23 +71,46 @@
 <input type="text" name="beds" id="beds" style="border:0; " />
 </fieldset>
 
+<?php 
+if(isset($search_rentals)) 
+	{
+		
+	}
+	else
+	{
+	?>
 <fieldset>
 
-<legend>Buying Price Range:</legend>
+	<legend>Buying Price Range:</legend>
+	
+	
+	<div id="slider-range"></div>
+	<input type="text" name="amount" id="amount" style="border:0;  " />
+	</fieldset>
+		<?php 
+	}
+?>
+	
 
 
-<div id="slider-range"></div>
-<input type="text" name="amount" id="amount" style="border:0;  " />
-</fieldset>
-
-<fieldset>
-
+<?php 
+if(isset($search_sales)) 
+	{
+		
+	}
+	else
+	{
+	?>
+	<fieldset>
 <legend>Rent Price Range Per Month:</legend>
 
 
 <div id="slider-range-rent"></div>
 <input type="text" name="rent" id="rent" style="border:0; " />
 </fieldset>
+	<?php 
+	}
+?>
 
 <fieldset>
 	<legend>Other</legend>

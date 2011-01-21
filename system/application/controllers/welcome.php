@@ -36,6 +36,19 @@ function content()
 				$data['main'] = "pages/dynamic";
 			
 			}
+			
+	if(($this->uri->segment(4))=="sales")
+			{
+				
+				$data['search_sales'] = 1;
+			
+			}
+	if(($this->uri->segment(4))=="rentals")
+			{
+				
+				$data['search_rentals'] = 1;
+			
+			}
 		
 			$data['content'] =	$this->content_model->get_content($id);
 				
