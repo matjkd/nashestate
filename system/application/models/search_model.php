@@ -56,7 +56,7 @@ class Search_model extends Model {
 		return $data;
 	}
 	
-	function search_rentals($from, $to)
+	function search_rentals($from, $to, $beds)
 	{
 		
 		

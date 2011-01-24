@@ -7,6 +7,7 @@
 <link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/menu2.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/gallery.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/pagination.css' type='text/css' />
 
 <script src="<?=base_url()?>js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.pikachoose.js" type="text/javascript"></script>
@@ -14,6 +15,7 @@
 <script src="<?=base_url()?>js/jquery-ui-1.8.7.custom.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.cycle.all.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.simpletip.js" type="text/javascript"></script>
+<script src="<?=base_url()?>js/jquery.pagination.js" type="text/javascript"></script>
 
 <script src="<?=base_url()?>js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jeditable.js" type="text/javascript"></script>

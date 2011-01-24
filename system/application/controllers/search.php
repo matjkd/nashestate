@@ -15,6 +15,7 @@ class Search extends MY_Controller
 		parent::__construct();
 		$this->load->model('ajax_model');	
 		$this->load->model('search_model');		
+		$this->load->library('pagination');
 	}
 	
 	function index()
@@ -49,6 +50,9 @@ class Search extends MY_Controller
 			$data['rentfrom']  = substr($rent, 0, strpos($rent, "-") );
 			$data['rentto'] = substr($rent, strpos($rent, "-")+strlen('-'));
 			
+		
+			
+			
 			
 			// Purchase Only
 			if($data['buyto'] > 0 AND $data['rentto'] == 0)
@@ -81,6 +85,9 @@ class Search extends MY_Controller
 				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds']);	
 				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds']);		
 			}
+			
+		
+			
 			
 			// Load Template
 			$this->load->vars($data);
