@@ -1,45 +1,29 @@
- <script type="text/javascript">
+  <script type="text/javascript">
         
-            // This is a very simple demo that shows how a range of elements can
-            // be paginated.
-            // The elements that will be displayed are in a hidden DIV and are
-            // cloned for display. The elements are static, there are no Ajax 
-            // calls involved.
-        
-            /**
-             * Callback function that displays the content.
-             *
-             * Gets called every time the user clicks on a pagination link.
-             *
-             * @param {int} page_index New Page index
-             * @param {jQuery} jq the container with the pagination links as a jQuery object
-             */
-            function pageselectCallback(page_index, jq){
-                var new_content = jQuery('#hiddenresult div.result:eq('+page_index+')').clone();
-                $('#Searchresult').empty().append(new_content);
-                return false;
-            }
-           
-            /** 
-             * Initialisation function for pagination
-             */
-            function initPagination() {
-                // count entries inside the hidden content
-                var num_entries = jQuery('#hiddenresult div.result').length;
-              
-                // Create content inside pagination element
-                $("#Pagination").pagination(num_entries, {
-                    callback: pageselectCallback,
-                    items_per_page:'10' // Show only one item per page
-                });
-             }
+  var pagination_options = {
+		  num_edge_entries: 2,
+		  num_display_entries: 8,
+		  callback: pageselectCallback,
+		  items_per_page:5
+		}
+		function pageselectCallback(page_index, jq){
+		  var items_per_page = pagination_options.items_per_page;
+		  var offset = page_index * items_per_page;
+		  var new_content = $('#hiddenresult div.result').slice(offset, offset + items_per_page).clone();
+		  $('#Searchresult').empty().append(new_content);
+		  return false;
+		}
+		function initPagination() {
+		  var num_entries = $('#hiddenresult div.result').length;
+		  // Create pagination element
+		  $("#Pagination").pagination(num_entries, pagination_options);
+		}
             
-            // When document is ready, initialize pagination
-            $(document).ready(function(){      
-                initPagination();
-            });
-            
-            
+		  // When document is ready, initialize pagination
+        $(document).ready(function(){      
+            initPagination();
+        });
+         
             
         </script>
 
@@ -75,13 +59,12 @@
 </div>
 
 
- <div id="Pagination"></div>
-        <br style="clear:both;" />
-        <div id="Searchresult">
-            This content will be replaced when pagination inits.
-        </div>
-        
-       <div id="hiddenresult" style="display:none;">
+  <div id="Searchresult"></div>
+   
+    <div id="Pagination" class="pagination"></div>
+   <br style="clear:both;" />
+  
+	<div id="hiddenresult" style="display:none;">
 		<?php if($properties != NULL)
 		{
 			  	foreach($properties as $property):?>
@@ -93,7 +76,8 @@
 					
 				
 				?>
-					<div id="search_list" class="result">
+			
+					<div id="search_list" class="result" >
 							
 							<div id="search_content">
 							<div style="height:85px;">
@@ -130,6 +114,7 @@
 				else
 				{
 				}
+				
 				endforeach;
 		}
 		?>
@@ -144,7 +129,7 @@
 				{
 				
 				?>
-				<div id="search_list" class="result">
+				<div id="search_list" class="result" >
 						<div id="search_content">
 						<div style="height:85px;">
 						<strong><?=$rentals['property_title']?></strong><br/>
@@ -175,8 +160,8 @@
 				else
 				{
 				}
+				
 				endforeach;
 		}
-		
 		?>
-</div>
+	</div>	
