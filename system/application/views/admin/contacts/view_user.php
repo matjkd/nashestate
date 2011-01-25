@@ -94,6 +94,12 @@ $(".editcompany").editable("<?=site_url('/admin/contacts/edit_company')?>",
 			</div>
 			
 			 	<div class='editclient' id='short_desc'><?=$row['short_desc']?></div>
+			 	
+	<div class='leftcolumn'>
+			Skype ID:
+			</div>
+			
+			 	<div class='editclient' id='skype_id'><?=$row['skype_id']?></div>
 		
 	<div  class='leftcolumn'>
 			Nationality:

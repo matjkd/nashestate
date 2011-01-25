@@ -133,6 +133,11 @@ echo form_dropdown('groups', $options, $row->company_name);
 		
 	<?php } ?>
 	
+	<div class="admin_title">Community Fees</div>
+	<div class="admin_field">
+		<div class="editdetails" id="community_fees" ><?php echo $row->community_fees; ?></div>
+	</div>
+	
 	<div class="admin_title">Available From</div>
 	<div class="admin_field">
 		<div class="editdate" id="available_from" ><?php echo $row->available_from; ?></div>
