@@ -588,6 +588,27 @@ function rooms_table()
 		
 		$this->output->set_output($update);
 	}
+	
+	function add_rooms()
+	{
+		
+		$this->form_validation->set_rules('number_of_rooms','number_of_rooms','required|numeric');	
+		
+		$property_id = $this->input->post('property_id');
+		$room_id = $this->input->post('room_id');
+		$number_of_rooms = $this->input->post('number_of_rooms');
+		
+		if ($this->form_validation->run() == FALSE) // validation hasn'\t been passed
+		{
+			$this->session->set_flashdata('message', 'room number must be a number');
+			redirect('admin/properties/update/'.$property_id.'');
+		}
+		
+		$this->properties_model->add_rooms($room_id, $number_of_rooms, $property_id);
+		
+		redirect('admin/properties/update/'.$property_id);
+		
+	}
 	function add_feature()
 	{
 	$segment_active = $this->uri->segment(4);
