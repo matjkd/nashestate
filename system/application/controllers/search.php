@@ -25,7 +25,8 @@ class Search extends MY_Controller
 	
 	function content()
 	{
-		
+	
+			$data['search_type'] = $this->input->post('search_type');
 			$data['title'] = "searchpage";
 			$data['page'] = "search";
 			$data['menu'] =	$this->content_model->get_menus();
@@ -55,7 +56,7 @@ class Search extends MY_Controller
 			
 			
 			// Purchase Only
-			if($data['buyto'] > 0 AND $data['rentto'] == 0)
+			if(($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1)
 			{
 				$data['list'] = 'purchase only';
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds']);	
@@ -63,7 +64,7 @@ class Search extends MY_Controller
 			}
 			
 			// Rent Only
-			if($data['rentto'] > 0 AND $data['buyto'] == 0)
+			if(($data['rentto'] > 0 && $data['buyto'] == 0 ) || $data['search_type'] == 2)
 			{
 				$data['list'] = 'rent only';
 				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds']);	
@@ -71,7 +72,7 @@ class Search extends MY_Controller
 			}
 			
 			// Search Both rental and purchase limited by price
-			if($data['rentto'] > 0 AND $data['buyto'] > 0)
+			if($data['rentto'] > 0 && $data['buyto'] > 0)
 			{
 				$data['list'] = 'both limited';
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds']);	
@@ -79,7 +80,7 @@ class Search extends MY_Controller
 			}
 			
 			// Search Both rent and purchase with no limit on price
-			if($data['rentto'] == 0 AND $data['buyto'] == 0)
+			if($data['rentto'] == 0 && $data['buyto'] == 0 && !isset($data['search_type']))
 			{
 				$data['list'] = 'both unlimited';
 				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds']);	

@@ -72,9 +72,9 @@
 </fieldset>
 
 <?php 
-if(isset($search_rentals)) 
+if(isset($search_type) && $search_type == 2) 
 	{
-		
+	echo form_hidden('search_type', '2');	
 	}
 	else
 	{
@@ -94,13 +94,14 @@ if(isset($search_rentals))
 
 
 <?php 
-if(isset($search_sales)) 
+if(isset($search_type) && $search_type == 1) 
 	{
-		
+ echo form_hidden('search_type', '1');	
 	}
 	else
 	{
 	?>
+	
 	<fieldset>
 <legend>Rent Price Range Per Month:</legend>
 

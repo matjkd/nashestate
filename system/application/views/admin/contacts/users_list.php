@@ -95,6 +95,8 @@ else
 			<th>Description</th>
 			
 			<th>Actions</th>
+			
+			<th>Main</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -114,6 +116,30 @@ foreach($company_users as $key => $row):
 				
 			<td style="padding:5px;"><a href="../details/<?=$row['user_id']?>">edit</a> | <?="<a href='#' onclick='userconfirm(".$row['user_id'].")'>Delete</a>"?></td>
 		
+			<td style="padding:5px;">
+			<?php 
+			foreach($contact_detail as $key => $row2):
+			
+			if($row2['main_user'] == $row['user_id'])
+			{
+			?>
+			
+			<a href="#"><span  class="ui-icon ui-icon-circle-check">&nbsp;</span></a>
+			
+			<?php 
+			}
+			else
+			{
+			?>
+			
+			<a href="<?=base_url()?>/admin/contacts/make_main_user/<?=$company_id?>/<?=$row['user_id']?>"><span  class="ui-icon ui-icon-plus">&nbsp;</span></a>
+			
+			<?php 	
+			}
+			
+			endforeach;
+			?>
+			</td>
 		</tr>
 		<?php
 

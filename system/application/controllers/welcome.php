@@ -23,7 +23,7 @@ class Welcome extends MY_Controller
 function content()
 	{
 
-		
+	
 		if(($this->uri->segment(3))==NULL)
 			{
 				$id = "home";
@@ -40,13 +40,13 @@ function content()
 	if(($this->uri->segment(4))=="sales")
 			{
 				
-				$data['search_sales'] = 1;
+				$data['search_type'] = 1;
 			
 			}
 	if(($this->uri->segment(4))=="rentals")
 			{
 				
-				$data['search_rentals'] = 1;
+				$data['search_type'] = 2;
 			
 			}
 		
@@ -64,7 +64,7 @@ function content()
 					}
 				endforeach;		
 			$data['leftbox'] = 'search/searchbox';
-			//data['side1'] = 'sidebar/property_menu';
+			$data['side1'] = 'sidebar/property_menu';
 			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			

@@ -887,6 +887,29 @@ class Properties_model extends Model {
 		return $data;
 	}
 	
+	function add_rooms($room_id, $number_of_rooms, $property_id)
+	{
+		//add something to check rooms haven't already been added
+		
+		
+		// add room to property_rooms
+		// room_type is $room_id, property_id is $property_id.
+		// Repeat $number_of_rooms times
+		$x = 0;
+	 	while($x < $number_of_rooms)
+	 	{
+			$new_room = array(
+				'room_type' => $room_id,
+				'property_id' => $property_id,
+						
+			);
+			
+			
+			$this->db->insert('property_rooms', $new_room);
+			$x=$x+1;
+	 	}
+		
+	}
 	
 	
 }

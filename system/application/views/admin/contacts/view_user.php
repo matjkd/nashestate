@@ -109,7 +109,7 @@ $(".editcompany").editable("<?=site_url('/admin/contacts/edit_company')?>",
 			
 	
 			<div class='leftcolumn'>
-			Group Name:
+			<a href="<?=base_url()?>admin/contacts/view_company/<?=$row['company_id']?>">Group Name:</a>
 			</div>
 			
 			 	<div class='editcompany' id='company_name' style="color:#666666;"><?=$row['company_name']?></div>

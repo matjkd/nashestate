@@ -169,6 +169,16 @@ function edit_company($id, $field, $value)
 				return $query->result();
 			}
 		}
+		
+	function make_main_user($id, $company)
+		{
+			$main_user_update = array(
+						'main_user' => $id
+						);
+			$this->db->where('company_id', $company);
+			$update = $this->db->update('company', $main_user_update);
+			return $update;
+		}
 	function add_company()
 	{
 

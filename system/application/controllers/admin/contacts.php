@@ -482,7 +482,15 @@ function user_detail_table()
 		
 		$this->load->vars($data);
 		$this->load->view('/admin/contacts/edit_contact_detail');
-	}		
+	}	
+
+	function make_main_user()
+	{
+		$company = $this->uri->segment(4);
+		$user = $this->uri->segment(5);
+		$this->contacts_model->make_main_user($user, $company);
+		redirect('admin/contacts/view_company/'.$company);
+	}
 	
 	function is_logged_in()
 	{
