@@ -129,7 +129,17 @@ echo form_dropdown('groups', $options, $row->company_name);
 	<div class="admin_field">
 		<div class="editperiod" id="rent_period" ><?php echo $row->rent_period; ?></div>
 	</div>
-				
+	
+	
+		<div class="admin_title">Security Deposit</div>
+	<div class="admin_field">
+		<div class="editdetails" id="security_deposit" ><?php echo $row->security_deposit; ?></div>
+	</div>	
+	
+		<div class="admin_title">Agency Commission</div>
+	<div class="admin_field">
+		<div class="editdetails" id="agency_commission" ><?php echo $row->agency_commission; ?></div>
+	</div>				
 		
 	<?php } ?>
 	

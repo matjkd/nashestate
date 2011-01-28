@@ -4,6 +4,16 @@
 
 
 <h2>Property ID: <?php echo $property_id;?></h2>
+<?php echo form_open('admin/properties/change_property_ref/'.$property_id.'');?>
+<?php
+
+
+
+echo form_input('property_ref', $property_id); 
+ 
+?>
+<?php echo form_submit( 'submit', 'change property ref');  ?>
+<?php echo form_close();?>
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Main Details</a></li>

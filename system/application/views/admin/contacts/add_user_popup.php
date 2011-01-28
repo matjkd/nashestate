@@ -3,8 +3,8 @@
 		
 		var first_name = $("#first_name1"),
 			last_name = $("#last_name1"),
-			
-			allFields = $([]).add(first_name).add(last_name),
+			short_desc = $("#description1"),
+			allFields = $([]).add(first_name).add(last_name).add(short_desc),
 			tips = $(".validateTips");
 		
 		var companyid = "<?=$company_id?>";
@@ -62,6 +62,7 @@
 						$.post('<?=base_url()?>admin/contacts/create_user', {
 							first_name: first_name.val(),
 							last_name: last_name.val(),
+							short_desc: short_desc.val(),
 							id_company: "<?=$company_id?>"
 							
 							});
@@ -104,8 +105,12 @@
 		<br/>
 		<label for="last_name1">Last Name</label><br/>
 		
-		<input type="text" name="last_name1" id="last_name1" class="text ui-widget-content ui-corner-all" />
+			
 		
+		<input type="text" name="last_name1" id="last_name1" class="text ui-widget-content ui-corner-all" />
+		<br/>
+		<label for="description1">Description</label><br/>
+		<input type="text" name="description1" id="description1" class="text ui-widget-content ui-corner-all" />
 		</fieldset>
 	</form>
 </div>

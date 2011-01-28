@@ -252,6 +252,45 @@ class Properties_model extends Model {
 		
 	}
 	
+	function change_property_ref($id, $newref)
+	{
+				$data1 = array(
+               'property_ref_no' => $newref,
+				);
+				$data2 = array(
+               'property_id' => $newref,
+				);
+				$data3 = array(
+               'property_ref' => $newref,
+				);
+		
+		//change property ref in property_main (property_ref_no)
+		$this->db->where('property_ref_no', $id);
+		$this->db->update('property_main', $data1); 
+				
+		//change proeprty ref on images (property_id)
+		$this->db->where('property_id', $id);
+		$this->db->update('property_images', $data2); 
+		
+		//change property ref on rooms (property id)
+		$this->db->where('property_id', $id);
+		$this->db->update('property_rooms', $data2); 
+		
+		//change property ref on features (property_id)
+		$this->db->where('property_id', $id);
+		$this->db->update('property_features', $data2); 
+		
+		//change proprty ref on featured properties (property_ref)
+		$this->db->where('property_ref', $id);
+		$this->db->update('featured_properties', $data3); 
+		
+		//change property ref on premiere properties (property_ref)
+		$this->db->where('property_ref', $id);
+		$this->db->update('premiere_properties', $data3); 
+		
+		return TRUE;
+	}
+	
 	
 	function edit_property1($id, $field, $value)
 	{

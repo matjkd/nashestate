@@ -146,6 +146,42 @@ class Import extends MY_Controller {
 		redirect('admin/import/import_properties', 'refresh');
 		//
 	}
+	function convert_rentals()
+	{
+		$data['rentals'] = $this->import_model->select_rentals();
+		
+		foreach($data['rentals'] as $row):
+
+		$this->import_model->change_rentals($row->property_id);
+
+		endforeach;
+		
+		$this->load->vars($data);
+		$this->load->view('admin/import/convert_rentals');
+		
+	}
+	function convert_salerent()
+	{
+		$data['sales'] = $this->import_model->select_sales();
+		
+		foreach($data['sales'] as $row):
+
+		$this->import_model->change_sales($row->property_id);
+
+		endforeach;
+		
+		$data['rentals'] = $this->import_model->select_rentals();
+		
+		foreach($data['rentals'] as $row2):
+
+		$this->import_model->change_rentals($row2->property_id);
+
+		endforeach;
+		
+		$this->load->vars($data);
+		$this->load->view('admin/import/convert_sales');
+		
+	}
 	function is_logged_in()
 	{
 		

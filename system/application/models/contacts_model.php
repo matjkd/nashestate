@@ -133,7 +133,8 @@ function edit_company($id, $field, $value)
 			$new_user_insert_data = array(
 				'company_id' => $id_company,
 				'firstname' => $this->input->post('first_name'),
-				'lastname' => $this->input->post('last_name')
+				'lastname' => $this->input->post('last_name'),
+				'short_desc' => $this->input->post('short_desc')
 			);
 			
 			$this->db->insert('users', $new_user_insert_data);

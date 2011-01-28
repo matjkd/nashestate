@@ -196,11 +196,11 @@ class Properties extends MY_Controller
 				$this->ftp->rename('/public_html/images/properties/'.$id.'/','/public_html/images/properties/deleted/'.$id.'/');
 				
 				$this->ftp->close();
-			//rmdir('/public_html/images/properties/'.$id.'/');	
+			
 				
 			$this->properties_model->delete_property($id);
 				
-		//redirect('admin/properties/view_deleted');  
+		redirect('admin/properties/view_deleted');  
 	}
 	function update($id)
 	{
@@ -272,6 +272,7 @@ class Properties extends MY_Controller
 			
 			$id_data = array('property_name' => set_value('property_type'));
 			$sale_rent = set_value('sale_rent');
+			
 			// If user enters id it must remove any letters if they've added them
 			// It must then check if they selected sale or rent, if rent add R at the start
 			// It must then check if the ID already exists
@@ -280,7 +281,7 @@ class Properties extends MY_Controller
 			$add_id = $this->input->post('property_ref');
 			$user_id =  $this->input->post('user_id');
 			
-			if($add_id > 0)
+			if(isset($add_id))
 			{
 				
 				//remove letters from $add_id
@@ -411,7 +412,60 @@ class Properties extends MY_Controller
 		redirect('admin/properties/update/'.$id.'/#tabs-1');  
 	}
 	
-
+	function change_property_ref($id)
+	{
+		//check if property ref is not changed
+		$newref = $this->input->post('property_ref');
+		
+		if($newref == $id)
+		{
+			$this->session->set_flashdata('message', 'The id has not changed');
+			redirect('admin/properties/update/'.$id.'');
+		}
+		
+		//check if property ref already exists
+		if($this->properties_model->get_property($newref))
+		{
+			$this->session->set_flashdata('message', 'property exists');
+			redirect('admin/properties/update/'.$id.'');
+		}
+		
+		
+		//change images folder
+				
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['debug'] = TRUE;
+				$this->ftp->connect($config);
+				
+					
+				$this->ftp->mkdir('/public_html/images/properties/'.$newref.'/');
+				
+				$this->ftp->move('/public_html/images/properties/'.$id.'/','/public_html/images/properties/'.$newref.'/');
+			
+			
+				
+				$this->ftp->close();
+		
+		
+		//change property ref in everything
+		
+		if($this->properties_model->change_property_ref($id, $newref))
+		{
+			$this->session->set_flashdata('message', 'property ref changed');
+			redirect('admin/properties/update/'.$newref.'');
+		}
+		else
+		{
+			$this->session->set_flashdata('message', 'error');
+			redirect('admin/properties/update/'.$newref.'');
+		}
+		
+		
+		
+	
+	}
 	
 	function upload_image()
 	{

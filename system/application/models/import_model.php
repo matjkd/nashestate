@@ -60,6 +60,64 @@ class Import_model extends Model {
 	 	}
 		
 	}
+	
+	function select_rentals()
+	{
+		$this->db->from('property_main');
+		
+		$this->db->like('property_ref_no', 'R'); 
+		$this->db->where('sale_rent <', 2);
+		$query = $this->db->get();
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+		
+		
+	}
+	function select_sales()
+	{
+		$this->db->from('property_main');
+		
+		$this->db->not_like('property_ref_no', 'R', 'after'); 
+		$this->db->where('sale_rent !=', 1);
+		//$this->db->or_where('sale_rent', 0);
+		
+		$query = $this->db->get();
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+		
+		
+	}
+	function change_rentals($id)
+	{
+		$form_data = array(
+				
+				'sale_rent' => 2
+			
+				);
+		
+		$this->db->where('property_id', $id);
+		$this->db->update('property_main', $form_data);
+	}
+	
+	function change_sales($id)
+	{
+		$form_data = array(
+				
+				'sale_rent' => 1
+			
+				);
+		
+		$this->db->where('property_id', $id);
+		$this->db->update('property_main', $form_data);
+	}
 	function update_address($id, $address)
 	{
 						
