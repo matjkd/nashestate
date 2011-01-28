@@ -80,4 +80,20 @@ $(document).ready(function(){
 
 </div>
 
-	
+//file uploader
+
+<div id="file-uploader-demo1">      
+    <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
+</div> 
+<script>        
+    jQuery(function(){
+        var uploader = new qq.FileUploader({
+            element: document.getElementById('file-uploader-demo1'),
+            action: '<?=base_url()?>admin/properties/uploader_image',
+            params: {
+            id: '<?=$image->property_id?>'
+            
+        },
+        });           
+    });     
+</script>

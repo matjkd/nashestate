@@ -8,6 +8,7 @@
 <link rel='stylesheet' href='<?=base_url()?>css/menu2.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/gallery.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/pagination.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/fileuploader.css' type='text/css' />
 
 <script src="<?=base_url()?>js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.pikachoose.js" type="text/javascript"></script>
