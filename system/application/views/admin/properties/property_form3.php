@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 </div>
 
-//file uploader
+//multi file uploader under development - Do not use
 
 <div id="file-uploader-demo1">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
