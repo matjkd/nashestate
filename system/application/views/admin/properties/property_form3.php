@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 </div>
 
-//multi file uploader under development - Do not use yet!
+Drag and Drop File upload.
 
 <div id="file-uploader">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
