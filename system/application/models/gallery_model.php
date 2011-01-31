@@ -59,12 +59,68 @@ class Gallery_model extends Model {
 		// add this to database $row['file_name'];
 		$new_image_data = array(
 				'filename' => $row['file_name'],
-				'property_id' => $id
+				'property_id' => $id,
+				'test' => $image_data['full_path']
 		);
 		
 		$this->db->insert('property_images', $new_image_data);
 		
 		endforeach;
+		
+		
+		
+	}
+	
+function do_uploader($id, $fullpath, $filename) {
+		
+			
+		$config = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
+			'maintain_ratio' => true,
+			'width' => 134,
+			'height' => 100
+		
+		);
+		
+		$this->load->library('image_lib', $config);
+		$this->image_lib->resize();
+		$this->image_lib->clear();
+		
+		
+		$config2 = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'/medium',
+			'maintain_ratio' => true,
+			'width' => 400,
+			'height' => 300
+		);
+		
+		$this->image_lib->initialize($config2);
+		$this->image_lib->resize();
+		$this->image_lib->clear();
+		
+			$config3 = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'',
+			'maintain_ratio' => true,
+			
+		);
+		$this->image_lib->initialize($config3);
+		$this->image_lib->resize();
+		
+		// add this to database $row['file_name'];
+		$new_image_data = array(
+				'filename' => $filename,
+				'property_id' => $id
+		);
+		
+		$this->db->insert('property_images', $new_image_data);
+		
+		
+			
+			
+		
 		
 		
 		

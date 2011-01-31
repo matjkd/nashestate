@@ -15,7 +15,8 @@ class Images extends MY_Controller
 		parent::__construct();
 		$this->is_logged_in();	
 		
-		$this->load->model('gallery_model');
+		$this->load->model('Gallery_model');
+		
 	}
 	
 	function index()
@@ -37,6 +38,13 @@ class Images extends MY_Controller
 		redirect('admin/properties/update/'.$id.'#tabs-3');   // or whatever logic needs to occur
 		
 	}
+	function convert_image()
+	{
+		$id = $this->input->post('id');
+		$path = $this->input->post('path');
+			$filename = $this->input->post('filename');
+		$this->Gallery_model->do_uploader($id, $path, $filename);
+	}
 	
 	function editable_images()
 	{
@@ -44,7 +52,7 @@ class Images extends MY_Controller
 		$data['id'] = $this->input->post('elementid');
 		$data['field'] = 'printable';
 		$data['value'] = $this->input->post('value');
-		$this->gallery_model->edit_images($data['id'], $data['field'], $data['value']);
+		$this->Gallery_model->edit_images($data['id'], $data['field'], $data['value']);
 		
 	
 					
@@ -63,7 +71,7 @@ class Images extends MY_Controller
 		$data['id'] = $this->input->post('elementid');
 		$data['field'] = 'print_order';
 		$data['value'] = $this->input->post('value');
-		$this->gallery_model->edit_images($data['id'], $data['field'], $data['value']);
+		$this->Gallery_model->edit_images($data['id'], $data['field'], $data['value']);
 			
 		$update = $this->input->post('value');
 		
@@ -74,7 +82,7 @@ class Images extends MY_Controller
 	{
 		$property_id = $this->input->post('id');
 		$image_id = $this->input->post('image_id');
-		$this->gallery_model->delete_image($image_id);
+		$this->Gallery_model->delete_image($image_id);
 		
 		redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
 	}

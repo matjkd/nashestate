@@ -204,7 +204,15 @@ class Properties extends MY_Controller
 	}
 	function update($id)
 	{
-			
+		//get uploader directory
+		
+		$files = array();
+		$files['files'] = array(
+			'title' => 'Uploaded Files',
+			'files' => get_filenames('./images/uploads/files'),
+		);
+		$data['upload_url'] = base_url() . 'images/uploads/';
+		$data['files'] = $files;	
 		
 		$data['property_types'] = $this->ajax_model->get_property_types();
 		
@@ -467,20 +475,9 @@ class Properties extends MY_Controller
 	
 	}
 	
-	function upload_image()
-	{
-		//Move this function to the images model
-		$id = $this->input->post('id');
-		if($this->input->post('upload'))
-		{
-			$this->Gallery_model->do_upload($id);
-		}
-		
-		
-		
-		redirect('admin/properties/update/'.$id.'#tabs-3');   // or whatever logic needs to occur
-		
-	}
+	
+	
+	
 	function editable_property1()
 	{
 	

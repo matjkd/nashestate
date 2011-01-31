@@ -71,7 +71,7 @@ $(document).ready(function(){
 <div id="upload">
 	<?php 
 		echo realpath(APPPATH . '../images/properties');
-		echo form_open_multipart('admin/properties/upload_image');
+		echo form_open_multipart('admin/images/upload_image');
 		echo form_hidden('id', $property_id);
 		echo form_upload('userfile');
 		echo form_submit('upload', 'Upload');
@@ -80,20 +80,62 @@ $(document).ready(function(){
 
 </div>
 
-//multi file uploader under development - Do not use
+//multi file uploader under development - Do not use yet!
 
-<div id="file-uploader-demo1">      
+<div id="file-uploader">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
 </div> 
+<div id="test"></div>
 <script>        
-    jQuery(function(){
-        var uploader = new qq.FileUploader({
-            element: document.getElementById('file-uploader-demo1'),
-            action: '<?=base_url()?>admin/properties/uploader_image',
-            params: {
-            id: '<?=$image->property_id?>'
-            
-        },
-        });           
-    });     
+$().ready(function(){
+    $('form.confirm-delete').live('submit',function(){
+        var file = $(this).find('input[name=file]').val();
+        return confirm('Are you sure you want to delete ' + file + '?');
+    });
+    $('.qq-upload-fail, .qq-upload-success').live('dblclick', function(){
+        $(this).fadeOut();
+    });
+    $('input.read-only').live('click',function(){
+        $(this).select();
+    });
+    //add the uploader to the interface if needed
+    (function(){
+        var element = document.getElementById('file-uploader');
+        if(element){
+            new qq.FileUploader({
+                element: element,
+                action: base_url + 'uploadr/upload',
+                params: {
+                    propertyid: <?=$property_id?>
+                    },
+
+                
+                onComplete: function(id, fileName, responseJSON){
+                    if(responseJSON.success == false){
+                        var $list = $('.qq-upload-list');
+                        //add the error message to the element
+                        $list.find('li:nth-child('+(id + 1)+')').append('<span class="error small">'+responseJSON.error+'</span>');
+                    } else {
+                        var property_id = <?=$property_id?>;
+                        var fullpath = "/home/nh001/public_html/images/uploads/" + fileName;
+                       
+
+                         $.post('<?=base_url()?>admin/images/convert_image/', 
+                                {
+                            	id: property_id,
+                                path: fullpath,
+                                filename: fileName
+                                        });
+                         
+                        $('#test').append(property_id + fullpath + fileName);
+                    }
+
+                  
+                    }
+            });
+        }
+
+       
+    })();
+});  
 </script>
