@@ -146,6 +146,79 @@ class Import extends MY_Controller {
 		redirect('admin/import/import_properties', 'refresh');
 		//
 	}
+	
+	function images()
+	{
+		$data['images'] = $this->import_model->get_images();
+		$this->load->vars($data);
+		$this->load->view('admin/import/import_images');
+		
+		
+		
+	}
+	
+	function convert_images()
+	{
+		$id = $this->input->post('property_id');
+		$fullpath = $this->input->post('fullpath');
+		$param1 = $this->input->post('filename');
+		$image_id = $this->input->post('image_id');
+		
+		$filename = substr_replace($param1, '.', strrpos($param1, '_'), strlen('_'));
+		
+		$this->import_model->do_uploader($id, $fullpath, $filename);
+		
+		$this->import_model->mark_image_imported($image_id);
+		redirect('admin/import/images', 'refresh');
+		
+	}
+	function bulk_convert_images()
+	{
+		$data['images'] = $this->import_model->get_images();
+		
+		foreach($data['images'] as $row):
+		
+			$filelocation = "../public_html/images/fotos/".$row->Foto;
+			$fullpath = "/home/nh001/public_html/images/fotos/";
+			$filenamethumb = "../public_html/images/fotos/th_".$row->Foto;
+			if(!file_exists($filelocation))
+			{
+   					if(file_exists($filenamethumb)){
+  
+ 					$thumbfile = "th_".$row->Foto; 
+	
+					$id = $row->id_property;
+					$fullpath = $fullpath;
+					$param1 = $thumbfile;
+					$image_id = $row->Cod_img;
+					
+					$filename = substr_replace($param1, '.', strrpos($param1, '_'), strlen('_'));
+		
+					$this->import_model->do_uploader($id, $fullpath, $filename);
+		
+					$this->import_model->mark_image_imported($image_id);
+   					}
+			}
+			else
+			{
+			$id = $row->id_property;
+			$fullpath = $fullpath;
+			$param1 = $row->Foto;
+			$image_id = $row->Cod_img;
+		
+		$filename = substr_replace($param1, '.', strrpos($param1, '_'), strlen('_'));
+		
+		$this->import_model->do_uploader($id, $fullpath, $filename);
+		
+		$this->import_model->mark_image_imported($image_id);
+		
+			}
+		
+		endforeach;
+		
+		
+		
+	}
 	function convert_rentals()
 	{
 		$data['rentals'] = $this->import_model->select_rentals();

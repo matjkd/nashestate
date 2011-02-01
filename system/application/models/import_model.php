@@ -139,6 +139,130 @@ class Import_model extends Model {
 				);
 		
 		$this->db->where('id_property', $id);
-		$this->db->update('Propiedades', $form_data);
+		$this->db->update('imagen', $form_data);
+	}
+	
+	function mark_image_imported($id)
+	{
+		$form_data = array(
+				
+				'imported' => 6
+			
+				);
+		
+		$this->db->where('Cod_img', $id);
+		$this->db->update('imagen', $form_data);
+	}
+	
+	
+	function get_images()
+	{
+		$this->db->from('imagen');
+		
+		$this->db->where('imagen.imported', NULL);
+		$this->db->or_where('imagen.imported', '1');
+		$this->db->or_where('imagen.imported', '2');
+		$this->db->or_where('imagen.imported', '3');
+		$this->db->or_where('imagen.imported', '4');
+			$this->db->or_where('imagen.imported', '5');
+		$this->db->join('Propiedades', 'Propiedades.Cod = imagen.Cod_not', 'right');	
+		
+		$this->db->limit(1500);
+		$query = $this->db->get();
+		
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+	}
+	
+	function do_uploader($id, $fullpath, $param1) {
+	
+		$this->gallery_path = './images/properties';
+		$this->gallery_path_url = base_url().'images/properties/';
+			
+		$param1 = str_replace(" ","_",$param1);	
+		$filename2 = str_replace(".","_",$param1);
+		$filename = substr_replace($filename2, '.', strrpos($filename2, '_'), strlen('_'));
+
+
+
+		$fullpath = $fullpath.$filename;
+			//check if filename exists in database for id
+			$this->db->where('property_id', $id);
+			$this->db->where('filename', $filename);
+			$query = $this->db->get('property_images');
+					
+			if ($query->num_rows() == 1)
+					{
+						$thumblocation = "../public_html/images/properties/".$id."/thumbs/".$filename;
+							$config = array(
+						'source_image' => $fullpath,
+						'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
+						'maintain_ratio' => true,
+						'width' => 134,
+						'height' => 100
+		
+					);
+		
+					$this->load->library('image_lib', $config);
+					$this->image_lib->resize();
+					$this->image_lib->clear();
+					return;
+					}
+
+		
+		
+		$config = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
+			'maintain_ratio' => true,
+			'width' => 134,
+			'height' => 100
+		
+		);
+		
+		$this->load->library('image_lib', $config);
+		$this->image_lib->resize();
+		$this->image_lib->clear();
+		
+		
+		$config2 = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'/medium',
+			'maintain_ratio' => true,
+			'width' => 400,
+			'height' => 300
+		);
+		
+		$this->image_lib->initialize($config2);
+		$this->image_lib->resize();
+		$this->image_lib->clear();
+		
+			$config3 = array(
+			'source_image' => $fullpath,
+			'new_image' => $this->gallery_path . '/'.$id.'',
+			'maintain_ratio' => true,
+			
+		);
+		$this->image_lib->initialize($config3);
+		$this->image_lib->resize();
+		
+		// add this to database $row['file_name'];
+		$new_image_data = array(
+				'filename' => $filename,
+				'property_id' => $id
+		);
+		
+		$this->db->insert('property_images', $new_image_data);
+		
+		
+		
+		
+				
+		
+		
 	}
 }

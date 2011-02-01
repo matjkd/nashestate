@@ -54,7 +54,13 @@ class Search extends MY_Controller
 		
 			
 			
-			
+	// Search Both rent and purchase with no limit on price
+			if($data['rentto'] == 0 && $data['buyto'] == 0)
+			{
+				$data['list'] = 'both unlimited';
+				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds']);	
+				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds']);		
+			}
 			// Purchase Only
 			if(($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1)
 			{
@@ -79,13 +85,7 @@ class Search extends MY_Controller
 				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds']);	
 			}
 			
-			// Search Both rent and purchase with no limit on price
-			if($data['rentto'] == 0 && $data['buyto'] == 0 && !isset($data['search_type']))
-			{
-				$data['list'] = 'both unlimited';
-				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds']);	
-				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds']);		
-			}
+			
 			
 		
 			

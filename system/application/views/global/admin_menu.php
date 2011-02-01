@@ -36,7 +36,7 @@
 	        <a href="<?=base_url()?>index.php?admin/features/view_features"><span>Features</span></a></li>
 	        
 	         <li <?php if($page=='config'){echo "class='current'";}?>>
-	        <a href="<?=base_url()?>index.php?admin/import/import_properties"><span>Import Properties from old site</span></a></li>
+	        <a href="<?=base_url()?>index.php?admin/import/images"><span>Import Photos</span></a></li>
 	        </ul>
         
         

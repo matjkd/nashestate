@@ -71,9 +71,23 @@ class Gallery_model extends Model {
 		
 	}
 	
-function do_uploader($id, $fullpath, $filename) {
+function do_uploader($id, $fullpath, $param1) {
 		
-			
+$param1 = str_replace(" ","_",$param1);	
+$filename2 = str_replace(".","_",$param1);
+$filename = substr_replace($filename2, '.', strrpos($filename2, '_'), strlen('_'));
+
+
+$fullpath = $fullpath.$filename;
+	//check if filename exists in database for id
+$this->db->where('property_id', $id);
+$this->db->where('filename', $filename);
+$query = $this->db->get('property_images');
+			if ($query->num_rows() == 1)
+			{
+				return;
+			}
+
 		$config = array(
 			'source_image' => $fullpath,
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
@@ -118,10 +132,17 @@ function do_uploader($id, $fullpath, $filename) {
 		$this->db->insert('property_images', $new_image_data);
 		
 		
-			
+	//delete files in uploads folder		
 			
 		
-		
+				$config['hostname'] = $this->config_ftp_host;
+				$config['username'] = $this->config_ftp_user;
+				$config['password'] = $this->config_ftp_password;
+				$config['debug'] = TRUE;
+				$this->ftp->connect($config);
+				$this->ftp->delete_file('/public_html/images/uploads/'.$filename);
+			
+				$this->ftp->close();
 		
 		
 	}

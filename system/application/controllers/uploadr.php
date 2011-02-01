@@ -50,7 +50,7 @@ class Uploadr extends MY_Controller {
 		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 		header('Content-type: application/json');
 
-		$validTypes = array('jpeg', 'jpg', 'pdf', 'png', 'gif', 'bmp');
+		$validTypes = array('jpeg', 'JPG', 'JPEG', 'jpg', 'pdf', 'png', 'gif', 'bmp');
 		//determine what kind of upload we are getting from the client
 		if (isset($param1)) {
 			$class = 'UploadFileXhr';

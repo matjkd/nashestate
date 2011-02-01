@@ -105,9 +105,7 @@ $().ready(function(){
             new qq.FileUploader({
                 element: element,
                 action: base_url + 'uploadr/upload',
-                params: {
-                    propertyid: <?=$property_id?>
-                    },
+                
 
                 
                 onComplete: function(id, fileName, responseJSON){
@@ -117,8 +115,8 @@ $().ready(function(){
                         $list.find('li:nth-child('+(id + 1)+')').append('<span class="error small">'+responseJSON.error+'</span>');
                     } else {
                         var property_id = <?=$property_id?>;
-                        var fullpath = "/home/nh001/public_html/images/uploads/" + fileName;
-                       
+                        var fullpath = "/home/nh001/public_html/images/uploads/";
+                        
 
                          $.post('<?=base_url()?>admin/images/convert_image/', 
                                 {
@@ -126,8 +124,8 @@ $().ready(function(){
                                 path: fullpath,
                                 filename: fileName
                                         });
-                         
-                        $('#test').append(property_id + fullpath + fileName);
+                        
+                        $('#test').html("<input type='button' value='Reload Page' onClick='window.location.reload()'>");
                     }
 
                   
