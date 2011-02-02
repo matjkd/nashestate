@@ -164,10 +164,10 @@ class Import_model extends Model {
 		$this->db->or_where('imagen.imported', '2');
 		$this->db->or_where('imagen.imported', '3');
 		$this->db->or_where('imagen.imported', '4');
-			$this->db->or_where('imagen.imported', '5');
+		$this->db->or_where('imagen.imported', '5');
 		$this->db->join('Propiedades', 'Propiedades.Cod = imagen.Cod_not', 'right');	
-		
-		$this->db->limit(1500);
+		$this->db->order_by('imagen.Cod_not', 'DESC');
+		$this->db->limit(1);
 		$query = $this->db->get();
 		
 		if($query->num_rows > 0);

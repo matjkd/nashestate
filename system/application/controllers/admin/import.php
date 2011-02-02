@@ -150,6 +150,31 @@ class Import extends MY_Controller {
 	function images()
 	{
 		$data['images'] = $this->import_model->get_images();
+		//foreach($data['images'] as $row):
+		//$image_id = $row->Cod_img;
+		//$filelocation = "../public_html/images/fotos/".$row->Foto;
+		
+		//$newlocationthumb = "../public_html/images/properties/".$row->id_property."/thumbs/".$row->Foto;
+		
+		
+		
+		//if(!file_exists($filelocation))
+		//	{
+				
+		//		$this->import_model->mark_image_imported($image_id);
+			
+		//	}
+		
+		//if(file_exists($newlocationthumb))
+		//	{
+		//		$this->import_model->mark_image_imported($image_id);
+		//	}
+			
+			
+		
+		//endforeach;
+		
+		
 		$this->load->vars($data);
 		$this->load->view('admin/import/import_images');
 		

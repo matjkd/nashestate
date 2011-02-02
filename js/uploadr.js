@@ -16,9 +16,7 @@ $().ready(function(){
             new qq.FileUploader({
                 element: element,
                 action: base_url + 'uploadr/upload',
-                params: {
-                    id: <?=$property_id?>
-                    },
+               
                 
                 
                 onComplete: function(id, fileName, responseJSON){
