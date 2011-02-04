@@ -145,7 +145,17 @@
 								<br/>
 						</p>
 						</div>	
-						<div style="float:left;"><strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: &euro;<?=$rentals['rent_price']?>  <?=$rentals['rent_period']?></strong></div>
+						<div style="float:left;"><strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: &euro;<?=$rentals['rent_price']?> 
+							 <?php 
+							 if(isset($rentals['rent_period']))
+							 {
+							 	$rentals['rent_period'];
+							 }
+							 else
+							 {
+							 	echo "Monthly";
+							 }
+							 ?></strong></div>
 						
 				</div>
 				<div id="search_thumb">
