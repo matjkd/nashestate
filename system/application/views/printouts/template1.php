@@ -25,20 +25,20 @@ Villa: Test
 <div style="clear:both; height:5px;">&nbsp;</div>
 
 <table width=560px border="0" style="padding: 0; margin: 0;  border-collapse: collapse;">
-<tr>
-<td width=268px>
-<div style="height: 230px; width: 268px; float:left; padding:3px; color:#444444;  background-color: #ffffff"> 
-left box
-</div> 
-</td>
-<td width=10px>
-</td>
-<td width=268px>
-<div style="height: 230px; width: 268px; float:right; padding:3px; color:#000000;  background-color: #f9dba8"> 
-right box
-</div>
-</td> 
-</tr>
+	<tr>
+		<td width=268px>
+			<div style="height: 230px; width: 268px; float:left; padding:3px; color:#444444;  background-color: #ffffff"> 
+				left box
+			</div> 
+		</td>
+		<td width=10px>
+		</td>
+		<td width=268px>
+			<div style="height: 230px; width: 268px; float:right; padding:3px; color:#000000;  background-color: #f9dba8"> 
+				right box
+			</div>
+		</td> 
+	</tr>
 </table>
 
 <div style="clear:both; height:5px;">&nbsp;</div>

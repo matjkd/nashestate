@@ -177,6 +177,22 @@ $query = $this->db->get('property_images');
 			
 		return FALSE;
 	}
+	function get_pdf_images($id)
+	{
+		$this->db->from('property_images');
+		$this->db->where('property_id', $id);
+		$this->db->where('prinatable', 1);
+		$this->db->order_by('print_order');
+		$this->db->limit(6);
+		$query = $this->db->get();
+		
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+			
+		return FALSE;
+	}
 	
 	function edit_images($id, $field, $value)
 	{
