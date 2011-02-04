@@ -168,6 +168,7 @@ $query = $this->db->get('property_images');
 	{
 		$this->db->from('property_images');
 		$this->db->where('property_id', $id);
+		$this->db->order_by('print_order');
 		$query = $this->db->get();
 		
 		if($query->num_rows > 0);

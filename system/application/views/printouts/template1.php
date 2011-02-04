@@ -22,7 +22,7 @@ body {
 		
 				<td width="240px" align="right">
 					<?php 
-					if($header->sale_rent == 1) {?>
+					if($header->sale_rent == 1) { ?>
 					<strong>Price: <?=$header->sale_price?>  &#0128;</strong>
 					<?php } 
 					if($header->sale_rent == 2) {?>
@@ -36,8 +36,7 @@ body {
 									 {
 									 	echo "Monthly";
 									 }
-									 ?>
-					<?php } ?>
+					 } ?>
 				</td>
 			</tr>
 		</table>
@@ -248,7 +247,7 @@ case 2:
 					echo "<ul style='padding-left:2px;'>";
 					foreach($property_features as $feature): ?>
 					
-						<li style='display: inline; padding-right: 5px;' >|&nbsp;<?=$feature['features']?></li>
+						<li style='display: inline; padding-right: 3px;' ><?=$feature['features']?>,</li>
 												
 					<?php endforeach; 
 					echo "</ul>";
