@@ -12,16 +12,73 @@ body {
 <div style="clear:both; height:5px;">&nbsp;</div>
 
 <div style="height: 20px; width: 554px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444"> 
-Villa: Test
+	Villa: Test
 </div> 
 
 <div style="clear:both; height:5px;">&nbsp;</div>
+<?php 
+		$x = 0;
+	foreach($property_images as $image):
+		
+		$x = $x + 1;
+		
+		$mainImage[$x] = "$image->property_id"."/"."$image->filename"; 
+	
+	endforeach;
+?>
 
-<?php foreach($property_images as $image):?>
-<?php $mainImage = "$image->property_id"."/"."$image->filename"; ?>
-<?php endforeach;?>
+<?php 
 
-<img style="width: 560px;" src="/home/nh001/www/images/properties/<?=$mainImage?>"/>
+if(count($property_images) < 4) 	
+	{
+	$imagecount = 1;
+	} 
+if(count($property_images) < 6 && count($property_images) >= 4) 	
+	{
+	$imagecount = 4;
+	}
+if(count($property_images) >= 6) 	
+	{
+	$imagecount = 6;
+	}
+	
+?>
+
+<?php 
+switch ($imagecount) {
+	
+	case 1:
+		
+		?>
+		<img style="width: 560px;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
+		<?php
+		break;
+	
+	case 4:
+		?>
+		<img style="width: 275px; padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 275px; padding-right:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 275px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[4]?>"/>
+		<?php 
+		break;
+	
+	case 6:
+		?>
+		<img style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 132px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[4]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[5]?>"/>
+		<img style="width: 132px; height:92px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[6]?>"/>
+		<?php		
+		break;
+	
+}
+
+?>
+
+
 <div style="clear:both; height:5px;">&nbsp;</div>
 
 <table width=560px border="0" style="padding: 0; margin: 0;  border-collapse: collapse;">

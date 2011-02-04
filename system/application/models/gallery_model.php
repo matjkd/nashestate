@@ -181,7 +181,7 @@ $query = $this->db->get('property_images');
 	{
 		$this->db->from('property_images');
 		$this->db->where('property_id', $id);
-		$this->db->where('prinatable', 1);
+		$this->db->where('printable', 1);
 		$this->db->order_by('print_order');
 		$this->db->limit(6);
 		$query = $this->db->get();
