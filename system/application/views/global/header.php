@@ -1,7 +1,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
- <script type="text/javascript">
+
+
+<script type="text/javascript">
       //base url for javascript actions
       var base_url = "<?php echo base_url() . index_page() ?>";
  </script>
@@ -43,4 +45,22 @@
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAo44bloMTDYnLwRZTm304PxQh_Ytr1GqVXW-fsJC4NQ6h-tLSDBRmgPM5OldMPUZBxfoE58RMo9tlvw" type="text/javascript"></script>
 
 <title><?=$title?></title>
+ <meta name="description" content="Nash Homes">
+  <meta name="author" content="Redstudio Design Limited">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+  
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="<?=base_url()?>js/modernizr-1.6.min.js"></script>
 </head>
