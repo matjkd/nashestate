@@ -15,25 +15,29 @@ echo form_input('property_ref', $property_id);
 <?php echo form_submit( 'submit', 'change property ref');  ?>
 <?php echo form_close();?>
 <div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Main Details</a></li>
-		<li><a href="#tabs-2">Details 2</a></li>
-		<li><a href="#tabs-3">Pictures</a></li>
-		<li><a href="#tabs-4">Sales Data</a></li>
-	</ul>
-	<div id="tabs-1">
+		<ul>
+			<li><a href="#tabs-1">Main Details</a></li>
+			<li><a href="#tabs-2">Details 2</a></li>
+			<li><a href="#tabs-3">Pictures</a></li>
+			<li><a href="#tabs-4">Sales Data</a></li>
+			<li><a href="#tabs-5">Create User</a></li>
+		</ul>
+		<div id="tabs-1">
 	
 		<?=$this->load->view('admin/properties/update_property_1')?>
 	
-	</div>
-	<div id="tabs-2">
+		</div>
+		<div id="tabs-2">
 		<?=$this->load->view('admin/properties/property_form2')?>
-	</div>
-	<div id="tabs-3">
+		</div>
+		<div id="tabs-3">
 		<?=$this->load->view('admin/properties/property_form3')?>
 		</div>
 		<div id="tabs-4">
 		<?=$this->load->view('admin/properties/property_form4')?>
+		</div>
+		<div id="tabs-5">
+		<?=$this->load->view('admin/properties/property_form5')?>
 		</div>
 </div>
 <div style="clear:both;"></div>
