@@ -80,35 +80,35 @@ $(document).ready(function(){
 
 </div>
 
-File Upload
+Drag and Drop File upload.
 
 <div id="file-uploader">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
 </div> 
+
 <div id="test"></div>
 <script>        
-$().ready(function(){
+$(document).ready(function(){
     $('form.confirm-delete').live('submit',function(){
         var file = $(this).find('input[name=file]').val();
         return confirm('Are you sure you want to delete ' + file + '?');
     });
+   
     $('.qq-upload-fail, .qq-upload-success').live('dblclick', function(){
         $(this).fadeOut();
     });
+    
     $('input.read-only').live('click',function(){
         $(this).select();
     });
-    //add the uploader to the interface if needed
-    function(){
+    
+
         var element = document.getElementById('file-uploader');
         if(element){
             new qq.FileUploader({
                 element: element,
                 action: base_url + 'uploadr/upload',
-                params: {
-                    propertyid: <?=$property_id?>
-                    },
-
+               
                 
                 onComplete: function(id, fileName, responseJSON){
                     if(responseJSON.success == false){
@@ -119,8 +119,7 @@ $().ready(function(){
                     else
                     {
                         var property_id = <?=$property_id?>;
-                        var fullpath = "/home/nh001/public_html/images/uploads/" + fileName;
-                       
+                        var fullpath = "/home/nh001/public_html/images/uploads/" 
 
                          $.post('<?=base_url()?>admin/images/convert_image/', 
                                 {
@@ -129,15 +128,14 @@ $().ready(function(){
                                 filename: fileName
                                         });
                          
-                        $('#test').append(property_id + fullpath + fileName);
+                        $('#test').html("<input type='button' value='Reload Page' onClick='window.location.reload()'>");
                     }
 
                   
                     }
             });
         }
-
        
-    });
+   
 });  
 </script>
