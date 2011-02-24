@@ -3,11 +3,6 @@
 
 
 
-<script type="text/javascript">
-      //base url for javascript actions
-      var base_url = "<?php echo base_url() . index_page() ?>";
- </script>
-    
     
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.7.custom.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table_jui.css' type='text/css' />

@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 </div>
 
-Drag and Drop File upload.
+File Upload
 
 <div id="file-uploader">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         
@@ -99,13 +99,15 @@ $().ready(function(){
         $(this).select();
     });
     //add the uploader to the interface if needed
-    (function(){
+    function(){
         var element = document.getElementById('file-uploader');
         if(element){
             new qq.FileUploader({
                 element: element,
                 action: base_url + 'uploadr/upload',
-                
+                params: {
+                    propertyid: <?=$property_id?>
+                    },
 
                 
                 onComplete: function(id, fileName, responseJSON){
@@ -113,10 +115,12 @@ $().ready(function(){
                         var $list = $('.qq-upload-list');
                         //add the error message to the element
                         $list.find('li:nth-child('+(id + 1)+')').append('<span class="error small">'+responseJSON.error+'</span>');
-                    } else {
+                    } 
+                    else
+                    {
                         var property_id = <?=$property_id?>;
-                        var fullpath = "/home/nh001/public_html/images/uploads/";
-                        
+                        var fullpath = "/home/nh001/public_html/images/uploads/" + fileName;
+                       
 
                          $.post('<?=base_url()?>admin/images/convert_image/', 
                                 {
@@ -124,8 +128,8 @@ $().ready(function(){
                                 path: fullpath,
                                 filename: fileName
                                         });
-                        
-                        $('#test').html("<input type='button' value='Reload Page' onClick='window.location.reload()'>");
+                         
+                        $('#test').append(property_id + fullpath + fileName);
                     }
 
                   
@@ -134,6 +138,6 @@ $().ready(function(){
         }
 
        
-    })();
+    });
 });  
 </script>
