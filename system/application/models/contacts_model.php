@@ -251,6 +251,23 @@ function add_contact_detail()
 		
 	
 	}
+function add_contact_detail2($type, $value, $company_id, $userid)
+	{
+		//add validation  here	
+		
+		
+		$new_contact_insert_data = array(
+			'company_id' => $company_id,
+			'company_contact_type' => $type,
+			'company_contact_detail' => $value,
+			'company_userid' => $userid
+		);
+		
+		$this->db->insert('company_contact', $new_contact_insert_data);
+		
+		
+	
+	}
 function get_addresses($id, $type)
 	{
 		$this->db->from('company_address');

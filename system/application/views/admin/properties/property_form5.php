@@ -25,10 +25,13 @@ THIS DOESN'T WORK YET. I'LL REMOVE THIS MESSAGE WHEN IT DOES. THANK YOU!<br/>
 	<?=form_label('Email', 'email')?>
 	<input type="text" name="email" id="email" style="width:150px; "/><br/>
 	
-	<?=form_label('Phone', 'phone')?>
-	<input type="text" name="phone" id="phone" style="width:150px; "/><br/>
+	<?=form_label('Home Phone', 'home_phone')?>
+	<input type="text" name="home_phone" id="home_phone" style="width:150px; "/><br/>
+	
+	<?=form_label('Work Phone', 'work_phone')?>
+	<input type="text" name="work_phone" id="work_phone" style="width:150px; "/><br/>
 	
 	<?=form_label('Mobile', 'mobile')?>
 	<input type="text" name="mobile" id="mobile" style="width:150px; "/><br/>
-
+<?php echo form_hidden('company_name', 'N/A'); ?>
 <?php echo form_submit( 'submit', 'Add New Contact to this property');  ?>

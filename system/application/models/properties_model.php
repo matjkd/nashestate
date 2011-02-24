@@ -183,19 +183,32 @@ class Properties_model extends Model {
 		);
 		return $new_array;
 	}
-	function change_owner($id)
+	function change_owner($id, $new_owner)
 	{
-		$new_owner = $this->input->post('groups');
-				
-				$form_data = array(
+		
+			$this->db->where('company_id', $new_owner);
+			$query = $this->db->get('users');
+			if($query->num_rows > 0);
+			{
+				foreach($query->result_array() as $row):
+					
+				$user_id = $row['user_id'];
+					
+				endforeach;
+			}
+					
+		$form_data = array(
 				
 				'company_id' => $new_owner,
-				'user_id' => NULL
+				'user_id' => $user_id
 				
 				);
 		
 		$this->db->where('property_ref_no', $id);
 		$this->db->update('property_main', $form_data);
+		
+	
+		
 	}
 	function update_property1()
 	{

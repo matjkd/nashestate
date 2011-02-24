@@ -414,9 +414,68 @@ class Properties extends MY_Controller
 		
 	}
 	
+	function add_contact($id)
+	{
+		//create contact
+		$this->form_validation->set_rules('firstname', 'firstname', 'trim|required');
+		$this->form_validation->set_rules('lastname', 'lastname', 'trim|required');
+		
+		if($this->form_validation->run() == FALSE)
+			{
+			$this->session->set_flashdata('message', 'Enter a Firstname and Lastname');
+			redirect('/admin/properties/update/'.$id.'#tabs-5');
+			}
+			
+			// Create the company called firstname lastnames group
+			
+			$companydata['company_id'] = $this->contacts_model->add_company();
+				
+				foreach($companydata['company_id'] as $row2):
+				$company_id = $row2['company_id'];
+				
+				endforeach;
+			
+			// Add the user to above company
+			$newuserdata['user_id'] = $this->contacts_model->quick_add_user($company_id);	
+				foreach($newuserdata['user_id'] as $row3):
+				$user_id = $row3['user_id'];
+				endforeach;
+			
+			$this->session->set_flashdata('message', 'New Person Created');
+			
+		
+		//add email address
+		$contact_type = "Email";
+		$contact_detail = $this->input->post('email');
+		$this->contacts_model->add_contact_detail2($contact_type, $contact_detail, $company_id, $user_id);
+		
+		//add home phone
+		$contact_type = "Home Tel";
+		$contact_detail = $this->input->post('home_phone');
+		$this->contacts_model->add_contact_detail2($contact_type, $contact_detail, $company_id, $user_id);
+		
+		//add work phone
+		$contact_type = "Work Tel";
+		$contact_detail = $this->input->post('work_phone');
+		$this->contacts_model->add_contact_detail2($contact_type, $contact_detail, $company_id, $user_id);
+		
+		//add mobile
+		$contact_type = "Mobile";	
+		$contact_detail = $this->input->post('mobile');
+		$this->contacts_model->add_contact_detail2($contact_type, $contact_detail, $company_id, $user_id);
+		
+		
+		//Assign User to the current property
+		$this->properties_model->change_owner($id, $company_id);
+		
+		//refresh back to page 1 of property editing page
+		redirect('/admin/properties/update/'.$id.'#tabs-1');
+	}
+	
 	function change_owner($id)
 	{
-		$this->properties_model->change_owner($id);
+		$new_owner = $this->input->post('groups');
+		$this->properties_model->change_owner($id, $new_owner);
 		redirect('admin/properties/update/'.$id.'/#tabs-1');  
 	}
 	
