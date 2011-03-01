@@ -7,7 +7,7 @@ $options = array(
                   
                 );
 ?>
-THIS DOESN'T WORK YET. I'LL REMOVE THIS MESSAGE WHEN IT DOES. THANK YOU!<br/>
+<br/>
 
 
 <?php echo form_open('admin/properties/add_contact/'.$property_id.'');?>
