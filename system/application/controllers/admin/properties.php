@@ -277,7 +277,7 @@ class Properties extends MY_Controller
 		}
 		else // passed validation proceed to post success logic
 		{
-			
+			Any views or opinions presented in this e-mail are solely of the author and do not necessarily represent those of the company. E-mail may be susceptible to data corruption, interception, unauthorised amendment, viruses and delays or the consequences thereof. Accordingly, this email and any attachments are opened at your own risk. 
 			$id_data = array('property_name' => set_value('property_type'));
 			$sale_rent = set_value('sale_rent');
 			
@@ -288,8 +288,8 @@ class Properties extends MY_Controller
 			
 			$add_id = $this->input->post('property_ref');
 			$user_id =  $this->input->post('user_id');
-			
-			if(isset($add_id))
+			$company_id = $this->input->post('company_id');
+			if($add_id != "")
 			{
 				
 				//remove letters from $add_id
@@ -312,8 +312,8 @@ class Properties extends MY_Controller
 				
 					if($check == 1)
 					{
-					$this->session->set_flashdata('message', 'ID exists '.$check.'  '.$id_result.'');
-					redirect('admin/properties/add/'.$user_id.'', 'refresh');
+					$this->session->set_flashdata('message', 'ID exists '.$check.' trying to add id '.$id_result.' for user '.$user_id.'');
+					redirect('admin/properties/add/'.$company_id.'', 'refresh');
 					}
 				
 				

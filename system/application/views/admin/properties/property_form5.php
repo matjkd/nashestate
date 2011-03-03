@@ -35,3 +35,5 @@ $options = array(
 	<input type="text" name="mobile" id="mobile" style="width:150px; "/><br/>
 <?php echo form_hidden('company_name', 'N/A'); ?>
 <?php echo form_submit( 'submit', 'Add New Contact to this property');  ?>
+
+<?php echo form_close();?>
