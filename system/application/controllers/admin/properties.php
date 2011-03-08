@@ -277,7 +277,7 @@ class Properties extends MY_Controller
 		}
 		else // passed validation proceed to post success logic
 		{
-			Any views or opinions presented in this e-mail are solely of the author and do not necessarily represent those of the company. E-mail may be susceptible to data corruption, interception, unauthorised amendment, viruses and delays or the consequences thereof. Accordingly, this email and any attachments are opened at your own risk. 
+			
 			$id_data = array('property_name' => set_value('property_type'));
 			$sale_rent = set_value('sale_rent');
 			
