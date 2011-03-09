@@ -2,9 +2,16 @@
 $(document).ready(function() {
 	oTable = $('#contacts').dataTable({
 		"bJQueryUI": true,
-		"bStateSave": true,
+		"bScrollInfinite": true,
+		"bScrollCollapse": true,
+		"sScrollY": "400px",
+		"bPaginate": true,
+		"bLengthChange": true,
+		"bFilter": true,
+		"bSort": true,
 		"aoColumns": [null, null, null, {"bSearchable": false}],
-		"sPaginationType": "full_numbers"
+		"sPaginationType": "full_numbers",
+		"iDisplayLength": 20
 	});
 } );
 <!--
