@@ -26,6 +26,19 @@ function confirmation(id) {
 	}
 }
 //-->
+
+<!--
+function groupconfirmation(id) {
+	var answer = confirm("are you sure you want to delete this group (including all users and properties associated with it)?")
+	if (answer){
+		
+		window.location = "<?=base_url()?>admin/contacts/delete_group/"+ id;
+	}
+	else{
+		alert("nothing deleted!")
+	}
+}
+//-->
 </script>
 <div id="search_heading"><?php $this->load->view('admin/contacts/quick_add_company');?></div>
 <div id="search_heading"><?php $this->load->view('admin/contacts/quick_add_user');?></div>
@@ -54,7 +67,7 @@ if($row['company_name']==NULL)
 					
 			<td style="padding:5px;"><?=$row['company_type']?></td>
 			
-			<td style="padding:5px;"><?=$row['user_id']?> <?="<a href='#' onclick='confirmation(".$row['user_id'].")'>Delete</a> | <a href='".base_url()."admin/properties/add/".$row['company_id']."'>Add Property"?></a></td>
+			<td style="padding:5px;"><?="<a href='#' onclick='confirmation(".$row['user_id'].")'>Del User</a> | <a href='#' onclick='groupconfirmation(".$row['company_id'].")'>Del Group</a> | <a href='".base_url()."admin/properties/add/".$row['company_id']."'>Add Property"?></a></td>
 		</tr>
 		<?php endforeach;  ?>
 	</tbody>
