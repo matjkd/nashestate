@@ -78,13 +78,25 @@ class Properties_model extends Model {
 	
 	function create_sales_data($id)
 	{
-		$new_sales_data = array(
-				'property_id' => $id
-		);
-		$this->db->insert('sales_data', $new_sales_data);
+		$this->db->where('property_id', $id);
+		$this->db->from('sales_data');	
+		$query = $this->db->get();
 		
+		if($query->num_rows == 1)
+			{
+				return;
+			}
 			
-		return;
+		if($query->num_rows == 0)
+			{
+					$new_sales_data = array(
+							'property_id' => $id
+					);
+					$this->db->insert('sales_data', $new_sales_data);
+					
+						
+					return;
+			}
 	}
 	
 	function get_property($id)
@@ -304,6 +316,15 @@ class Properties_model extends Model {
 		return TRUE;
 	}
 	
+	function edit_salesdata($id, $field, $value)
+	{
+		$user_update_data = array(
+					$field => $value
+					);
+		$this->db->where('property_id', $id);
+		$update = $this->db->update('sales_data', $user_update_data);
+		return $update;
+	}
 	
 	function edit_property1($id, $field, $value)
 	{

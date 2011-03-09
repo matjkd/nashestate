@@ -592,7 +592,26 @@ class Properties extends MY_Controller
 		
 		$this->output->set_output($update);
 	}
+	function yesnojeditable()
+	{
+	
+		$data['id'] = $this->input->post('id');
+		$data['field'] = $this->input->post('elementid');
+		$data['value'] = $this->input->post('value');
+		
+	//create sales data if it doesn't exist already
+	$this->properties_model->create_sales_data($data['id']);
+		
+		
+		$this->properties_model->edit_sales_data($data['id'], $data['field'], $data['value']);
+		
+		if($data['value'] == 0 ) {$update = 'No';}
+					
+		if($data['value'] == 1 ) {$update = 'Yes';}
 
+	$this->output->set_output($update);
+	}
+	
 	function editable_images()
 	{
 		//Move this function to the images model

@@ -1,4 +1,5 @@
 <?=$this->load->view('admin/properties/sales_data_js')?>
+
 	<?php foreach($property_details as $key => $row): ?>
 <div class="admin_left">
  <table>
@@ -18,10 +19,10 @@
 	
 	<tr>
 	        <td class='leftcolumn'>
-			Sign Board
+			Sign Board 
 	        </td>
 			<td>
-				<div class="signboard" id="sign_board" style="width:150px; float:left;">
+				<div class="yesnojeditable" id="sign_board" style="width:150px; float:left;">
 				<?php 
 				if($row->sign_board==0) {echo "No";}; 
 				if($row->sign_board==1) {echo "Yes";};
@@ -34,7 +35,7 @@
 			Advertising
 	        </td>
 			<td>
-				<div class="advertising" id="advertising" style="width:150px; float:left;">
+				<div class="yesnojeditable" id="advertising" style="width:150px; float:left;">
 				<?php 
 				if($row->advertising==0) {echo "No";}; 
 				if($row->advertising==1) {echo "Yes";};
@@ -48,7 +49,7 @@
 			Signed Sales Contract
 	        </td>
 			<td>
-				<div class="signed_contract" id="signed_sales_contract" style="width:150px; float:left;">
+				<div class="yesnojeditable" id="signed_sales_contract" style="width:150px; float:left;">
 				<?php 
 				if($row->signed_sales_contract==0) {echo "No";}; 
 				if($row->signed_sales_contract==1) {echo "Yes";};
@@ -62,10 +63,24 @@
 			Nash homes Exclusive
 	        </td>
 			<td>
-				<div class="exclusive" id="exclusive" style="width:150px; float:left;">
+				<div class="yesnojeditable" id="exclusive" style="width:150px; float:left;">
 				<?php 
 				if($row->exclusive==0) {echo "No";}; 
 				if($row->exclusive==1) {echo "Yes";};
+				?>
+				</div>
+			</td>
+	</tr>
+	
+	<tr>
+	        <td class='leftcolumn'>
+			Premiere Property 
+	        </td>
+			<td>
+				<div class="yesnojeditable" id="premiere" style="width:150px; float:left;">
+				<?php 
+				if($row->premiere==0) {echo "No";}; 
+				if($row->premiere==1) {echo "Yes";};
 				?>
 				</div>
 			</td>
@@ -75,7 +90,7 @@
 </div>
 <div class="admin_left">
 <?=$this->load->view('admin/properties/featured_property_form')?>
-<?=$this->load->view('admin/properties/premiere_property_form')?>
+
 </div>
 	<?php endforeach; ?>
 <div style="clear:both;"></div>

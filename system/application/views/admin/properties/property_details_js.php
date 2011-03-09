@@ -41,7 +41,22 @@ $(document).ready(function() {
 
     $(".yesno").editable("<?=site_url('admin/properties/editable_property1')?>", 
     	    {
-    	data   : " {'1':'Yes','0':'No', 'selected':'<?php echo $row->active; ?>'}",
+    	data   : " {'1':'Yes','0':'No'}",
+     	    type   : "select",
+     	    onblur : "submit",
+     	    style  : "inherit",
+     	    id   : 'elementid',     
+     	        submitdata : function() 
+     	        {
+     	        return {id : uid};
+    }
+    
+        	        
+    	    });
+    	    
+    $(".yesnojeditable").editable("<?=site_url('admin/properties/yesnojeditable')?>", 
+    	    {
+    	data   : " {'1':'Yes','0':'No'}",
      	    type   : "select",
      	    onblur : "submit",
      	    style  : "inherit",
