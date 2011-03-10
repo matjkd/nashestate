@@ -83,6 +83,69 @@ function content()
 		
 			$this->load->view('template');
 	}
+function test()
+	{
+
+	
+		if(($this->uri->segment(3))==NULL)
+			{
+				$id = "home";
+				$data['main'] = "pages/dynamic";
+			
+			}
+		else
+			{
+				$id = $this->uri->segment(3);
+				$data['main'] = "pages/dynamic";
+			
+			}
+			
+	if(($this->uri->segment(4))=="sales")
+			{
+				
+				$data['search_type'] = 1;
+			
+			}
+	if(($this->uri->segment(4))=="rentals")
+			{
+				
+				$data['search_type'] = 2;
+			
+			}
+		
+			$data['content'] =	$this->content_model->get_content($id);
+				
+				foreach($data['content'] as $row):
+				
+					$data['title'] = $row['content_title'];
+					$data['main_text'] = $row['content'];
+					$data['page'] = $row['menu_top'];
+					
+					if($row['slideshow'] != NULL)
+					{
+					$data['slideshow'] = $row['slideshow'];
+					}
+				endforeach;		
+			$data['leftbox'] = 'search/searchbox';
+			$data['side1'] = 'sidebar/property_menu';
+			$data['side2'] = 'sidebar/property_of_week';
+			$data['general_areas'] = $this->ajax_model->get_general_area();	
+			
+			if(isset($data['search_rentals']))
+				{
+					$data['featured_property'] = $this->properties_model->get_featured_rental();	
+				}
+				else
+				{
+					$data['featured_property'] = $this->properties_model->get_featured_property();
+				}
+			
+			$data['menu'] =	$this->content_model->get_menus();
+			$data['content'] = "content/standard";
+			$this->load->vars($data);
+		
+			$this->load->view('template/standard/main');
+	}
 	
 	function contact_page()
 	{
