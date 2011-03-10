@@ -60,11 +60,19 @@ body {
 
 <?php 
 //determine image layout based on number of prinatbale images
-if(count($property_images) < 4) 	
+if(count($property_images) < 2) 	
 	{
+	//number of images and therefore the case number	
 	$imagecount = 1;
+	
+	//height of body
 	$bodyheight = "90px";
 	} 
+if(count($property_images) < 4 && count($property_images) >= 2) 	
+	{
+	$imagecount = 2;
+	$bodyheight = "270px";
+	}
 if(count($property_images) < 6 && count($property_images) >= 4) 	
 	{
 	$imagecount = 4;
@@ -96,6 +104,14 @@ switch ($imagecount) {
 		?>
 		<img style="width: 560px;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
 		<?php
+		break;
+	
+	case 2:
+		?>
+		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
+		
+		<?php 
 		break;
 	
 	case 4:
@@ -143,8 +159,8 @@ if($rooms['room_type'] == 13)
 	$parking = $parking + 1;
 }
 
-//Count Bathrooms
-if($rooms['room_type'] == 2)
+//Count Bathrooms bathroom is room type 2 and en suite bathroom is room type 11
+if($rooms['room_type'] == 2 || $rooms['room_type'] == 11)
 {
 	$bathrooms = $bathrooms + 1;
 }
