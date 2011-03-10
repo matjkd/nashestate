@@ -5,7 +5,7 @@
 </p>
 <div id="slider-range-max"></div>
 
-<div id="min" class="myDivClass" style="">100</div>
+<div id="min" class="myDivClass" style="">0</div>
 <div id="max" class="myDivClass" style="">100000</div>
 <p>
 	<label for="price">Price range:</label>

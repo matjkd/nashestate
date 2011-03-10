@@ -253,7 +253,8 @@ $(function() {
 			range: true,
 			min: minvar,
 			max: maxvar,
-			values: [ 100, 10000 ],
+			step: 25000,
+			values: [ 0, 100000 ],
 			slide: function( event, ui ) {
 				$( "#price" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 			}
