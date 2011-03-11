@@ -233,33 +233,5 @@ jQuery.fn.pngFix = function(settings) {
 	    });
 	 });
 	 
-//searchbox sliders
-$(function() {
-		$( "#slider-range-max" ).slider({
-			range: "max",
-			min: 1,
-			max: 10,
-			value: 2,
-			slide: function( event, ui ) {
-				$( "#rooms" ).val( ui.value );
-			}
-		});
-		$( "#rooms" ).val( $( "#slider-range-max" ).slider( "value" ) );
-		
-		var minvar = $('#min').text();
-		var maxvar = $('#max').text();
-		
-		$( "#slider-range" ).slider({
-			range: true,
-			min: minvar,
-			max: maxvar,
-			step: 25000,
-			values: [ 0, 100000 ],
-			slide: function( event, ui ) {
-				$( "#price" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-			}
-		});
-		$( "#price" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-			" - $" + $( "#slider-range" ).slider( "values", 1 ) );
-	});
+
 
