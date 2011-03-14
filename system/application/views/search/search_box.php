@@ -6,7 +6,9 @@
      .three { display:none; }
      #back { height:23px; width:23px; background:transparent; float:right; display:none;}
 </style>
+		
 
+		
 <div class="searchbox">
 <img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_search.png"/>		
 <div id="back" style="cursor:pointer;"><img src="<?=base_url()?>images/template/standard/graphic/left_arrow.png" /></div>
@@ -71,7 +73,7 @@
 					</div>
 				
 					<div style="height:196px;"class="searchbox_content">
-					&nbsp;
+					<?=$this->load->view('search/rentals')?>
 					</div>
 					<div class="searchbox_content2">
 					Search by ID

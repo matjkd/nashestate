@@ -100,19 +100,65 @@ function test()
 			
 			}
 			
-	if(($this->uri->segment(4))=="sales")
-			{
+			//get the max sale and rent price to put in the dropdowns in the search box.
+			//This section could probably be moved somewhere so it loads automatically 
+			//get highest price of property from database
+			$data['max_sale'] = $this->properties_model->get_max_price('1');	
+			foreach($data['max_sale'] as $row):
 				
-				$data['search_type'] = 1;
-			
-			}
-	if(($this->uri->segment(4))=="rentals")
-			{
+				// determines how much to round up by
+				$data['saleroundup'] = 50000;
+				// determines how much to increment by in dropdown
+				$data['saleincrements'] = 50000;
 				
-				$data['search_type'] = 2;
+				$saleroundup = 1 / $data['saleroundup'];
+				$value = $row['sale_price'];
+				$data['max_sale_round'] = (ceil($value * $saleroundup) / $saleroundup );
+				
+			endforeach;
 			
-			}
+			//get highest price of rental property from database
+			$data['max_rent'] = $this->properties_model->get_max_price('2');	
+			foreach($data['max_rent'] as $row):
+				
+				// determines how much to round up by
+				$data['rentroundup'] = 1000;
+				// determines how much to increment by in dropdown
+				$data['rentincrements'] = 50;
+				
+				$rentroundup = 1 / $data['rentroundup'];
+				$value = $row['monthly_rent'];
+				$data['max_rent_round'] = (ceil($value * $rentroundup) / $rentroundup );
+				
+			endforeach;
+			
+			
+				// Creates arrays for incremental sale prices and rental prices. This should be moved to a controller eventually
+				
+				$saleprices = array();
+								
+				for ($saleprice = $data['saleincrements'] ; $saleprice <= $data['max_sale_round']+1; $saleprice=$saleprice+$data['saleincrements'] ) {
+					
+					$saleformat = number_format($saleprice);
+					$saleprices[$saleprice] = $saleformat;
+					
+				}
+				
+				$rentprices = array();
+								
+				for ($rentprice = $data['rentincrements']; $rentprice <= $data['max_rent_round']+1; $rentprice=$rentprice+$data['rentincrements']) {
+					$rentformat = number_format($rentprice);
+					$rentprices[$rentprice] = $rentformat;
+					
+				}
 		
+				$data['saleprices'] = $saleprices;
+				$data['rentprices'] = $rentprices;
+			
+			//end of getting max prices
+			
+				
+			//get the page content
 			$data['content'] =	$this->content_model->get_content($id);
 				
 				foreach($data['content'] as $row):

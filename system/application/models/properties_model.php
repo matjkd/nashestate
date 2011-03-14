@@ -117,6 +117,39 @@ class Properties_model extends Model {
 		return FALSE;
 	}
 	
+	//type is rental or sales - 1 for sales 2 for rentals
+	function get_max_price($type)
+	{
+		$this->db->from('property_main');
+		$this->db->where('sale_rent', $type);
+		if($type == 1)
+			{
+				//select highest sale price	
+				$this->db->select_max('sale_price');
+			}
+		else if($type == 2)
+			{
+				//select highest rental price
+				$this->db->select_max('monthly_rent');
+			}
+			
+			$query = $this->db->get();
+			
+			if($query->num_rows == 1)
+			{
+			 	foreach ($query->result_array() as $row)
+			
+				$data[] = $row;
+				
+				return $data;
+			}
+			else
+				{
+					return false;
+				
+				}
+	}
+	
 	function get_contact_properties($id, $type)
 	{
 		$this->db->from('property_main');

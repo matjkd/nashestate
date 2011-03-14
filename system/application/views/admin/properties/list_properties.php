@@ -2,13 +2,14 @@
 $(document).ready(function() {
 	oTable = $('#contacts').dataTable({
 		"bJQueryUI": true,
-			"bScrollInfinite": true,
+		"bScrollInfinite": true,
 		"bScrollCollapse": true,
 		"sScrollY": "400px",
 		"bPaginate": true,
 		"bLengthChange": true,
 		"bFilter": true,
 		"bSort": true,
+		"aaSorting": [[ 0, "desc" ]],
 		"aoColumns": [null, null, null, null, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}],
 		"sPaginationType": "full_numbers",
 		"iDisplayLength": 20
@@ -55,7 +56,7 @@ function wipe(id) {
 			<th>Vendor</th>
 			<th>Address 1</th>
 			<th>Type</th>
-			<th>Price</th>
+			<th>Price(&euro;)</th>
 			<th>Date Available</th>
 			<th>Active</th>
 			<th>Actions</th>
@@ -70,7 +71,7 @@ if($row['sale_rent'] == 1)
 }
 if($row['sale_rent'] == 2)
 {
-	$price = $row['rent_price'] ." ". $row['rent_period'];
+	$price = $row['rent_price'];
 }
 
 ?>
@@ -79,7 +80,7 @@ if($row['sale_rent'] == 2)
 			<td style="padding:5px;"><?=$row['company_name']?></td>
 			<td style="padding:5px;"><?=$row['property_address1']?></td>		
 			<td style="padding:5px;"><?=$row['property_type_name']?></td>
-			<td style="padding:5px;">&euro;<?=$price?></td>
+			<td style="padding:5px;"><?=$price?></td>
 			<td style="padding:5px;"><?=$row['available_from']?></td>
 			<td style="padding:5px;"><?php if($row['active']==0) {echo "No";};	if($row['active']==1) {echo "Yes";};?></td>
 			<?php if($row['archived'] == 1)
