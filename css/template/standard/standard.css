@@ -1,6 +1,21 @@
 body {
 background:url('/~nh001/images/template/standard/graphic/background.jpg') repeat-x #caddee;
+color: #5d5d5d;
+margin:0 auto;
+font-size:12px;
+font-family:'Lucida Grande','Verdana',sans-serif;
 }
+
+p {
+	line-height:20px;
+	font-size:12px;
+	margin:10px 0 10px 0;
+}
+ul {
+ margin-top:10px;
+ line-height:20px;
+ }
+
 .logo {
 	height: 70px;
 	
@@ -90,7 +105,41 @@ overflow: hidden;
 
 }
 
-
+.login {
+	height:0px;
+	background:#fdbc5f;
+	width:960px;
+	margin: 0 auto;
+}
+#toppanel {
+    position: relative;
+    top: 0px;
+    width: 960px;
+    z-index: 25;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#panel {
+    width: 960px;
+    position: relative;
+ 
+    height: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    overflow: hidden;
+    text-align: left;
+}
+#panel_contents {
+    background:#fcb034;
+    height: 100%;
+    width: 904px;
+    position: absolute;
+    z-index: -1;
+    color:#ffffff;
+    padding:5px 30px;
+}
 
 /**
  *********************************************
@@ -238,3 +287,35 @@ div#menu li.back {
     margin: -1px 5px 0 0px;
 }
 
+/* Pagination */
+.pagination {
+            font-size: 80%;
+        }
+        
+.pagination a {
+    text-decoration: none;
+	border: solid 1px #666;
+	color: #000;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+	min-width:1em;
+	text-align:center;
+}
+
+.pagination .current {
+    background: #f7cc86;
+    color: #ae7628;
+	border: solid 1px #666;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}

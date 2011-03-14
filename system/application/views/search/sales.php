@@ -1,8 +1,12 @@
+<form name="search" action="<?=base_url()?>search/content" method="post">
 Minimum Cost
-<?=form_dropdown('min_price', $saleprices, $saleincrements)?>
+<?=form_dropdown('buyfrom', $saleprices, $saleincrements)?>
 <br/>
-<br/>
+
 
 
 Maximum Cost
-<?=form_dropdown('min_price', $saleprices, $saleincrements)?>
+<?=form_dropdown('buyto', $saleprices, "$max_sale_round")?>
+
+<input type="submit" value="Submit" />
+</form>

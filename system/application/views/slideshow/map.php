@@ -34,5 +34,5 @@
   }
 </script> 
 
-<div id="map_canvas" style="width: 600px; height: 300px;">map div</div> 
+<div id="map_canvas" style="width: 640px; height: 303px;">map div</div> 
 

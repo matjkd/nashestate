@@ -1,24 +1,3 @@
-<script type="text/javascript">
-$(document).ready(function() {
-	$("div.panel_button").animate({top: "0px"});
-	$("div.panel_button").click(function(){
-		$("div#panel").animate({height: "55px"}).animate({height: "48px"}, "fast");
-		$("div.panel_button").animate({top: "48px"}).toggle();
-
-		
-	});	
-	
-   $("div#hide_button").click(function(){
-		$("div#panel").animate({height: "0px"}, "fast");
-		$("div.panel_button").animate({top: "0px"});
-	
-   });	
-	
-});
-
-
-</script>
-
 
  
   

@@ -13,7 +13,10 @@
 </head>
 
 <body onload="initialize()" onunload="GUnload()">
+<?php $this->load->view('global/ie6warning'); ?>
 
+<div class="login"></div>
+<?php $this->load->view('global/login'); ?>
 
 
 
@@ -35,43 +38,61 @@
     		
     </header>
    	
+
+   	
+   	
    	<div class="container_24">
 		<div class="topmenu"><?php $this->load->view('global/top_menu'); ?></div>
 	</div>
      
-    <div class="container_24">
-		<div class="grid_8">
-			<?=$this->load->view('search/search_box')?>
-		</div>
-		<div class="grid_16">
-			<div class="slidebox">
+	<div id="content" class="container_24">
+
+	<div id="" class="grid_8 ">
+		<?=$this->load->view('search/search_box')?>
+		
+	<div style="height:8px;" class="clear">	</div>	
+		<div class="property_week">
 				
-				<div id="slide">
-					<img src="<?=base_url()?>images/slides/slide1.jpg"/>
-				</div>
-				
-			</div>
-		</div>
-	</div>    
-	
-	<div style="height:8px;" class="clear">	</div>
-	
-	  <div class="container_24">
-		<div class="grid_8">
-			<div class="property_week">
 				<img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_of_the_week.png"/>
 				
-			</div>
 		</div>
-		<div class="grid_16">
-			<div class="contentbox">
+	<div style="height:8px;" class="clear">	</div>		
+		
+		
+		
+	</div>
+	
+	
+	<div id="" class="grid_16 ">
+	
+	
+					<?php if(isset($slideshow))
+					{ ?>
+					<div class="slidebox">
+					<?=$this->load->view('slideshow/'.$slideshow.'')?> 
+					
+					
+					</div>
+					
+					<div style="height:8px;" class="clear">	</div> 
+					<?php }
+					
+					
+					?>	
+					<div class="contentbox">
+							
+						<?php $this->load->view($content); ?>
+					</div>
+					
 				
-				<img width="245px" height="23px" src="<?=base_url()?>images/template/standard/titles/welcome.png"/>
-				
-			</div>
-		</div>
-	</div>   
-	<div style="height:8px;" class="clear">	</div> 
+	</div>
+	
+	
+	
+	</div>
+   	 
+     
+   
     <footer>
 		<div class="container_24">
 				<div class="grid_24">

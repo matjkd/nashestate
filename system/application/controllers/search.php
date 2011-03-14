@@ -39,22 +39,19 @@ class Search extends MY_Controller
 			// Deal with data sent from search form
 			$data['beds'] = $this->input->post('beds');
 			
-			//split up buy amount
-			$amount = $this->input->post('amount');
-			$amount = str_replace("€", "", $amount);
-			$data['buyfrom']  = substr($amount, 0, strpos($amount, "-") );
-			$data['buyto'] = substr($amount, strpos($amount, "-")+strlen('-'));
 			
-			//split up rent amount
-			$rent = $this->input->post('rent');
-			$rent = str_replace("€", "", $rent);
-			$data['rentfrom']  = substr($rent, 0, strpos($rent, "-") );
-			$data['rentto'] = substr($rent, strpos($rent, "-")+strlen('-'));
+		
+			$data['buyfrom']  = $this->input->post('buyfrom');
+			$data['buyto'] =  $this->input->post('buyto');
+			
+		
+			$data['rentfrom']  =  $this->input->post('rentfrom');
+			$data['rentto'] =  $this->input->post('rentto');
 			
 		
 			
 			
-	// Search Both rent and purchase with no limit on price
+			// Search Both rent and purchase with no limit on price
 			if($data['rentto'] == 0 && $data['buyto'] == 0)
 			{
 				$data['list'] = 'both unlimited';
@@ -92,7 +89,7 @@ class Search extends MY_Controller
 			
 			// Load Template
 			$this->load->vars($data);
-			$this->load->view('template');
+			$this->load->view('template/standard/main');
 			
 	}
 	

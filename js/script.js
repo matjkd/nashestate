@@ -167,14 +167,14 @@ jQuery.fn.pngFix = function(settings) {
 //map
 
 
-  var nash = new google.maps.LatLng(51.575456,0.400926);
-  var parliament = new google.maps.LatLng(51.575456,0.400926);
+  var nash = new google.maps.LatLng(39.535222, 2.571909);
+  var parliament = new google.maps.LatLng(39.535222, 2.571909);
   var marker;
   var map;
  
   function initialize() {
     var mapOptions = {
-      zoom: 12,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       center: nash
     };
@@ -199,11 +199,7 @@ jQuery.fn.pngFix = function(settings) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-//jquery ui buttons
-	$(function() {
-		$("button, input:submit").button();
-		
-		});
+
 		
 //searchbox fader
 	$(function() {
@@ -233,5 +229,67 @@ jQuery.fn.pngFix = function(settings) {
 	    });
 	 });
 	 
+//slideshow
+$(document).ready(function() {
+    $('#s1').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		speedIn:  2000, 
+	    speedOut: 2000, 
+	   timeout:   5000 
+	});
+	$('.cycle').css("display", "block");
+});
 
+$(function() {
+    // run the code in the markup!
+	$('#s2').cycle({ 
+	    fx: 'blindX',
+	    speed:    500, 
+	    timeout:  7000  
+	});
+    
+});
 
+//login dropdown
+$(document).ready(function() {
+	$("div.panel_button").animate({top: "0px"});
+	$("div.panel_button").click(function(){
+		$("div#panel").animate({height: "55px"}).animate({height: "48px"}, "fast");
+		$("div.panel_button").animate({top: "48px"}).toggle();
+
+		
+	});	
+	
+   $("div#hide_button").click(function(){
+		$("div#panel").animate({height: "0px"}, "fast");
+		$("div.panel_button").animate({top: "0px"});
+	
+   });	
+	
+});
+
+//search results pagination
+  var pagination_options = {
+		  num_edge_entries: 2,
+		  num_display_entries: 8,
+		  callback: pageselectCallback,
+		  items_per_page:5
+		}
+		function pageselectCallback(page_index, jq){
+		  var items_per_page = pagination_options.items_per_page;
+		  var offset = page_index * items_per_page;
+		  var new_content = $('#hiddenresult div.result').slice(offset, offset + items_per_page).clone();
+		  $('#Searchresult').empty().append(new_content);
+		  return false;
+		}
+		function initPagination() {
+		  var num_entries = $('#hiddenresult div.result').length;
+		  // Create pagination element
+		  $("#Pagination").pagination(num_entries, pagination_options);
+		}
+            
+		  // When document is ready, initialize pagination
+        $(document).ready(function(){      
+            initPagination();
+        });
+         

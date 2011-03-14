@@ -22,8 +22,7 @@ function __construct()
 		$data['title'] = 'Login';
 		
 		$this->load->vars($data);
-		$this->load->view('template');
-		
+		redirect('welcome');		
 	}
 	function validate_credentials()
 	{		
@@ -67,7 +66,7 @@ function __construct()
 		else // incorrect username or password
 		{
 		$this->session->set_flashdata('message', "<strong>Alert:</strong> Login Failed.");
-		redirect('welcome/');
+		redirect('welcome');	
 			
 			
 		}
@@ -77,7 +76,7 @@ function __construct()
 	{
 		$data['main'] = '/user/register';
 		$this->load->vars($data);
-		$this->load->view('template');
+		redirect('welcome');	
 		//$this->template->load('template', 'user/register');
 	}
 	
@@ -130,7 +129,7 @@ function __construct()
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in == true)
 		{
-			redirect($this->uri->uri_string());
+			redirect('welcome');	
 		}		
 		$this->index();
 	}
@@ -142,7 +141,7 @@ function __construct()
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in == true)
 		{
-			redirect('welcome/');
+			redirect('welcome');	
 		}		
 	}	
 
