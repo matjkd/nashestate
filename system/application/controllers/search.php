@@ -31,7 +31,7 @@ class Search extends MY_Controller
 			$data['page'] = "search";
 			$data['menu'] =	$this->content_model->get_menus();
 			$data['main_text'] = "searchpage";
-			$data['content'] = "search/searchlist";
+			$data['content'] = "search/search_list";
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			$data['side2'] = 'sidebar/refine';
 			$data['leftbox'] = 'search/searchbox';

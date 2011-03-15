@@ -1,6 +1,6 @@
 body {
 background:url('/~nh001/images/template/standard/graphic/background.jpg') repeat-x #caddee;
-color: #5d5d5d;
+color: #444444;
 margin:0 auto;
 font-size:12px;
 font-family:'Lucida Grande','Verdana',sans-serif;
@@ -15,7 +15,9 @@ ul {
  margin-top:10px;
  line-height:20px;
  }
-
+li {
+line-height:20px;
+}
 .logo {
 	height: 70px;
 	
@@ -53,6 +55,27 @@ background:#c08628;
 margin-top:1px;
 padding:8px;
 color:#ffffff;
+}
+
+/*search results*/
+
+#search_content {
+border:1px solid #dedede;
+background:#ffffff;
+height: 140px;
+padding:5px 0px 5px 0px;
+margin-bottom:5px;
+	margin-right:5px;
+	-moz-box-shadow: 1px 2px 3px #292929;
+	-webkit-box-shadow: 1px 2px 3px #292929;
+	box-shadow: 1px 2px 3px #292929;
+}
+#thumb {
+width:180px;
+
+display:inline;
+	float: left;
+	position: relative;
 }
 .slider_border {
 padding:5px;
@@ -222,7 +245,7 @@ div#menu ul ul a.parent:hover span {
 div#menu a {
     padding: 0 20px 0 5px;
     line-height: 20px;
-    color: #000000;
+    color: #444444;
 }
 div#menu span {
     margin-top: 5px;
