@@ -48,21 +48,23 @@ class Search extends MY_Controller
 			$data['rentfrom']  =  $this->input->post('rentfrom');
 			$data['rentto'] =  $this->input->post('rentto');
 			
-		
+			// location, and if selected find out what group OR groups it is in
+			$area = $this->input->post('location');
+			$group = $this->search_model->find_group($area);
 			
 			
 			// Search Both rent and purchase with no limit on price
 			if($data['rentto'] == 0 && $data['buyto'] == 0)
 			{
 				$data['list'] = 'both unlimited';
-				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds']);	
-				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds']);		
+				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds'], $area);	
+				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds'], $area);		
 			}
 			// Purchase Only
 			if(($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1)
 			{
 				$data['list'] = 'purchase only';
-				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds']);	
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $area);	
 				$data['rentals'] = NULL;
 			}
 			
@@ -70,7 +72,7 @@ class Search extends MY_Controller
 			if(($data['rentto'] > 0 && $data['buyto'] == 0 ) || $data['search_type'] == 2)
 			{
 				$data['list'] = 'rent only';
-				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds']);	
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $area);	
 				$data['properties'] = NULL;
 			}
 			
@@ -78,14 +80,15 @@ class Search extends MY_Controller
 			if($data['rentto'] > 0 && $data['buyto'] > 0)
 			{
 				$data['list'] = 'both limited';
-				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds']);	
-				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds']);	
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $area);	
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $area);	
 			}
 			
 			
+			//convert rental period to something that works
 			
+			$data['rental_period'] = "month";
 		
-			
 			
 			// Load Template
 			$this->load->vars($data);

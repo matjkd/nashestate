@@ -66,8 +66,29 @@ class MY_Controller extends Controller {
 				// Creates arrays for incremental sale prices and rental prices. This should be moved to a controller eventually
 				
 				$saleprices = array();
-								
-				for ($saleprice = $search['saleincrements'] ; $saleprice <= $search['max_sale_round']+1; $saleprice=$saleprice+$search['saleincrements'] ) {
+				$saleprice_addition = $search['saleincrements'];				
+				for ($saleprice = $search['saleincrements'] ; $saleprice <= $search['max_sale_round']+$saleprice_addition; $saleprice=$saleprice+$saleprice_addition ) {
+					
+					
+					if($saleprice > 0 && $saleprice <= 1000000)
+					{
+						$saleprice_addition = 50000;
+					}
+					
+					if($saleprice > 1000000 &&  $saleprice <= 1500000)
+					{
+						$saleprice_addition = 100000;
+					}
+					
+					if($saleprice > 1500000 && $saleprice <= 2500000)
+					{
+						$saleprice_addition = 300000;
+					}
+					if($saleprice > 2500000)
+					{
+						$saleprice_addition = 1000000;
+						$saleprice = round($saleprice, -6);
+					}
 					
 					$saleformat = number_format($saleprice);
 					$saleprices[$saleprice] = $saleformat;
@@ -75,13 +96,38 @@ class MY_Controller extends Controller {
 				}
 				
 				$rentprices = array();
-								
-				for ($rentprice = $search['rentincrements']; $rentprice <= $search['max_rent_round']+1; $rentprice=$rentprice+$search['rentincrements']) {
+				$rentprice_addition = $search['rentincrements'];						
+				for ($rentprice = $rentprice_addition; $rentprice <= $search['max_rent_round']+1; $rentprice=$rentprice+$rentprice_addition) {
+						
+					if($rentprice >= 500)
+					{
+						$rentprice_addition = 100;
+					}	
+					
+					if($rentprice >= 1000)
+					{
+						$rentprice_addition = 1000;
+					}	
+						
 					$rentformat = number_format($rentprice);
 					$rentprices[$rentprice] = $rentformat;
 					
 				}
-		
+				
+				//create bed number range
+				$beds = array(
+				
+				 0 => 'Any',
+				 1 => '1 or more',
+				 2 => '2 or more',
+				 3 => '3 or more',
+				 4 => '4 or more',
+				 5 => '5 or more',
+				 6 => '6 or more',
+					7 => '7 or more'
+				);
+				
+				$search['bedsnumbers'] = $beds;
 				$search['saleprices'] = $saleprices;
 				$search['rentprices'] = $rentprices;
 			

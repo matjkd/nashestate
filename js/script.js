@@ -286,6 +286,7 @@ $(document).ready(function() {
 		  var num_entries = $('#hiddenresult div.result').length;
 		  // Create pagination element
 		  $("#Pagination").pagination(num_entries, pagination_options);
+		 
 		}
             
 		  // When document is ready, initialize pagination

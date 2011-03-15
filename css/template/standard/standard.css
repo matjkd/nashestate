@@ -72,7 +72,8 @@ margin-bottom:5px;
 }
 #thumb {
 width:180px;
-
+height:140px;
+background: #bbbbbb;
 display:inline;
 	float: left;
 	position: relative;
@@ -312,7 +313,7 @@ div#menu li.back {
 
 /* Pagination */
 .pagination {
-            font-size: 80%;
+            font-size: 100%;
         }
         
 .pagination a {
