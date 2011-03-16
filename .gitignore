@@ -2,4 +2,6 @@ system/application/config/database.php
 system/application/config/config.php
 system/application/config/postmark.php
 images/fotos
+images/properties
+.htaccess
 *.psd
