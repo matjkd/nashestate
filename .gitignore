@@ -1,6 +1,7 @@
 system/application/config/database.php
 system/application/config/config.php
 system/application/config/postmark.php
+system/application/libraries/MY_Controller.php
 images/fotos
 images/properties
 .htaccess
