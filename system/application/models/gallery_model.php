@@ -135,14 +135,10 @@ $query = $this->db->get('property_images');
 	//delete files in uploads folder		
 			
 		
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
-				$config['debug'] = TRUE;
-				$this->ftp->connect($config);
-				$this->ftp->delete_file('/public_html/images/uploads/'.$filename);
+				
+				delete_files('./images/uploads/');
 			
-				$this->ftp->close();
+				
 		
 		
 	}
@@ -227,19 +223,11 @@ $query = $this->db->get('property_images');
 				$delete = $this->db->delete('property_images');
 				
 				//delete images from server
-				$this->load->library('ftp');
-
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
-				$config['port']     = 21;
-				$config['passive']  = FALSE;
-				$config['debug']    = TRUE;
-
-				$this->ftp->connect($config);
-				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/'.$filename.'');
-				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/medium/'.$filename.'');
-				$this->ftp->delete_file('/public_html/images/properties/'.$property_id.'/thumbs/'.$filename.'');
+				
+				unlink('./images/properties/'.$property_id.'/'.$filename.'');
+				unlink('./images/properties/'.$property_id.'/medium/'.$filename.'');
+				unlink('./images/properties/'.$property_id.'/thumbs/'.$filename.'');
+			
 			}
 		
 		

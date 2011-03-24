@@ -42,8 +42,9 @@ class Images extends MY_Controller
 	{
 		$id = $this->input->post('id');
 		$path = $this->input->post('path');
-			$filename = $this->input->post('filename');
+		$filename = $this->input->post('filename');
 		$this->Gallery_model->do_uploader($id, $path, $filename);
+		
 	}
 	
 	function editable_images()
