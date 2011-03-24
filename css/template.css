@@ -55,7 +55,7 @@ h1 {
 .logo {
 	height: 70px;
 	width:340px;
-	background:url('/~nh001/images/logo2.png') no-repeat;
+	background:url('images/logo2.png') no-repeat;
 	float:left;
 	
 }
@@ -73,7 +73,7 @@ h1 {
 .adminlogo {
 	height: 70px;
 	width:340px;
-	background:url('/~nh001/images/adminlogo.png') no-repeat;
+	background:url('images/adminlogo.png') no-repeat;
 	
 }
 .topmenu {
@@ -222,7 +222,7 @@ h1 {
 	height: 20px;
 	width:290px;
 	padding:5px 10px;
-	background:url('/~nh001/images/trans.png') repeat;
+	background:url('images/trans.png') repeat;
 	position:relative;
 	margin-bottom: -30px;
 	color: #ffffff;

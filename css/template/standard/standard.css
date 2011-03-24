@@ -1,5 +1,5 @@
 body {
-background:url('/~nh001/images/template/standard/graphic/background.jpg') repeat-x #caddee;
+background:url('graphic/background.jpg') repeat-x #caddee;
 color: #444444;
 margin:0 auto;
 font-size:12px;
@@ -22,7 +22,7 @@ line-height:20px;
 	height: 70px;
 	
 	width:340px;
-	background:url('/~nh001/images/logo2.png') no-repeat;
+	background:url('images/logo2.png') no-repeat;
 	float:left;
 	margin-left:5px;
 	margin-top:15px;
@@ -83,7 +83,7 @@ padding:5px;
 }
 
 .property_week {
-	background:url('/~nh001/images/template/standard/graphic/box_back.jpg') repeat-x #aaa8b4;
+	background:url('standard/graphic/box_back.jpg') repeat-x #aaa8b4;
 	height:302px;
 	width:305px;
 	padding:5px 5px 5px 5px;
