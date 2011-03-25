@@ -54,8 +54,15 @@ class Uploadr extends MY_Controller {
 		//determine what kind of upload we are getting from the client
 		if (isset($param1)) {
 			$class = 'UploadFileXhr';
+			
 			//codeigniter replaces the . with a _ argh, we can fix that by doing this:
-			$filename = substr_replace($param1, '.', strrpos($param1, '_'), strlen('_'));
+			$param1 = str_replace(" ","_",$param1);	
+			$filename2 = str_replace(".","_",$param1);
+			$filename = substr_replace($filename2, '.', strrpos($filename2, '_'), strlen('_'));
+			
+			
+			
+			//$filename = substr_replace($param1, '.', strrpos($param1, '_'), strlen('_'));
 		} elseif (isset($_FILES['qqfile'])) {
 			$class = 'UploadFileForm';
 			$filename = $_FILES['qqfile']['name'];

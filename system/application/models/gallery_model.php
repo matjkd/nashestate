@@ -26,7 +26,7 @@ class Gallery_model extends Model {
 		$image_data = $this->upload->data();
 		
 		
-		
+		//resize the images
 		$config = array(
 			'source_image' => $image_data['full_path'],
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
@@ -79,7 +79,8 @@ $filename = substr_replace($filename2, '.', strrpos($filename2, '_'), strlen('_'
 
 
 $fullpath = $fullpath.$filename;
-	//check if filename exists in database for id
+
+//check if filename exists in database for id
 $this->db->where('property_id', $id);
 $this->db->where('filename', $filename);
 $query = $this->db->get('property_images');
@@ -136,7 +137,7 @@ $query = $this->db->get('property_images');
 			
 		
 				
-				delete_files('./images/uploads/');
+			//	delete_files('./images/uploads/');
 			
 				
 		
