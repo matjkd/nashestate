@@ -137,7 +137,7 @@ $query = $this->db->get('property_images');
 			
 		
 				
-			//	delete_files('./images/uploads/');
+			delete_files('./images/uploads/');
 			
 				
 		
