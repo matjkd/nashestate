@@ -7,7 +7,7 @@ body {
 
 </style>
 <body>
-<img style="width: 240px; " src="/home/nh001/www/images/pdf/logo.jpg"/>
+<img style="width: 240px; " src="<?=$config_base_path?>images/pdf/logo.jpg"/>
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
@@ -102,35 +102,35 @@ switch ($imagecount) {
 	case 1:
 		
 		?>
-		<img style="width: 560px;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 560px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<?php
 		break;
 	
 	case 2:
 		?>
-		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
-		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		
 		<?php 
 		break;
 	
 	case 4:
 		?>
-		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
-		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
-		<img style="width: 275px; height:183px;  padding-right:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[3]?>"/>
-		<img style="width: 275px; height:183px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[4]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 275px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 		<?php 
 		break;
 	
 	case 6:
 		?>
-		<img style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[1]?>"/>
-		<img style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[2]?>"/>
-		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[3]?>"/>
-		<img style="width: 132px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[4]?>"/>
-		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[5]?>"/>
-		<img style="width: 132px; height:92px; float:left;" src="/home/nh001/www/images/properties/<?=$mainImage[6]?>"/>
+		<img style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 132px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
+		<img style="width: 132px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
 		<?php		
 		break;
 	
