@@ -4,5 +4,6 @@ system/application/config/postmark.php
 system/application/libraries/MY_Controller.php
 images/fotos
 images/properties
+images/uploads
 .htaccess
 *.psd
