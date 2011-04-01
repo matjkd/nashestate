@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * @name 		Search controller
- * @author 		Mat Sadler - Redstudio Design Limited
+ * @name 	Search controller
+ * @author 	 Mat Sadler - Redstudio Design Limited
  * @package 	Nash Estate Agents
  * @subpackage 	Controllers
  */
@@ -97,8 +97,12 @@ class Search extends MY_Controller
 	}
 	function property_id() 
 	{
-		$this->form_validation->set_rules('property_id', 'property_id', 'trim|required');	
-		if($this->form_validation->run() == FALSE)
+	
+    $this->form_validation->set_rules('property_id', 'property_id', 'trim|required');	
+		
+    //need to add a check to see if property exists, or it will direct to a page with errors
+        
+        if($this->form_validation->run() == FALSE)
 			{
 			
 			$this->session->set_flashdata('message', 'You must enter a property id');
