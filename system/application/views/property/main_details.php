@@ -32,10 +32,10 @@ endforeach; ?>
 <br/>
 <?php 
 if($property->sale_rent == 1) {?>
-<strong>Price: &euro;<?=$property->sale_price?></strong>
+<strong>Price: &euro;<?=number_format($property->sale_price)?></strong>
 <?php } 
 if($property->sale_rent == 2) {?>
-<strong>Price: &euro;<?=$property->rent_price?> <?=$property->rent_period?></strong>
+<strong>Price: &euro;<?=number_format($property->rent_price)?> <?=$property->rent_period?></strong>
 <?php } ?>
 <p>
 
