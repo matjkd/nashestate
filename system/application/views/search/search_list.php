@@ -29,7 +29,18 @@
 								Bedrooms: <?=$property['rooms']?><br/>
 								<p>
 									<?php 
-									$description = strip_tags($property['description']);
+									
+								 if($property['alt_description'] == NULL)
+									{
+										$description = $property['description'];
+									}
+									else
+									{
+										$description = $property['alt_description'];	
+									}
+
+
+									$description = strip_tags($description);
 									$description = substr($description, 0, 130);
 									echo "".$description."...";
 									
@@ -71,13 +82,17 @@
 				
 				<?php 
 				//convert period if it is set
-				if($rentals['rent_period'] == "weekly")
+				if($rentals['rent_period'] == "Weekly")
 				{
 				$rental_period = "week";	
 				}
-				if($rentals['rent_period'] == "yearly")
+				if($rentals['rent_period'] == "Yearly")
 				{
 				$rental_period = "year";	
+				}
+				if($rentals['rent_period'] == "Monthly" || $rentals['rent_period'] == NULL)
+				{
+					$rental_period = "month";
 				}
 				
 				
@@ -95,7 +110,17 @@
 								Bedrooms: <?=$rentals['rooms']?><br/>
 								<p>
 									<?php 
-									$description = strip_tags($rentals['description']);
+									if($rentals['alt_description'] == NULL)
+									{
+										$description = $rentals['description'];
+									}
+									else
+									{
+										$description = $rentals['alt_description'];	
+									}
+									
+									
+									$description = strip_tags($description);
 									$description = substr($description, 0, 130);
 									echo "".$description."...";
 									
@@ -107,7 +132,7 @@
 									
 									
 								
-								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?> </strong>
+								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?></strong>
 								</div>	
 								
 								<div  id="thumb">
