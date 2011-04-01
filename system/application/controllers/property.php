@@ -41,7 +41,7 @@ class Property extends MY_Controller {
 			$data['content'] = 'property/main_details';
 			$this->load->vars($data);
 		
-			$this->load->view('template');
+			$this->load->view('template/standard/property');
 	}
 	
 	function pdf($id)

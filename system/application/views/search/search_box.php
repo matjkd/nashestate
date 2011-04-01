@@ -19,10 +19,10 @@
 					Search All Properties
 					</div>
 					<div class="searchbox_content" id="button2" style="cursor:pointer;">
-					Properties for Sale
+					Search Properties for Sale
 					</div>
 					<div class="searchbox_content" id="button3" style="cursor:pointer;">
-					Properties for Rent
+					Search Properties for Rent
 					</div>
 					<div style="height:142px;"class="searchbox_content">
 					&nbsp;

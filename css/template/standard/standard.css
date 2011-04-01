@@ -5,6 +5,10 @@ margin:0 auto;
 font-size:12px;
 font-family:'Lucida Grande','Verdana',sans-serif;
 }
+h1 {
+font-size:150%;
+
+}
 
 p {
 	line-height:20px;
@@ -363,4 +367,18 @@ div#menu li.back {
 	color:#999;
 	border-color:#999;
 	background:#fff;
+}
+#property_features {
+	border-bottom:solid 1px #bbbbbb;
+	clear:both;
+	height: 15px;
+	padding: 4px 0;
+}
+#property_features_L {
+	float:left;
+	width: 45%;
+}
+#property_features_R {
+	float:left;
+	width: 45%;
 }

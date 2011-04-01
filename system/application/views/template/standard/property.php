@@ -47,23 +47,12 @@
      
 	<div id="content" class="container_24">
 
-	<div id="" class="grid_8 ">
-		<?=$this->load->view('search/search_box')?>
-		<?php $this->load->view('global/warning'); ?>
-	<div style="height:8px;" class="clear">		</div>	
-		<div class="property_week">
-				
-				<img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_of_the_week.png"/>
-				
+	
+	<div id="" class="grid_12 ">
+		<?php $this->load->view('property/gallery'); ?>
 		</div>
-	<div style="height:8px;" class="clear">	</div>		
-		
-		
-		
-	</div>
 	
-	
-	<div id="" class="grid_16 ">
+	<div id="" class="grid_12 ">
 	
 	
 					<?php if(isset($slideshow))
@@ -79,10 +68,10 @@
 					
 					
 					?>	
-					<div class="contentbox">
+					
 					
 						<?php $this->load->view($content); ?>
-					</div>
+				
 					
 				
 	</div>

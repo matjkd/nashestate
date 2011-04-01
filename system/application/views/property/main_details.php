@@ -37,9 +37,10 @@ if($property->sale_rent == 1) {?>
 if($property->sale_rent == 2) {?>
 <strong>Price: &euro;<?=$property->rent_price?> <?=$property->rent_period?></strong>
 <?php } ?>
+<p>
 
 <?=$property->description?>
-
+</p>
 <br/>
 
 <div id="property_features">
@@ -60,15 +61,6 @@ if($property->sale_rent == 2) {?>
 	</div>
 </div>
 
-
-<div id="property_features">
-	<div id="property_features_L">
-	<strong>Number of floors</strong>
-	</div>
-	<div id="property_features_L">
-	<?=$property->floors?>
-	</div>
-</div>
 
 <?php if($bedrooms > 0) {?>
 <div id="property_features">
@@ -121,20 +113,18 @@ if($property->sale_rent == 2) {?>
 	</div>
 </div>
 
-<?php endforeach;?>
+<?php endforeach;?><br/>
 
+<strong>Property Features</strong>
+<p>
 <?php foreach($property_features as $features): ?>
 
 
-<div id="property_features">
-	<div id="property_features_L">
-	<strong><?=$features['features']?></strong>
-	</div>
-	<div id="property_features_L">
-	Yes
-	</div>
-</div>
+
+	<?=$features['features']?> |  
+
 
 <?php endforeach; ?>
+</p>
 <br/>
 <a href="<?=base_url()?>property/pdf/<?=$property_id?>">pdf</a>

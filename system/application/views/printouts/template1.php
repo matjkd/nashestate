@@ -181,11 +181,7 @@ endforeach; ?>
 				
 				<table width=99%>
 					
-					<?php if(isset($property->floors))  {   ?>
-					<tr>
-						<td width=133px><strong>Number of floors:</strong></td>		<td><?=$property->floors?></td>
-					</tr>
-					<?php } ?>
+					
 					
 					<?php if(isset($bedrooms))  {   ?>
 					<tr>
