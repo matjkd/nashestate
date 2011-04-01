@@ -87,21 +87,33 @@ class Search_model extends Model {
 		return $data;
 	}
 	
-	function search_rentals($from, $to, $beds)
+	function search_rentals($from, $to, $beds, $area)
 	{
-		
-		
-		
 		$data = array();
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 2);
-		$this->db->where('active', 1);
+		$this->db->where('active', 1);						//if property is active
 		$this->db->where('archived', 0); 					//select if property has not been archived
 		$this->db->order_by('monthly_rent', 'asc'); 						// order by price
-		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left');
+		
+		$this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');	//link to property type table
+		$this->db->join('general_area', 'general_area.general_area_id = property_main.general_area', 'left'); 		//link to areas table
+		$this->db->join('general_area_link', 'general_area_link.area_id = property_main.general_area', 'left'); 		//link to areas-groups link table
+		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left'); 		// link to images table
+		
+		if($area != "any")
+		{
+				
+			//find out group ids
+			//$groups = $this->search_model->find_group($area);	
+				
+			$this->db->where('general_area.general_area_id', $area); 	
+			
+		}
+		
 		$this->db->group_by('property_main.property_ref_no');
 		
-		if ($to > 0)
+		if ($to > 0) // if a top price is selected else make it unlimited
 				{
 					$search = "monthly_rent <= $to AND $from <= monthly_rent";
 					$this->db->where($search);

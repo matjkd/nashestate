@@ -1,4 +1,7 @@
 <img width="270px" height="23px" src="<?=base_url()?>images/template/standard/titles/search_results.png"/>
+<div class="search_list_heading">
+<?=$search_desc?>
+</div>
 
     <br style="clear:both;" />
   <div id="Searchresult"></div>
@@ -27,7 +30,7 @@
 								<p>
 									<?php 
 									$description = strip_tags($property['description']);
-									$description = substr($description, 0, 180);
+									$description = substr($description, 0, 130);
 									echo "".$description."...";
 									
 									?>
@@ -88,11 +91,12 @@
 						<div id="search_content">
 								<div class="grid_11">
 								<strong><?=$rentals['property_title']?> </strong><br/>
+								<?=$rentals['property_type_name']?> :: <?=$rentals['area']?></strong><br/>
 								Bedrooms: <?=$rentals['rooms']?><br/>
 								<p>
 									<?php 
 									$description = strip_tags($rentals['description']);
-									$description = substr($description, 0, 180);
+									$description = substr($description, 0, 130);
 									echo "".$description."...";
 									
 									?>

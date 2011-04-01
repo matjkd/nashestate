@@ -4,6 +4,26 @@ Number of Bedrooms
 <br/>
 
 
+Minimum Cost
+<?=form_dropdown('buyfrom', $saleprices, $saleincrements)?>
+<br/>
+
+
+
+Maximum Cost
+<?=form_dropdown('buyto', $saleprices, "$max_sale_round")?>
+<br/>
+
+
+
+
+
+
+Number of Bedrooms
+<?=form_dropdown('beds', $bedsnumbers, 0)?>
+<br/>
+
+
 Minimum Monthly Rent:
 <?=form_dropdown('rentfrom', $rentprices)?>
 <br/>
@@ -20,6 +40,5 @@ Location:
 	<?php endforeach; ?>
 	
 	</select>
-
 <input type="submit" value="Submit" />
 </form>
