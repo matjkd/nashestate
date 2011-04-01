@@ -1,4 +1,5 @@
-<?php 
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 class Content_model extends Model {
 	
 	function __construct()

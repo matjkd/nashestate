@@ -1,4 +1,5 @@
-<?php 
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 class Features_model extends Model {
 	
 	function __construct()
