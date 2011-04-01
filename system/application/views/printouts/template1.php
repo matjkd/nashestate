@@ -165,6 +165,30 @@ if($rooms['room_type'] == 2 || $rooms['room_type'] == 11)
 	$bathrooms = $bathrooms + 1;
 }
 
+//get size of terrace
+if($rooms['room_type'] == 7 || $rooms['room_type'] == 8)
+{
+	$terrace_size = $rooms['room_size'];
+}
+
+
+//get parking type
+// 1 private
+// 2 shared
+// 3 n/a
+
+if($rooms['room_type'] == 13)
+{
+	if ($rooms['room_additional']==1)
+	{
+		$parking_type = "Private";
+	}
+	if ($rooms['room_additional']==2)
+	{
+		$parking_type = "Community";
+	}
+}
+
 endforeach; ?>
 
 
@@ -181,7 +205,9 @@ endforeach; ?>
 				
 				<table width=99%>
 					
-					
+					<tr>
+						<td width=133px><strong>Reference Number:</strong></td>		<td><?=$property->property_ref_no?></td>
+					</tr>
 					
 					<?php if(isset($bedrooms))  {   ?>
 					<tr>
@@ -208,11 +234,18 @@ endforeach; ?>
 					</tr>
 					<?php } ?>
 					
-					<?php if(isset($property->community_fees))  {   ?>
+					
+					<?php if(isset($terrace_size))  {   ?>
 					<tr>
-						<td width=133px><strong>Community Fees:</strong></td>		<td><?=$property->community_fees?> &#0128;</td>
+						<td width=133px><strong>Terrace Size:</strong></td>		<td><?=$terrace_size?></td>
 					</tr>
 					<?php } ?>
+					
+					<tr>
+						<td width=133px><strong>Parking:</strong></td>		<td><?php if(isset($parking_type)) { echo $parking_type; } else { echo "None"; }?></td>
+					</tr>
+					
+					
 					
 					
 					<?php if($property->sale_rent == 2) {?>
