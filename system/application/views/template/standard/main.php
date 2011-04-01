@@ -49,8 +49,8 @@
 
 	<div id="" class="grid_8 ">
 		<?=$this->load->view('search/search_box')?>
-		
-	<div style="height:8px;" class="clear">	</div>	
+		<?php $this->load->view('global/warning'); ?>
+	<div style="height:8px;" class="clear">		</div>	
 		<div class="property_week">
 				
 				<img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_of_the_week.png"/>
@@ -80,7 +80,7 @@
 					
 					?>	
 					<div class="contentbox">
-							
+					
 						<?php $this->load->view($content); ?>
 					</div>
 					

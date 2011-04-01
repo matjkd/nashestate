@@ -1,8 +1,8 @@
 <img width="270px" height="23px" src="<?=base_url()?>images/template/standard/titles/search_results.png"/>
- <div id="Pagination" class="pagination"></div> 
+
     <br style="clear:both;" />
   <div id="Searchresult"></div>
-  
+   <div id="Pagination" class="pagination"></div> 
   
 	<div id="hiddenresult" style="display:none;">
 		<?php if($properties != NULL)

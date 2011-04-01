@@ -97,7 +97,14 @@ class Search extends MY_Controller
 	}
 	function property_id() 
 	{
+		$this->form_validation->set_rules('property_id', 'property_id', 'trim|required');	
+		if($this->form_validation->run() == FALSE)
+			{
 			
+			$this->session->set_flashdata('message', 'You must enter a property id');
+			
+			redirect('welcome/content');
+			}
 		$id = $this->input->post('property_id');
 		redirect('/property/display/'.$id);
 		
