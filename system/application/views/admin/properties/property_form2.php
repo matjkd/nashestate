@@ -31,6 +31,8 @@ $this->load->view('admin/properties/features_autocomplete');?>
 <?php 
 $description = $row->description;
 
+$alt_description = $row->alt_description;
+
 endforeach;
 $readonly = "DISABLED";
 
@@ -43,10 +45,13 @@ echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes
 
 
 <br/><br/>
+Long Description:<br/>
 
 <textarea name="description" id="description"  class="wymeditor2" style="width:100%;"><?=$description?></textarea>
-		
- 
+	<br/>
+Short Description (to be displayed on printouts if not left blank):<br/>
+	
+<textarea name="alt_description" id="alt_description"  class="wymeditor2" style="width:100%;"><?=$alt_description?></textarea> 
 
 <br/><input type="submit" class="wymupdate" />
 

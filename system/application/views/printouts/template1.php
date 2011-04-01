@@ -2,7 +2,7 @@
 body {
   margin: 0pt 22pt 24pt 22pt;
    font-family: 'Helvetica';
-  font-size: 9px;
+  font-size: 12px;
 }
 
 </style>
@@ -280,12 +280,24 @@ break;
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 <div style="height: <?=$bodyheight?>; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px;"> 
-<?=$property->description?>
+
+<?php if($property->alt_description == NULL)
+{
+	echo $property->description;
+}
+else
+	{
+	echo $property->alt_description;	
+	}
+
+?>
+
+
 </div> 
 
 
 <?php endforeach; ?>
-<div align="center" style="height: 3px; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px; color:#ffffff;  background-color: #f15c22; font-size:8px;"> 
+<div align="center" style="height: 3px; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px; color:#ffffff;  background-color: #f15c22; font-size:10px;"> 
 No information herein constitutes the basis for a purchase/sale contract. The sale price is that indicated uppermost above. Other currencies are for guide purposes
 only.<br/>
 Local 13, Ctra. Palma Andratx 43, Portals Nous, 07181 Calvia, Mallorca<br/>

@@ -291,6 +291,7 @@ class Properties_model extends Model {
 			
 		$form_data = array(
     					'description' => $this->input->post('description'),
+    					'alt_description' => $this->input->post('alt_description')
     					);
 		
 		$this->db->where('property_ref_no', $id);
