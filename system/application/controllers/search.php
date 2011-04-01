@@ -95,5 +95,12 @@ class Search extends MY_Controller
 			$this->load->view('template/standard/main');
 			
 	}
-	
+	function property_id() 
+	{
+			
+		$id = $this->input->post('property_id');
+		redirect('/property/display/'.$id);
+		
+	}
+		
 }

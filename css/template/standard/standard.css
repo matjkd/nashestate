@@ -52,11 +52,20 @@ color:#ffffff;
 }
 .searchbox_content2 {
 background:#c08628;
+height:25px;
+padding:2px 5px;
 margin-top:1px;
-padding:8px;
-color:#ffffff;
-}
 
+color:#ffffff;
+clear:both;
+
+}
+.searchbox_content2 div{
+display:block;
+float:left;
+margin-top:2px;
+
+}
 /*search results*/
 
 #search_content {

@@ -29,8 +29,8 @@
 					</div>
 					
 					<div class="searchbox_content2">
-					Search by ID
-			</div>
+					<?=$this->load->view('search/search_by_id')?>
+					</div>
 			</div>
 				
 				
@@ -44,7 +44,7 @@
 					&nbsp;
 					</div>
 						<div class="searchbox_content2">
-					Search by ID
+						<?=$this->load->view('search/search_by_id')?>
 			</div>
 				</div>
 		
@@ -60,7 +60,7 @@
 					<?=$this->load->view('search/sales')?>
 					</div>
 					<div class="searchbox_content2">
-					Search by ID
+						<?=$this->load->view('search/search_by_id')?>
 			</div>
 				</div>
 			
@@ -76,7 +76,7 @@
 					<?=$this->load->view('search/rentals')?>
 					</div>
 					<div class="searchbox_content2">
-					Search by ID
+						<?=$this->load->view('search/search_by_id')?>
 			</div>
 				</div>
 				
