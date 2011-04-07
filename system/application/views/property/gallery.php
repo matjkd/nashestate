@@ -1,41 +1,23 @@
-<script language="javascript">
-			<!--
-			$(document).ready(
-				function (){
-					$("#pikame").PikaChoose();
 
-					$("#pikame").jcarousel({scroll:4,					
-						initCallback: function(carousel) 
-						{
-					        $(carousel.list).find('img').click(function() {
-					        	//console.log($(this).parents('.jcarousel-item').attr('jcarouselindex'));
-					            carousel.scroll(parseInt($(this).parents('.jcarousel-item').attr('jcarouselindex')));
-					        });
-					    }
-				    });
-
-				});
-				
-			-->
-</script>
-		
-		
-<div >
-
-<ul id="pikame" class="jcarousel-skin-pika">
-<?php foreach($property_images as $image):?>
-
-<li><a alt="an image" href="<?=base_url()?>images/properties/<?=$image->property_id?>/<?=$image->filename?>" target="_blank"><img src="<?=base_url()?>/images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>"/></a>
-
-<?php if(isset($image->image_description)) { echo "<span>".$image->image_description."</span>"; }?></li>
-
-
-<?php endforeach;?>
-	
-	
-</ul>
-
-
-
+<link rel="stylesheet" href="<?=base_url()?>css/gallerific.css">
+<div class="slideshow-container"> 
+	<div id="loading" class="loader" style="display: none"></div>
+	<div id="slideshow" class="slideshow"></div> 
 </div>
-<div style="clear:both;"></div><br/>
+<div id="caption" class="caption-container"></div>
+<div id="thumbs" >
+    <ul class="thumbs noscript">
+    	<?php foreach($property_images as $image):?>
+        <li>
+            <a class="thumb" name="optionalCustomIdentifier" href="<?=base_url()?>images/properties/<?=$image->property_id?>/<?=$image->filename?>" title="<?=$image->filename?>">
+                <img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
+            </a>
+           <?php if(isset($image->image_description)) { echo "<div class='caption'>".$image->image_description."</div>"; }?>
+        </li>
+        <?php endforeach;?>
+       
+    </ul>
+</div>
+
+
+
