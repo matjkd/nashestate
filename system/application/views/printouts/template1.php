@@ -66,7 +66,7 @@ if(count($property_images) < 2)
 	$imagecount = 1;
 	
 	//height of body
-	$bodyheight = "90px";
+	$bodyheight = "55px";
 	} 
 if(count($property_images) < 4 && count($property_images) >= 2) 	
 	{
