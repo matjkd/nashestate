@@ -447,6 +447,26 @@ function user_detail_table()
 		redirect('admin/contacts/details');
 	}
 	
+	function delete_group($id)
+	{
+			
+		$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
+		
+		$data['company_users'] =  $this->contacts_model->get_company_users($id);
+		
+		$data['right_main'] = 'admin/contacts/delete_group';
+		
+		$data['page'] = 'contacts';
+		
+		$data['title'] = 'Nash Homes Groups';
+		
+		$data['heading'] = 'Delete Group';
+		
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+		
+	}
+	
 	function delete_company()
 	{
 		$id = $this->input->post('id');

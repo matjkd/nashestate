@@ -4,3 +4,8 @@
 
 <?=$main_text?>
 
+<?php if($extra != "") {?>
+	<br/><br/>
+	<?=$this->load->view($extra)?>
+	
+<?php } ?>

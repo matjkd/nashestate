@@ -65,8 +65,8 @@ class Content_model extends Model {
 			
     				$form_data = array(
     				
-					'content' => $this->input->post('content')    				
-    				
+					'content' => $this->input->post('content'),    				
+    				'extra' => $this->input->post('extra')
 					);
 		
 		

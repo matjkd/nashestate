@@ -28,7 +28,7 @@ foreach($edit_content as $row):?>
 	
 ?>
 
-
+<?=form_input('extra', $row['extra'])?>
 <?php endforeach; ?>
 <br/> <input type="submit" class="wymupdate" />
 <?=form_close()?>

@@ -48,6 +48,7 @@ function content()
 					$data['title'] = $row['content_title'];
 					$data['content_menu'] = $row['content_menu'];
 					$data['main_text'] = $row['content'];
+					$data['extra'] = $row['extra'];
 					$data['page'] = $row['menu_top'];
 					
 					if($row['slideshow'] != NULL)

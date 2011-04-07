@@ -23,10 +23,10 @@ body {
 				<td width="240px" align="right">
 					<?php 
 					if($header->sale_rent == 1) { ?>
-					<strong>Price: <?=$header->sale_price?>  &#0128;</strong>
+					<strong>Price: <?=number_format($header->sale_price)?>   &#0128;</strong>
 					<?php } 
 					if($header->sale_rent == 2) {?>
-					<strong>Price: <?=$header->rent_price?>  &#0128;</strong>&nbsp;&nbsp;
+					<strong>Price: <?=number_format($header->rent_price)?>  &#0128;</strong>&nbsp;&nbsp;
 					 <?php 
 									 if(isset($rentals['rent_period']))
 									 {
@@ -71,7 +71,7 @@ if(count($property_images) < 2)
 if(count($property_images) < 4 && count($property_images) >= 2) 	
 	{
 	$imagecount = 2;
-	$bodyheight = "270px";
+	$bodyheight = "250px";
 	}
 if(count($property_images) < 6 && count($property_images) >= 4) 	
 	{
