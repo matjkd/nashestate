@@ -50,8 +50,49 @@ class Properties_model extends Model {
 		$this->db->where('property_id', $id);
 		$this->db->delete('property_images');
 		
+		//delete Large files
+		$mydir = './images/properties/'.$id.'/large/'; 
+		$d = dir($mydir); 
+		while($entry = $d->read()) { 
+		 if ($entry!= "." && $entry!= "..") { 
+		 unlink($mydir.$entry); 
+		 } 
+		} 
+		$d->close(); 
+		rmdir($mydir); 
 		
-				
+		//delete Medium files
+		$mydir = './images/properties/'.$id.'/medium/'; 
+		$d = dir($mydir); 
+		while($entry = $d->read()) { 
+		 if ($entry!= "." && $entry!= "..") { 
+		 unlink($mydir.$entry); 
+		 } 
+		} 
+		$d->close(); 
+		rmdir($mydir); 		
+		
+		//delete thumbs files
+		$mydir = './images/properties/'.$id.'/thumbs/'; 
+		$d = dir($mydir); 
+		while($entry = $d->read()) { 
+		 if ($entry!= "." && $entry!= "..") { 
+		 unlink($mydir.$entry); 
+		 } 
+		} 
+		$d->close(); 
+		rmdir($mydir); 		
+		
+		//delete root files
+		$mydir = './images/properties/'.$id.'/'; 
+		$d = dir($mydir); 
+		while($entry = $d->read()) { 
+		 if ($entry!= "." && $entry!= "..") { 
+		 unlink($mydir.$entry); 
+		 } 
+		} 
+		$d->close(); 
+		rmdir($mydir); 		
 		
 		//delete featured properties with $id
 		$this->db->where('property_ref', $id);

@@ -466,7 +466,13 @@ function user_detail_table()
 		$this->load->view('admin/admin');
 		
 	}
-	
+	function delete_group_confirm($id)
+	{
+	//delete properties
+	$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
+	//foreach($data['properties'] as $row)
+		
+	}
 	function delete_company()
 	{
 		$id = $this->input->post('id');

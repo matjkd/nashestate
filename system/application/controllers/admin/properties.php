@@ -184,19 +184,12 @@ class Properties extends MY_Controller
 			
 		
 		
-		//delete images dir from server
+		
 				
 
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
-				$config['debug'] = TRUE;
-				$this->ftp->connect($config);
+		
 				
-				$this->ftp->rename('/public_html/images/properties/'.$id.'/','/public_html/images/properties/deleted/'.$id.'/');
-				
-				$this->ftp->close();
-			
+					
 				
 			$this->properties_model->delete_property($id);
 				
@@ -360,16 +353,14 @@ class Properties extends MY_Controller
 				
 				$id = $this->db->insert_id();
 				
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
+			
 				$config['debug'] = TRUE;
-				$this->ftp->connect($config);
-				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/');
-				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/thumbs/');
-				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/medium/');
-				$this->ftp->mkdir('/public_html/images/properties/'.$ref.'/large/');
-				$this->ftp->close();
+				
+				mkdir(''.$this->config_base_path.'images/properties/'.$ref.'/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$ref.'/thumbs/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$ref.'/medium/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$ref.'/large/');
+				
 				
 				
 				
