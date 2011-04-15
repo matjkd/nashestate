@@ -59,6 +59,6 @@
 		<p>
 		<?php  $this->load->view('admin/contacts/properties'); ?>
 		</p>
-		<br/><button>Add Property</button>
+		<br/><a href="<?=base_url()?>admin/properties/add/<?=$company_id?>"><button>Add Property</button></a>
 			</div>
 </div>
