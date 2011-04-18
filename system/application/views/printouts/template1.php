@@ -1,11 +1,17 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
 <style>
 body {
   margin: 0pt 22pt 24pt 22pt;
-   font-family: 'Helvetica';
+   font-family: 'Helvetica', 'Arial', 'Sans-serif';
   font-size: 12px;
 }
 
 </style>
+</head>
 <body>
 <img style="width: 240px; " src="<?=$config_base_path?>images/pdf/logo.jpg"/>
 
@@ -341,3 +347,4 @@ No information contained herein constitutes the basis for a purchase/sale contra
 
 
 </body>
+</html>

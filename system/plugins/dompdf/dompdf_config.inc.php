@@ -73,6 +73,20 @@ define("DOMPDF_FONT_DIR", DOMPDF_DIR . "/lib/fonts/");
 define("DOMPDF_TEMP_DIR", "/tmp");
 
 /**
+ * ==== IMPORTANT ====
+ *
+ * dompdf's "chroot": Prevents dompdf from accessing system files or other
+ * files on the webserver.  All local files opened by dompdf must be in a
+ * subdirectory of this directory.  DO NOT set it to '/' since this could
+ * allow an attacker to use dompdf to read any files on the server.  This
+ * should be an absolute path.
+ * This is only checked on command line call by dompdf.php, but not by
+ * direct class use like:
+ * $dompdf = new DOMPDF();	$dompdf->load_html($htmldata); $dompdf->render(); $pdfdata = $dompdf->output();
+ */
+define("DOMPDF_CHROOT", realpath(DOMPDF_DIR));
+
+/**
  * The path to the tt2pt1 utility (used to convert ttf to afm)
  *
  * Not strictly necessary, but useful if you would like to install 
@@ -168,7 +182,7 @@ define("DOMPDF_DPI", "150");
  *
  * @var bool
  */
-define("DOMPDF_ENABLE_PHP", true);
+define("DOMPDF_ENABLE_PHP", false);
 
 
 /**
@@ -231,5 +245,3 @@ $_dompdf_show_warnings = false;
 $_dompdf_debug = false;
 
 require_once(DOMPDF_INC_DIR . "/functions.inc.php");
-
-?>
