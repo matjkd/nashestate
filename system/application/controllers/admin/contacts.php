@@ -452,6 +452,8 @@ function user_detail_table()
 			
 		$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
 		
+		$data['group'] = $this->contacts_model->get_company($id);
+		
 		$data['company_users'] =  $this->contacts_model->get_company_users($id);
 		
 		$data['right_main'] = 'admin/contacts/delete_group';
@@ -466,17 +468,59 @@ function user_detail_table()
 		$this->load->view('admin/admin');
 		
 	}
-	function delete_group_confirm($id)
+	function delete_group_confirm()
 	{
-	//delete properties
-	$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
-	//foreach($data['properties'] as $row)
 		
+	$id = $this->input->post('group_id');	
+	
+	if($id == 1) 
+		{
+			//so you can't delete my company	
+			$this->session->set_flashdata('message', 'You are not allowed to delete this group');
+			redirect('admin/contacts/details', 'refresh');	
+			
+		}
+		//delete properties
+		$data['properties'] = $this->properties_model->get_contact_properties($id, 'company_id');
+		if ($data['properties'] == NULL)
+			{
+				//There are no properties to delete
+			}
+			else
+			{	
+			foreach($data['properties'] as $row):
+				
+				$this->properties_model->delete_property($row['property_ref_no']);
+				
+			endforeach;
+			}
+	
+		//delete users
+		$data['company_users'] =  $this->contacts_model->get_company_users($id);
+		if ($data['company_users'] == NULL)
+			{
+				//There are no users to delete
+			}
+			else
+			{	
+			foreach($data['company_users'] as $key => $row):
+				
+				$this->contacts_model->delete_contact_detail($row['user_id']);
+				
+			endforeach;
+			}
+		
+		//delete group
+	
+			$this->contacts_model->delete_company($id);
+	
+			$this->session->set_flashdata('message', 'Group id '.$id.' has been deleted');
+			redirect('admin/contacts/details', 'refresh');	
+	
+	
 	}
-	function delete_company()
-	{
-		$id = $this->input->post('id');
-	}
+
+	
 	function view_address()
 	{
 		$segment_active = $this->uri->segment(4);

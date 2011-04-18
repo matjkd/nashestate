@@ -1,3 +1,11 @@
+<?php foreach($group as $key => $row):?>
+	<?php 
+	$groupname = $row['company_name'];
+	$group_id = $row['company_id'];
+	?>
+	<h1><?=$groupname?></h1>
+<?php endforeach; ?>
+
 <strong>The following properties will be deleted (if you wish to keep the property, click the id and change the group):</strong><br/>
 
 <?php
@@ -32,8 +40,11 @@ foreach($company_users as $key => $row): ?>
 <br/>
 <br/>
 
-Are you sure you want to delete all of the above?
+Are you sure you want to delete the <?=$groupname?> group and all of the above data (this can't be undone)?
 
 <br/>
 <br/>
-A button is coming soon...
+<?=form_open('admin/contacts/delete_group_confirm')?>
+<?=form_hidden('group_id', $group_id)?>
+<?=form_submit('submit', 'Delete '.$group_id.'')?>
+<?=form_close()?>

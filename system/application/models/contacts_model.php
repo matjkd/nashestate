@@ -351,16 +351,18 @@ function get_company_users($id)
 	}
 function delete_address($id_address) 
 	{
+		$this->db->where('company_address_id', $id_address);
+		$this->db->delete('company_address');
 		
-		$delete_address = $this->db->query('DELETE FROM ignite_company_address WHERE company_address_id='.$id_address);
 		
 		return TRUE;
 		
 	}	
 function delete_contact_detail($id_contact) 
 	{
-		
-		$delete_address = $this->db->query('DELETE FROM ignite_company_contact WHERE company_contact_id='.$id_contact);
+			
+		$this->db->where('company_contact_id', $id_contact);
+		$this->db->delete('company_contact');
 		
 		return TRUE;
 		
@@ -369,6 +371,22 @@ function delete_user($id)
 	{
 		$this->db->where('user_id', $id);
 		$this->db->delete('users');
+		
+		return TRUE;
+		
+	}
+function delete_company($id) // group id
+	{
+		//delete all addresses associated with company(group)
+		$this->delete_address($id);
+		
+		//delete contact details, like phonenumbers etc
+		$this->delete_contact_detail($id);
+		
+		//delete group
+		$this->db->where('company_id', $id);
+		$this->db->delete('company');
+		
 		
 		return TRUE;
 		

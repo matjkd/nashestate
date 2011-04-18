@@ -34,6 +34,7 @@ class Properties_model extends Model {
 	}
 	function delete_property($id)
 	{
+	
 		//Delete Property
 		$this->db->where('property_ref_no', $id);
 		$this->db->delete('property_main');
