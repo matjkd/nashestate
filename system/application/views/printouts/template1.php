@@ -1,6 +1,7 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
 <style>
 body {
   margin: 0pt 22pt 24pt 22pt;
@@ -11,6 +12,7 @@ body {
 </style>
 </head>
 <body>
+	
 <img style="width: 240px; " src="<?=$config_base_path?>images/pdf/logo.jpg"/>
 
 <div style="clear:both; height:5px;">&nbsp;</div>
