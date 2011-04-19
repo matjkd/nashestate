@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<title>Printout</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
-<style type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
 body {
   margin: 0pt 22pt 24pt 22pt;
    font-family: 'Helvetica', 'Arial', 'Sans-serif';
@@ -13,8 +12,8 @@ body {
 </style>
 </head>
 <body>
-<div>	
-<img style="width: 240px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" />
+	
+<img style="width: 240px;" src="<?=$config_base_path?>images/pdf/logo.jpg" />
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
@@ -115,29 +114,29 @@ switch ($imagecount) {
 	
 	case 2:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		
 		<?php 
 		break;
 	
 	case 4:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>" style="width: 275px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>" style="width: 275px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 275px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 275px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 		<?php 
 		break;
 	
 	case 6:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>"  style="width: 132px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
-		<img alt="<?=$mainImage[5]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
-		<img alt="<?=$mainImage[6]?>"  style="width: 132px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
+		<img style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img style="width: 132px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
+		<img style="width: 132px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
 		<?php		
 		break;
 	
@@ -344,7 +343,58 @@ For additional information contact Nash Homes on +34 971 67 59 69 or +34 636 47 
 No information contained herein constitutes the basis for a purchase/sale contract.
 </div> 
 
-</div>
+
+<script type="text/php">
+
+if ( isset($pdf) ) {
+
+  $font = Font_Metrics::get_font("verdana");;
+  $size = 6;
+  $color = array(0,0,0);
+  $text_height = Font_Metrics::get_font_height($font, $size);
+
+  $foot = $pdf->open_object();
+  
+  $w = $pdf->get_width();
+  $h = $pdf->get_height();
+
+  // Draw a line along the bottom
+  $y = $h - 2 * $text_height - 24;
+  $pdf->line(16, $y, $w - 16, $y, $color, 1);
+
+  $y += $text_height;
+
+  $text = "ID: <?php echo $report_id; ?>";
+  $pdf->text(16, $y, $text, $font, $size, $color);
+
+  $pdf->close_object();
+  $pdf->add_object($foot, "all");
+
+ // global $initials;
+ // $initials = $pdf->open_object();
+  
+  // Add an initals box
+  //$text = "Initials:";
+  //$width = Font_Metrics::get_text_width($text, $font, $size);
+  //$pdf->text($w - 16 - $width - 38, $y, $text, $font, $size, $color);
+  //$pdf->rectangle($w - 16 - 36, $y - 2, 36, $text_height + 4, array(0.5,0.5,0.5), 0.5);
+    
+
+  //$pdf->close_object();
+ // $pdf->add_object($initials);
+ 
+  // Mark the document as a duplicate
+  //df->text(110, $h - 240, "DUPLICATE", Font_Metrics::get_font("verdana", "bold"),
+   //        110, array(0.85, 0.85, 0.85), 0, -52);
+
+  $text = "Page {PAGE_NUM} of {PAGE_COUNT}";  
+
+  // Center the text
+  $width = Font_Metrics::get_text_width("Page 1 of 2", $font, $size);
+  $pdf->page_text($w / 2 - $width / 2, $y, $text, $font, $size, $color);
+  
+}
+</script>
 
 </body>
 </html>
