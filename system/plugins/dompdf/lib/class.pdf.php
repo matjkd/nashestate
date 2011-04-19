@@ -2077,7 +2077,7 @@ class  Cpdf {
 
     $xref = array();
 
-    $content = "%PDF-1.3\n%âãÏÓ\n";
+    $content = "%PDF-1.3\n%ï¿½ï¿½ï¿½ï¿½\n";
 
     //  $content="%PDF-1.3\n";
     $pos = strlen($content);
@@ -4667,14 +4667,14 @@ class  Cpdf {
 
     //$fp = fopen($img,'rb');
 
-    $tmp =  get_magic_quotes_runtime();
+    // $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    //set_magic_quotes_runtime(0);
 
     $data =  file_get_contents($img);
 
     //fread($fp,filesize($img));
-    set_magic_quotes_runtime($tmp);
+    // set_magic_quotes_runtime($tmp);
 
 
     //fclose($fp);
