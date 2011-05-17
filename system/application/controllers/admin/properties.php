@@ -510,7 +510,7 @@ class Properties extends MY_Controller
 						if (!copy($mydir.$entry, $newdir.$entry)) {
 	    				echo "failed to copy $file...\n";
 						}	
-						 
+							 unlink($mydir.$entry);  
 					  
 					 } 
 					} 
@@ -528,7 +528,7 @@ class Properties extends MY_Controller
 	    				echo "failed to copy $file...\n";
 						}	
 						 
-					  
+					  	 unlink($mydir.$entry); 
 					 } 
 					} 
 					$d->close(); 
@@ -545,7 +545,7 @@ class Properties extends MY_Controller
 	    				echo "failed to copy $file...\n";
 						}	
 						 
-					  
+					  	 unlink($mydir.$entry); 
 					 } 
 					} 
 					$d->close(); 
@@ -563,7 +563,7 @@ class Properties extends MY_Controller
 	    				echo "failed to copy $file...\n";
 						}	
 						 
-					  
+					  	 unlink($mydir.$entry); 
 					 } 
 					} 
 					$d->close(); 
