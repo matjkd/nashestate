@@ -491,20 +491,90 @@ class Properties extends MY_Controller
 		
 		//change images folder
 				
-				$config['hostname'] = $this->config_ftp_host;
-				$config['username'] = $this->config_ftp_user;
-				$config['password'] = $this->config_ftp_password;
-				$config['debug'] = TRUE;
-				$this->ftp->connect($config);
+		
 				
+				
+				mkdir(''.$this->config_base_path.'images/properties/'.$newref.'/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$newref.'/thumbs/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$newref.'/medium/');
+				mkdir(''.$this->config_base_path.'images/properties/'.$newref.'/large/');
+				
+				//move large files
+				
+					$mydir = './images/properties/'.$id.'/large/'; 
+					$newdir = './images/properties/'.$newref.'/large/'; 
+					$d = dir($mydir); 
+					while($entry = $d->read()) { 
+					 if ($entry!= "." && $entry!= "..") {
+					 	
+						if (!copy($mydir.$entry, $newdir.$entry)) {
+	    				echo "failed to copy $file...\n";
+						}	
+						 
+					  
+					 } 
+					} 
+					$d->close(); 
+					rmdir($mydir); 	
+				
+				//move medium files
+					$mydir = './images/properties/'.$id.'/medium/'; 
+					$newdir = './images/properties/'.$newref.'/medium/'; 
+					$d = dir($mydir); 
+					while($entry = $d->read()) { 
+					 if ($entry!= "." && $entry!= "..") {
+					 	
+						if (!copy($mydir.$entry, $newdir.$entry)) {
+	    				echo "failed to copy $file...\n";
+						}	
+						 
+					  
+					 } 
+					} 
+					$d->close(); 
+					rmdir($mydir); 	
+				
+				//move thumbs
+					$mydir = './images/properties/'.$id.'/thumbs/'; 
+					$newdir = './images/properties/'.$newref.'/thumbs/'; 
+					$d = dir($mydir); 
+					while($entry = $d->read()) { 
+					 if ($entry!= "." && $entry!= "..") {
+					 	
+						if (!copy($mydir.$entry, $newdir.$entry)) {
+	    				echo "failed to copy $file...\n";
+						}	
+						 
+					  
+					 } 
+					} 
+					$d->close(); 
+					rmdir($mydir); 	
+				
+				//move root files	
 					
-				$this->ftp->mkdir('/public_html/images/properties/'.$newref.'/');
+					$mydir = './images/properties/'.$id.'/'; 
+					$newdir = './images/properties/'.$newref.'/'; 
+					$d = dir($mydir); 
+					while($entry = $d->read()) { 
+					 if ($entry!= "." && $entry!= "..") {
+					 	
+						if (!copy($mydir.$entry, $newdir.$entry)) {
+	    				echo "failed to copy $file...\n";
+						}	
+						 
+					  
+					 } 
+					} 
+					$d->close(); 
+					rmdir($mydir); 	
 				
-				$this->ftp->move('/public_html/images/properties/'.$id.'/','/public_html/images/properties/'.$newref.'/');
+				
 			
 			
+			
 				
-				$this->ftp->close();
+				
 		
 		
 		//change property ref in everything
