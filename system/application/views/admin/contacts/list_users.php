@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	oTable = $('#contacts').dataTable({
 		"bJQueryUI": true,
-		"bStateSave": true,5
+		"bStateSave": true,
 		"bScrollInfinite": true,
 		"bScrollCollapse": true,
 		"sScrollY": "400px",
