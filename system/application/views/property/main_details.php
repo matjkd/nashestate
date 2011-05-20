@@ -18,12 +18,18 @@ if($rooms['room_type'] == 13)
 	$parking = $parking + 1;
 }
 
-//Count Bathrooms
-if($rooms['room_type'] == 2)
+
+//Count Bathrooms bathroom is room type 2 and en suite bathroom is room type 11
+if($rooms['room_type'] == 2 || $rooms['room_type'] == 11)
 {
 	$bathrooms = $bathrooms + 1;
 }
 
+//get size of terrace
+if($rooms['room_type'] == 7 || $rooms['room_type'] == 8)
+{
+	$terrace_size = $rooms['room_size'];
+}
 endforeach; ?>
 
 <?php foreach($property_details as $property):?>
