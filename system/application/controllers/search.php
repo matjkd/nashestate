@@ -35,7 +35,7 @@ class Search extends MY_Controller
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			$data['side2'] = 'sidebar/refine';
 			$data['leftbox'] = 'search/searchbox';
-			
+			$data['featured_property'] = $this->properties_model->get_featured_property();
 			// Deal with data sent from search form
 			$data['beds'] = $this->input->post('beds');
 			

@@ -61,6 +61,8 @@ function content()
 			$data['side2'] = 'sidebar/property_of_week';
 			$data['general_areas'] = $this->ajax_model->get_general_area();	
 			
+			
+			
 			if(isset($data['search_rentals']))
 				{
 					$data['featured_property'] = $this->properties_model->get_featured_rental();	

@@ -54,7 +54,7 @@
 		<div class="property_week">
 				
 				<img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_of_the_week.png"/>
-				
+				<?=$this->load->view('sidebar/property_of_week')?>
 		</div>
 	<div style="height:8px;" class="clear">	</div>		
 		
