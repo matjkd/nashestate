@@ -4,6 +4,7 @@ $bedrooms = 0;
 $parking = 0;
 $bathrooms = 0;
 
+if(isset($property_rooms)){
 foreach($property_rooms as $rooms):
 
 //Count Bedrooms
@@ -30,7 +31,7 @@ if($rooms['room_type'] == 7 || $rooms['room_type'] == 8)
 {
 	$terrace_size = $rooms['room_size'];
 }
-endforeach; ?>
+endforeach; }?>
 
 <?php foreach($property_details as $property):?>
 <h1><?=$property->property_title?> </h1>

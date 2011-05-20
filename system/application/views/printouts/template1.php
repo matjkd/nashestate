@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Printout</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 body {
   margin: 0pt 22pt 24pt 22pt;
@@ -150,7 +150,7 @@ switch ($imagecount) {
 $bedrooms = 0;
 $parking = 0;
 $bathrooms = 0;
-
+if(isset($property_rooms)){
 foreach($property_rooms as $rooms):
 
 //Count Bedrooms
@@ -196,7 +196,7 @@ if($rooms['room_type'] == 13)
 	}
 }
 
-endforeach; ?>
+endforeach; }?>
 
 
 
