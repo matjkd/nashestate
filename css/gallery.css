@@ -11,6 +11,14 @@
 		.thumb:hover {
 			outline: 1px solid #999;
 		}
+		
+		
+		#sortablethumb { list-style-type: none; margin: 0; padding: 0; 
+		}
+		#sortablethumb li { margin: 0px 0px 0px 0; padding: 10px; float: left; width: 155px; height: 180px;  text-align: center; 
+		}
+
+		
 		img {
 			border: 0;
 		}

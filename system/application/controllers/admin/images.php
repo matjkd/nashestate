@@ -88,6 +88,26 @@ class Images extends MY_Controller
 		redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
 	}
 	
+	function ajaxsort()
+	{
+			$pages = $this->input->post('pageorder');
+			
+			
+			
+			$pages = str_replace("pageorder;[]", "pageorder[]",  $pages);
+			echo $pages;
+			parse_str($pages, $pageOrder);
+		
+			foreach ($pageOrder['pageorder'] as $key => $value):
+				echo $key;
+			mysql_query("UPDATE ignite_property_images SET `print_order` = '$key' WHERE `image_id` = '$value'") or die(mysql_error());
+			
+			
+			
+			endforeach;
+
+	}
+	
 	function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');

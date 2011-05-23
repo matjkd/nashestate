@@ -1,5 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){	
+
+
 			
 			 $(".printable").editable("<?=site_url('admin/images/editable_images')?>", 
 			    	    {
@@ -16,32 +18,37 @@ $(document).ready(function(){
 			        	        
 			    	    });
 
-			 $(".image_order").editable("<?=site_url('admin/images/image_order')?>", 
-			    	    {
-			    	
-					 indicator : 'Saving...',
-	    	    	id   : 'elementid',
-	    	    	onblur : 'submit',
-	    	        tooltip   : 'Click to edit...',
-			     	        submitdata : function() 
-			     	        {
-			     	        return {id : "elementid"};
-			    }
-			    
-			        	        
-			    	    });
+
 
 });	
-			
+$(function() {
+		$( "#sortablethumb" ).sortable({
+   update: function(event,ui)
+        {
+var order = $('#sortablethumb').sortable('serialize');
+          $.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order } );
+//alert(order);
+        }
+  });
+		$( "#sortablethumb" ).disableSelection();
+var order1 = $('#sortablethumb').sortable('serialize');
+$.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order1 } );	
+	});	
+
+			 
+	
 </script>
 
 <div id="gallery">
+<ul id="sortablethumb">
 		<?php if (isset($images)):
+	
 			foreach($images as $image):	?>
 
 			
-			
-			<div class="thumb">
+
+			<li id="pageorder_<?=$image->image_id?>">
+			<div class="thumb" >
 				<a href="#">
 					<img height="100px" width="135px" src="<?=base_url()?>images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" />
 				</a>
@@ -62,8 +69,11 @@ $(document).ready(function(){
 				<?=form_close()?>
 				</div> 		
 			</div>
+			</li>
+
 		
 		<?php endforeach; else: ?>
+</ul>
 			<div id="blank_gallery">Please Upload an Image</div>
 		<?php endif; ?>
 </div>

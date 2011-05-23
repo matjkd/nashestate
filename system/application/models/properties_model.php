@@ -913,7 +913,10 @@ class Properties_model extends Model {
 		$this->db->where('sale_rent', 1);
 		$this->db->limit('1');
 		$this->db->join('property_main', 'property_main.property_ref_no=featured_properties.property_ref', 'left');
+		
 		$this->db->join('property_images', 'property_images.property_id=featured_properties.property_ref', 'left');
+		$this->db->order_by('property_images.print_order');
+		
 		$this->db->where('property_main.active', 1);
 		$Q = $this->db->get();
 		if ($Q->num_rows() == 1) {

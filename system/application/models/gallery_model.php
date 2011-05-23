@@ -61,6 +61,7 @@ class Gallery_model extends Model {
 		$new_image_data = array(
 				'filename' => $row['file_name'],
 				'property_id' => $id,
+				'print_order' => 5,
 				'test' => $image_data['full_path']
 		);
 		
@@ -128,7 +129,8 @@ $query = $this->db->get('property_images');
 		// add this to database $row['file_name'];
 		$new_image_data = array(
 				'filename' => $filename,
-				'property_id' => $id
+				'property_id' => $id,
+				'print_order' => 5
 		);
 		
 		$this->db->insert('property_images', $new_image_data);
@@ -171,6 +173,7 @@ $query = $this->db->get('property_images');
 		
 		if($query->num_rows > 0);
 			{
+				
 				return $query->result();
 			}
 			
