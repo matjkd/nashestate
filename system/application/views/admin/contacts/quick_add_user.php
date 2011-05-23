@@ -16,4 +16,4 @@ Type: <select name="company_type" >
 
 <div style="float:right;"><?php echo form_submit('quickadd', 'Quick Add Individual');?></div>
 <?php echo form_close();?>
-<div style="clear:both; font-size: 0.7em;">Note: Adding an individual also creates a Group for that person, though it will be called N/A. This is so you can still create related individuals.</div>
+<div style="clear:both; font-size: 0.9em;">Note: Adding an individual also creates a Group for that person, though it will be called N/A. This is so you can still create related individuals.</div>

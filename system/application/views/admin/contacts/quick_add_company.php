@@ -9,4 +9,4 @@ Group Type: <select name="company_type" >
 </select>
 <div style="float:right;"><?php echo form_submit('quickadd', 'Quick Add Group');?></div>
 <?php echo form_close();?>
-<div style="clear:both; font-size: 0.7em;">Note: Adding a group like this will have no people in it. You have to add them by clicking the group name in the table below then adding people using the menu on the left titled 'Group Detail'.</div>
+<div style="clear:both; font-size: 0.9em;">Note: Adding a group like this will have no people in it. You have to add them by clicking the group name in the table below then adding people using the menu on the left titled 'Group Detail'.</div>
