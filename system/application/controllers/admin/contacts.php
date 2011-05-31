@@ -208,15 +208,15 @@ function view_company()
 	function quick_add_user()
 	{
 		$this->form_validation->set_rules('firstname', 'firstname', 'trim|required');
-		$this->form_validation->set_rules('lastname', 'lastname', 'trim|required');
+		//$this->form_validation->set_rules('lastname', 'lastname', 'trim|required');
 		
 		if($this->form_validation->run() == FALSE)
 			{
-			$this->session->set_flashdata('message', 'Enter a Firstname and Lastname');
+			$this->session->set_flashdata('message', 'You must enter a firstname');
 			redirect('/admin/contacts/view_company');
 			}
 			
-			// Create the company called N/A
+			// Create the company 
 			
 			$companydata['company_id'] = $this->contacts_model->add_company();
 				

@@ -184,10 +184,18 @@ function edit_company($id, $field, $value)
 	{
 
 		$company_name = $this->input->post('company_name');
-		
-		if($company_name == "N/A")
+		$firstname = $this->input->post('firstname');
+		$lastname = $this->input->post('lastname');
+		if($company_name == "N/A") //N/A is a hidden field on the quick add form
 		{
-			$company_name =  "".$this->input->post('firstname')." ".$this->input->post('lastname')."s Group";
+			if($lastname != ""){	
+			$company_name =  "".$firstname." ".$lastname."s Group";
+			}
+			else 
+			{
+			$company_name =  $firstname."s Group";	
+				
+			}	
 		}
 		else
 		{
