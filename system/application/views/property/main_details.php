@@ -39,10 +39,14 @@ endforeach; }?>
 <br/>
 <?php 
 if($property->sale_rent == 1) {?>
-<strong>Price: &euro;<?=number_format($property->sale_price)?></strong>
+<strong>Price: <?=number_format($property->sale_price)?>&euro;</strong>
 <?php } 
 if($property->sale_rent == 2) {?>
-<strong>Price: &euro;<?=number_format($property->rent_price)?> <?=$property->rent_period?></strong>
+<strong>Price: <?=number_format($property->rent_price)?>&euro; <?=$property->rent_period?></strong><br/>
+
+<?php if(isset($security_deposit)) { ?>
+<strong>Security Deposit: <?=number_format($property->security_deposit)?>&euro; </strong>
+<?php } ?>
 <?php } ?>
 <p>
 
