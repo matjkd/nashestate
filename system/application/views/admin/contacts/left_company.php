@@ -28,7 +28,7 @@
 		<div id="ajax_users"><?php  $this->load->view('admin/contacts/users_list'); ?></div>
 		</p>
 <div style="float:left;"><?php $this->load->view('admin/contacts/add_user_popup'); ?></div>
-<div style="float:left;"><button>Delete Group(coming soon)</button></div>
+<div style="float:left;"><button><a href='#' onclick='groupconfirmation("<?=$company_id?>")'>Delete Group</a></button></div>
 	</div>
 	<h3><a href="#">Contact Details</a></h3>
 	<div>
