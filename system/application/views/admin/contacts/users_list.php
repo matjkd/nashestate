@@ -16,11 +16,15 @@ $(document).ready(function() {
 
 </script>
 <script >
+
+
+
+
 function userconfirm(id) {
-	var answer = confirm("are you sure you want to delete this user?")
+	var answer = confirm("are you sure you want to delete this user??")
 	if (answer){
 		
-		$.post('<?=base_url()?>admin/contacts/delete_user/', {id: id});
+		$.post('<?=base_url()?>admin/contacts/delete_user/'+id);
 			
 	}
 	else{
