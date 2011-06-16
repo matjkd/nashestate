@@ -91,7 +91,8 @@ $query = $this->db->get('property_images');
 				return;
 			}
 
-		$config = array(
+
+                $config = array(
 			'source_image' => $fullpath,
 			'new_image' => $this->gallery_path . '/'.$id.'/thumbs',
 			'maintain_ratio' => true,
@@ -121,6 +122,8 @@ $query = $this->db->get('property_images');
 			'source_image' => $fullpath,
 			'new_image' => $this->gallery_path . '/'.$id.'',
 			'maintain_ratio' => true,
+                        'width' => 800,
+			'height' => 600
 			
 		);
 		$this->image_lib->initialize($config3);

@@ -231,7 +231,7 @@ div#menu li {
     position: relative;
     z-index: 9;
     margin: 0;
-    padding: 0 5px 0 0;
+    padding: 0 2px 0 0;
     display: block;
     float: left;
 }

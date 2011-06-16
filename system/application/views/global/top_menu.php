@@ -39,7 +39,10 @@
 						</ul>
         
         </li>   
-           
+
+         <li <?php if($page=='7'){echo "class='current'";}?>>
+        <a href="<?=base_url()?>premiere"><span>Premiere Properties</span></a></li>
+        
            <li <?php if($page=='3'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?welcome/content/where_we_are"><span>Where we are</span></a></li>   
         
