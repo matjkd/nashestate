@@ -31,7 +31,7 @@ class Search_model extends Model {
 		
 	}
 	
-	function search_sales($from, $to, $beds, $area)
+	function search_sales($from, $to, $beds, $maxbeds, $area)
 	{
 		$data = array();
 		
@@ -93,7 +93,7 @@ class Search_model extends Model {
 		return $data;
 	}
 	
-	function search_rentals($from, $to, $beds, $area)
+	function search_rentals($from, $to, $beds, $maxbeds, $area)
 	{
 		$data = array();
 		$this->db->from('property_main');

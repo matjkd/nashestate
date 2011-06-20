@@ -3,7 +3,7 @@ Min Bedrooms
 <?=form_dropdown('beds', $bedsnumbers, 0)?>
 <br/>
 Max Bedrooms
-<?=form_dropdown('maxbeds', $bedsnumbers, 0)?>
+<?=form_dropdown('maxbeds', $maxbedsnumbers, 0)?>
 <br/>
 
 

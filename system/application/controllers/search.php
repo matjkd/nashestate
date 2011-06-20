@@ -38,8 +38,9 @@ class Search extends MY_Controller
 			$data['featured_property'] = $this->properties_model->get_featured_property();
 			// Deal with data sent from search form
 			$data['beds'] = $this->input->post('beds');
+			$data['maxbeds'] = $this->input->post('maxbeds');
 			
-			
+                        if($data['maxbeds'] < $data['beds']) { $data['maxbeds'] = $data['beds']; }
 		
 			$data['buyfrom']  = $this->input->post('buyfrom');
 			$data['buyto'] =  $this->input->post('buyto');
@@ -58,8 +59,8 @@ class Search extends MY_Controller
 			{
 				$data['list'] = 'both unlimited';
 				$data['search_desc'] = "All properties";
-				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds'], $area);	
-				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds'], $area);		
+				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds'], $data['maxbeds'], $area);
+				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds'], $data['maxbeds'],  $area);
 			}
 			// Purchase Only
 			if(($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1)
@@ -67,7 +68,7 @@ class Search extends MY_Controller
 				$data['list'] = 'purchase only';
 				$data['search_desc'] = "Properties for Sale between ".number_format($data['buyfrom'])."&euro; and ".number_format($data['buyto'])."&euro;";
 				
-				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $area);	
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area);
 				$data['rentals'] = NULL;
 			}
 			
@@ -77,7 +78,7 @@ class Search extends MY_Controller
 				$data['list'] = 'rent only';
 				$data['search_desc'] = "Properties for Rent between ".number_format($data['rentfrom'])."&euro; and ".number_format($data['rentto'])."&euro; per month";
 				
-				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $area);	
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area);
 				$data['properties'] = NULL;
 			}
 			
@@ -86,8 +87,8 @@ class Search extends MY_Controller
 			{
 				$data['list'] = 'both limited';
 				$data['search_desc'] = "Properties for Rent between ".number_format($data['buyfrom'])."&euro; and ".number_format($data['buyto'])."&euro; and for Rent between ".number_format($data['rentfrom'])."&euro; and ".number_format($data['rentto'])."&euro; per month";
-				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $area);	
-				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $area);	
+				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area);
+				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area);
 			}
 			
 			

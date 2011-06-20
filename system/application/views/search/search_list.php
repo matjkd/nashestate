@@ -14,7 +14,7 @@
 				
 				<?php 
 				
-				if($beds <= $property['rooms'] )
+				if($property['rooms'] >= $beds && $maxbeds >= $property['rooms'])
 				{
 					
 				
