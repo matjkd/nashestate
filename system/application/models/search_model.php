@@ -18,22 +18,73 @@ class Search_model extends Model {
 	
 	function find_group($area)
 	{
+		$data = array();
 		
-		$this->db->select('group_id');	
-		$this->db->from('general_area_link');
-		$this->db->where('area_id', $area); 
+		$this->db->from('general_area_group');
+		$this->db->where('group_name', $area);
 		$Q = $this->db->get();	
-		if ($Q->num_rows() > 0)
+		if ($Q->num_rows() == 1)
 		{
-			return $Q->result();
+
+
+                        foreach ($Q->result_array() as $row)
+
+			$data[] = $row;
+                       
+
 		}
+                $Q->free_result();
+		return $data;
+		
 		
 		
 	}
+
+        function getareas($groupid)
+        {
+            $data = array();
+
+		$this->db->from('general_area_link');
+		$this->db->where('group_id', $groupid);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+
+
+                        foreach ($Q->result_array() as $row)
+
+			$data[] = $row;
+
+		}
+
+		$Q->free_result();
+		return $data;
+
+        }
 	
-	function search_sales($from, $to, $beds, $maxbeds, $area)
+	function search_sales($from, $to, $beds, $maxbeds, $area, $nearby)
 	{
-		$data = array();
+
+            //find out group ids. First get group idwith area id
+	if($area != "any")
+		{
+                     $areaGroup = $this->find_group($area);
+
+                        foreach($areaGroup as $row):
+
+
+                        $groupID = $row['general_area_group_id'];
+
+                        endforeach;
+
+                        if(isset($groupID)){
+                                $relatedAreas = $this->getareas($groupID);
+                               
+                          }
+                }
+           
+
+            $data = array();
 		
 		$this->db->from('property_main'); 				// main property details
 		$this->db->where('property_main.sale_rent', 1); 				//select only entries that are for sale
@@ -50,14 +101,39 @@ class Search_model extends Model {
 		
 		$this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
 		
-		//if area is not any search by area also
+		//if area is not "any", search by area also
 		if($area != "any")
 		{
 				
-			//find out group ids
-			//$groups = $this->search_model->find_group($area);	
-				
-			$this->db->where('general_area.general_area_id', $area); 	
+			
+
+
+			//if nearby is set just search nearby locations, if not search main location
+                    if($nearby == 0){
+			$this->db->where('general_area.general_area_id', $area);
+                    }
+
+                    if($nearby == 1){
+                        $x = 1;
+                        if(isset($relatedAreas)) {
+                            echo $relatedAreas;
+                                foreach($relatedAreas as $row2):
+
+                                if($x == 1) {
+                               $this->db->where('general_area.general_area_id', $row2['area_id']);
+                                }
+                                else
+                                {
+                                $this->db->or_where('general_area.general_area_id', $row2['area_id']);
+                                }
+                                   $x = $x + 1;
+                                 endforeach;
+                                 }
+                                 else
+                                 {
+                                     $this->db->where('general_area.general_area_id', 'NO');
+                                 }
+                        }
 			
 		}
 		
@@ -93,8 +169,27 @@ class Search_model extends Model {
 		return $data;
 	}
 	
-	function search_rentals($from, $to, $beds, $maxbeds, $area)
+	function search_rentals($from, $to, $beds, $maxbeds, $area, $nearby)
 	{
+                 //find out group ids. First get group idwith area id
+	if($area != "any")
+		{
+                     $areaGroup = $this->find_group($area);
+
+                        foreach($areaGroup as $row):
+
+
+                        $groupID = $row['general_area_group_id'];
+
+                        endforeach;
+
+                        if(isset($groupID)){
+                                $relatedAreas = $this->getareas($groupID);
+                               
+                          }
+                }
+
+
 		$data = array();
 		$this->db->from('property_main');
 		$this->db->where('sale_rent', 2);
@@ -111,10 +206,31 @@ class Search_model extends Model {
 		if($area != "any")
 		{
 				
-			//find out group ids
-			//$groups = $this->search_model->find_group($area);	
-				
-			$this->db->where('general_area.general_area_id', $area); 	
+			//if nearby is set just search nearby locations, if not search main location
+                    if($nearby == 0){
+			$this->db->where('general_area.general_area_id', $area);
+                    }
+
+                    if($nearby == 1){
+                        $x = 1;
+                        if(isset($relatedAreas)) {
+                                foreach($relatedAreas as $row2):
+
+                                if($x == 1) {
+                               $this->db->where('general_area.general_area_id', $row2['area_id']);
+                                }
+                                else
+                                {
+                                $this->db->or_where('general_area.general_area_id', $row2['area_id']);
+                                }
+                                   $x = $x + 1;
+                                 endforeach; 
+                                 }
+                                  else
+                                 {
+                                     $this->db->where('general_area.general_area_id', 'NO');
+                                 }
+                        }
 			
 		}
 		
