@@ -1,8 +1,10 @@
 <form name="search" action="<?=base_url()?>search/content" method="post">
-Number of Bedrooms
+Min Bedrooms
 <?=form_dropdown('beds', $bedsnumbers, 0)?>
 <br/>
-
+Max Bedrooms
+<?=form_dropdown('maxbeds', $bedsnumbers, 0)?>
+<br/>
 
 Minimum Cost
 <?=form_dropdown('buyfrom', $saleprices, $saleincrements)?>

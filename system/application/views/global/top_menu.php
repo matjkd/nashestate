@@ -43,8 +43,7 @@
          <li <?php if($page=='7'){echo "class='current'";}?>>
         <a href="<?=base_url()?>premiere"><span>Premiere Properties</span></a></li>
         
-           <li <?php if($page=='3'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?welcome/content/where_we_are"><span>Where we are</span></a></li>   
+       
         
            <li <?php if($page=='4'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?welcome/content/guide_to_buying_or_selling"><span>Guide to Buying or Selling</span></a></li>   
@@ -52,8 +51,8 @@
            <li <?php if($page=='8'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?welcome/content/references"><span>References</span></a></li>   
         
-           <li <?php if($page=='6'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?welcome/content/contact_us"><span>Contact Us</span></a></li>        
+           <li <?php if($page=='3'){echo "class='current'";}?>>
+        <a href="<?=base_url()?>index.php?welcome/content/where_we_are"><span>Contact Us</span></a></li>
        
        <?php 
        
