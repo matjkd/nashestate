@@ -116,7 +116,7 @@ class Search_model extends Model {
                     if($nearby == 1){
                         $x = 1;
                         if(isset($relatedAreas)) {
-                            echo $relatedAreas;
+                          
                                 foreach($relatedAreas as $row2):
 
                                 if($x == 1) {
