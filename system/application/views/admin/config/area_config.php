@@ -44,7 +44,19 @@ background: #dddddd;
 <?php echo form_close();?>
 
 <?php echo form_open('admin/areas/add_group/');?>
-<input type="text" name="group" id="group" style="width:150px; "/>
+<select  name="group" id="group" style="width:150px; "/>
+<?php foreach($areas as $row):?>
+
+<option value="<?=$row['general_area_id']?>"><?=$row['area']?></option>
+
+
+<?php endforeach; ?>
+
+</select>
+
+
+
+
 <?php echo form_submit( 'submit', 'Add Group');  ?>
 <?php echo form_close();?>
 	
@@ -54,7 +66,7 @@ background: #dddddd;
 	<?php foreach($groups as $row):?>
 	
 					<div id="area_group"> 
-					<div><strong><?=$row['group_name']?></strong>
+					<div><strong><?=$row['area']?></strong>
 					
 					<a href="<?=base_url()?>admin/areas/delete_group/<?=$row['general_area_group_id']?>" >
 					<span style="float:right;" class="ui-icon ui-icon-circle-close"></span>

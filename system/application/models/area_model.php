@@ -25,15 +25,23 @@ function __construct()
     
     function add_group()
     {
-    	
-    	 $new_group_insert_data = array(
-			'group_name' => $this->input->post('group'),
+    $group = $this->input->post('group');
+
+    $this->db->where('group_name', $group);
+
+		$query = $this->db->get('general_area_group');
+
+		if($query->num_rows < 1)
+		{
+
+                 $new_group_insert_data = array(
+			'group_name' => $group,
 						
 		);
-		
+
 		
 		$this->db->insert('general_area_group', $new_group_insert_data);
-    	
+                }
     }
     
     function list_areas()
@@ -124,6 +132,7 @@ function __construct()
     {
     	$data = array();
 		$this->db->from('general_area_group');
+                $this->db->join('general_area', 'general_area.general_area_id = general_area_group.group_name', 'left');
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
 		{

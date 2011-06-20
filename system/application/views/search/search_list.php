@@ -95,8 +95,8 @@
 					$rental_period = "month";
 				}
 				
+				if($rentals['rooms'] >= $beds && $maxbeds >= $rentals['rooms'])
 				
-				if($beds <= $rentals['rooms'] )
 				{
 				
 				?>
