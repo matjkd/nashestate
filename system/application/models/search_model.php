@@ -205,11 +205,19 @@ class Search_model extends Model {
 		$this->db->join('general_area', 'general_area.general_area_id = property_main.general_area', 'left'); 		//link to areas table
 		$this->db->join('general_area_link', 'general_area_link.area_id = property_main.general_area', 'left'); 		//link to areas-groups link table
 		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left'); 		// link to images table
-		
-		if($area != "any")
+                $this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
+
+                	if ($to > 0) // if a top price is selected else make it unlimited
+				{
+					$search = "monthly_rent <= $to AND $from <= monthly_rent";
+					$this->db->where($search);
+				}
+
+		//if area is not any, search by area also
+                 if($area != "any")
 		{
 				
-			//if nearby is set just search nearby locations, if not search main location
+                    //if nearby is set just search nearby locations, if not search main location
                     if($nearby == 0){
 			$this->db->where('general_area.general_area_id', $area);
                     }
@@ -217,17 +225,15 @@ class Search_model extends Model {
                     if($nearby == 1){
                         $x = 1;
                         if(isset($relatedAreas)) {
+
                                 foreach($relatedAreas as $row2):
 
-                                if($x == 1) {
-                               $this->db->where('general_area.general_area_id', $row2['area_id']);
-                                }
-                                else
-                                {
-                                $this->db->or_where('general_area.general_area_id', $row2['area_id']);
-                                }
-                                   $x = $x + 1;
-                                 endforeach; 
+                                   $otherAreas[] = $row2['area_id'];
+
+                                 endforeach;
+
+                                  $this->db->where_in('general_area.general_area_id', $otherAreas);
+
                                  }
                                   else
                                  {
@@ -239,11 +245,7 @@ class Search_model extends Model {
 		
 		$this->db->group_by('property_main.property_ref_no');
 		
-		if ($to > 0) // if a top price is selected else make it unlimited
-				{
-					$search = "monthly_rent <= $to AND $from <= monthly_rent";
-					$this->db->where($search);
-				}
+	
 		
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
