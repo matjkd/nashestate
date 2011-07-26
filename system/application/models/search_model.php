@@ -65,7 +65,7 @@ class Search_model extends Model {
 	function search_sales($from, $to, $beds, $maxbeds, $area, $nearby)
 	{
 
-            //find out group ids. First get group idwith area id
+           //find out group ids. First get group idwith area id
 	if($area != "any")
 		{
                      $areaGroup = $this->find_group($area);
@@ -100,7 +100,15 @@ class Search_model extends Model {
 		$this->db->order_by('property_main.sale_price', 'asc'); 		// order by price
 		
 		$this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
-		
+
+                if ($to > 0) 			// if a top price is selected else make it unlimited
+				{
+						$search = "sale_price <= $to AND $from <= sale_price";
+						$this->db->where($search);
+                                            
+				}
+
+
 		//if area is not "any", search by area also
 		if($area != "any")
 		{
@@ -119,15 +127,12 @@ class Search_model extends Model {
                           
                                 foreach($relatedAreas as $row2):
 
-                                if($x == 1) {
-                               $this->db->where('general_area.general_area_id', $row2['area_id']);
-                                }
-                                else
-                                {
-                                $this->db->or_where('general_area.general_area_id', $row2['area_id']);
-                                }
-                                   $x = $x + 1;
+                                    $otherAreas[] = $row2['area_id'];
+                               
                                  endforeach;
+                              
+                                 $this->db->where_in('general_area.general_area_id', $otherAreas);
+
                                  }
                                  else
                                  {
@@ -137,11 +142,7 @@ class Search_model extends Model {
 			
 		}
 		
-		if ($to > 0) 			// if a top price is selected else make it unlimited
-				{
-						$search = "sale_price <= $to AND $from <= sale_price"; 
-						$this->db->where($search);
-				}
+		
 
 
 

@@ -78,6 +78,7 @@ class Search extends MY_Controller
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 0);
                                   if($area != "any") {
                                 $data['nearby'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 1);
+                                
                                   }
 				$data['rentals'] = NULL;
 			}
