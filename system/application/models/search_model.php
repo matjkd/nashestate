@@ -142,7 +142,9 @@ class Search_model extends Model {
 						$search = "sale_price <= $to AND $from <= sale_price"; 
 						$this->db->where($search);
 				}
-		
+
+
+
 		$Q = $this->db->get();
 		
 		if ($Q->num_rows() > 0)
@@ -171,7 +173,7 @@ class Search_model extends Model {
 	
 	function search_rentals($from, $to, $beds, $maxbeds, $area, $nearby)
 	{
-                 //find out group ids. First get group idwith area id
+         //find out group ids. First get group idwith area id
 	if($area != "any")
 		{
                      $areaGroup = $this->find_group($area);

@@ -62,9 +62,12 @@ class Search extends MY_Controller
 				$data['list'] = 'both unlimited';
 				$data['search_desc'] = "All properties";
 				$data['properties'] = $this->search_model->search_sales(0,0, $data['beds'], $data['maxbeds'], $area, 0);
-                                $data['nearby'] = $this->search_model->search_sales(0,0, $data['beds'], $data['maxbeds'], $area, 1);
+                               
 				$data['rentals'] = $this->search_model->search_rentals(0,0, $data['beds'], $data['maxbeds'],  $area, 0);
+                                if($area != "any") {
+                                  $data['nearby'] = $this->search_model->search_sales(0,0, $data['beds'], $data['maxbeds'], $area, 1);
                                  $data['nearbyrentals'] = $this->search_model->search_sales(0,0, $data['beds'], $data['maxbeds'], $area, 1);
+                                }
 			}
 			// Purchase Only
 			if(($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1)
@@ -73,7 +76,9 @@ class Search extends MY_Controller
 				$data['search_desc'] = "Properties for Sale between ".number_format($data['buyfrom'])."&euro; and ".number_format($data['buyto'])."&euro;";
 				
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 0);
+                                  if($area != "any") {
                                 $data['nearby'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 1);
+                                  }
 				$data['rentals'] = NULL;
 			}
 			
@@ -84,7 +89,9 @@ class Search extends MY_Controller
 				$data['search_desc'] = "Properties for Rent between ".number_format($data['rentfrom'])."&euro; and ".number_format($data['rentto'])."&euro; per month";
 				
 				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 0);
+                                 if($area != "any") {
                                 $data['nearbyrentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 1);
+                                 }
 				$data['properties'] = NULL;
 			}
 			
@@ -95,8 +102,10 @@ class Search extends MY_Controller
 				$data['search_desc'] = "Properties for Rent between ".number_format($data['buyfrom'])."&euro; and ".number_format($data['buyto'])."&euro; and for Rent between ".number_format($data['rentfrom'])."&euro; and ".number_format($data['rentto'])."&euro; per month";
 				$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 0);
 				$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 0);
+                                 if($area != "any") {
                                 $data['nearby'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 1);
 				$data['nearbyrentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area,  1);
+                                 }
 			}
 			
 			
