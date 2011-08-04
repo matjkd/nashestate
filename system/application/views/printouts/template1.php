@@ -18,7 +18,7 @@ body {
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
-<div style="height: 20px; width: 554px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;"> 
+<div style="height: 20px; width: 564px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;">
 	
 	<?php foreach($property_details as $header):?>
 		<table width="560px">
@@ -78,7 +78,7 @@ if(count($property_images) < 2)
 if(count($property_images) < 4 && count($property_images) >= 2) 	
 	{
 	$imagecount = 2;
-	$bodyheight = "250px";
+	$bodyheight = "260px";
 	}
 if(count($property_images) < 6 && count($property_images) >= 4) 	
 	{
@@ -88,7 +88,7 @@ if(count($property_images) < 6 && count($property_images) >= 4)
 if(count($property_images) >= 6) 	
 	{
 	$imagecount = 6;
-	$bodyheight = "182px";
+	$bodyheight = "190px";
 	}
 	
 
@@ -109,35 +109,35 @@ switch ($imagecount) {
 	case 1:
 		
 		?>
-		<img style="width: 560px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 564px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<?php
 		break;
 	
 	case 2:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 279px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 279px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		
 		<?php 
 		break;
 	
 	case 4:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>" style="width: 275px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>" style="width: 275px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 279px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 279px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>" style="width: 279px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>" style="width: 279px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 		<?php 
 		break;
 	
 	case 6:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>"  style="width: 132px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
-		<img alt="<?=$mainImage[5]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
-		<img alt="<?=$mainImage[6]?>"  style="width: 132px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 279px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 279px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>"  style="width: 134px; height:92px; padding-right:11px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>"  style="width: 134px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[5]?>"  style="width: 134px; height:92px; padding-right:11px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
+		<img alt="<?=$mainImage[6]?>"  style="width: 134px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
 		<?php		
 		break;
 	
@@ -205,10 +205,10 @@ endforeach; }?>
 <div style="clear:both; height:5px;">&nbsp;</div>
 <?php foreach($property_details as $property):?>
 	
-<table width="560px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
+<table width="564px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 	<tr>
-			<td bgcolor="#dddddd" width="272px" height="130px" valign="top">
-			<div style="height: 130px; width: 268px; float:left; padding:3px; color:#444444; " > 
+			<td bgcolor="#dddddd" width="277px" height="130px" valign="top">
+			<div style="height: 130px; width: 270px; float:left; padding:3px; color:#444444; " >
 				
 				<table width="99%">
 					
@@ -275,10 +275,10 @@ endforeach; }?>
 
 			</div> 
 		</td>
-		<td width="10px">
+		<td width="8px">
 		</td>
-		<td bgcolor="#f9dba8" width="272px" height="130px" valign="top">
-			<div style="height: 130px; width: 268px; float:right; padding:3px; margin-top:0px; color:#000000;"  > 
+		<td bgcolor="#f9dba8" width="277px" height="130px" valign="top">
+			<div style="height: 130px; width: 270px; float:right; padding:3px; margin-top:0px; color:#000000;"  >
 				<table width="99%">
 					<tr>
 						<td>

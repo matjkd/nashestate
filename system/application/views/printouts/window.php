@@ -18,7 +18,7 @@ body {
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
-<div style="height: 20px; width: 554px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;"> 
+<div style="height: 20px; width: 564px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;">
 	
 	<?php foreach($property_details as $header):?>
 		<table width="560px">
@@ -88,7 +88,7 @@ switch ($imagecount) {
 	case 1:
 		
 		?>
-		<img style="width: 560px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 564px; height:370px" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<?php
 		break;
 	
