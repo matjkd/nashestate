@@ -73,22 +73,22 @@ if(count($property_images) < 2)
 	$imagecount = 1;
 	
 	//height of body
-	$bodyheight = "55px";
+	$bodyheight = "65px";
 	} 
 if(count($property_images) < 4 && count($property_images) >= 2) 	
 	{
 	$imagecount = 2;
-	$bodyheight = "260px";
+	$bodyheight = "270px";
 	}
 if(count($property_images) < 6 && count($property_images) >= 4) 	
 	{
 	$imagecount = 4;
-	$bodyheight = "90px";
+	$bodyheight = "100px";
 	}
 if(count($property_images) >= 6) 	
 	{
 	$imagecount = 6;
-	$bodyheight = "190px";
+	$bodyheight = "200px";
 	}
 	
 
@@ -338,10 +338,11 @@ else
 
 <?php endforeach; ?>
 <div align="center" style="height: 3px; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px; color:#000000;  background-color: #f15c22; font-size:10px;"> 
-For additional information contact Nash Homes on +34 971 67 59 69 or +34 636 47 55 49. Email: info@nashhomesmallorca.com. Office address: We are in the centre of Portals village street opposite the Bar Portals Village. Ctra. Palma-Andraitx 43, Local 13, Portals Nous, Calvia 07181, Mallorca.
-<br/>
 
+Contact: Nash Homes on +34 971 67 59 69 or + 34 636 47 55 49. Email: info@nashhomesmallorca.com.<br/>
+Office address: Ctra. Palma-Andraitx 43, local 13, Portals Nous, Calvia 07181, Mallorca.<br/>
 No information contained herein constitutes the basis for a purchase/sale contract.
+
 </div> 
 
 </div>
