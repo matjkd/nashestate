@@ -91,6 +91,18 @@
 <div class="admin_left">
 <?=$this->load->view('admin/properties/featured_property_form')?>
 
+
+  <?php if($row->sale_rent==1){ ?>
+
+    Sale Form
+  <?=$this->load->view('admin/properties/sales_form')?>
+    <?php } ?>
+
+
+      <?php if($row->sale_rent==2){ ?>
+    Rental Form
+  <?=$this->load->view('admin/properties/rental_form')?>
+        <?php } ?>
 </div>
 	<?php endforeach; ?>
 <div style="clear:both;"></div>
