@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-function pdf_create($html, $filename, $stream) 
+function pdf_create($html, $filename, $stream=TRUE) 
 {
     require_once("dompdf/dompdf_config.inc.php");
     spl_autoload_register('DOMPDF_autoload');
@@ -10,15 +10,12 @@ function pdf_create($html, $filename, $stream)
     if ($stream) {
          $CI =& get_instance();
      	 $CI->load->helper('file');
-        
-         $dompdf->stream($filename.".pdf");
-      	
+
+        $dompdf->stream($filename.".pdf");
     } else {
-        $CI =& get_instance();
+            $CI =& get_instance();
         $CI->load->helper('file');
         write_file("./images/reports/$filename.pdf", $dompdf->output());
-        write_file("./invoices_temp/invoice_$filename.pdf", $dompdf->output());
-        
-       
     }
 }
+?>

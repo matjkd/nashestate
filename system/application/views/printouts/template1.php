@@ -1,27 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
 	<title>Printout</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 body {
-  margin: 0pt 22pt 24pt 22pt;
+ 
    font-family: 'Helvetica', 'Arial', 'Sans-serif';
-  font-size: 12px;
+  font-size: 16px;
+  
 }
+
+div.absolute {
+	
+	position: fixed;
+	padding: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 </style>
 </head>
 <body>
-<div>	
-<img style="width: 240px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" />
+	
+    <div><img style="width: 290px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" /></div>
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
-<div style="height: 20px; width: 554px; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;"> 
+<div style="height: 20px; width: 100%; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;">
 	
 	<?php foreach($property_details as $header):?>
-		<table width="560px">
+		<table width="100%">
 			<tr>
 				<td width="300px">
 					<?=$header->property_type_name?> :: <?=$header->area?>
@@ -109,35 +119,35 @@ switch ($imagecount) {
 	case 1:
 		
 		?>
-		<img style="width: 560px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img style="width: 724px; height:440px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<?php
 		break;
 	
 	case 2:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		
 		<?php 
 		break;
 	
 	case 4:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>" style="width: 275px; height:183px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>" style="width: 275px; height:183px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>" style="width: 357px; height:223px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>" style="width: 357px; height:223px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 		<?php 
 		break;
 	
 	case 6:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 275px; height:183px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 275px; height:183px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>"  style="width: 132px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
-		<img alt="<?=$mainImage[5]?>"  style="width: 133px; height:92px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
-		<img alt="<?=$mainImage[6]?>"  style="width: 132px; height:92px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[5]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
+		<img alt="<?=$mainImage[6]?>"  style="width: 174px; height:122px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
 		<?php		
 		break;
 	
@@ -203,53 +213,55 @@ endforeach; }?>
 
 
 <div style="clear:both; height:5px;">&nbsp;</div>
+
+<div>
 <?php foreach($property_details as $property):?>
 	
-<table width="560px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
+<table width="723px" height="140px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 	<tr>
-			<td bgcolor="#dddddd" width="272px" height="130px" valign="top">
-			<div style="height: 130px; width: 268px; float:left; padding:3px; color:#444444; " > 
+			<td bgcolor="#dddddd" width="354px" height="180px" valign="top">
+			<div style="float:left; padding:3px; color:#444444; " >
 				
 				<table width="99%">
 					
 					<tr>
-						<td width="133px"><strong>Reference Number:</strong></td>		<td><?=$property->property_ref_no?></td>
+						<td width="233px"><strong>Reference Number:</strong></td>		<td><?=$property->property_ref_no?></td>
 					</tr>
 					
 					<?php if(isset($bedrooms))  {   ?>
 					<tr>
-						<td width="133px"><strong>Number of Bedrooms:</strong></td>		<td><?=$bedrooms?></td>
+						<td width="233px"><strong>Number of Bedrooms:</strong></td>		<td><?=$bedrooms?></td>
 					</tr>
 					<?php } ?>
 					
 					<?php if(isset($bathrooms))  {   ?>
 					<tr>
-						<td width="133px"><strong>Number of Bathrooms:</strong></td>		<td><?=$bathrooms?></td>
+						<td width="233px"><strong>Number of Bathrooms:</strong></td>		<td><?=$bathrooms?></td>
 					</tr>
 					<?php } ?>
 					
 					<?php if(isset($property->plot_size))  {   ?>
 					<tr>
-						<td width="133px"><strong>Plot Size:</strong></td>		<td><?=$property->plot_size?></td>
+						<td width="233px"><strong>Plot Size:</strong></td>		<td><?=$property->plot_size?></td>
 					</tr>
 					<?php } ?>
 					
 					
 					<?php if(isset($property->build_size))  {   ?>
 					<tr>
-						<td width="133px"><strong>Build Size:</strong></td>		<td><?=$property->build_size?></td>
+						<td width="233px"><strong>Build Size:</strong></td>		<td><?=$property->build_size?></td>
 					</tr>
 					<?php } ?>
 					
 					
 					<?php if(isset($terrace_size))  {   ?>
 					<tr>
-						<td width="133px"><strong>Terrace Size:</strong></td>		<td><?=$terrace_size?></td>
+						<td width="233px"><strong>Terrace Size:</strong></td>		<td><?=$terrace_size?></td>
 					</tr>
 					<?php } ?>
 					
 					<tr>
-						<td width="133px"><strong>Parking:</strong></td>	<td><?php if(isset($parking)) { echo $parking; } else { echo "None"; }?></td>
+						<td width="233px"><strong>Parking:</strong></td>	<td><?php if(isset($parking)) { echo $parking; } else { echo "None"; }?></td>
 					</tr>
 					
 					
@@ -259,7 +271,7 @@ endforeach; }?>
 					
 						<?php if(isset($property->security_deposit))  {   ?>
 						<tr>
-							<td width="133px"><strong>Security Deposit:</strong></td>		<td><?=$property->security_deposit?> &#0128;</td>
+							<td width="233px"><strong>Security Deposit:</strong></td>		<td><?=$property->security_deposit?> &#0128;</td>
 						</tr>
 						<?php } ?>
 						
@@ -275,11 +287,11 @@ endforeach; }?>
 
 			</div> 
 		</td>
-		<td width="10px">
+		<td width="8px">
 		</td>
-		<td bgcolor="#f9dba8" width="272px" height="130px" valign="top">
-			<div style="height: 130px; width: 268px; float:right; padding:3px; margin-top:0px; color:#000000;"  > 
-				<table width="99%">
+		<td bgcolor="#f9dba8" width="354px" height="180px" valign="top">
+			
+				<table  border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 					<tr>
 						<td>
 					<strong>Features</strong><br/>
@@ -305,21 +317,21 @@ case 2:
 					echo "</ul>";
 break;
 }
-?>
+?></td>
+                                </tr>
+</table>
 					
 					
 						</td>
 					</tr>
 			</table>	
 			</div>
-		</td> 
-	</tr>
-</table>
+	
 
 
 
-<div style="clear:both; height:5px;">&nbsp;</div>
-<div style="height: <?=$bodyheight?>; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px;"> 
+<div style="clear:both; height:10px;">&nbsp;</div>
+<div style="width: 100%; min-height:100px; ">
 
 <?php if($property->alt_description == NULL)
 {
@@ -337,14 +349,15 @@ else
 
 
 <?php endforeach; ?>
-<div align="center" style="height: 3px; width: 560px; margin-bottom:0px; margin-top:0px; padding:0px; color:#000000;  background-color: #f15c22; font-size:10px;"> 
+
+ <div style="clear:both; height:0px;">&nbsp;</div>
+
+
+<div  class="absolute"style="bottom: 3px; left: 0px; right: 0px; color:#000000;  background-color: #f15c22; font-size:12px; height:1.8cm;">
 For additional information contact Nash Homes on +34 971 67 59 69 or +34 636 47 55 49. Email: info@nashhomesmallorca.com. Office address: We are in the centre of Portals village street opposite the Bar Portals Village. Ctra. Palma-Andraitx 43, Local 13, Portals Nous, Calvia 07181, Mallorca.
 <br/>
 
-No information contained herein constitutes the basis for a purchase/sale contract.
-</div> 
-
+No information contained herein constitutes the basis for a purchase/sale contract..
 </div>
-
 </body>
 </html>
