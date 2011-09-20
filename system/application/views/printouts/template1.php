@@ -28,7 +28,9 @@ div.absolute {
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
+
 <div style="height: 20px; width: 100%; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;">
+
 	
 	<?php foreach($property_details as $header):?>
 		<table width="100%">
@@ -83,31 +85,31 @@ if(count($property_images) < 2)
 	$imagecount = 1;
 	
 	//height of body
-	$bodyheight = "55px";
+	$bodyheight = "65px";
 	} 
 if(count($property_images) < 4 && count($property_images) >= 2) 	
 	{
 	$imagecount = 2;
-	$bodyheight = "250px";
+	$bodyheight = "270px";
 	}
 if(count($property_images) < 6 && count($property_images) >= 4) 	
 	{
 	$imagecount = 4;
-	$bodyheight = "90px";
+	$bodyheight = "100px";
 	}
 if(count($property_images) >= 6) 	
 	{
 	$imagecount = 6;
-	$bodyheight = "182px";
+	$bodyheight = "200px";
 	}
 	
 
 //determine features layout based on number of features
-if(count($property_features) < 9)
+if(count($property_features) < 6)
 	{
 		$featurecount = 1;
 	}
-if(count($property_features) > 8)
+if(count($property_features) > 5)
 	{
 		$featurecount = 2;
 	}
@@ -119,35 +121,43 @@ switch ($imagecount) {
 	case 1:
 		
 		?>
+
 		<img style="width: 724px; height:440px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+
 		<?php
 		break;
 	
 	case 2:
 		?>
+
 		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+
 		
 		<?php 
 		break;
 	
 	case 4:
 		?>
+
 		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		<img alt="<?=$mainImage[3]?>" style="width: 357px; height:223px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
 		<img alt="<?=$mainImage[4]?>" style="width: 357px; height:223px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+
 		<?php 
 		break;
 	
 	case 6:
 		?>
+
 		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		<img alt="<?=$mainImage[3]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
 		<img alt="<?=$mainImage[4]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 		<img alt="<?=$mainImage[5]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
 		<img alt="<?=$mainImage[6]?>"  style="width: 174px; height:122px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
+
 		<?php		
 		break;
 	
@@ -217,10 +227,12 @@ endforeach; }?>
 <div>
 <?php foreach($property_details as $property):?>
 	
+
 <table width="723px" height="140px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 	<tr>
 			<td bgcolor="#dddddd" width="354px" height="180px" valign="top">
 			<div style="float:left; padding:3px; color:#444444; " >
+
 				
 				<table width="99%">
 					
@@ -289,9 +301,11 @@ endforeach; }?>
 		</td>
 		<td width="8px">
 		</td>
+
 		<td bgcolor="#f9dba8" width="354px" height="180px" valign="top">
 			
 				<table  border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
+
 					<tr>
 						<td>
 					<strong>Features</strong><br/>
@@ -350,6 +364,7 @@ else
 
 <?php endforeach; ?>
 
+
  <div style="clear:both; height:0px;">&nbsp;</div>
 
 
@@ -358,6 +373,7 @@ For additional information contact Nash Homes on +34 971 67 59 69 or +34 636 47 
 <br/>
 
 No information contained herein constitutes the basis for a purchase/sale contract..
+
 </div>
 </body>
 </html>
