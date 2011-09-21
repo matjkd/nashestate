@@ -15,6 +15,9 @@
 <link rel='stylesheet' href='<?=base_url()?>css/pagination.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/fileuploader.css' type='text/css' />
 
+<!--[if IE 7]>
+<link rel="stylesheet" href="<?=base_url()?>css/template/standard/ie7.css" />
+<![endif]-->
 
 <script src="<?=base_url()?>js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.pikachoose.js" type="text/javascript"></script>

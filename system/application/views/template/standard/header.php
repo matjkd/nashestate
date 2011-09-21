@@ -23,7 +23,10 @@
   <link rel="stylesheet" href="<?=base_url()?>css/template/standard/grid.css">
   <link rel="stylesheet" href="<?=base_url()?>css/template/standard/style.css?v=2">
    <link rel="stylesheet" href="<?=base_url()?>css/template/standard/standard.css">
-  
+
+<!--[if IE 7]>
+<link rel="stylesheet" href="<?=base_url()?>css/template/standard/ie7.css" />
+<![endif]-->
 
   <link rel="stylesheet" media="handheld" href="<?=base_url()?>css/handheld.css?v=2">  
  

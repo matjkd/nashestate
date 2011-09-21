@@ -47,14 +47,55 @@ float:right;
 	-moz-box-shadow: 1px 2px 3px #191919;
 	-webkit-box-shadow: 1px 2px 3px #191919;
 	box-shadow: 1px 2px 3px #191919;
+        display:block;
 }
 .searchbox_content {
 background:#e09d2e;
 margin-top:1px;
 padding:5px;
 color:#ffffff;
+        display:block;
 }
+.searchbox_content select {
+width:100px;
+background-color: #ffffff;
+border: 1px solid #006;
+height:18px;
+float:left;
 
+}
+#submitsearch {
+width:100%;
+color:#ffffff;
+background-color:#ae7628;
+border: 0px solid #006;
+display:block;
+margin-top:8px;
+position:relative;
+bottom:0px;
+padding-top:2px;
+padding-bottom:2px;
+}
+#submitsearch:hover{
+color:#000000;
+    background-color:#fdbc5f;
+}
+#searchinput {
+height:18px;
+    margin:1px;
+    padding:1px;
+    width:99%;
+    background-color: #c08628;
+clear:both;
+display:block;
+}
+#searchlabel {
+
+    float: right;
+    padding-right:7px;
+    padding-top:2px;
+
+}
 .searchbox_content2 {
 background:#c08628;
 height:25px;

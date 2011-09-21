@@ -10,8 +10,11 @@
 
 		
 <div class="searchbox">
-<img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_search.png"/>		
+    <div>
+        <div style="float:left;"><img width="250px" height="23px" src="<?=base_url()?>images/template/standard/titles/property_search.png"/>	</div>
 <div id="back" style="cursor:pointer;"><img src="<?=base_url()?>images/template/standard/graphic/left_arrow.png" /></div>
+    </div>
+    <div style="clear:both;"></div>
 			<div class="original">
 				
 					
@@ -37,7 +40,7 @@
 				<div class="one">	
 				
 					<div class="searchbox_content">
-					Search All Properties
+					Search All Properties.
 					</div>
 				
 					<div style="height:196px;"class="searchbox_content">

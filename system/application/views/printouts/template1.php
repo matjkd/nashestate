@@ -372,7 +372,7 @@ else
 For additional information contact Nash Homes on +34 971 67 59 69 or +34 636 47 55 49. Email: info@nashhomesmallorca.com. Office address: We are in the centre of Portals village street opposite the Bar Portals Village. Ctra. Palma-Andraitx 43, Local 13, Portals Nous, Calvia 07181, Mallorca.
 <br/>
 
-No information contained herein constitutes the basis for a purchase/sale contract..
+No information contained herein constitutes the basis for a purchase/sale contract.
 
 </div>
 </body>
