@@ -54,7 +54,7 @@
 									
 									
 								
-								<strong>Ref: &#35;<?=$property['property_ref_no']?> 	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
+								<strong>Ref: &#35;<?=$property['property_ref_no']?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
 								</div>	
 								
 								<div  id="thumb">
@@ -123,7 +123,7 @@ echo "<br/>PROPERTYEND ";
 
 
 
-								<strong>Ref: &#35;<?=$property['property_ref_no']?> 	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
+								<strong>Ref: &#35;<?=$property['property_ref_no']?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
 								</div>
 
 								<div  id="thumb">
@@ -209,7 +209,7 @@ echo "<br/>PROPERTYEND ";
 									
 									
 								
-								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?></strong>
+								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?></strong>
 								</div>	
 								
 								<div  id="thumb">
@@ -289,7 +289,7 @@ echo "<br/>PROPERTYEND ";
 
 
 
-								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> 	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?></strong>
+								<strong>Ref: &#35;<?=$rentals['property_ref_no']?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	Price: <?=number_format($rentals['rent_price'])?>&euro; per <?=$rental_period?></strong>
 								</div>
 
 								<div  id="thumb">

@@ -96,10 +96,17 @@
     <footer>
 		<div class="container_24">
 				<div class="grid_24">
-					<div class="footerbox"></div>	
+					<div class="footerbox">	</div>
 				</div>
+
+
+                   <div class="grid_24">
+				<?=$this->load->view('template/standard/links')?>
+		</div>
+                    
 		</div>
     </footer>
+     
   </div> 
 
 <!--! end of #container -->

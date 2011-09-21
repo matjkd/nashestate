@@ -179,9 +179,11 @@ position:relative;
 .footerbox {
 
 	background:#333333;
-	height:80px;
+        color:#777777;
+	height:30px;
 	width:950px;
 	padding:5px;
+        padding-top:50px;
 	-moz-box-shadow: 1px 2px 3px #191919;
 	-webkit-box-shadow: 1px 2px 3px #191919;
 	box-shadow: 1px 2px 3px #191919;

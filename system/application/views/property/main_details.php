@@ -37,9 +37,10 @@ endforeach; }?>
 <h1><?=$property->property_title?> </h1>
 <strong>Ref: <?=$property->property_ref_no?></strong>
 <br/>
+
 <?php 
 if($property->sale_rent == 1) {?>
-<strong>Price: <?=number_format($property->sale_price)?>&euro;</strong>
+<strong>Price: <?=number_format($property->sale_price)?>&euro;</strong></span>
 <?php } 
 if($property->sale_rent == 2) {?>
 <strong>Price: <?=number_format($property->rent_price)?>&euro; <?=$property->rent_period?></strong><br/>
