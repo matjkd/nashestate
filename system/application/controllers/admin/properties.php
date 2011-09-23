@@ -214,6 +214,8 @@ class Properties extends MY_Controller
 		$data['general_areas'] = $this->ajax_model->get_general_area();
 	
 		$data['property_details'] = $this->properties_model->get_property($id);
+
+                $data['sales_data'] = $this->properties_model->get_sales_data($id);
 			
 			foreach($data['property_details'] as $row):
 			
@@ -404,7 +406,55 @@ class Properties extends MY_Controller
 		redirect('admin/properties/update/'.$id.'/#tabs-2');  
 		
 	}
-	
+
+        function sold()
+        {
+           //property id
+            $id = $this->input->post('property_id');
+
+            //mark as sold in properties table (sold_rented)
+            $this->properties_model->mark_sold($id);
+
+
+            //add sold date to new line in sold table
+            //use 'startdate_unix' (because it's a unix timestamp)
+             $this->properties_model->add_sold();
+            redirect('admin/properties/update/'.$id.'/#tabs-4');
+
+        }
+
+        function unsell($id)
+        {
+            //mark as not sold in properties table (sold_rented)
+             //add current time to unsold
+             $propertyid = $this->properties_model->scalar("sold", "property_id", "sold_id = $id");
+
+            $this->properties_model->mark_unsold($id, $propertyid);
+
+
+
+             redirect('admin/properties/update/'.$propertyid.'/#tabs-4');
+        }
+
+
+        function rented()
+        {
+              //property id
+            $id = $this->input->post('property_id');
+
+            //mark as rented in properties table (sold_rented)
+            $this->properties_model->mark_sold($id);
+
+
+            //add sold date to new line in sold table
+            //use 'startdate_unix' (because it's a unix timestamp)
+             $this->properties_model->add_rented();
+            redirect('admin/properties/update/'.$id.'/#tabs-4');
+
+        }
+
+     
+        
 	function add_contact($id)
 	{
 		//create contact

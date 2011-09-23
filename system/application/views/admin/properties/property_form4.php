@@ -86,6 +86,20 @@
 			</td>
 	</tr>
 
+        <tr>
+	        <td class='leftcolumn'>
+			<?php if(preg_match('/^R/', $row->property_ref_no)) {echo "RENTED"; } else { echo "SOLD"; }?>
+	        </td>
+			<td>
+				<div  style="width:150px; float:left;">
+				<?php
+				if($row->sold_rented==0) {echo "No";  $this->sold = FALSE; };
+				if($row->sold_rented==1) {echo "Yes"; $this->sold = TRUE;};
+				?>
+				</div>
+			</td>
+	</tr>
+
 </table>	
 </div>
 <div class="admin_left">

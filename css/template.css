@@ -331,7 +331,7 @@ fieldset { border:1px solid #fc8034; }
 #featured_list {
 	background:#dddddd;
 	margin-bottom:3px;
-	height:18px;
+	min-height:18px;
 }
 .ui-widget {
 font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;

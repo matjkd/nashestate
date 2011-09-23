@@ -352,7 +352,100 @@ class Properties_model extends Model {
 	{
 		
 	}
-	
+
+        function mark_sold($id)
+        {
+            $mark_sold = array(
+               'sold_rented' => 1,
+				);
+
+            $this->db->where('property_ref_no', $id);
+            $this->db->update('property_main', $mark_sold);
+
+            return TRUE;
+
+        }
+        function scalar($table,$field,$where)
+        {
+           $this->db->select($field);
+           $this->db->where($where);
+           $query = $this->db->get($table);
+           $row = $query->row_array();
+           return $row[$field];
+        }
+
+
+             function mark_unsold($id, $propertyid)
+        {
+          
+            //add date to sold database of when it is unsold
+                 $unsold = array(
+               'unsold' => now()
+            );
+            $this->db->where('sold_id', $id);
+            $this->db->update('sold', $unsold);
+            
+            
+          
+
+
+            
+            //mark main property as unsold
+            $mark_unsold = array(
+             'sold_rented' => 0,
+				);
+
+            $this->db->where('property_ref_no', $propertyid);
+            $this->db->update('property_main', $mark_unsold);
+
+            return TRUE;
+
+        }
+
+        function add_sold()
+        {
+            $add_sold = array(
+
+                'property_id' => $this->input->post('property_id'),
+                'sold_date' => $this->input->post('startdate_unix')
+                );
+
+            $this->db->insert('sold', $add_sold);
+
+            return TRUE;
+        }
+
+         function add_rented()
+        {
+
+             
+                $add_sold = array(
+
+                'property_id' => $this->input->post('property_id'),
+                'rented_date' => $this->input->post('startdate_unix'),
+                'rented_end' => $this->input->post('enddate_unix')
+                );
+
+            $this->db->insert('sold', $add_sold);
+
+            return TRUE;
+        }
+           function get_sales_data($id)
+        {
+                //get sales data for property
+               $this->db->from('sold');
+		$this->db->where('property_id', $id);
+                $query = $this->db->get();
+
+                if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+
+		return FALSE;
+        }
+
+
 	function change_property_ref($id, $newref)
 	{
 				$data1 = array(
