@@ -345,7 +345,7 @@ break;
 
 
 <div style="clear:both; height:2px;">&nbsp;</div>
-<div style="width: 100%; min-height:100px; ">
+<div style="width: 100%; text-align:justify; min-height:100px; ">
 
 <?php if($property->alt_description == NULL)
 {
