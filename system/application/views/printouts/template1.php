@@ -230,7 +230,7 @@ endforeach; }?>
 
 <table width="723px" height="140px" border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 	<tr>
-			<td bgcolor="#dddddd" width="354px" height="180px" valign="top">
+			<td bgcolor="#dddddd" width="354px" height="140px" valign="top">
 			<div style="float:left; padding:3px; color:#444444; " >
 
 				
@@ -302,7 +302,7 @@ endforeach; }?>
 		<td width="8px">
 		</td>
 
-		<td bgcolor="#f9dba8" width="354px" height="180px" valign="top">
+		<td bgcolor="#f9dba8" width="354px" height="140px" valign="top">
 			
 				<table  border="0px" style="padding: 0; margin: 0;  border-collapse: collapse;">
 
