@@ -321,7 +321,7 @@ break;
 }
 else
 	{
-	echo $property->description;
+	echo $property->alt_description;
 	}
 
 ?>
