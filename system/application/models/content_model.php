@@ -80,7 +80,29 @@ class Content_model extends Model {
 		}
 		
 		return FALSE;
-	}	
+	}
+
+        function add_content()
+        {
+            $form_data = array(
+'content_title' => $this->input->post('title'),
+                'content_menu' => $this->input->post('menu'),
+					'content' => $this->input->post('content'),
+    				'extra' => $this->input->post('extra')
+					);
+
+
+
+		$this->db->insert('content', $form_data);
+
+		if ($this->db->affected_rows() == '1')
+		{
+
+			return TRUE;
+		}
+
+		return FALSE;
+        }
 	
 	function get_menus()
 		{

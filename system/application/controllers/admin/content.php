@@ -55,7 +55,24 @@ class Content extends MY_Controller
 		$this->content_model->update_content($id); 
 		redirect('admin/content/edit_content/'.$id.'');  
 	}
-	
+        function new_content()
+        {
+
+
+		$data['page'] = 'content';
+		$data['title'] = 'Nash Homes: add Content';
+		$data['right_main'] = 'admin/content/add_content';
+		$data['heading'] = 'Add Content';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+        }
+
+	function add_content()
+	{
+
+		$this->content_model->add_content();
+		redirect('admin/content/');
+	}
 	function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');

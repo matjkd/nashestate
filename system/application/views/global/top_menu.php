@@ -46,7 +46,19 @@
        
         
            <li <?php if($page=='4'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?welcome/content/guide_to_buying_or_selling"><span>Guide to Buying or Selling</span></a></li>   
+        <a href="<?=base_url()?>index.php?welcome/content/guide_to_buying_or_selling"><span>Guide to Buying or Selling</span></a>
+
+           <ul>
+						<li><a href="<?=base_url()?>index.php?welcome/content/vendors"><span>Vendors</span></a></li>
+						<li><a href="<?=base_url()?>index.php?welcome/content/purchasers"><span>Purchasers</span></a></li>
+						<li><a href="<?=base_url()?>index.php?welcome/content/tax"><span>Tax and finance arrangements</span></a></li>
+					
+
+
+						</ul>
+
+
+           </li>
         
            <li <?php if($page=='8'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?welcome/content/references"><span>References</span></a></li>   
