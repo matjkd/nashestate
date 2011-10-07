@@ -49,7 +49,7 @@ if($property->sale_rent == 2) {?>
 <strong>Security Deposit: <?=number_format($property->security_deposit)?>&euro; </strong>
 <?php } ?>
 <?php } ?>
-<p>
+<p style=" text-align:justify;">
 
 <?=$property->description?>
 </p>
