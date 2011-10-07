@@ -240,6 +240,17 @@ $(document).ready(function() {
 	$('.cycle').css("display", "block");
 });
 
+//slideshow
+$(document).ready(function() {
+    $('#ref').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		speedIn:  2000,
+	    speedOut: 2000,
+	   timeout:   25000
+	});
+	$('.cycle').css("display", "block");
+});
+
 $(function() {
     // run the code in the markup!
 	$('#s2').cycle({ 
