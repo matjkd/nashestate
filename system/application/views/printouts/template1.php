@@ -28,7 +28,7 @@ div.absolute {
 </head>
 <body> 
 	
-    <div><img style="width: 320px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" /></div>
+<div><img style="width: 320px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" /></div>
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
@@ -134,8 +134,8 @@ switch ($imagecount) {
 	case 2:
 		?>
 
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:270px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:270px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 
 		
 		<?php 
@@ -144,10 +144,10 @@ switch ($imagecount) {
 	case 4:
 		?>
 
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>" style="width: 357px; height:223px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>" style="width: 357px; height:223px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:270px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:270px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>" style="width: 357px; height:270px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>" style="width: 357px; height:270px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
 
 		<?php 
 		break;
@@ -155,12 +155,12 @@ switch ($imagecount) {
 	case 6:
 		?>
 
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
-		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
-		<img alt="<?=$mainImage[3]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
-		<img alt="<?=$mainImage[4]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
-		<img alt="<?=$mainImage[5]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
-		<img alt="<?=$mainImage[6]?>"  style="width: 174px; height:122px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:270px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:270px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
+		<img alt="<?=$mainImage[3]?>"  style="width: 173px; height:132px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
+		<img alt="<?=$mainImage[4]?>"  style="width: 173px; height:132px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
+		<img alt="<?=$mainImage[5]?>"  style="width: 173px; height:132px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[5]?>"/>
+		<img alt="<?=$mainImage[6]?>"  style="width: 174px; height:132px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[6]?>"/>
 
 		<?php		
 		break;

@@ -24,12 +24,12 @@ div.absolute {
 </head>
 <body>
 
-    <div><img style="width: 290px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" /></div>
+    <div><img style="width: 320px;" alt="logo" src="<?=$config_base_path?>images/pdf/logo.jpg" /></div>
 
 <div style="clear:both; height:5px;">&nbsp;</div>
 
 
-<div style="height: 20px; width: 100%; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:14px;">
+<div style="height: 25px; width: 100%; margin-bottom:5px; margin-top:5px; padding:3px; color:#ffffff;  background-color: #444444; font-size:18px;">
 
 	<?php foreach($property_details as $header):?>
 		<table width="100%">
@@ -100,7 +100,7 @@ switch ($imagecount) {
 
 		?>
 
-	<img style="width: 724px; height:440px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+	<img style="width: 724px; height:520px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
 
 		<?php
 		break;
