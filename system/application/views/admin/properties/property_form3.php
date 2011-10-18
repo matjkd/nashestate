@@ -90,7 +90,7 @@ $.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order1 } );
 
 </div>
 
-Drag and Drop File upload.
+Drag and Drop File upload (this appears to have stopped working since the server move, single upload above should work if this doesn't).
 
 <div id="file-uploader">      
     <noscript><p>Please enable JavaScript to use file uploader.</p></noscript>         

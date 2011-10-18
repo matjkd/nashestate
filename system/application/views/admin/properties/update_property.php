@@ -17,7 +17,7 @@ echo form_input('property_ref', $property_id);
 <?php echo form_submit( 'submit', 'change property ref');  ?>
 <?php echo form_close();?>
 </div>
-<div style="float:right;"><a href="<?=base_url()?>property/window_pdf/<?=$property_id?>">Print Window Display</a> <a href="<?=base_url()?>property/pdf/<?=$property_id?>">standard pdf</a></div>
+<div style="float:right;"><a href="<?=base_url()?>property/window_pdf/<?=$property_id?>">Print Window Display</a> | <a href="<?=base_url()?>property/pdf/<?=$property_id?>">standard pdf</a></div>
 <div style="clear:both;"></div>
 <div id="tabs">
 		<ul>
