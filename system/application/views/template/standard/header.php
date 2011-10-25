@@ -7,7 +7,7 @@
   <title><?=$title?></title>
   <meta name="description" content="">
   <meta name="author" content="">
-<meta name="google-site-verification" content="jTI_AxXsXA7SsuuHsCGkeole2CsrK0MDJR9IPqgiS7g" />
+<meta name="google-site-verification" content="ux94X6e1wKnxN1VT7Fy2fz260ichCgHg7GvkR7YU7SY" />
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
