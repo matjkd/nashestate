@@ -8,14 +8,14 @@ Website developed by redstudio design limited<br/>
 
 
 
-    Home |
-About Us |
-Services to Buyers |
-Services to Sellers |
-Services to Landlords |
-Services to Tenants |<br/>
-Premiere Properties |
-Guide to Buying and Selling |
-References |
-Contact us |
+    <a href="<?=base_url()?>">Home</a> |
+    <a href="<?=base_url()?>about_us">About Us</a> |
+    <a href="<?=base_url()?>services_buyers">Services to Buyers</a> |
+    <a href="<?=base_url()?>services_sellers">Services to Sellers</a> |
+    <a href="<?=base_url()?>services_landlords">Services to Landlords</a> |
+    <a href="<?=base_url()?>services_tenants">Services to Tenants</a> |<br/>
+    <a href="<?=base_url()?>premiere">Premiere Properties</a> |
+    <a href="<?=base_url()?>guide_to_buying_or_selling">Guide to Buying and Selling</a> |
+    <a href="<?=base_url()?>references">References</a> |
+    <a href="<?=base_url()?>where_we_are">Contact us</a> |
 </div>

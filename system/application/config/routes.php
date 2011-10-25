@@ -42,7 +42,21 @@
 
 $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
+$route['about_us'] = '/welcome/content/';
+$route['home'] = '/welcome/content/';
+$route['what_we_can_do_for_you'] = '/welcome/content/';
+$route['services_sellers'] = '/welcome/content/';
+$route['services_buyers'] = '/welcome/content/';
+$route['services_landlords'] = '/welcome/content/';
+$route['services_tenants'] = '/welcome/content/';
 
 
+$route['guide_to_buying_or_selling'] = '/welcome/content/';
+$route['references'] = '/welcome/content/';
+$route['where_we_are'] = '/welcome/content/';
+$route['vendors'] = '/welcome/content/';
+$route['purchasers'] = '/welcome/content/';
+$route['landlords'] = '/welcome/content/';
+$route['tax'] = '/welcome/content/';
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

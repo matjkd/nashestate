@@ -18,7 +18,7 @@ class Welcome extends MY_Controller
 	
 	function index()
 	{
-		redirect('/welcome/content');
+		redirect('/home');
 	}
 function content()
 	{
@@ -26,8 +26,17 @@ function content()
 	
 		if(($this->uri->segment(3))==NULL)
 			{
-				$id = "home";
+				
+                                                               if(($this->uri->segment(1))==NULL)
+                                                               {
+                                                                $id = "home";
 				$data['main'] = "pages/dynamic";
+                                                               }
+                                                               else
+                                                               {
+                                                                 $id = $this->uri->segment(1);
+				$data['main'] = "pages/dynamic";
+                                                               }
 			
 			}
 		else
