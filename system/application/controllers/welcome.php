@@ -57,11 +57,9 @@ class Welcome extends MY_Controller {
 
         //get the references
            
-        if(isset($this->ref_id)){
-            $data['references'] = $this->content_model->get_testimonial($this->ref_id);
-        } else {
+       
             $data['references'] = $this->content_model->get_testimonials();
-        }
+       
                 
         
         

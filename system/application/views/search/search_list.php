@@ -5,7 +5,7 @@
 
 <br style="clear:both;" />
 
-<div id="paginatesearch" >
+<div id="paginate" >
     <?php
     if ($properties != NULL) {
 

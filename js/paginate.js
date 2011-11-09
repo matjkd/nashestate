@@ -1,4 +1,3 @@
-
 // ----------------------------------------------------------------------------
 // Pagination Plugin - A jQuery Plugin to paginate content
 // v 1.0 Beta
@@ -44,7 +43,7 @@
 
 	var startPage = 1; // start page
 
-	var itemsPerPage = 3; // no. of items you want to show on one page
+	var itemsPerPage = 5; // no. of items you want to show on one page
 
 	var firstPageSymbol = '<<'; // to indicate First Page
 

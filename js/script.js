@@ -2,15 +2,6 @@
 (function($){
 
  
-
-
-
-
-
- 
-
-
-
 })(this.jQuery);
 
 
@@ -44,21 +35,9 @@ jQuery(function() {
     jQuery('.wymeditor').wymeditor();
 });
 
-             $(function(){
-itemsPerPage = 3;
-paginatorStyle = 1;
+           $(function(){ $("#paginate").pagination(); });
 
-enableGoToPage = false;
-$("#paginate").pagination();
-});
-
-   $(function(){
-itemsPerPage = 5;
-paginatorStyle = 2;
-paginatorPosition = 'both';
-enableGoToPage = true;
-$("#paginatesearch").pagination();
-});
+  
 
 /**
  * --------------------------------------------------------------------
