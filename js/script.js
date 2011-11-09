@@ -44,8 +44,21 @@ jQuery(function() {
     jQuery('.wymeditor').wymeditor();
 });
 
+             $(function(){
+itemsPerPage = 3;
+paginatorStyle = 1;
 
+enableGoToPage = false;
+$("#paginate").pagination();
+});
 
+   $(function(){
+itemsPerPage = 5;
+paginatorStyle = 2;
+paginatorPosition = 'both';
+enableGoToPage = true;
+$("#paginatesearch").pagination();
+});
 
 /**
  * --------------------------------------------------------------------
@@ -304,6 +317,7 @@ $(document).ready(function() {
         $(document).ready(function(){      
             initPagination();
         });
+
    
    // gallerific
    
@@ -362,4 +376,3 @@ $(document).ready(function() {
 				});
 			});
 
-           
