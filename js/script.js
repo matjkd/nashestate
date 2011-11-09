@@ -28,14 +28,14 @@ window.log = function(){
 })(document);
 
 
-
+  jQuery(function(){ jQuery("#paginate").pagination(); });
 
 //wymeditor
 jQuery(function() {
     jQuery('.wymeditor').wymeditor();
 });
 
-           $(function(){ $("#paginate").pagination(); });
+         
 
   
 
@@ -271,31 +271,7 @@ $(document).ready(function() {
 	
 });
 
-//search results pagination
-  var pagination_options = {
-		  num_edge_entries: 2,
-		  num_display_entries: 8,
-		  callback: pageselectCallback,
-		  items_per_page:5
-		}
-		function pageselectCallback(page_index, jq){
-		  var items_per_page = pagination_options.items_per_page;
-		  var offset = page_index * items_per_page;
-		  var new_content = $('#hiddenresult div.result').slice(offset, offset + items_per_page).clone();
-		  $('#Searchresult').empty().append(new_content);
-		  return false;
-		}
-		function initPagination() {
-		  var num_entries = $('#hiddenresult div.result').length;
-		  // Create pagination element
-		  $("#Pagination").pagination(num_entries, pagination_options);
-		 
-		}
-            
-		  // When document is ready, initialize pagination
-        $(document).ready(function(){      
-            initPagination();
-        });
+
 
    
    // gallerific

@@ -17,7 +17,7 @@
 
 <script src="<?= base_url() ?>js/libs/gallerific.js"></script>
 
-
+<script src="<?= base_url() ?>js/plugins.js"></script>
 
 <script src="<?= base_url() ?>js/script.js"></script>
 
