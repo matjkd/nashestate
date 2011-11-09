@@ -1,7 +1,7 @@
 <img width="270px" height="23px" src="<?=base_url()?>images/template/standard/titles/<?=$content_menu?>.png"/>
 <br/>
 <br/>
-
+<div id="paginate" >
 		<?php if($properties != NULL)
 		{
 
@@ -58,3 +58,4 @@
 <?php endforeach;
 
                 }?>
+</div>
