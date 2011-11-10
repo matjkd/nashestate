@@ -14,6 +14,7 @@ class Premiere extends MY_Controller
 		parent::__construct();
 		$this->load->model('ajax_model');
 		$this->load->model('properties_model');
+                $this->load->model('gallery_model');
 	}
 
         function index()
@@ -35,15 +36,20 @@ class Premiere extends MY_Controller
                 //load view for main content
 		$data['content'] = "content/premiere";
 
-                //get property of the week
-                if(isset($data['search_rentals']))
-				{
-					$data['featured_property'] = $this->properties_model->get_featured_rental();
-				}
-				else
-				{
-					$data['featured_property'] = $this->properties_model->get_featured_property();
-				}
+               //get property of the week
+        if (isset($data['search_rentals'])) {
+            echo $data['search_rentals'];
+            $data['featured_property'] = $this->properties_model->get_featured_rental();
+           
+        } else {
+            $data['featured_property'] = $this->properties_model->get_featured_property();
+        }
+        //get property of the week images
+        foreach($data['featured_property'] as $row):
+            $featuredpropertyid = $row['property_id'];
+            $data['featured_images'] = $this->gallery_model->get_property_images($featuredpropertyid);
+            
+        endforeach;
 
                  //Get Premiere Properties
                   $data['properties'] = $this->properties_model->get_premiere_properties();
