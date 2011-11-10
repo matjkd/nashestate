@@ -10,7 +10,7 @@
     	<?php foreach($property_images as $image):?>
         <li>
             <a class="thumb" name="optionalCustomIdentifier" href="<?=base_url()?>images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" title="<?=$image->filename?>">
-                <img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
+                <img width="137px" height="100px" src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
             </a>
             <div class='caption'>
             <a  href="<?=base_url()?>images/properties/<?=$image->property_id?>/<?=$image->filename?>" title="<?=$image->filename?>">View Full Size Image</a><br/>
