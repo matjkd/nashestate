@@ -243,6 +243,18 @@ $(document).ready(function() {
 	$('.cycle').css("display", "block");
 });
 
+
+//featured propertyslideshow
+$(document).ready(function() {
+    $('#featuredproperty').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		speedIn:  2000,
+	    speedOut: 2000,
+	   timeout:   5000
+	});
+	$('.featuredcycle').css("display", "block");
+});
+
 $(function() {
     // run the code in the markup!
 	$('#s2').cycle({ 
