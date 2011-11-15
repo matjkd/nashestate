@@ -202,6 +202,7 @@ if ($rentals != NULL) {
 
                         //end of main rentals
                         //start of nearby rentals
+                        if(isset($nearbyrentals)){
                         foreach ($nearbyrentals as $rentals):
                             ?>
 
@@ -267,7 +268,7 @@ if ($rentals != NULL) {
                         }
 
                     endforeach;
-
+                        }
                     //end of nearby rentals
                 }
                 ?>
