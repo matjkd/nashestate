@@ -180,6 +180,28 @@ class Properties_model extends Model {
         return FALSE;
     }
 
+     /**
+     *
+     * @param type $id
+     * @return type 
+     */
+    function get_active_property($id) {
+        $this->db->from('property_main');
+        $this->db->join('company', 'company.company_id=property_main.company_id', 'left');
+        $this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');
+        $this->db->join('general_area', 'general_area.general_area_id=property_main.general_area', 'left');
+        $this->db->join('sales_data', 'sales_data.property_id=property_main.property_ref_no', 'left');
+        $this->db->where('property_ref_no', $id);
+        $this->db->where('active', 1);
+        $query = $this->db->get();
+
+        if ($query->num_rows == 1)
+             {
+            return $query->result();
+        }
+
+        return FALSE;
+    }
    
 /**
  * type is rental or sales - 1 for sales 2 for rentals

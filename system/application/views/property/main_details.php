@@ -40,7 +40,7 @@ endforeach; }?>
 
 <?php 
 if($property->sale_rent == 1) {?>
-<strong>Price: <?=number_format($property->sale_price)?>&euro;</strong></span>
+<strong>Price: <?=number_format($property->sale_price)?>&euro;</strong>
 <?php } 
 if($property->sale_rent == 2) {?>
 <strong>Price: <?=number_format($property->rent_price)?>&euro; <?=$property->rent_period?></strong><br/>
@@ -49,6 +49,11 @@ if($property->sale_rent == 2) {?>
 <strong>Security Deposit: <?=number_format($property->security_deposit)?>&euro; </strong>
 <?php } ?>
 <?php } ?>
+<?php 
+if($property->sold_rented == 1) {?>
+<span style="color:#a80000;">SOLD SUBJECT TO CONTRACT</span>
+<?php } ?>
+
 <p style=" text-align:justify;">
 
 <?=$property->description?>

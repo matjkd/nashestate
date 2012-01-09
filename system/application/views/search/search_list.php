@@ -21,9 +21,13 @@
 
                     <div id="search_content">
                         <div class="grid_11">
-                            <strong><?= $property['property_title'] ?> <br/>
+                            <strong><?= $property['property_title'] ?>
+                 <br/>
                                 <?= $property['property_type_name'] ?> :: <?= $property['area'] ?></strong><br/>
-                            Bedrooms: <?= $property['rooms'] ?><br/>
+                            Bedrooms: <?= $property['rooms'] ?> <?php 
+if($property['sold_rented'] == 1) {?>
+<span style="color:#a80000;">: SOLD SUBJECT TO CONTRACT</span>
+<?php } ?><br/>
                             <p>
                                 <?php
                                 if ($property['alt_description'] == NULL) {

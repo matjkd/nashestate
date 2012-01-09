@@ -77,7 +77,7 @@
                     <?php }
                     ?>	
                     <div class="contentbox">
-
+   <?php $this->load->view('global/warning'); ?>
                     <?php $this->load->view($content); ?>
                     </div>
 
