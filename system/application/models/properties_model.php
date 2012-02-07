@@ -309,6 +309,25 @@ class Properties_model extends Model {
         );
         return $new_array;
     }
+    
+    function get_all_properties() {
+        
+         //move this and reference to it to features model
+        $data = array();
+        $this->db->from('property_main');
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0) {
+            foreach ($Q->result_array() as $row)
+                $data[] = $row;
+            
+            
+        }
+
+        $Q->free_result();
+        return $data;
+       
+          
+    }
 /**
  * 
  */
@@ -317,7 +336,7 @@ class Properties_model extends Model {
         $this->db->where('company_id', $new_owner);
         $query = $this->db->get('users');
         if ($query->num_rows > 0)
-            ; {
+             {
             foreach ($query->result_array() as $row):
 
                 $user_id = $row['user_id'];
@@ -650,7 +669,7 @@ class Properties_model extends Model {
     }
 
     function list_all_features() {
-        //move this and reference to it to features model
+        //TODO move this and reference to it to features model
         $data = array();
         $this->db->from('features');
         $Q = $this->db->get();
