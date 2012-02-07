@@ -279,14 +279,14 @@ class Properties extends MY_Controller {
                 if ($sale_rent == 2) {
                     $id_result = "R" . $id_result . "";
                 } else {
-                    
+                    $id_result = $id_result;
                 }
 
                 //check if $id_result already exists
                 $check = $this->properties_model->check_id($id_result);
 
 
-                if ($check == 1) {
+                if ($check > 0) {
                     $this->session->set_flashdata('message', 'ID exists ' . $check . ' trying to add id ' . $id_result . ' for user ' . $user_id . '');
                     redirect('admin/properties/add/' . $company_id . '', 'refresh');
                 }
@@ -301,6 +301,11 @@ class Properties extends MY_Controller {
                 } else {
                     $this->properties_model->create_property_id('sale_id', $id_data);
                     $ref = $this->db->insert_id();
+                }
+                   $check = $this->properties_model->check_id($ref);
+                    if ($check > 0) {
+                    $this->session->set_flashdata('message', 'ID exists ' . $check . ' trying to add id ' . $ref . ' for user ' . $user_id . '');
+                    redirect('admin/properties/add/' . $company_id . '', 'refresh');
                 }
 
                 $this->properties_model->create_sales_data($ref);
