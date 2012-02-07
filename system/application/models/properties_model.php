@@ -1153,5 +1153,32 @@ class Properties_model extends Model {
             $x = $x + 1;
         }
     }
+    
+        /**
+     *
+     * @param type $param
+     * @return type 
+     */
+    function autocomplete_features($param) {
+        $data = array();
+
+
+
+        $where = "features REGEXP '^$param'";
+        $this->db->where($where);
+
+
+        $query = $this->db->get('features');
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row)
+                $data[] = $row;
+            $query->free_result();
+
+            return $data;
+        } else {
+            return FALSE;
+        }
+    }
 
 }
