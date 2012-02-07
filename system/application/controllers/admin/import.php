@@ -67,10 +67,10 @@ class Import extends MY_Controller {
 
         //get properties
         $data['allproperties'] = $this->properties_model->get_all_properties();
-        //for each property alter date of instruction
+        //for each property alter date of instruction and available_from
         foreach ($data['allproperties'] as $row):
 
-
+            // convert date of instruction
             echo $row['property_ref_no'] . "-" . $row['date_of_instruction'];
             if ($row['date_of_instruction'] != "" &! $this->isValidTimeStamp($row['date_of_instruction'])) {
 
@@ -78,14 +78,36 @@ class Import extends MY_Controller {
                 $newdate = strtotime($row['date_of_instruction']);
 
                 echo " " . $newdate;
-                //convert to unix timestamp $table, $field, $value, $id
+                //convert to unix timestamp $table, $field, $value, $id, $id_field
                 $table = "property_main";
                 $field = "date_of_instruction";
                 $value = $newdate;
                 $id = $row['property_id'];
+                $id_field = "property_id";
+                
 
-                $this->import_model->convert_to_unix($table, $field, $value, $id);
+                $this->import_model->convert_to_unix($table, $field, $value, $id, $id_field);
             }
+            
+            //convert available from
+             echo "---->".$row['property_ref_no'] . "-" . $row['available_from'];
+            if ($row['available_from'] != "" &! $this->isValidTimeStamp($row['available_from'])) {
+
+                echo " convert to ";
+                $newdate = strtotime($row['available_from']);
+
+                echo " " . $newdate;
+                //convert to unix timestamp $table, $field, $value, $id, $id_field
+                $table = "property_main";
+                $field = "available_from";
+                $value = $newdate;
+                $id = $row['property_id'];
+                $id_field = "property_id";
+                
+
+                $this->import_model->convert_to_unix($table, $field, $value, $id, $id_field);
+            }
+            
 
             echo "<br/>";
         endforeach;
