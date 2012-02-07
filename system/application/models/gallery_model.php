@@ -16,12 +16,29 @@ class Gallery_model extends Model {
         $this->gallery_path_url = base_url() . 'images/properties/';
     }
 
+    /**
+     *
+     * @param type $id 
+     */
     function do_upload($id) {
 
-        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/');
-        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/thumbs/');
-        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/medium/');
-        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/large/');
+        //check file path exists.
+        //maybe extend this check for each subfolder in future
+        $path = $this->config_base_path . 'images/properties/' . $id . '/';
+
+        //create directories if required
+        if (file_exists($path)) {
+
+            // folder exists, do nothing
+        } else {
+
+            //create folders
+            mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/');
+            mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/thumbs/');
+            mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/medium/');
+            mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/large/');
+        }
+
 
         $config = array(
             'allowed_types' => 'jpg|jpeg|gif|png',
