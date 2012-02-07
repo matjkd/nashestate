@@ -18,6 +18,11 @@ class Gallery_model extends Model {
 
     function do_upload($id) {
 
+        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/');
+        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/thumbs/');
+        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/medium/');
+        mkdir('' . $this->config_base_path . 'images/properties/' . $id . '/large/');
+
         $config = array(
             'allowed_types' => 'jpg|jpeg|gif|png',
             'upload_path' => $this->gallery_path . '/' . $id . '',
