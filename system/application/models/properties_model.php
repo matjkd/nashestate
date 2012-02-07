@@ -180,7 +180,7 @@ class Properties_model extends Model {
         return FALSE;
     }
 
-     /**
+    /**
      *
      * @param type $id
      * @return type 
@@ -195,21 +195,20 @@ class Properties_model extends Model {
         $this->db->where('active', 1);
         $query = $this->db->get();
 
-        if ($query->num_rows == 1)
-             {
+        if ($query->num_rows == 1) {
             return $query->result();
         }
 
         return FALSE;
     }
-   
-/**
- * type is rental or sales - 1 for sales 2 for rentals
- * @param type $type
- * @return type 
- */
+
+    /**
+     * type is rental or sales - 1 for sales 2 for rentals
+     * @param type $type
+     * @return type 
+     */
     function get_max_price($type) {
-         
+
         $this->db->from('property_main');
         $this->db->where('sale_rent', $type);
         if ($type == 1) {
@@ -232,12 +231,12 @@ class Properties_model extends Model {
         }
     }
 
-  /**
-   *
-   * @param type $id
-   * @param type $type
-   * @return string 
-   */
+    /**
+     *
+     * @param type $id
+     * @param type $type
+     * @return string 
+     */
     function get_contact_properties($id, $type) {
         $this->db->from('property_main');
         $this->db->where("property_main." . $type . "", $id);
@@ -253,11 +252,12 @@ class Properties_model extends Model {
         $query->free_result();
         return $data;
     }
-/**
- *
- * @param type $type
- * @return type 
- */
+
+    /**
+     *
+     * @param type $type
+     * @return type 
+     */
     function list_properties($type) {
 
         $data = array();
@@ -291,6 +291,7 @@ class Properties_model extends Model {
         $Q->free_result();
         return $data;
     }
+
     /**
      * 
      */
@@ -309,34 +310,30 @@ class Properties_model extends Model {
         );
         return $new_array;
     }
-    
+
     function get_all_properties() {
-        
-         //move this and reference to it to features model
+
+        //move this and reference to it to features model
         $data = array();
         $this->db->from('property_main');
         $Q = $this->db->get();
         if ($Q->num_rows() > 0) {
             foreach ($Q->result_array() as $row)
                 $data[] = $row;
-            
-            
         }
 
         $Q->free_result();
         return $data;
-       
-          
     }
-/**
- * 
- */
+
+    /**
+     * 
+     */
     function change_owner($id, $new_owner) {
 
         $this->db->where('company_id', $new_owner);
         $query = $this->db->get('users');
-        if ($query->num_rows > 0)
-             {
+        if ($query->num_rows > 0) {
             foreach ($query->result_array() as $row):
 
                 $user_id = $row['user_id'];
@@ -352,9 +349,10 @@ class Properties_model extends Model {
         $this->db->where('property_ref_no', $id);
         $this->db->update('property_main', $form_data);
     }
-/**
- * 
- */
+
+    /**
+     * 
+     */
     function update_property1() {
 
         $property_id = $this->input->post('property_id');
@@ -380,9 +378,10 @@ class Properties_model extends Model {
 
         return FALSE;
     }
-/**
- * 
- */
+
+    /**
+     * 
+     */
     function update_property2($id) {
 
 
@@ -1057,8 +1056,7 @@ class Properties_model extends Model {
                 $Q->free_result();
                 return $data;
             }
-        }
-        else{
+        } else {
             return FALSE;
         }
     }

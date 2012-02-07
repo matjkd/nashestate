@@ -34,7 +34,7 @@ foreach ($property_details as $key => $row):
         <label for="individuals">Individual</label>
 
         <select id="user_id"  name="user_id" />
-    <?php foreach ($company_users as $company_users): ?>
+        <?php foreach ($company_users as $company_users): ?>
             <option 
             <?php
             $individual_id = $company_users->user_id;
@@ -50,12 +50,16 @@ foreach ($property_details as $key => $row):
 
     <br/><label for="sale_rent">For Sale/Rent*</label>
     <select id="sale_rent"  name="sale_rent" <?= $readonly ?>/>
-    <option <?php if ($row->sale_rent == 1) {
+    <option <?php
+        if ($row->sale_rent == 1) {
             echo "selected";
-        } ?>value="1">For Sale</option>
-    <option <?php if ($row->sale_rent == 2) {
-            echo "selected";
-        } ?> value="2">For Rent</option>
+        }
+            ?>value="1">For Sale</option>
+    <option <?php
+    if ($row->sale_rent == 2) {
+        echo "selected";
+    }
+            ?> value="2">For Rent</option>
     </select>
 
 
@@ -65,10 +69,12 @@ foreach ($property_details as $key => $row):
 
     <select id="property_type"  name="property_type" />
     <?php foreach ($property_types as $types): ?>
-        <option <?php if ($row->property_type == $types['property_type_id']) {
+        <option <?php
+        if ($row->property_type == $types['property_type_id']) {
             echo "selected";
-        } ?> value="<?= $types['property_type_id']; ?>"><?= $types['property_type_name']; ?></option>
-    <?php endforeach; ?>
+        }
+        ?> value="<?= $types['property_type_id']; ?>"><?= $types['property_type_name']; ?></option>
+        <?php endforeach; ?>
     </select>
 
 
