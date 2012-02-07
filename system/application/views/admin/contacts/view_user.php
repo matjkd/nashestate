@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function() {
-        var uid = "<?= $segment_id ?>";
+        var uid = "<?= $user_id ?>";
         var cid = "<?= $company_id ?>";
 	
         $(".editcompany").editable("<?= site_url('/admin/contacts/edit_company') ?>", 
