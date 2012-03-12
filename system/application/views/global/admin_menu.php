@@ -44,6 +44,10 @@
         </li>
         
         
+          <li <?php if($page=='reports'){echo "class='current'";}?>>
+        <a href="<?=base_url()?>index.php?admin/reports/properties"><span>Reports</span></a></li>
+        
+        
          <li <?php if($page=='config'){echo "class='current'";}?>>
         <a target="_blank" href="https://www.pivotaltracker.com/projects/447607"><span>Support Page</span></a></li>
 		

@@ -17,6 +17,9 @@ class Contacts extends MY_Controller {
         redirect('admin/contacts/details');
     }
 
+    /**
+     * 
+     */
     function details() {
 
 

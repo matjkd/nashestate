@@ -16,13 +16,13 @@ class Import_model extends Model {
      * @param type $value
      * @param type $id 
      */
-    function convert_to_unix($table, $field, $value, $id) {
+    function convert_to_unix($table, $field, $value, $id, $id_field) {
         
         $form_data = array(
             $field => $value
         );
 
-        $this->db->where('property_id', $id);
+        $this->db->where($id_field, $id);
         $this->db->update($table, $form_data);
         return;
         

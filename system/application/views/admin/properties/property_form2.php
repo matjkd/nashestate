@@ -1,44 +1,43 @@
 <script type="text/javascript">
-jQuery(function() {
-    jQuery('.wymeditor2').wymeditor();
-});
+    jQuery(function() {
+        jQuery('.wymeditor2').wymeditor();
+    });
 </script>
 
 
-<?php // Change the css classes to suit your needs    
+<?php
+// Change the css classes to suit your needs    
 
 $attributes = array('class' => 'form', 'id' => 'form');
 
-if(isset($company))
-{
-	//print_r($company);
-	foreach($company as $key => $company_row):
-	
-	echo "<label>Company Name:</label>".$company_row['company_name']."<br/><br/>";
-	$company_id =  $company_row['company_id'];
-	endforeach;
+if (isset($company)) {
+    //print_r($company);
+    foreach ($company as $key => $company_row):
+
+        echo "<label>Company Name:</label>" . $company_row['company_name'] . "<br/><br/>";
+        $company_id = $company_row['company_id'];
+    endforeach;
 }
 
 
-	foreach($property_details as $key => $row):
+foreach ($property_details as $key => $row):
+    ?>
 
-?>
 
+    <?php
+    echo "<label>Company Name:</label>" . $row->company_name . "<br/><br/>";
+    $this->load->view('admin/properties/features_autocomplete');
+    ?>
+    <?php
+    $description = $row->description;
 
-<?php 
-echo "<label>Company Name:</label>".$row->company_name."<br/><br/>";
-$this->load->view('admin/properties/features_autocomplete');?>
-<?php 
-$description = $row->description;
-
-$alt_description = $row->alt_description;
+    $alt_description = $row->alt_description;
 
 endforeach;
 $readonly = "DISABLED";
 
 
-echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes);
-
+echo form_open('admin/properties/update_property2/' . $property_id . '', $attributes);
 ?>
 
 
@@ -47,11 +46,11 @@ echo form_open('admin/properties/update_property2/'.$property_id.'', $attributes
 <br/><br/>
 Long Description:<br/>
 
-<textarea name="description" id="description"  class="wymeditor2" style="width:100%;"><?=$description?></textarea>
-	<br/>
+<textarea name="description" id="description"  class="wymeditor2" style="width:100%;"><?= $description ?></textarea>
+<br/>
 Short Description (to be displayed on printouts if not left blank):<br/>
-	
-<textarea name="alt_description" id="alt_description"  class="wymeditor2" style="width:100%;"><?=$alt_description?></textarea> 
+
+<textarea name="alt_description" id="alt_description"  class="wymeditor2" style="width:100%;"><?= $alt_description ?></textarea> 
 
 <br/><input type="submit" class="wymupdate" />
 

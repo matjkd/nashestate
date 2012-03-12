@@ -39,12 +39,16 @@ foreach ($property_details as $key => $row):
 
         <div class="admin_title">For Sale/Rent*</div>
         <select id="sale_rent" name="sale_rent" DISABLED/>
-        <option <?php if ($row->sale_rent == 1) {
+        <option <?php
+    if ($row->sale_rent == 1) {
         echo "selected";
-    } ?>value="1">For Sale</option>
-        <option <?php if ($row->sale_rent == 2) {
+    }
+    ?>value="1">For Sale</option>
+        <option <?php
+    if ($row->sale_rent == 2) {
         echo "selected";
-    } ?> value="2">For Rent</option>
+    }
+    ?> value="2">For Rent</option>
     </select>
 
 
@@ -70,7 +74,7 @@ foreach ($property_details as $key => $row):
 
         <div class="admin_title">Date of Instruction:</div>
         <div class="admin_field">
-            
+
             <?php
             //convert date of instruct to human readable
             $datestring = " %d/%m/%Y";
@@ -79,15 +83,13 @@ foreach ($property_details as $key => $row):
 
 
 
-            $datetime = mdate($datestring, $time); 
-            
-            
+            $datetime = mdate($datestring, $time);
             ?>
-            <div class="editdateinstruction" id="date_of_instruction"><?=$datetime?>
-            
+            <div class="editdateinstruction" id="date_of_instruction"><?= $datetime ?>
+
 
             </div>
-           
+
         </div>
 
         <div class="admin_title">Property Type:</div>
@@ -135,7 +137,7 @@ foreach ($property_details as $key => $row):
             <div class="admin_field">
                 <div class="editpayment" id="sale_payment" ><?php echo $row->sale_payment; ?></div>
             </div>
-    <?php } ?>
+        <?php } ?>
 
     <?php if ($row->sale_rent == 2) { ?>
             <div class="admin_title">Rent Price (&euro;)</div>
@@ -170,7 +172,19 @@ foreach ($property_details as $key => $row):
 
         <div class="admin_title">Available From</div>
         <div class="admin_field">
-            <div class="editdate" id="available_from" ><?php echo $row->available_from; ?></div>
+            
+            
+              <?php
+            //convert date of instruct to human readable
+            $datestring = " %d/%m/%Y";
+            $availabletime = $row->available_from;
+
+
+
+
+            $availabledatetime = mdate($datestring, $availabletime);
+            ?>
+            <div class="editdate" id="available_from" ><?=$availabledatetime?></div>
         </div>
 
         <div class="admin_title">Build Size (m2)</div>
