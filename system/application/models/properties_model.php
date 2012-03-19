@@ -685,6 +685,7 @@ class Properties_model extends Model {
         $data = array();
 
         $this->db->where('property_id', $id);
+        $this->db->order_by('features.features_order', 'asc');
         $this->db->join('features', 'features.features_id=property_features.features_id', 'left');
         $Q = $this->db->get('property_features');
         if ($Q->num_rows() > 0) {
