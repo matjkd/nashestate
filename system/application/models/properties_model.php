@@ -840,7 +840,8 @@ class Properties_model extends Model {
             foreach ($Q->result_array() as $row)
                 $new_property_feature_data = array(
                     'features_id' => $row['features_id'],
-                    'property_id' => $id
+                    'property_id' => $id,
+                    'features_order' => 99
                 );
             $this->db->insert('property_features', $new_property_feature_data);
         }
