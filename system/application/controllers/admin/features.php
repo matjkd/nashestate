@@ -67,10 +67,11 @@ class Features extends MY_Controller {
      */
     function sortlist() {
         $pages = $this->input->post('pages');
+        $pages = str_replace(";", "",  $pages);
         parse_str($pages, $pageOrder);
 print_r($pageOrder);
         // list id is retrieved from the ID on the sortable list
-        foreach ($pageOrder['page;'] as $key => $value):
+        foreach ($pageOrder['page'] as $key => $value):
            
             mysql_query("UPDATE ignite_property_features SET `features_order` = '$key' WHERE `pf_id` = '$value'") or die(mysql_error());
 

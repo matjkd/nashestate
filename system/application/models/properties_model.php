@@ -840,7 +840,8 @@ class Properties_model extends Model {
             foreach ($Q->result_array() as $row)
                 $new_property_feature_data = array(
                     'features_id' => $row['features_id'],
-                    'property_id' => $id
+                    'property_id' => $id,
+                    'features_order' => 99
                 );
             $this->db->insert('property_features', $new_property_feature_data);
         }
@@ -852,6 +853,7 @@ class Properties_model extends Model {
         $data = array();
 
         $this->db->where('property_id', $id);
+         $this->db->order_by('property_features.features_order', 'asc');
         $this->db->join('features', 'features.features_id = property_features.features_id', 'left');
         $Q = $this->db->get('property_features');
 

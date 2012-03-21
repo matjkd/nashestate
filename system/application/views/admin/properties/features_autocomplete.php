@@ -58,8 +58,8 @@
     $("#sortable").sortable({
         update: function(event,ui)
         {
-//           loadergif = $('<img class="gifloader" src="/images/load.gif" />');
-         //   $('#create_list').append(loadergif);
+// loadergif = $('<img class="gifloader" src="/images/load.gif" />');
+ //   $('#create_list').append(loadergif);
             $.post("<?= base_url() ?>admin/features/sortlist", {
                 pages: $('#sortable').sortable('serialize')
             }
