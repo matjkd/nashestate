@@ -33,42 +33,38 @@ class Properties extends MY_Controller {
         $data['title'] = 'Nash Homes';
         $this->load->vars($data);
         $this->load->view('admin/admin');
-        
     }
 
     function active_sold() {
-        
+
         $data1['heading'] = 'Active Sold Properties';
         $data1['properties'] = $this->reports_model->properties_sold(1);
-           $this->load->vars($data1);
+        $this->load->vars($data1);
         $this->property_list();
-        
     }
-       function notactive_sold() {
-        
+
+    function notactive_sold() {
+
         $data1['heading'] = 'Non Active Sold Properties';
         $data1['properties'] = $this->reports_model->properties_sold(0);
-           $this->load->vars($data1);
+        $this->load->vars($data1);
         $this->property_list();
-        
     }
-    
-     function active_rented() {
-        
+
+    function active_rented() {
+
         $data1['heading'] = 'Non Active Rented Properties';
         $data1['properties'] = $this->reports_model->properties_rented(1);
-           $this->load->vars($data1);
+        $this->load->vars($data1);
         $this->property_list();
-        
     }
-    
-         function notactive_rented() {
-        
+
+    function notactive_rented() {
+
         $data1['heading'] = 'Active Sold Properties';
         $data1['properties'] = $this->reports_model->properties_rented(0);
-           $this->load->vars($data1);
+        $this->load->vars($data1);
         $this->property_list();
-        
     }
 
     function view_sales() {
@@ -254,6 +250,27 @@ class Properties extends MY_Controller {
         $data['property_details'] = $this->properties_model->get_property($id);
 
         $data['sales_data'] = $this->properties_model->get_sales_data($id);
+        
+        $data['rentedEndDate'] = $this->properties_model->get_last_rented_date($id);
+        if ($data['rentedEndDate'] != NULL) {
+            foreach ($data['rentedEndDate'] as $row1):
+
+                $data['endDate'] = $row1->rented_end;
+                $data['startDate'] = $row1->rented_date;
+
+            endforeach;
+            //check if rented to date has passed
+
+            if (now() > $data['endDate'] || now() < $data['startDate']) {
+                //make property unrented
+                $this->properties_model->mark_unrented($id);
+            }
+
+            if (now() < $data['endDate'] && now() > $data['startDate']) {
+                //make property rented
+                $this->properties_model->mark_sold($id);
+            }
+        }
 
         foreach ($data['property_details'] as $row):
 
@@ -453,14 +470,21 @@ class Properties extends MY_Controller {
     function rented() {
         //property id
         $id = $this->input->post('property_id');
+        $now = now();
+        $from = $this->input->post('startdate_unix');
+        $to = $this->input->post('enddate_unix');
+        //mark as rented in properties table (sold_rented) if rented to date is later than now
 
-        //mark as rented in properties table (sold_rented)
-        $this->properties_model->mark_sold($id);
+        if ($to > $now) {
+            $this->properties_model->mark_sold($id);
+        }
 
 
         //add sold date to new line in sold table
         //use 'startdate_unix' (because it's a unix timestamp)
-        $this->properties_model->add_rented();
+        if ($from < $to) {
+            $this->properties_model->add_rented();
+        }
         redirect('admin/properties/update/' . $id . '/#tabs-4');
     }
 

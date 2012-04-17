@@ -14,3 +14,4 @@ Total Properties in Database <?=$total?>
 <strong>Active Properties: <?=$rentactive?></strong> (<a href="<?=base_url()?>admin/properties/active_rented">of which <?=$rented?> are Rented</a>)
 <br/>
 <strong>Non Active Properties:<?=$rentnotactive?></strong> (<a href="<?=base_url()?>admin/properties/notactive_rented">of which <?=$rentednotactive?> are Rented</a>)
+

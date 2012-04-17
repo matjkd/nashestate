@@ -421,6 +421,9 @@ class Properties_model extends Model {
         return $row[$field];
     }
 
+    /*
+     * 
+     */
     function mark_unsold($id, $propertyid) {
 
         //add date to sold database of when it is unsold
@@ -436,6 +439,17 @@ class Properties_model extends Model {
         );
 
         $this->db->where('property_ref_no', $propertyid);
+        $this->db->update('property_main', $mark_unsold);
+
+        return TRUE;
+    }
+    function mark_unrented($id) {
+         //mark main property as unrented
+        $mark_unsold = array(
+            'sold_rented' => 0,
+        );
+
+        $this->db->where('property_ref_no', $id);
         $this->db->update('property_main', $mark_unsold);
 
         return TRUE;
@@ -472,8 +486,24 @@ class Properties_model extends Model {
         $this->db->where('property_id', $id);
         $query = $this->db->get();
 
-        if ($query->num_rows > 0)
-            ; {
+        if ($query->num_rows > 0) {
+            return $query->result();
+        }
+
+        return FALSE;
+    }
+
+    function get_last_rented_date($id) {
+
+        $this->db->from('sold');
+        $this->db->limit(1);
+        $this->db->order_by('sold_id', 'desc');
+        $this->db->where('property_id', $id);
+        $this->db->where('unsold', 'NULL');
+        $this->db->like('property_id', 'R', 'after');
+        $query = $this->db->get();
+
+        if ($query->num_rows == 1) {
             return $query->result();
         }
 
@@ -820,7 +850,7 @@ class Properties_model extends Model {
         $quotes = array('/"/', "/'/");
         $replacements = array('&quot;', '&#39;');
         $feature = preg_replace($quotes, $replacements, $feature);
-        
+
         $data = array();
         $this->db->from('features');
         $this->db->where('features', $feature);
