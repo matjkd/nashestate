@@ -16,6 +16,7 @@ class Reports extends MY_Controller {
         $this->is_logged_in();
         $this->load->model('contacts_model');
         $this->load->model('properties_model');
+                $this->load->model('reports_model');
         $this->load->model('ajax_model');
     }
 
@@ -26,6 +27,15 @@ class Reports extends MY_Controller {
          $data['page'] = 'reports';
         $data['right_main'] = 'admin/reports/report_main';
         $data['title'] = 'Nash Homes: Reports';
+        $data['saleactive'] = $this->reports_model->count_properties_for_sale(1);
+         $data['salenotactive'] = $this->reports_model->count_properties_for_sale(0);
+         $data['sold'] = $this->reports_model->count_properties_sold();
+         $data['soldnotactive'] = $this->reports_model->count_properties_sold(0);
+         
+         $data['rentactive'] = $this->reports_model->count_properties_for_rent(1);
+         $data['rentnotactive'] = $this->reports_model->count_properties_for_rent(0);
+         $data['rented'] = $this->reports_model->count_properties_rented();
+         $data['rentednotactive'] = $this->reports_model->count_properties_rented(0);
         $this->load->vars($data);
 
         $this->load->view('admin/admin');
