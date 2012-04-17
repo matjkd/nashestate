@@ -51,7 +51,7 @@ if($property->sale_rent == 2) {?>
 <?php } ?>
 <?php 
 if($property->sold_rented == 1) {?>
-<span style="color:#a80000;">SOLD SUBJECT TO CONTRACT</span>
+
 <?php } ?>
 
 <p style=" text-align:justify;">
