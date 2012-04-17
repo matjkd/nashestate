@@ -53,7 +53,7 @@ class Properties extends MY_Controller {
 
     function active_rented() {
 
-        $data1['heading'] = 'Non Active Rented Properties';
+        $data1['heading'] = 'Active Rented Properties';
         $data1['properties'] = $this->reports_model->properties_rented(1);
         $this->load->vars($data1);
         $this->property_list();
@@ -61,7 +61,7 @@ class Properties extends MY_Controller {
 
     function notactive_rented() {
 
-        $data1['heading'] = 'Active Sold Properties';
+        $data1['heading'] = 'Non Active Rented Properties';
         $data1['properties'] = $this->reports_model->properties_rented(0);
         $this->load->vars($data1);
         $this->property_list();
