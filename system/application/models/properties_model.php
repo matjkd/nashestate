@@ -817,6 +817,10 @@ class Properties_model extends Model {
 
     function add_feature($id) {
         $feature = $this->input->post('feature');
+        $quotes = array('/"/', "/'/");
+        $replacements = array('&quot;', '&#39;');
+        $feature = preg_replace($quotes, $replacements, $feature);
+        
         $data = array();
         $this->db->from('features');
         $this->db->where('features', $feature);
@@ -853,7 +857,7 @@ class Properties_model extends Model {
         $data = array();
 
         $this->db->where('property_id', $id);
-         $this->db->order_by('property_features.features_order', 'asc');
+        $this->db->order_by('property_features.features_order', 'asc');
         $this->db->join('features', 'features.features_id = property_features.features_id', 'left');
         $Q = $this->db->get('property_features');
 
@@ -1156,8 +1160,8 @@ class Properties_model extends Model {
             $x = $x + 1;
         }
     }
-    
-        /**
+
+    /**
      *
      * @param type $param
      * @return type 

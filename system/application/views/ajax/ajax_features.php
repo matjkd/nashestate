@@ -1,5 +1,5 @@
 <?php foreach($features as $feature):?>
-"<?=$feature['features']?>",  
+"<?= $feature['features']?>",  
 <?php endforeach; ?>
 "other"
 
