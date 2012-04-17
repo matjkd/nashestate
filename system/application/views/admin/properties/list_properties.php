@@ -63,7 +63,7 @@ function wipe(id) {
 		</tr>
 	</thead>
 	<tbody>
-<?php foreach($properties as $key => $row):
+<?php if($properties != NULL) { foreach($properties as $key => $row):
 
 if($row['sale_rent'] == 1)
 {
@@ -93,6 +93,6 @@ if($row['sale_rent'] == 2)
 			<?php }?>
 		
 		</tr>
-		<?php endforeach;  ?>
+		<?php endforeach; }  ?>
 	</tbody>
 </table>

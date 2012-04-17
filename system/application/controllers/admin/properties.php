@@ -17,11 +17,58 @@ class Properties extends MY_Controller {
         $this->load->model('contacts_model');
         $this->load->model('properties_model');
         $this->load->model('ajax_model');
+        $this->load->model('reports_model');
         $this->load->model('Gallery_model');
     }
 
     function index() {
         redirect('admin/properties/view_all');
+    }
+
+    function property_list() {
+
+
+        $data['right_main'] = 'admin/properties/list_properties';
+        $data['page'] = 'properties';
+        $data['title'] = 'Nash Homes';
+        $this->load->vars($data);
+        $this->load->view('admin/admin');
+        
+    }
+
+    function active_sold() {
+        
+        $data1['heading'] = 'Active Sold Properties';
+        $data1['properties'] = $this->reports_model->properties_sold(1);
+           $this->load->vars($data1);
+        $this->property_list();
+        
+    }
+       function notactive_sold() {
+        
+        $data1['heading'] = 'Non Active Sold Properties';
+        $data1['properties'] = $this->reports_model->properties_sold(0);
+           $this->load->vars($data1);
+        $this->property_list();
+        
+    }
+    
+     function active_rented() {
+        
+        $data1['heading'] = 'Non Active Rented Properties';
+        $data1['properties'] = $this->reports_model->properties_rented(1);
+           $this->load->vars($data1);
+        $this->property_list();
+        
+    }
+    
+         function notactive_rented() {
+        
+        $data1['heading'] = 'Active Sold Properties';
+        $data1['properties'] = $this->reports_model->properties_rented(0);
+           $this->load->vars($data1);
+        $this->property_list();
+        
     }
 
     function view_sales() {
@@ -302,8 +349,8 @@ class Properties extends MY_Controller {
                     $this->properties_model->create_property_id('sale_id', $id_data);
                     $ref = $this->db->insert_id();
                 }
-                   $check = $this->properties_model->check_id($ref);
-                    if ($check > 0) {
+                $check = $this->properties_model->check_id($ref);
+                if ($check > 0) {
                     $this->session->set_flashdata('message', 'ID exists ' . $check . ' trying to add id ' . $ref . ' for user ' . $user_id . '');
                     redirect('admin/properties/add/' . $company_id . '', 'refresh');
                 }
