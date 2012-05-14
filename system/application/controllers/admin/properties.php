@@ -374,6 +374,7 @@ class Properties extends MY_Controller {
 
                 $this->properties_model->create_sales_data($ref);
             }
+            
             // build array for the model
             $form_data = array(
                 'property_ref_no' => $ref,
@@ -385,6 +386,7 @@ class Properties extends MY_Controller {
                 'property_address4' => set_value('property_address4'),
                 'property_address5' => set_value('property_address5'),
                 'sale_rent' => set_value('sale_rent'),
+            	'rent_period' => 'Monthly',
                 'user_id' => set_value('user_id')
             );
 

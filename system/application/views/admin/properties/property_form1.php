@@ -35,31 +35,40 @@ foreach ($property_details as $key => $row):
 
         <select id="user_id"  name="user_id" />
         <?php foreach ($company_users as $company_users): ?>
-            <option 
+            
             <?php
             $individual_id = $company_users->user_id;
 
             if ($row->user_id == $individual_id) {
-                echo "selected";
+                $selectedValue ="selected";
+            } else {
+            	$selectedValue = "";
             }
             ?>
 
-                value="<?= $company_users->user_id; ?>"><?= $company_users->firstname; ?> <?= $company_users->lastname; ?></option>
+             <option <?=$selectedValue?>   value="<?= $company_users->user_id; ?>"><?= $company_users->firstname; ?> <?= $company_users->lastname; ?></option>
             <?php endforeach; ?>
     </select>
 
     <br/><label for="sale_rent">For Sale/Rent*</label>
     <select id="sale_rent"  name="sale_rent" <?= $readonly ?>/>
-    <option <?php
+    <?php
         if ($row->sale_rent == 1) {
-            echo "selected";
+            $selectedValue1 = "selected";
+        } else {
+        	$selectedValue1 = "";
         }
-            ?>value="1">For Sale</option>
-    <option <?php
+            ?>
+            
+          <option  <?=$selectedValue1?> value="1">For Sale</option>
+    <?php
     if ($row->sale_rent == 2) {
-        echo "selected";
+      $selectedValue2 = "selected";
+    } else {
+    	$selectedValue2 = "";
     }
-            ?> value="2">For Rent</option>
+            ?>
+            <option <?=$selectedValue2?> value="2">For Rent</option>
     </select>
 
 

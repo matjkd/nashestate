@@ -3,4 +3,4 @@
 'Monthly':'Monthly',
 'Yearly':'Yearly',
 
-'selected':'1'}
+'selected':'Monthly'}

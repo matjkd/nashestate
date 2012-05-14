@@ -430,3 +430,22 @@ div#menu li.back {
     float:left;
     width: 45%;
 }
+.separator {
+	
+	text-align:left !important;
+}
+.separator img {
+	margin-right:3px;
+	margin-bottom:3px;
+	margin-top:3px;
+	margin-left:0px !important;
+	
+}
+.separator a {
+
+	margin-left:0px !important;
+	
+}
+.soldrented {
+	color:red;
+}
