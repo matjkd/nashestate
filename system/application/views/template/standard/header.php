@@ -12,9 +12,7 @@
 <!--  Mobile viewport optimized: j.mp/bplateviewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-<link rel="shortcut icon" href="<?= base_url() ?>favicon.ico">
-<link rel="apple-touch-icon" href="<?= base_url() ?>apple-touch-icon.png">
+
 
 <!-- Load google fonts-->
 <link  href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css" >
