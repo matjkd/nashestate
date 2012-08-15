@@ -35,6 +35,8 @@ class Premiere extends MY_Controller
 
                 //load view for main content
 		$data['content'] = "content/premiere";
+		//list general areas for search box
+		$data['general_areas'] = $this->ajax_model->get_general_area();
 
                //get property of the week
         if (isset($data['search_rentals'])) {
