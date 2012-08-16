@@ -20,7 +20,7 @@
 <select name="location">
 	<option value="any">Any</option>
 	<?php  foreach($general_areas as $area):?>
-	<option value="<?=$area->general_area_id?>"><?=$area->area?></option>
+	<option value="<?=$area['general_area_id']?>"><?=$area['area']?></option>
 	<?php endforeach; ?>
 	
 	</select><span id="searchlabel"> Location</span>

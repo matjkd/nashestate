@@ -19,7 +19,7 @@
 
 <script src="<?= base_url() ?>js/plugins.js"></script>
 
-<script src="<?= base_url() ?>js/script.js"></script>
+<script src="<?= base_url() ?>js/script.js?1234"></script>
 
 <!-- end concatenated and minified scripts-->
 
