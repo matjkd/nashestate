@@ -35,6 +35,7 @@ class Ajax_model extends Model {
 			$this->db->order_by('area', 'asc');
 			$query = $this->db->get();
 			if ($query->num_rows > 0) {
+				
 				return $query->result();
 			}
 	
