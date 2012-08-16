@@ -193,11 +193,6 @@ jQuery.fn.pngFix = function(settings) {
   }
 
 		
-
-	 
-//slideshow
-$(document).ready(function() {
-
 //searchbox fader
 	$(function() {
 		var fadedelay = 300;
@@ -225,8 +220,9 @@ $(document).ready(function() {
 	         $('.original').delay(fadedelay).fadeIn(fadedelay);
 	    });
 	 });
-
-
+	 
+//slideshow
+$(document).ready(function() {
     $('#s1').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		speedIn:  2000, 

@@ -5,5 +5,12 @@ system/application/libraries/MY_Controller.php
 images/fotos
 images/properties
 images/uploads
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+stats/*
 .htaccess
 *.psd
+*.*~
