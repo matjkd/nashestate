@@ -29,22 +29,19 @@ class Ajax_model extends Model {
 	}
 	function get_general_area()
 	{
-		$data = array();
 		
+	
 		$this->db->from('general_area');
-		$this->db->order_by('area', 'asc');
-		$Q = $this->db->get();
-		if ($Q->num_rows() > 0)
-		{
-			foreach ($Q->result_array() as $row)
-			
-			$data[] = $row;
-			
-		}
+			$this->db->order_by('area', 'asc');
+			$query = $this->db->get();
+			if ($query->num_rows > 0) {
+				return $query->result();
+			}
+	
 		
-		$Q->free_result();
-		return $data;
+		
 	}
+	
 	function get_property_types()
 	{
 		$data = array();
