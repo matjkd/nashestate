@@ -199,7 +199,7 @@ jQuery.fn.pngFix = function(settings) {
 $(document).ready(function() {
 
 //searchbox fader
-	$(function() {
+
 		var fadedelay = 300;
 	    $('#button1').click(function () {
 	        $('.original').fadeOut(fadedelay);
@@ -224,7 +224,7 @@ $(document).ready(function() {
 	          $('#back').fadeOut(fadedelay);
 	         $('.original').delay(fadedelay).fadeIn(fadedelay);
 	    });
-	 });
+	 
 
 
     $('#s1').cycle({
