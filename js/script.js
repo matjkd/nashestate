@@ -192,6 +192,8 @@ $(document).ready(function() {
 	    });
 	 
 
+if ($("#s1").length > 0){
+  // do something here
 
     $('#s1').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
@@ -200,10 +202,11 @@ $(document).ready(function() {
 	   timeout:   5000 
 	});
 	$('.cycle').css("display", "block");
-
+}
 
 //slideshow
-
+if ($("#ref").length > 0){
+  // do something here
     $('#ref').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		speedIn:  2000,
@@ -212,10 +215,11 @@ $(document).ready(function() {
 	});
 	$('.cycle').css("display", "block");
 
-
+}
 
 //featured propertyslideshow
-
+if ($("#featuredproperty").length > 0){
+  // do something here
     $('#featuredproperty').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		speedIn:  2000,
@@ -223,13 +227,17 @@ $(document).ready(function() {
 	   timeout:   5000
 	});
 	$('.featuredcycle').css("display", "block");
-
+	
+	}
+if ($("#s2").length > 0){
     // run the code in the markup!
 	$('#s2').cycle({ 
 	    fx: 'blindX',
 	    speed:    500, 
 	    timeout:  7000  
 	});
+	
+	}
     
 
 
