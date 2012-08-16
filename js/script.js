@@ -156,41 +156,7 @@ jQuery.fn.pngFix = function(settings) {
 
 })(jQuery);
 
-//map
 
-
-  var nash = new google.maps.LatLng(39.535222, 2.571909);
-  var parliament = new google.maps.LatLng(39.535222, 2.571909);
-  var marker;
-  var map;
- 
-  function initialize() {
-    var mapOptions = {
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: nash
-    };
- 
-    map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-          
-    marker = new google.maps.Marker({
-      map:map,
-      draggable:true,
-      animation: google.maps.Animation.DROP,
-      position: parliament
-    });
-    google.maps.event.addListener(marker, 'click', toggleBounce);
-  }
- 
-  function toggleBounce() {
- 
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }
 
 		
 
@@ -234,10 +200,10 @@ $(document).ready(function() {
 	   timeout:   5000 
 	});
 	$('.cycle').css("display", "block");
-});
+
 
 //slideshow
-$(document).ready(function() {
+
     $('#ref').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		speedIn:  2000,
@@ -245,11 +211,11 @@ $(document).ready(function() {
 	   timeout:   25000
 	});
 	$('.cycle').css("display", "block");
-});
+
 
 
 //featured propertyslideshow
-$(document).ready(function() {
+
     $('#featuredproperty').cycle({
 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 		speedIn:  2000,
@@ -257,9 +223,7 @@ $(document).ready(function() {
 	   timeout:   5000
 	});
 	$('.featuredcycle').css("display", "block");
-});
 
-$(function() {
     // run the code in the markup!
 	$('#s2').cycle({ 
 	    fx: 'blindX',
@@ -267,10 +231,10 @@ $(function() {
 	    timeout:  7000  
 	});
     
-});
+
 
 //login dropdown
-$(document).ready(function() {
+
 	$("div.panel_button").animate({top: "0px"});
 	$("div.panel_button").click(function(){
 		$("div#panel").animate({height: "55px"}).animate({height: "48px"}, "fast");
@@ -283,7 +247,42 @@ $(document).ready(function() {
 		$("div#panel").animate({height: "0px"}, "fast");
 		$("div.panel_button").animate({top: "0px"});
 	
-   });	
+   });
+   
+   
+   
+     var nash = new google.maps.LatLng(39.535222, 2.571909);
+  var parliament = new google.maps.LatLng(39.535222, 2.571909);
+  var marker;
+  var map;
+ 
+  function initialize() {
+    var mapOptions = {
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: nash
+    };
+ 
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+          
+    marker = new google.maps.Marker({
+      map:map,
+      draggable:true,
+      animation: google.maps.Animation.DROP,
+      position: parliament
+    });
+    google.maps.event.addListener(marker, 'click', toggleBounce);
+  }
+ 
+  function toggleBounce() {
+ 
+    if (marker.getAnimation() != null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }	
 	
 });
 
@@ -346,4 +345,9 @@ $(document).ready(function() {
 					}
 				});
 			});
+			
+			//map
+
+
+
 

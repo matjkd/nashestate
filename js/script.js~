@@ -156,41 +156,7 @@ jQuery.fn.pngFix = function(settings) {
 
 })(jQuery);
 
-//map
 
-
-  var nash = new google.maps.LatLng(39.535222, 2.571909);
-  var parliament = new google.maps.LatLng(39.535222, 2.571909);
-  var marker;
-  var map;
- 
-  function initialize() {
-    var mapOptions = {
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: nash
-    };
- 
-    map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-          
-    marker = new google.maps.Marker({
-      map:map,
-      draggable:true,
-      animation: google.maps.Animation.DROP,
-      position: parliament
-    });
-    google.maps.event.addListener(marker, 'click', toggleBounce);
-  }
- 
-  function toggleBounce() {
- 
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }
 
 		
 
@@ -199,7 +165,7 @@ jQuery.fn.pngFix = function(settings) {
 $(document).ready(function() {
 
 //searchbox fader
-	$(function() {
+
 		var fadedelay = 300;
 	    $('#button1').click(function () {
 	        $('.original').fadeOut(fadedelay);
@@ -224,7 +190,7 @@ $(document).ready(function() {
 	          $('#back').fadeOut(fadedelay);
 	         $('.original').delay(fadedelay).fadeIn(fadedelay);
 	    });
-	 });
+	 
 
 
     $('#s1').cycle({
@@ -346,4 +312,40 @@ $(document).ready(function() {
 					}
 				});
 			});
+			
+			//map
+
+
+  var nash = new google.maps.LatLng(39.535222, 2.571909);
+  var parliament = new google.maps.LatLng(39.535222, 2.571909);
+  var marker;
+  var map;
+ 
+  function initialize() {
+    var mapOptions = {
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: nash
+    };
+ 
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+          
+    marker = new google.maps.Marker({
+      map:map,
+      draggable:true,
+      animation: google.maps.Animation.DROP,
+      position: parliament
+    });
+    google.maps.event.addListener(marker, 'click', toggleBounce);
+  }
+ 
+  function toggleBounce() {
+ 
+    if (marker.getAnimation() != null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
 
