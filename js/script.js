@@ -259,40 +259,9 @@ if ($("#s2").length > 0){
    
    
    
-     var nash = new google.maps.LatLng(39.535222, 2.571909);
-  var parliament = new google.maps.LatLng(39.535222, 2.571909);
-  var marker;
-  var map;
- 
-  function initialize() {
-    var mapOptions = {
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: nash
-    };
- 
-    map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-          
-    marker = new google.maps.Marker({
-      map:map,
-      draggable:true,
-      animation: google.maps.Animation.DROP,
-      position: parliament
-    });
-    google.maps.event.addListener(marker, 'click', toggleBounce);
-  }
- 
-  function toggleBounce() {
- 
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }	
+
 	
-});
+
 
 
 
@@ -300,7 +269,7 @@ if ($("#s2").length > 0){
    // gallerific
    if ($("#thumbs").length > 0){
   // do something here
-  jQuery(document).ready(function($) {
+
 				// We only want these styles applied when javascript is enabled
 				$('div.navigation').css({'width' : '300px', 'float' : 'left'});
 				$('div.content').css('display', 'block');
@@ -353,11 +322,74 @@ if ($("#s2").length > 0){
 						this.fadeTo('fast', 1.0);
 					}
 				});
-			});
+			
 			
 			}
-			
+			});
 			//map
+			
+			var map;
+
+
+ var nash = new google.maps.LatLng(39.535222, 2.571909);
+
+/**
+ * The HomeControl adds a control to the map that simply
+ * returns the user to Chicago. This constructor takes
+ * the control DIV as an argument.
+ */
+
+function HomeControl(controlDiv, map) {
+
+  // Set CSS styles for the DIV containing the control
+  // Setting padding to 5 px will offset the control
+  // from the edge of the map
+  controlDiv.style.padding = '5px';
+
+  // Set CSS for the control border
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.borderStyle = 'solid';
+  controlUI.style.borderWidth = '2px';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Click to set the map to Home';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior
+  var controlText = document.createElement('div');
+  controlText.style.fontFamily = 'Arial,sans-serif';
+  controlText.style.fontSize = '12px';
+  controlText.style.paddingLeft = '4px';
+  controlText.style.paddingRight = '4px';
+  controlText.innerHTML = '<b>Home</b>';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to
+  // Chicago
+  google.maps.event.addDomListener(controlUI, 'click', function() {
+    map.setCenter(seedbed)
+  });
+
+}
+
+
+
+function initialize() {
+  var myLatlng = new google.maps.LatLng(39.535222, 2.571909);
+  var myOptions = {
+      zoom: 16,
+    center: seedbed,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  
+  var marker = new google.maps.Marker({
+      position: seedbed, 
+      map: map,
+      title:"Nash Homes"
+  });   
+}
 
 
 

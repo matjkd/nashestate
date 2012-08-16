@@ -298,7 +298,8 @@ if ($("#s2").length > 0){
 
    
    // gallerific
-   
+   if ($("#thumbs").length > 0){
+  // do something here
   jQuery(document).ready(function($) {
 				// We only want these styles applied when javascript is enabled
 				$('div.navigation').css({'width' : '300px', 'float' : 'left'});
@@ -353,6 +354,8 @@ if ($("#s2").length > 0){
 					}
 				});
 			});
+			
+			}
 			
 			//map
 
