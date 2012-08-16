@@ -379,7 +379,7 @@ function initialize() {
   var myLatlng = new google.maps.LatLng(39.535222, 2.571909);
   var myOptions = {
       zoom: 16,
-    center: seedbed,
+    center: nash,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
