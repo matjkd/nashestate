@@ -327,7 +327,8 @@ if ($("#s2").length > 0){
 			}
 			});
 			//map
-			
+			if ($("#map_canvas").length > 0){
+  // do something here
 			var map;
 
 
@@ -385,11 +386,14 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
   
   var marker = new google.maps.Marker({
-      position: seedbed, 
+      position: nash, 
       map: map,
       title:"Nash Homes"
   });   
 }
+
+ google.maps.event.addDomListener(window, 'load', initialize);
+ }
 
 
 

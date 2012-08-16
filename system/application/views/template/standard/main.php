@@ -12,7 +12,7 @@
 
     </head>
 
-    <body onload="initialize()" onunload="GUnload()">
+    <body>
         <?php $this->load->view('global/ie6warning'); ?>
 
         <div class="login"></div>

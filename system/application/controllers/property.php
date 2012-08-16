@@ -36,10 +36,17 @@ class Property extends MY_Controller {
             $data['leftbox'] = 'property/gallery';
 
             $data['page'] = 'search';
+            
+            foreach( $data['property_details'] as $row):
+            
+            $data['title'] = "Nash Homes - ".$row->property_title;
+            
+            endforeach;
+            
             $data['menu'] = $this->content_model->get_menus();
 
             $data['narrow'] = 1;
-            $data['title'] = 'Property View';
+           
 
             $data['content'] = 'property/main_details';
             $this->load->vars($data);
