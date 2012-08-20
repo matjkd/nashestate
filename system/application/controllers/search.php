@@ -69,13 +69,19 @@ class Search extends MY_Controller {
         if ($data['rentto'] == 0 && $data['buyto'] == 0) {
             $data['list'] = 'both unlimited';
             $data['search_desc'] = "All properties";
-            $data['properties'] = $this->search_model->search_sales(0, 0, $data['beds'], $data['maxbeds'], $area, 0);
-
-            $data['rentals'] = $this->search_model->search_rentals(0, 0, $data['beds'], $data['maxbeds'], $area, 0);
+           
+            
             if ($area != "any") {
                 $data['nearby'] = $this->search_model->search_sales(0, 0, $data['beds'], $data['maxbeds'], $area, 1);
+               
                 $data['nearbyrentals'] = $this->search_model->search_sales(0, 0, $data['beds'], $data['maxbeds'], $area, 1);
             }
+            
+            $data['properties'] = $this->search_model->search_sales(0, 0, $data['beds'], $data['maxbeds'], $area, 0);
+             
+            $data['rentals'] = $this->search_model->search_rentals(0, 0, $data['beds'], $data['maxbeds'], $area, 0);
+            
+        
         }
         // Purchase Only
         if (($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1) {
@@ -83,6 +89,7 @@ class Search extends MY_Controller {
             $data['search_desc'] = "Properties for Sale between " . number_format($data['buyfrom']) . "&euro; and " . number_format($data['buyto']) . "&euro;";
 
             $data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 0);
+            
             if ($area != "any") {
                 $data['nearby'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 1);
             }
