@@ -1,4 +1,4 @@
-<?php foreach($property_details as $key => $row): ?>
+<?php  foreach($property_details as $key => $row): ?>
 
 
 <script>
@@ -66,4 +66,4 @@ $(document).ready(function() {
 	    	    });
 });
 </script>
-<?php endforeach; ?>
+<?php endforeach;  ?>

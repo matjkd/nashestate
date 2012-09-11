@@ -74,18 +74,33 @@
 	
 	<tr>
 	        <td class='leftcolumn'>
-			Premiere Property 
+			Reserved
 	        </td>
 			<td>
-				<div class="yesnojeditable" id="premiere" style="width:150px; float:left;">
+				<div class="yesnojeditable" id="status" style="width:150px; float:left;">
 				<?php 
-				if($row->premiere==0) {echo "No";}; 
-				if($row->premiere==1) {echo "Yes";};
+				if($row->status==0) {echo "No";}; 
+				if($row->status==1) {echo "Yes";};
 				?>
 				</div>
 			</td>
 	</tr>
 
+
+
+<tr>
+	        <td class='leftcolumn'>
+			Advertising
+	        </td>
+			<td>
+				<div class="yesnojeditable" id="advertising" style="width:150px; float:left;">
+				<?php 
+				if($row->advertising==0) {echo "No";}; 
+				if($row->advertising==1) {echo "Yes";};
+				?>
+				</div>
+			</td>
+	</tr>
         <tr>
 	        <td class='leftcolumn'>
 			<?php if(preg_match('/^R/', $row->property_ref_no)) {echo "RENTED"; } else { echo "SOLD"; }?>

@@ -14,7 +14,7 @@
 });
 </script>
 <?php $format = 'l jS \of F Y'; ?>
-<?php foreach($sales_data as $row): ?>
+<?php if(isset($sales_data) && $sales_data != NULL) { foreach($sales_data as $row): ?>
 <br/>
 
 <div id="featured_list">
@@ -30,7 +30,7 @@
 </div>
 
 <?php $saledate = TRUE;?>
-<?php endforeach; ?>
+<?php endforeach; } ?>
 
 
 <?php if(!$this->sold || !isset($saledate)) { echo form_open('admin/properties/sold/');?>

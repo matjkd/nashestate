@@ -50,7 +50,12 @@ if($property->sale_rent == 1) {?>
 if($property->sold_rented == 1) {?>
 <br/>
 <span class="soldrented">SOLD</span>
-<?php } ?>
+<?php } else {
+	if($property->status == 1) {
+		?>
+		<span class="soldrented">RESERVED</span>
+		<?php }
+} ?>
 <?php } 
 if($property->sale_rent == 2) {?>
 <strong>Price: <?=number_format($property->rent_price)?>&euro; <?=$property->rent_period?>
