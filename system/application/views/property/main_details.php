@@ -70,7 +70,12 @@ if($property->sale_rent == 2) {?>
 <?php 
 if($property->sold_rented == 1) {?>
 <span class="soldrented">RENTED</span>
-<?php } ?>
+<?php  } else {
+	if($property->status == 1) {
+		?>
+		<span class="soldrented">RESERVED</span>
+		<?php }
+} ?>
 <?php } ?>
 
 
