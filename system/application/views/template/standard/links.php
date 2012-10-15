@@ -1,10 +1,10 @@
-<div style="float:left; margin-top:3px; margin-left:5px;">
+<div class="grid_12" style=" margin-top:3px; margin-left:5px;">
 Website developed by redstudio design limited<br/>
-&copy; 2011 Nash Homes Mallorca
+&copy; 2011 Nash Homes Mallorca. <a href="https://plus.google.com/104817305640779722097" rel="publisher">Find us on Google+</a>
 
 </div>
 
-<div style="float:right; margin-top:3px; text-align:right;">
+<div class="grid_11" style="float:right; margin-top:3px; text-align:right;">
 
 
 
