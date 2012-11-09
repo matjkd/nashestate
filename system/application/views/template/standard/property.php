@@ -84,9 +84,24 @@
    
     <footer>
 		<div class="container_24">
-				<div class="grid_24">
-					<div class="footerbox"></div>	
-				</div>
+				 <div class="grid_24">
+                        <div class="footerbox">
+                            <div class="grid_8">
+                                    <?php if(isset($references)) { $this->load->view('global/testimonials'); } ?>
+                          &nbsp;
+                            </div>
+                              <div class="grid_15" style="width:620px;">
+                     <?=$this->load->view('global/social_icons')?>
+                                    &nbsp;
+                            </div>
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="grid_24">
+<?= $this->load->view('template/standard/links') ?>
+                    </div>
 		</div>
     </footer>
   </div> 
