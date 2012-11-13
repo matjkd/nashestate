@@ -72,6 +72,22 @@
 			</td>
 	</tr>
 	
+	
+	
+	<tr>
+	        <td class='leftcolumn'>
+			Premiere Property 
+	        </td>
+			<td>
+				<div class="yesnojeditable" id="premiere" style="width:150px; float:left;">
+				<?php 
+				if($row->premiere==0) {echo "No";}; 
+				if($row->premiere==1) {echo "Yes";};
+				?>
+				</div>
+			</td>
+	</tr>
+	
 	<tr>
 	        <td class='leftcolumn'>
 			Reserved
