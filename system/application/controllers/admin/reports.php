@@ -25,9 +25,9 @@ class Reports extends MY_Controller {
      */
     function properties() {
          $data['page'] = 'reports';
-        $data['right_main'] = 'admin/reports/report_main';
-        $data['title'] = 'Nash Homes: Reports';
-        $data['saleactive'] = $this->reports_model->count_properties_for_sale(1);
+         $data['right_main'] = 'admin/reports/report_main';
+         $data['title'] = 'Nash Homes: Reports';
+         $data['saleactive'] = $this->reports_model->count_properties_for_sale(1);
          $data['salenotactive'] = $this->reports_model->count_properties_for_sale(0);
          $data['sold'] = $this->reports_model->count_properties_sold();
          $data['soldnotactive'] = $this->reports_model->count_properties_sold(0);
@@ -36,9 +36,9 @@ class Reports extends MY_Controller {
          $data['rentnotactive'] = $this->reports_model->count_properties_for_rent(0);
          $data['rented'] = $this->reports_model->count_properties_rented();
          $data['rentednotactive'] = $this->reports_model->count_properties_rented(0);
-        $this->load->vars($data);
+         $this->load->vars($data);
 
-        $this->load->view('admin/admin');
+         $this->load->view('admin/admin');
     }
 
     function is_logged_in() {

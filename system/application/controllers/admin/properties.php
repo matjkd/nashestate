@@ -252,6 +252,7 @@ class Properties extends MY_Controller {
         $data['sales_data'] = $this->properties_model->get_sales_data($id);
         
         $data['rentedEndDate'] = $this->properties_model->get_last_rented_date($id);
+		
         if ($data['rentedEndDate'] != NULL) {
             foreach ($data['rentedEndDate'] as $row1):
 
@@ -259,6 +260,8 @@ class Properties extends MY_Controller {
                 $data['startDate'] = $row1->rented_date;
 
             endforeach;
+            
+            
             //check if rented to date has passed
 
             if (now() > $data['endDate'] || now() < $data['startDate']) {
@@ -277,6 +280,7 @@ class Properties extends MY_Controller {
             $data['features'] = $this->properties_model->features($row->sale_rent);
             $company_id = $row->company_id;
             $user_id = $row->user_id;
+			
         endforeach;
 
         //get user name

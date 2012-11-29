@@ -22,6 +22,13 @@ class Welcome extends MY_Controller {
 	 *
 	 */
 	function index() {
+		
+		//run a date check on rented properties...
+		
+		
+		
+		
+		
 		redirect('/home');
 	}
 
@@ -29,6 +36,7 @@ class Welcome extends MY_Controller {
 	 *
 	 */
 	function content($id = "home") {
+		
 		if (($this->uri->segment(3)) == NULL) {
 			if (($this->uri->segment(1)) == NULL) {
 				$id = "home";
