@@ -14,6 +14,7 @@ class Welcome extends MY_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('ajax_model');
+		$this->load->model('reports_model');
 		$this->load->model('properties_model');
 		$this->load->model('gallery_model');
 	}
@@ -23,9 +24,42 @@ class Welcome extends MY_Controller {
 	 */
 	function index() {
 		
+		//TODO make loading a fancy animated gif or something
+		echo "Loading...";
 		//run a date check on rented properties...
-		
-		
+		//get active rented properties
+		$activeRented = $this->reports_model->properties_rented(1);
+		foreach($activeRented as $row):
+			
+			$id = $row['property_ref_no'];
+			
+			$data['rentedEndDate'] = $this->properties_model->get_last_rented_date($id);
+			
+			if ($data['rentedEndDate'] != NULL) {
+	            	
+	            foreach ($data['rentedEndDate'] as $row1):
+	
+	                $data['endDate'] = $row1->rented_end;
+	                $data['startDate'] = $row1->rented_date;
+	
+	            endforeach;
+            
+            
+            	//check if rented to date has passed
+
+	            if (now() > $data['endDate'] || now() < $data['startDate']) {
+	                //make property unrented
+	                $this->properties_model->mark_unrented($id);
+	            }
+	
+	            if (now() < $data['endDate'] && now() > $data['startDate']) {
+	                //make property rented
+	                $this->properties_model->mark_sold($id);
+	            }
+	        }
+			
+			
+		endforeach; 
 		
 		
 		
