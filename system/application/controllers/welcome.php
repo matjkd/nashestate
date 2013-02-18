@@ -136,6 +136,73 @@ class Welcome extends MY_Controller {
 		$this->load->view('template/standard/main');
 	}
 
+function contenttest($id = "home") {
+		
+		if (($this->uri->segment(3)) == NULL) {
+			if (($this->uri->segment(1)) == NULL) {
+				$id = "home";
+				$data['main'] = "pages/dynamic";
+			} else {
+				$id = $this->uri->segment(1);
+				$data['main'] = "pages/dynamic";
+			}
+		} else {
+			$id = $this->uri->segment(3);
+			$data['main'] = "pages/dynamic";
+		}
+		//get the page content
+		$data['content'] = $this->content_model->get_content($id);
+		foreach ($data['content'] as $row):
+
+		$data['title'] = $row['content_title'];
+		$data['content_menu'] = $row['content_menu'];
+		$data['main_text'] = $row['content'];
+		$data['extra'] = $row['extra'];
+		$data['page'] = $row['menu_top'];
+
+		if ($row['slideshow'] != NULL) {
+			$data['slideshow'] = $row['slideshow'];
+		}
+		endforeach;
+
+		//get the references
+		 
+		 
+		$data['references'] = $this->content_model->get_testimonials();
+		 
+
+
+
+		//load block content
+		$data['leftbox'] = 'search/searchbox';
+		$data['side1'] = 'sidebar/property_menu';
+		$data['side2'] = 'sidebar/property_of_week';
+
+		//list general areas for search box
+		$data['general_areas'] = $this->ajax_model->get_general_area();
+
+		 
+		//get property of the week
+		if (isset($data['search_rentals'])) {
+			echo $data['search_rentals'];
+			$data['featured_property'] = $this->properties_model->get_featured_rental();
+			 
+		} else {
+			$data['featured_property'] = $this->properties_model->get_featured_property();
+		}
+		//get property of the week images
+		foreach($data['featured_property'] as $row):
+		$featuredpropertyid = $row['property_id'];
+		$data['featured_images'] = $this->gallery_model->get_property_images($featuredpropertyid);
+
+		endforeach;
+
+		$data['menu'] = $this->content_model->get_menus();
+		$data['content'] = "content/standard";
+		$this->load->vars($data);
+		$this->load->view('template/crystal/main');
+	}
+
 	function show($id)
 	{
 		$this->ref_id = $this->uri->segment(4);
