@@ -47,5 +47,5 @@
 	</select><span id="searchlabel"> Location</span>
          </div>
   
-<input type="submit" value="Submit" id="submitsearch" />
+<input  type="submit" value="Submit" id="submitsearch" />
 </form>

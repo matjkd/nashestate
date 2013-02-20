@@ -37,9 +37,9 @@ button::-moz-focus-inner {border: 0;}
 /* Headers/Titles */
 /*-----------------------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6, #footer .heading {
-    font-family: 'Segoe UI','Ubuntu',sans-serif;
+    font-family: 'myriad-pro','Ubuntu',sans-serif;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 #page-sidebar h4, #sidebar h4{
     font-weight: 600;
@@ -56,7 +56,7 @@ a:hover {color: #F7941D; text-decoration: none;}
 /* Top Menu */
 /*-----------------------------------------------------------------------------------*/
 .header-top{
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 .header-nav{
     margin-bottom: 15px;
@@ -202,7 +202,7 @@ a:hover {color: #F7941D; text-decoration: none;}
     list-style: none outside none;
     position: relative;
 }
-#menu > ul a { padding: 10px 20px;}
+#menu > ul a { padding: 10px 15px;}
 @media (max-width: 979px) {
     /*#menu > ul a {padding: 25px;}*/
 }
@@ -244,7 +244,7 @@ li.current {
     z-index: 10; /* IE7 FIX Z-INDEX */
 }
 .res-menu {width: 100%; display: none;}
-@media (max-width: 767px) {
+@media (max-width: 977px) {
     #menu {float: none;}
     #menu ul {display: none;}
     .res-menu {display: block;}
@@ -538,9 +538,7 @@ li.current {
     margin-left: 70px;
     padding: 10px 10px 10px 40px;
 }
-.testimonials h4 {
-    font-weight: 600;
-padding-bottom: 10px;}
+
 .testimonials img {
     float: left;
     margin-bottom: 10px;
@@ -1155,11 +1153,7 @@ a[class^='hl-icon']{
     height: 120px;
     text-indent: -9999px;
     width: 120px;}
-/*Our Works*/
-.our-works h4{
-    font-weight: 600;
-    padding-bottom: 10px;
-}
+
 /* Others */
 /*-----------------------------------------------------------------------------------*/
 .clear {clear: both;}

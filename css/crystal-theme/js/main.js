@@ -128,6 +128,15 @@ $(window).load(function() {
 		animationLoop: true,
 		smoothHeight: true
 	});
+	 $("#testimonialSlider").flexslider({
+		animation: "slide",
+        slideshow: true, // ***
+        useCSS: false,
+		controlNav: false,
+		directionNav: false,
+		animationLoop: true,
+		smoothHeight: true
+	});
     // Accordion settings
     $(function() {
         $('.accordion').on('show', function (e) {

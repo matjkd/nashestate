@@ -25,6 +25,13 @@
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="assets/css/font-awesome-ie7.css"/>
 		<![endif]-->
+		<script type="text/javascript" src="//use.typekit.net/mtn4tpv.js"></script>
+		<script type="text/javascript">
+			try {
+				Typekit.load();
+			} catch(e) {
+			}
+		</script>
 		<script type="text/javascript" src="<?=$base ?>js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/jquery.easing.1.3.js"></script>
@@ -64,152 +71,20 @@
 
 					</div>
 					<div class="span7 social-container" >
-						<p class="phone hidden-phone">
-							<i class="icon-envelope"></i> info@mywebsite.com
+						<p class=" hidden-phone">
+							<h2>Tel. +34 971 67 59 69</h2>
+							Property Sales & Rentals in South West Mallorca
 						</p>
-						<p class="phone hidden-phone">
-							<i class="icon-bell"></i> Call Us +1 800 123 45 67
-						</p>
-						<div class="top-social">
-							<a data-original-title="Facebook" rel="tooltip" data-placement="top" class="facebook"
-							href="#"></a>
-
-							<a data-original-title="Twitter" rel="tooltip" data-placement="top" class="twitter2"
-							href="#"></a>
-
-							<a data-original-title="Dribble" rel="tooltip" data-placement="top" class="dribbble"
-							href="#"></a>
-
-							<a data-original-title="Digg" rel="tooltip" data-placement="top" class="digg"
-							href="#"></a>
-
-							<a data-original-title="DeviantArt" rel="tooltip" data-placement="top" class="dart"
-							href="#"></a>
-
-							<a data-original-title="Market" rel="tooltip" data-placement="top" class="market"
-							href="#"></a>
-						</div>
+						
+						
+						
 					</div>
 				</div>
 				<div class="row header-nav">
 					<div class="span12">
 						<nav id="menu" class="clearfix">
 							<ul>
-								<li class="current">
-									<a href="./index.html" ><span class="name">Home</span></a>
-									<ul>
-										<li>
-											<a href="./index.html">Home Page 1</a>
-										</li>
-										<li>
-											<a href="./index2.html">Home Page 2</a>
-										</li>
-										<li>
-											<a href="./index3.html">Home Page 3</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="./about.html"><span class="name">Features</span></a>
-									<ul>
-										<li>
-											<a href="./about.html">About Us</a>
-										</li>
-										<li>
-											<a href="./full-width.html">Full Width</a>
-										</li>
-										<li>
-											<a href="./bs-scaffolding.html">BootStrap Pages</a>
-											<ul>
-												<li>
-													<a href="./bs-scaffolding.html">Scaffolding</a>
-												</li>
-												<li>
-													<a href="./bs-base-css.html">Base CSS</a>
-												</li>
-												<li>
-													<a href="./bs-components.html">Components</a>
-												</li>
-												<li>
-													<a href="./bs-javascript.html">JavaScript</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="./font-awesome.html">FontAwesome</a>
-										</li>
-										<li>
-											<a href="./price-table.html">Price Table</a>
-										</li>
-										<li class="last">
-											<a href="./404.html">404 Page not found</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="./portfolio4.html"><span class="name">Portfolio</span></a>
-									<ul>
-										<li>
-											<a href="./portfolio2.html">Portfolio 2 col</a>
-											<ul>
-												<li>
-													<a href="./portfolio2.html">Portfolio 2 Columns</a>
-												</li>
-												<li class="last">
-													<a href="./portfolio2ex.html">Portfolio 2 Columns Extended</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="./portfolio3.html">Portfolio 3 col</a>
-											<ul>
-												<li>
-													<a href="./portfolio3.html">Portfolio 3 Columns</a>
-												</li>
-												<li class="last">
-													<a href="./portfolio3ex.html">Portfolio 3 Columns Extended</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="./portfolio4.html">Portfolio 4 col</a>
-											<ul>
-												<li>
-													<a href="./portfolio4.html">Portfolio 4 Columns</a>
-												</li>
-												<li class="last">
-													<a href="./portfolio4ex.html">Portfolio 4 Columns Extended</a>
-												</li>
-											</ul>
-										</li>
-										<li class="last">
-											<a href="./portfolio-single.html">Single Portfolio</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="./blog-sidebar-right.html"><span class="name">Blogs</span></a>
-									<ul>
-										<li>
-											<a href="./blog-sidebar-right.html">Blog - Sidebar Right</a>
-										</li>
-										<li>
-											<a href="./blog-sidebar-left.html">Blog - Sidebar Left</a>
-										</li>
-										<li>
-											<a href="./blog-type-1.html">Blog Type 1</a>
-										</li>
-										<li>
-											<a href="./blog-type-2.html">Blog Type 2</a>
-										</li>
-										<li class="last">
-											<a href="./blog-single.html">Blog Single</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="./contact.html"><span class="name">Contacts</span></a>
-								</li>
+								<?=$this -> load -> view('template/crystal/menu') ?>
 							</ul>
 						</nav>
 						<!--<form class="top-search pull-right">-->
@@ -219,6 +94,7 @@
 						<!--</form>-->
 					</div>
 				</div>
+				
 			</div>
 		</header>
 
@@ -226,111 +102,14 @@
 		<section id="slider">
 			<div class="container">
 				<div class="row">
-					<aside id="sidebar" class="pull-left span4">
-<div >
-						<div class="accordion" id="accordion2">
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"> <i class="icon-minus icon-white"></i> Search All Properties </a>
-								</div>
-								<div id="collapse1" class="accordion-body collapse in">
-									<div class="accordion-inner">
-										<ul class="icons ul-list-2">
-											<li>
-												<a href="#">Wed Design</a>
-											</li>
-											<li>
-												<a href="#">Responsive</a>
-											</li>
-											<li>
-												<a href="#">HTML5 / CSS3</a>
-											</li>
-											<li>
-												<a href="#">Coding Essentials</a>
-											</li>
-											<li>
-												<a href="#">SEO Optimization</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
+					<div id="sidebar" class=" pull-left span4 searchbox">
+						<?=$this -> load -> view('template/crystal/searchbox') ?>
+					</div>
 
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6"> <i class="icon-plus icon-white"></i> Search Properties for Sale </a>
-								</div>
-								<div id="collapse6" class="accordion-body collapse">
-									<div class="accordion-inner">
-										<ul class="icons ul-list-2">
-											<li>
-												<a href="#">Wed Design</a>
-											</li>
-											
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6"> <i class="icon-plus icon-white"></i> Search Properties for Rent </a>
-								</div>
-								<div id="collapse6" class="accordion-body collapse">
-									<div class="accordion-inner">
-										<ul class="icons ul-list-2">
-											<li>
-												<a href="#">Wed Design</a>
-											</li>
-											
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-</div>
-					</aside>
+					
 
-					<div class="span8">
-						<div id="mainslider" class="flexslider">
-							<ul class="slides">
-								<li>
-									<img src="<?=$base ?>example/slider1.jpg" alt="" />
-									<div class="slide-caption">
-										<h3 class="slide-title">Premiere Properties</h3>
-										<p class="slide-subtitle">
-											Click here to view our premiere properties
-											</p>
-									</div>
-								</li>
-								<li>
-									<img src="<?=$base ?>example/slider2.jpg" alt="" />
-									<div class="slide-caption">
-										<h3 class="slide-title">Proin vel neque vel leo pulvinar tempor vitae sed</h3>
-										<p class="slide-subtitle">
-											Etiam porttitor aliquet nunc, non pulvinar nulla placerat et. Ut ipsum sapien, iaculis nec aliquet vel, pretium id mauris. Cras aliquet magna in eros mattis eu gravida urna fermentum.
-										</p>
-									</div>
-								</li>
-								<li>
-									<img src="<?=$base ?>example/slider3.jpg" alt="" />
-									<div class="slide-caption">
-										<h3 class="slide-title">Maecenas ultrices, est vel aliquam luctus posuere</h3>
-										<p class="slide-subtitle">
-											Etiam porttitor aliquet nunc, non pulvinar nulla placerat et. Ut ipsum sapien, iaculis nec aliquet vel, pretium id mauris. Cras aliquet magna in eros mattis eu gravida urna fermentum.
-										</p>
-									</div>
-								</li>
-								<li>
-									<img src="<?=$base ?>example/slider4.jpg" alt="" />
-									<div class="slide-caption">
-										<h3 class="slide-title">Cras dictum enim vitae urna auctor feugiat</h3>
-										<p class="slide-subtitle">
-											Etiam porttitor aliquet nunc, non pulvinar nulla placerat et. Ut ipsum sapien, iaculis nec aliquet vel, pretium id mauris. Cras aliquet magna in eros mattis eu gravida urna fermentum.
-										</p>
-									</div>
-								</li>
-							</ul>
-						</div>
+					<div class="span8 searchbox">
+						<?=$this -> load -> view('template/crystal/slideshow') ?>
 					</div>
 				</div>
 			</div>
@@ -340,89 +119,21 @@
 		<section id="container">
 			<div class="container">
 				<div class="row">
-					<div class="span12">
-						<div class="hero-unit">
-							<h4>Welcome to Crystal - responsive web template for business!</h4>
-							<p>
-								Proin arcu tellus, placerat facilisis rhoncus eget, mollis ac erat. Donec accumsan erat in elit condimentum dictum pharetra est molestie. Donec eget felis in ligula bibendum gravida consectetur at dolor.Proin arcu tellus, placerat facilisis rhoncus eget, mollis ac erat. Donec accumsan erat in elit condimentum dictum pharetra est molestie. Donec eget felis in ligula bibendum gravida consectetur at dolor.
-							</p>
-							<a class="btn btn-welcome btn-large pull-right">Learn more</a>
-						</div>
+					<div class="span4">
+
+						<?=$this -> load -> view('sidebar/featured_property') ?>
+
+					</div>
+					<div class="span8">
+
+						<?=$this->load->view('template/crystal/content')?>
+
 					</div>
 				</div>
-				<div class="row highlights">
-					<div class="span3">
-						<div class="hl-circle">
-							<a class="hl-icon1" href="services.html">service</a>
-						</div>
 
-						<div class="highlights-content clearfix">
-							<h5>RESPONSIVE DESIGN</h5>
-
-							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit, sed diam nonummy nibh euismod.
-							</p>
-
-							<a class="btn-small btn-hl" href="services.html"> <span>Read more</span> </a>
-							<!-- button small end -->
-						</div>
-					</div>
-					<div class="span3 ">
-						<div class="hl-circle">
-							<a class="hl-icon2" href="services.html">service</a>
-						</div>
-
-						<div class="highlights-content clearfix">
-							<h5>RESPONSIVE DESIGN</h5>
-
-							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit, sed diam nonummy nibh euismod.
-							</p>
-
-							<a class="btn-small btn-hl" href="services.html"> <span>Read more</span> </a>
-							<!-- button small end -->
-						</div>
-					</div>
-					<div class="span3">
-						<div class="hl-circle">
-							<a class="hl-icon3" href="services.html">service</a>
-						</div>
-
-						<div class="highlights-content clearfix">
-							<h5>RESPONSIVE DESIGN</h5>
-
-							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit, sed diam nonummy nibh euismod.
-							</p>
-
-							<a class="btn-small btn-hl" href="services.html"> <span>Read more</span> </a>
-							<!-- button small end -->
-						</div>
-					</div>
-					<div class="span3 highlights">
-						<div class="hl-circle">
-							<a class="hl-icon4" href="services.html">service</a>
-						</div>
-
-						<div class="highlights-content clearfix">
-							<h5>RESPONSIVE DESIGN</h5>
-
-							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit, sed diam nonummy nibh euismod.
-							</p>
-
-							<a class="btn-small btn-hl" href="services.html"> <span>Read more</span> </a>
-							<!-- button small end -->
-						</div>
-					</div>
-				</div>
 				<div class="row">
 					<div class="span12 our-works">
-						<h4>Our Work</h4>
+						<h3>Latest Properties</h3>
 					</div>
 					<div class="span12">
 						<div id="our-projects" class="carousel bttop">
@@ -536,96 +247,9 @@
 						</script>
 					</div>
 				</div>
+
 				<div class="row">
-					<div class="span12">
-						<ul class="thumbnails">
-							<!---->
-							<li class="span6">
-								<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto" class="thumbnail"> <img src="<?=$base ?>example/latest8.jpg" alt="" /> <span class="frame-overlay"></span> </a>
-							</li>
-							<!---->
-							<li class="span3">
-								<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto" class="thumbnail"> <img src="<?=$base ?>example/latest7.jpg" alt="" /> <span class="frame-overlay"></span> </a>
-							</li>
-							<!---->
-							<li class="span3">
-								<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto" class="thumbnail"> <img src="<?=$base ?>example/latest6.jpg" alt="" /> <span class="frame-overlay"></span> </a>
-							</li>
-							<!---->
-							<li class="span3">
-								<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto" class="thumbnail"> <img src="<?=$base ?>example/latest5.jpg" alt="" /> <span class="frame-overlay"></span> </a>
-							</li>
-							<!---->
-							<li class="span3">
-								<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto" class="thumbnail"> <img src="<?=$base ?>example/latest1.jpg" alt="" /> <span class="frame-overlay"></span> </a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span12 testimonials">
-						<h4>Testimonials</h4>
-					</div>
-					<div class="span4">
-						<p>
-							Suspendisse potenti. Suspendisse non sem lectus, eu sagittis diam. Nullam quis vestibulum augue.
-							Curabitur augue urna, viverra vel gravida et, aliquet eget erat.
-							Aliquam elit felis, pharetra id fringilla et, dignissim sed velit.
-						</p>
-					</div>
-					<div class="span8">
-						<!--testimonals-->
-						<div id="testimonial" class="carousel bttop ">
-							<div class="carousel-wrapper">
-								<ul class="testimonials">
-									<li>
-
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
-											Nullam at lectus augue. Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst.
-											Curabitur condimentum justo sed urna porttitor aliquam.
-										</p>
-										<h4>Jhon Doe <small>Compani Inc.</small></h4>
-									</li>
-									<li>
-
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
-											Nullam at lectus augue. Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst.
-											Curabitur condimentum justo sed urna porttitor aliquam.
-										</p>
-										<h4>Jhon Doe <small>Compani Inc.</small></h4>
-									</li>
-									<li>
-
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
-											Nullam at lectus augue. Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst.
-											Curabitur condimentum justo sed urna porttitor aliquam.
-										</p>
-										<h4>Jhon Doe <small>Compani Inc.</small></h4>
-									</li>
-									<li>
-
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
-											Nullam at lectus augue. Ut tristique consectetur elit, sed tincidunt elit iaculis in. In hac habitasse platea dictumst.
-											Curabitur condimentum justo sed urna porttitor aliquam.
-										</p>
-										<h4>Jhon Doe <small>Compani Inc.</small></h4>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<script type="text/javascript">
-							$(document).ready(function() {
-								$('#testimonial').elastislide({
-									imageW : 740,
-									margin : 30
-								});
-							});
-						</script>
-					</div>
+					<?=$this->load->view('template/crystal/testimonials')?>
 				</div>
 			</div>
 		</section>
@@ -638,17 +262,18 @@
 						<p><img src="<?=base_url() ?>images/logo2.png" alt="">
 						</p>
 						<address>
+
 							<p>
-								<i class="icon-map-marker"></i> Street Name 432/2, London, 90210
+								<i class="icon-map-marker"></i> Local 13, Ctra. Palma Andratx 43, Portals Nous, 07181 Calvià, Mallorca, Baleares, Spain.
 							</p>
 							<p>
-								<i class="icon-phone"></i> (123) 456-7890
+								<i class="icon-phone"></i> +34 971 67 59 69
 							</p>
 							<p>
-								<i class="icon-mobile-2"></i> (123) 456-7890
+								<i class="icon-print"></i> +34 971 67 59 05
 							</p>
 							<p>
-								<i class="icon-mail-3"></i><a href="mailto:#">info@email.com</a>
+								<i class="icon-envelope"></i><a href="mailto:info@nashhomesmallorca.com">info@nashhomesmallorca.com</a>
 							</p>
 						</address>
 					</div>
