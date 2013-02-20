@@ -1,3 +1,5 @@
+<?php $this->searchVisible = 1;?>
+
 <div >
 						<div class="accordion" id="accordion2">
 							<div class="accordion-group">

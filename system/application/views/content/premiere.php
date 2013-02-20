@@ -9,12 +9,13 @@
 
 			
 
-					<div id="search_list" class="result" >
+					<div  class="result row">
 
-							<div id="search_content">
-								<div class="grid_11">
-								<strong><?=$property['property_title']?> <br/>
-								<?=$property['property_type_name']?> :: <?=$property['area']?></strong><br/>
+						<div class="span8 search_list  " id="search_content">
+							<div class="row">
+							<div class="span6">
+								<p class="lead"><?=$property['property_title']?> </p>
+								<?=$property['property_type_name']?> :: <?=$property['area']?><br/>
 								Bedrooms: <?=$property['rooms']?><br/>
 								<p>
 									<?php
@@ -44,10 +45,11 @@
 								<strong>Ref: &#35;<?=$property['property_ref_no']?> 	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
 								</div>
 
-								<div  id="thumb">
+								<div  class="span2">
 								<?php if(isset($property['filename'])) { ?>
-								<img width="180px" height="140px" src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/medium/<?=$property['filename']?>">
+								<img width="100%"  src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/<?=$property['filename']?>">
 								<?php  }?>
+								</div>
 								</div>
 							</div>
 

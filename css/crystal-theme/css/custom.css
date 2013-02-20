@@ -71,6 +71,11 @@ line-height:18px;
 .submitsearch {
 	margin: 5px 0 5px 0;
 }
+
+.search_list {
+	padding:10px 0;
+	border-bottom:3px solid #ddd;
+}
 .property_box {
 	background:#ddd;
 	padding:0px;

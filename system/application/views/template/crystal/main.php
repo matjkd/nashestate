@@ -37,6 +37,7 @@
 			} catch(e) {
 			}
 		</script>
+		
 		<script type="text/javascript" src="<?=$base ?>js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/jquery.easing.1.3.js"></script>
@@ -50,8 +51,10 @@
 		<script type="text/javascript" src="<?=$base ?>js/jquery.tweet.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/smoothscroll.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/jquery.ui.totop.js"></script>
+		<script src="<?= base_url() ?>js/paginate.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/main.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/ajax-mail.js"></script>
+		
 		<!--[if lt IE 9]>
 		<script type="text/javascript"
 		src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -117,28 +120,39 @@
 		</header>
 
 		<!--slider-->
-		<section id="slider">
-			<div class="container">
-				<div class="row">
-					<div id="sidebar" class=" pull-left span4 searchbox">
-						<?=$this -> load -> view('template/crystal/searchbox') ?>
-					</div>
-
-					
-
-					<div class="span8 searchbox">
-						<?=$this -> load -> view('template/crystal/slideshow') ?>
-					</div>
-				</div>
-			</div>
-		</section>
+		 <?php if (isset($slideshow)) { ?>
+		<?=$this->load->view('template/crystal/'.$slideshow)?>
+		<?php } ?>
 
 		<!--container-->
 		<section id="container">
 			<div class="container">
+				
+				
+				<?php if(isset($property_display)) { ?>
+					
+					<div class="row">
+					<div class="span6">
+
+<?php $this->load->view('property/galleryBootstrap'); ?>
+					</div>
+					<div class="span6">
+
+						<?=$this->load->view($content)?>
+
+					</div>
+				</div>
+					
+					<?php } else { ?>
+				
+				
 				<div class="row">
 					<div class="span4">
-
+<?php if(!isset($this->searchVisible)) {?>
+	
+						<?=$this -> load -> view('template/crystal/searchbox') ?>
+					
+<?php } ?>
 						<?=$this -> load -> view('sidebar/featured_property') ?>
 
 					</div>
@@ -148,7 +162,11 @@
 
 					</div>
 				</div>
+				
+				
+				<?php } ?>
 
+ <?php if (isset($latest_properties)) { ?>
 				<div class="row">
 					<hr>
 					<div class="span12 our-works">
@@ -193,8 +211,10 @@
 						</script>
 					</div>
 				</div>
+				<?php } ?>
 
 				<div class="row">
+					<hr>
 					<?=$this->load->view('template/crystal/testimonials')?>
 				</div>
 			</div>

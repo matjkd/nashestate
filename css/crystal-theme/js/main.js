@@ -148,4 +148,8 @@ $(window).load(function() {
             $(e.target).prev('.accordion-heading').find('i').addClass('icon-plus');
         });
     });
+    
+    $("#paginate").pagination();
 });
+
+

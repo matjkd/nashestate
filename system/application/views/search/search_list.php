@@ -1,5 +1,4 @@
-<img width="270px" height="23px"
-	src="<?= base_url() ?>images/template/standard/titles/search_results.png" />
+<h1>Search Results</h1>
 <div class="search_list_heading">
 	<?= $search_desc ?>
 </div>
@@ -18,18 +17,20 @@
 	if ($property['rooms'] >= $beds && $maxbeds >= $property['rooms']) {
 		?>
 
-	<div id="search_list" class="result">
+	<div  class="result row">
 
-		<div id="search_content">
-			<div class="grid_11">
-				<strong><?= $property['property_title'] ?> <br /> <?= $property['property_type_name'] ?>
-					:: <?= $property['area'] ?> </strong><br /> Bedrooms:
+		<div class="span8 search_list  " id="search_content">
+			<div class="row">
+			<div class="span6">
+				<p class="lead"><?= $property['property_title'] ?></p>
+				 <?= $property['property_type_name'] ?>
+					:: <?= $property['area'] ?> <br/> Bedrooms:
 				<?= $property['rooms'] ?>
 				<?php 
 if($property['sold_rented'] == 1) {?>
 				<span style="color: #a80000;">: SOLD SUBJECT TO CONTRACT</span>
 				<?php } ?>
-				<br />
+				
 				<p>
 					<?php
 					if ($property['alt_description'] == NULL) {
@@ -57,11 +58,12 @@ if($property['sold_rented'] == 1) {?>
 				</strong>
 			</div>
 
-			<div id="thumb">
+			<div class="span2">
 				<?php if (isset($property['filename'])) { ?>
-				<img width="180px" height="140px"
-					src="<?= base_url() ?>images/properties/<?= $property['property_ref_no'] ?>/medium/<?= $property['filename'] ?>">
+				<img width="100%" 
+					src="<?= base_url() ?>images/properties/<?= $property['property_ref_no'] ?>/<?= $property['filename'] ?>">
 				<?php } ?>
+			</div>
 			</div>
 		</div>
 
@@ -89,12 +91,14 @@ if($property['sold_rented'] == 1) {?>
 	if ($property['rooms'] >= $beds && $maxbeds >= $property['rooms']) {
 		?>
 
-	<div id="search_list" class="result">
+	<div  class="result row">
 
-		<div id="search_content">
-			<div class="grid_11">
-				<strong><?= $property['property_title'] ?> <br /> <?= $property['property_type_name'] ?>
-					:: <?= $property['area'] ?> </strong><br /> Bedrooms:
+		<div class="span8 search_list  " id="search_content">
+			<div class="row">
+			<div class="span6">
+				<p class="lead"><?= $property['property_title'] ?> </p> 
+				<?= $property['property_type_name'] ?>
+					:: <?= $property['area'] ?> <br /> Bedrooms:
 				<?= $property['rooms'] ?>
 				<br />
 				<p>
@@ -124,11 +128,12 @@ if($property['sold_rented'] == 1) {?>
 				</strong>
 			</div>
 
-			<div id="thumb">
+				<div class="span2">
 				<?php if (isset($property['filename'])) { ?>
-				<img width="180px" height="140px"
-					src="<?= base_url() ?>images/properties/<?= $property['property_ref_no'] ?>/medium/<?= $property['filename'] ?>">
+				<img width="100%" 
+					src="<?= base_url() ?>images/properties/<?= $property['property_ref_no'] ?>/<?= $property['filename'] ?>">
 				<?php } ?>
+			</div>
 			</div>
 		</div>
 
@@ -169,16 +174,16 @@ if($property['sold_rented'] == 1) {?>
 
 	if ($rentals['rooms'] >= $beds && $maxbeds >= $rentals['rooms']) {
 		?>
-	<div id="search_list" class="result">
+	<div  class="result row">
 
-
-		<div id="search_content">
-			<div class="grid_11">
-				<strong><?= $rentals['property_title'] ?> </strong><br />
+		<div class="span8 search_list  " id="search_content">
+			<div class="row">
+			<div class="span6">
+				<p class="lead"><?= $rentals['property_title'] ?> </p>
 				<?= $rentals['property_type_name'] ?>
 				::
 				<?= $rentals['area'] ?>
-				</strong><br /> Bedrooms:
+				<br /> Bedrooms:
 				<?= $rentals['rooms'] ?>
 				<br />
 				<p>
@@ -208,11 +213,12 @@ if($property['sold_rented'] == 1) {?>
 				</strong>
 			</div>
 
-			<div id="thumb">
+			<div class="span2">
 				<?php if (isset($rentals['filename'])) { ?>
 				<img width="180px" height="140px"
 					src="<?= base_url() ?>images/properties/<?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
 				<?php } ?>
+			</div>
 			</div>
 		</div>
 
@@ -249,16 +255,16 @@ if($property['sold_rented'] == 1) {?>
 
 	if ($rentals['rooms'] >= $beds && $maxbeds >= $rentals['rooms']) {
 		?>
-	<div id="search_list" class="result">
+	<div  class="result row">
 
-
-		<div id="search_content">
-			<div class="grid_11">
-				<strong><?= $rentals['property_title'] ?> </strong><br />
+		<div class="span8 search_list  " id="search_content">
+			<div class="row">
+			<div class="span6">
+				<p class="lead"><?= $rentals['property_title'] ?> </p>
 				<?= $rentals['property_type_name'] ?>
 				::
 				<?= $rentals['area'] ?>
-				</strong><br /> Bedrooms:
+				<br /> Bedrooms:
 				<?= $rentals['rooms'] ?>
 				<br />
 				<p>
@@ -288,11 +294,12 @@ if($property['sold_rented'] == 1) {?>
 				</strong>
 			</div>
 
-			<div id="thumb">
+			<div class="span2">
 				<?php if (isset($rentals['filename'])) { ?>
 				<img width="180px" height="140px"
 					src="<?= base_url() ?>images/properties/<?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
 				<?php } ?>
+			</div>
 			</div>
 		</div>
 

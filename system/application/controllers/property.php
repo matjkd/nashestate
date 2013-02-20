@@ -25,6 +25,7 @@ class Property extends MY_Controller {
     }
 
     function display($id) {
+    	$data['property_display'] = 1;
         $data['property_details'] = $this->properties_model->get_active_property($id);
         
         //if property is returned, load other details
@@ -51,7 +52,7 @@ $data['references'] = $this->content_model->get_testimonials();
             $data['content'] = 'property/main_details';
             $this->load->vars($data);
 
-            $this->load->view('template/standard/property');
+            $this->load->view('template/standard/main');
         }
         else
         {
