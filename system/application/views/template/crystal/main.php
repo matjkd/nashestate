@@ -8,14 +8,19 @@
 
 	<head>
 		<?php $base = base_url() . "css/crystal-theme/"; ?>
+		<title><?= $title ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="google-site-verification" content="ux94X6e1wKnxN1VT7Fy2fz260ichCgHg7GvkR7YU7SY" />
 		<meta name="viewport" content="width=100%, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-		<link rel="shortcut icon" href="<?=$base ?>images/favicon.ico"/>
+		
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?=$base ?>images/apple-touch-icon-144-precomposed.png"/>
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=$base ?>images/apple-touch-icon-114-precomposed.png"/>
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=$base ?>images/apple-touch-icon-72-precomposed.png"/>
 		<link rel="apple-touch-icon-precomposed" href="<?=$base ?>images/apple-touch-icon-57-precomposed.png"/>
-		<title>Home Page</title>
+		
+		<link rel="shortcut icon" href="<?= base_url() ?>images/favicon.ico">
+		<link rel="apple-touch-icon" href="<?= base_url() ?>images/apple-touch-icon.png">
+
 		<link href="<?=$base ?>css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 		<link href="<?=$base ?>css/style.css" type="text/css" rel="stylesheet"/>
 		<link href="<?=$base ?>css/prettyPhoto.css" type="text/css" rel="stylesheet"/>
@@ -51,6 +56,19 @@
 		<script type="text/javascript"
 		src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19623681-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 	</head>
 
 	<body>
@@ -87,11 +105,11 @@
 								<?=$this -> load -> view('template/crystal/menu') ?>
 							</ul>
 						</nav>
-						<!--<form class="top-search pull-right">-->
-						<!--<input type="text" placeholder="text here..." class="span3">-->
-						<!--<button type="button" class="btn"><i
-						class="icon-search-form"></i></button>-->
-						<!--</form>-->
+						<form class="top-search pull-right visible-desktop">
+						<input type="text" placeholder="Search by Property ID" class="span3">
+						<button type="button" class="btn">
+							<i class="icon-search-form"></i></button>
+						</form>
 					</div>
 				</div>
 				
@@ -126,112 +144,40 @@
 					</div>
 					<div class="span8">
 
-						<?=$this->load->view('template/crystal/content')?>
+						<?=$this->load->view($content)?>
 
 					</div>
 				</div>
 
 				<div class="row">
+					<hr>
 					<div class="span12 our-works">
 						<h3>Latest Properties</h3>
 					</div>
 					<div class="span12">
+						
+					
+							
+							
 						<div id="our-projects" class="carousel bttop">
 							<div class="carousel-wrapper">
 								<ul class="portfolio">
+									
+										<?php foreach($latest_properties as $row): ?>
 									<li>
 										<article>
 											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest1.jpg" alt=""/> <span class="frame-overlay"></span> </a>
+												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> </a>
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 1</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
+													<h4 class="title"><a href="./portfolio-single.html"><?=$row['property_title']?></a></h4>
+													
 												</div>
 											</div>
 										</article>
 									</li>
-									<li>
-										<article>
-											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest2.jpg" alt=""/> <span class="frame-overlay"></span> </a>
-											</div>
-											<div class="sliding">
-												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 2</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
-
-												</div>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article>
-											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest3.jpg" alt=""/> <span class="frame-overlay"></span> </a>
-											</div>
-											<div class="sliding">
-												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 3</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
-
-												</div>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article>
-											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest4.jpg" alt=""/> <span class="frame-overlay"></span> </a>
-											</div>
-											<div class="sliding">
-												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 4</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
-												</div>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article>
-											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest5.jpg" alt=""/> <span class="frame-overlay"></span> </a>
-											</div>
-											<div class="sliding">
-												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 5</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
-
-												</div>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article>
-											<div class="inner-image">
-												<a href="<?=$base ?>example/view.jpg" data-rel="prettyPhoto"> <img src="<?=$base ?>example/latest6.jpg" alt=""/> <span class="frame-overlay"></span> </a>
-											</div>
-											<div class="sliding">
-												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html">Project title 6</a></h4>
-													<p>
-														Lorem ipsum dolor site amet quanta negat omnia
-													</p>
-												</div>
-											</div>
-										</article>
-									</li>
+									<?php endforeach; ?>
 								</ul>
 							</div>
 						</div>

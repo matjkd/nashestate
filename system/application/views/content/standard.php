@@ -1,8 +1,8 @@
-<img width="270px" height="23px" src="<?=base_url()?>images/template/standard/titles/<?=$content_menu?>.png"/>
-<br/>
-<br/>
+<h1><?=$title?></h1>
 
+<p>
 <?=$main_text?>
+</p>
 
 <?php if($extra != "") {?>
 	<br/><br/>

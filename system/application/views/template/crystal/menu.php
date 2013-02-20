@@ -8,7 +8,7 @@
 						
 						<li><a href="<?=base_url()?>index.php?welcome/content/property_management"><span>Property Management</span></a></li>
 						<li><a href="<?=base_url()?>index.php?welcome/content/project_management"><span>Project Management</span></a></li>
-												
+						<li><a href="<?=base_url()?>references"><span>References</span></a></li>   						
 						</ul>
         
         
@@ -49,8 +49,7 @@
 
            </li>
         
-           <li <?php if($page=='8'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>references"><span>References</span></a></li>   
+           
         
            <li <?php if($page=='3'){echo "class='current'";}?>>
         <a href="<?=base_url()?>where_we_are"><span>Contact Us</span></a></li>

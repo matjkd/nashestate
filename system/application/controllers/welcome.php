@@ -169,7 +169,7 @@ function contenttest($id = "home") {
 		 
 		 
 		$data['references'] = $this->content_model->get_testimonials();
-		 
+		$data['latest_properties'] = $this->properties_model->get_latest_properties();
 
 
 
