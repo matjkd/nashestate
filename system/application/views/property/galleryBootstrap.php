@@ -4,17 +4,17 @@
     <?php foreach($property_images as $image):?>
     	
     	<li>
-    	<img width="137px" height="100px" src="<?=base_url()?>/images/properties/<?=$image->property_id?>/<?=$image->filename?>" alt="<?=$image->filename?>" />	
+    	<img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/<?=$image->filename?>" alt="<?=$image->filename?>" />	
     	</li>
     	<?php endforeach; ?>
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
 <div id="carousel" class="flexslider">
-  <ul class="slides">
+  <ul class="slides slidethumbs">
     <?php foreach($property_images as $image):?>
     	<li>
-    	<img width="137px" height="100px" src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
+    	<img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
     	</li>
     	
     	<?php endforeach; ?>
@@ -31,7 +31,7 @@
     animationLoop: false,
     slideshow: false,
     itemWidth: 110,
-    itemMargin: 5,
+    itemMargin: 0,
     asNavFor: '#slider'
   });
    

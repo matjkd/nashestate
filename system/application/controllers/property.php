@@ -49,7 +49,7 @@ class Property extends MY_Controller {
             $data['narrow'] = 1;
            
 $data['references'] = $this->content_model->get_testimonials();
-            $data['content'] = 'property/main_details';
+            $data['content'] = 'property/main_details_bootstrap';
             $this->load->vars($data);
 
             $this->load->view('template/standard/main');

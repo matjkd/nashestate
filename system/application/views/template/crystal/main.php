@@ -108,9 +108,9 @@
 								<?=$this -> load -> view('template/crystal/menu') ?>
 							</ul>
 						</nav>
-						<form class="top-search pull-right visible-desktop">
-						<input type="text" placeholder="Search by Property ID" class="span3">
-						<button type="button" class="btn">
+						<form class="top-search pull-right visible-desktop" name="search" action="<?=base_url()?>search/property_id" method="post">
+						<input name="property_id" type="text" placeholder="Search by Property ID" class="span3">
+						<button type="submit" class="btn">
 							<i class="icon-search-form"></i></button>
 						</form>
 					</div>
@@ -256,41 +256,19 @@
 							About Us
 						</p>
 						<p>
-							Curabitur suscipit ultricies metus quis scelerisque. Quisque eget enim orci. Cras sagittis volutpat auctor.
+							Nash Homes Mallorca is a specialist property sales and rental agency for the South West of Mallorca, 
+							particularly the up-market areas of Puerto Portals, Portals Nous, Bendinat, Costa den Blanes and country homes in Calvia and Capdella.
 						</p>
-						<p class="heading">
-							Subscribe
-						</p>
-						<p>
-							Keep updated with our news. Your email is safe with us!
-						</p>
-						<div class="input-append">
-							<input type="text" placeholder="Enter Email Address" class="span2"/>
-							<button type="button" class="btn btn-inverse">
-								Subscribe!
-							</button>
-						</div>
+					
 					</div>
 					<div class="span4">
 						<p class="heading">
 							Company
 						</p>
 						<ul class="footer-navigate">
-							<li>
-								<a href="./index.html">Home</a>
-							</li>
-							<li>
-								<a href="./about.html">About</a>
-							</li>
-							<li>
-								<a href="./portfolio4.html">Portfolio</a>
-							</li>
-							<li>
-								<a href="./blog-sidebar-right.html">Blog</a>
-							</li>
-							<li>
-								<a href="./services.html">Service</a>
-							</li>
+							
+							<?=$this->load->view('template/crystal/menu_footer')?>
+							
 						</ul>
 					</div>
 				</div>
@@ -305,19 +283,10 @@
 						<p class="copyright">
 							&copy; Copyright 2013. Developed by <a href="http://www.redstudio.co.uk/">Redstudio Design Limited</a>.
 						</p>
+						
 					</div>
 					<div class="span8 hidden-phone">
-						<ul class="pull-right">
-							<li>
-								<a href="#">Privacy Policy</a>
-							</li>
-							<li>
-								<a href="#">Contact Us</a>
-							</li>
-							<li>
-								<a href="#">Sitemap</a>
-							</li>
-						</ul>
+						
 					</div>
 				</div>
 			</div>

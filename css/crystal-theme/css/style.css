@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, #footer .heading {
 }
 /* Link Colors */
 /*-----------------------------------------------------------------------------------*/
-a {color: #293674; text-decoration: none;}
+a {color: #535049; text-decoration: none;}
 a:hover {color: #F7941D; text-decoration: none;}
 
 /*-----------------------------------------------------------------------------------*/
@@ -192,7 +192,7 @@ a:hover {color: #F7941D; text-decoration: none;}
 #menu {
     display: inline-block;
 }
-#menu a {display: block; color: #535049;}
+#menu a {display: block; }
 #menu ul {margin: 0;}
 #menu > ul {display: block;}
 #menu > ul > li {
@@ -370,8 +370,8 @@ li.current {
     cursor: default;
 }
 @media screen and (max-width: 767px) {
-    .flex-direction-nav {top: 0; height: 100%;}
-    .flex-direction-nav a {height: 100%;}
+    .flex-direction-nav {top: 35px; height: 80%;}
+    .flex-direction-nav a {height: 80%;}
 }
 
 /* Control Nav */

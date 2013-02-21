@@ -1,6 +1,5 @@
-<img width="270px" height="23px" src="<?=base_url()?>images/template/standard/titles/<?=$content_menu?>.png"/>
-<br/>
-<br/>
+<h1>Premiere Properties</h1>
+
 <div id="paginate" >
 		<?php if($properties != NULL)
 		{

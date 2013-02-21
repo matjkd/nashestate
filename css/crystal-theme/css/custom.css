@@ -10,6 +10,9 @@ background: linear-gradient(to bottom,  #ffffff 0%,#e1e7ea 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e7ea',GradientType=0 ); /* IE6-9 */
 
 }
+.current a{
+color:#ffffff;
+}
 .slides .slide-title {
 color: #FFFFFF;
 font-size: 30px;
@@ -89,8 +92,19 @@ line-height:18px;
     .searchbox {float: none; width:100%;}
    
 }
+.slides  {
+	margin-left:0px;
+}
+.slidethumbs {
+	margin-top:30px;
+}
+.slidethumbs li {
+	margin-right:5px;
+}
 
 .portfolio article .title {
 font-size: 16px;
 font-weight: 300;
 }
+
+
