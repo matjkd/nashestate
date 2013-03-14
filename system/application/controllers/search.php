@@ -17,6 +17,7 @@ class Search extends MY_Controller {
         $this->load->model('search_model');
         $this->load->library('pagination');
         $this->load->model('gallery_model');
+		
     }
 
     function index() {
@@ -37,7 +38,6 @@ class Search extends MY_Controller {
         $data['general_areas'] = $this->ajax_model->get_general_area();
         $data['side2'] = 'sidebar/refine';
         $data['leftbox'] = 'search/searchbox';
-
 
 
 
@@ -126,15 +126,9 @@ class Search extends MY_Controller {
         $data['rental_period'] = "month";
 
         //get property of the week
-        if ($data['rentals'] != NULL) {
+        if ($data['search_type']  == 2) {
             $data['featured_property'] = $this->properties_model->get_featured_rental();
-             if($data['featured_property'] == FALSE){
-                 $data['featured_property'] = $this->properties_model->get_featured_property();
-             }
-             else
-             {
-                 $data['featureheading'] = "Rental";
-             }
+            
         } else {
             $data['featured_property'] = $this->properties_model->get_featured_property();
         }
@@ -146,7 +140,7 @@ class Search extends MY_Controller {
             
         endforeach;
         
-        
+        	$data['references'] = $this->content_model->get_testimonials();
         // Load Template
         $this->load->vars($data);
         $this->load->view('template/standard/main');

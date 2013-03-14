@@ -55,7 +55,7 @@ class Premiere extends MY_Controller
 
                  //Get Premiere Properties
                   $data['properties'] = $this->properties_model->get_premiere_properties();
-
+			$data['references'] = $this->content_model->get_testimonials();
 
 		$this->load->vars($data);
 

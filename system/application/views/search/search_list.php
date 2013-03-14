@@ -43,10 +43,10 @@ if($property['sold_rented'] == 1) {?>
 					$description = strip_tags($description);
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
-					?>
+					?><br/>
 					<a
-						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">Read
-						More</a> <br />
+						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>"><span class="btn">Read
+						More</span></a> <br />
 				</p>
 
 
@@ -113,10 +113,10 @@ if($property['sold_rented'] == 1) {?>
 					$description = strip_tags($description);
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
-					?>
-					<a
-						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">Read
-						More</a> <br />
+					?><br/>
+					<a href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">
+						<span class="btn">Read More</span>
+						</a> <br />
 				</p>
 
 
@@ -198,10 +198,10 @@ if($property['sold_rented'] == 1) {?>
 					$description = strip_tags($description);
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
-					?>
+					?><br/>
 					<a
-						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>">Read
-						More</a> <br />
+						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>">
+						<span class="btn">Read More</span></a> <br />
 				</p>
 
 
@@ -279,10 +279,10 @@ if($property['sold_rented'] == 1) {?>
 					$description = strip_tags($description);
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
-					?>
+					?><br/>
 					<a
-						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>">Read
-						More</a> <br />
+						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>"><span class="btn">Read
+						More</span></a> <br />
 				</p>
 
 

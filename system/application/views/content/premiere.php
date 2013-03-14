@@ -12,7 +12,7 @@
 
 						<div class="span8 search_list  " id="search_content">
 							<div class="row">
-							<div class="span6">
+							<div class="span5">
 								<p class="lead"><?=$property['property_title']?> </p>
 								<?=$property['property_type_name']?> :: <?=$property['area']?><br/>
 								Bedrooms: <?=$property['rooms']?><br/>
@@ -33,8 +33,9 @@
 									$description = substr($description, 0, 130);
 									echo "".$description."...";
 
-									?>
-										<a href="<?=base_url()?>property/display/<?=$property['property_ref_no']?>">Read More</a>
+									?><br/>
+										<a href="<?=base_url()?>property/display/<?=$property['property_ref_no']?>"><span class="btn">Read
+						More</span></a>
 									<br/>
 								</p>
 
@@ -44,7 +45,7 @@
 								<strong>Ref: &#35;<?=$property['property_ref_no']?> 	Price: <?=number_format($property['sale_price'])?> &euro;</strong>
 								</div>
 
-								<div  class="span2">
+								<div  class="span3">
 								<?php if(isset($property['filename'])) { ?>
 								<img width="100%"  src="<?=base_url()?>images/properties/<?=$property['property_ref_no']?>/<?=$property['filename']?>">
 								<?php  }?>

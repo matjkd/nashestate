@@ -53,7 +53,7 @@
 
 	var lastPageSymbol = '>>'; // to indicate Last Page
 
-	var separator = ' | '; // To separate paginator's items
+	var separator = ''; // To separate paginator's items
 
 	var paginatorPosition = 'bottom'; // where you want the paginator to be. Accepted values are 'top','bottom','both'
 

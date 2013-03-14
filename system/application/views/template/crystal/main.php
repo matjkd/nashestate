@@ -108,8 +108,8 @@
 								<?=$this -> load -> view('template/crystal/menu') ?>
 							</ul>
 						</nav>
-						<form class="top-search pull-right visible-desktop" name="search" action="<?=base_url()?>search/property_id" method="post">
-						<input name="property_id" type="text" placeholder="Search by Property ID" class="span3">
+						<form class="top-search pull-right" name="search" action="<?=base_url()?>search/property_id" method="post">
+						<input name="property_id" type="text" placeholder="Search by ID" class="searchBox">
 						<button type="submit" class="btn">
 							<i class="icon-search-form"></i></button>
 						</form>
@@ -283,6 +283,12 @@
 						<p class="copyright">
 							&copy; Copyright 2013. Developed by <a href="http://www.redstudio.co.uk/">Redstudio Design Limited</a>.
 						</p>
+						
+					<?=$this->load->view('user/modalLogin')?>
+
+
+
+
 						
 					</div>
 					<div class="span8 hidden-phone">
