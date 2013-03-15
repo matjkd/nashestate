@@ -189,7 +189,7 @@
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
-													<h4 class="title"><a href="./portfolio-single.html"><?=$row['property_title']?></a></h4>
+													<h4 class="title"><a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>"><?=$row['property_title']?></a></h4>
 													
 												</div>
 											</div>
