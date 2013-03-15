@@ -103,7 +103,7 @@ class Welcome extends MY_Controller {
 		 
 		$data['references'] = $this->content_model->get_testimonials();
 		 
-$data['latest_properties'] = $this->properties_model->get_latest_properties();
+// $data['latest_properties'] = $this->properties_model->get_latest_properties();
 
 
 		//load block content
