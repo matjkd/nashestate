@@ -13,4 +13,5 @@ images/uploads
 stats/*
 .htaccess
 *.psd
+.DS_Store
 *.*~
