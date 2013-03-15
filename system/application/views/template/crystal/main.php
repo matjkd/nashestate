@@ -185,7 +185,7 @@
 									<li>
 										<article>
 											<div class="inner-image">
-												<a href="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" data-rel="prettyPhoto"> <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> </a>
+												 <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> 
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
