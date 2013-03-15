@@ -57,7 +57,7 @@
 
 	var paginatorPosition = 'bottom'; // where you want the paginator to be. Accepted values are 'top','bottom','both'
 
-	var paginatorStyle = 1; // To define which style of paginator you need.
+	var paginatorStyle = 2; // To define which style of paginator you need.
 	// 1 - for << | < | 1 | 2 | 3 | > | >>
 	// 2 - for << | < | 1/8 | > | >>
 	// 3 - for < | 1 | 2 | 3 | >
