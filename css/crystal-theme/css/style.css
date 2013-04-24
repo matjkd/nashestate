@@ -376,10 +376,11 @@ li.current {
 
 /* Control Nav */
 .flex-control-nav {
-    bottom: 14px;
+    bottom: 3px;
     margin-right: 0;
     position: absolute;
     right: 0;
+    z-index:2;
     text-align: center;
 }
 .flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}

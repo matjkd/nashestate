@@ -108,11 +108,7 @@
 								<?=$this -> load -> view('template/crystal/menu') ?>
 							</ul>
 						</nav>
-						<form class="top-search pull-right" name="search" action="<?=base_url()?>search/property_id" method="post">
-						<input name="property_id" type="text" placeholder="Search by ID" class="searchBox">
-						<button type="submit" class="btn">
-							<i class="icon-search-form"></i></button>
-						</form>
+						
 					</div>
 				</div>
 				

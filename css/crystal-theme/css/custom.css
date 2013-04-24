@@ -88,9 +88,9 @@ line-height:18px;
 	padding:0 10px 10px 10px;
 }
 
-.searchbox { float: left;}
+
 @media (max-width: 979px) {
-    .searchbox {float: none; width:100%;}
+    .searchBox {float: none; width:100%;}
    
 }
 .slides  {
@@ -115,20 +115,25 @@ font-weight: 300;
 	.searchBox {
 		float:left;
 		margin: 5px 0;
-		width: 250px;
+		width: 310px;
 	}
 }
 @media  (min-width: 980px) and (max-width: 1199px) {
 .searchBox {
 	float:left;
 		margin: 5px 0;
-		width: 80px;
+		width: 240px;
 	}
 }
 @media  (max-width: 979px)  {
 	.searchBox {
 		float:left;
 		margin: 5px 0;
-		width: 250px;
+		width: 170px;
 	}
+}
+
+
+.accordion {
+margin-bottom: 10px;
 }

@@ -8,7 +8,7 @@
 					
 
 					<div class="span8 searchbox">
-						<?=$this -> load -> view('template/crystal/slideshow') ?>
+						<?=$this -> load -> view('template/crystal/slideshowV2') ?>
 					</div>
 				</div>
 			</div>
