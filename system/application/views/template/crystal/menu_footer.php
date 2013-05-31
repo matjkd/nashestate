@@ -30,6 +30,7 @@
 
            </li>
         
+        <li><a href="<?=base_url()?>index.php?welcome/content/epc"><span>EPC regulations in Spain</span></a></li>
            
         
            <li <?php if($page=='3'){echo "class=''";}?>>
