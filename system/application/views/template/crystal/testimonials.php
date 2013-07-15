@@ -12,8 +12,8 @@
 						
 						
 						
-						<div id="testimonialSlider" class="flexslider">
-							<ul class="slides testimonials">
+						<div id="testimonial" class="flexslider">
+							<ul id="cycle" class="slides testimonials">
 								<?php foreach ($references as $row2): ?>
 									<li>
 
@@ -36,9 +36,8 @@
 						
 						<script type="text/javascript">
 							$(document).ready(function() {
-								$('#testimonial').elastislide({
-									imageW : 740,
-									margin : 30
+								$('#cycle').cycle({
+									timeout: 14000
 								});
 							});
 						</script>

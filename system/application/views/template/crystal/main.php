@@ -51,6 +51,7 @@
 		<script type="text/javascript" src="<?=$base ?>js/jquery.tweet.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/smoothscroll.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/jquery.ui.totop.js"></script>
+		<script type="text/javascript" src="<?=$base ?>js/jquery.cycle.all.min.js"></script>
 		<script src="<?= base_url() ?>js/paginate.js?2"></script>
 		<script type="text/javascript" src="<?=$base ?>js/main.js"></script>
 		<script type="text/javascript" src="<?=$base ?>js/ajax-mail.js"></script>
