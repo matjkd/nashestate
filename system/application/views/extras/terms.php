@@ -229,4 +229,14 @@ for you in your absence.
      </tr>
 
 
+	  <tr>
+        <td>
+     EPC Certificate
+        </td>
+
+
+        <td>
+      Energy Performance Certificate is required under Spanish law since June 2013 (<a href="<?=base_url()?>welcome/content/epc">click here for more info</a>)
+        </td>
+     </tr>
 </table>

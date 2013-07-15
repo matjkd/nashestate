@@ -13,6 +13,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .current a{
 color:#ffffff;
 }
+
+ol a: {
+	
+	color:rgb(233, 84, 0);
+}
 .slides .slide-title {
 color: #FFFFFF;
 font-size: 30px;
