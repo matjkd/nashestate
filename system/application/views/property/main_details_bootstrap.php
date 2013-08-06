@@ -129,15 +129,18 @@ if($property->sold_rented == 1) {?>
 <?php } ?>
 
 <tr>
-	<td>Plot Size (m<sup>2</sup>)</td>
-	<td><?=$property->plot_size?></td>
+	<td>Plot Size  </td>
+	<td><?=$property->plot_size?> m<sup>2</sup></td>
 </tr>
 
 <tr>
-		<td>Build Size (m<sup>2</sup>)</td>
-		<td><?=$property->build_size?></td>
+		<td>Build Size </td>
+		<td><?=$property->build_size?> m<sup>2</sup></td>
 </tr>
-
+<tr>
+		<td>Community Fees</td>
+		<td><?=$property->community_fees?> &euro;</td>
+</tr>
 
 <?php endforeach;?>
 </table>
