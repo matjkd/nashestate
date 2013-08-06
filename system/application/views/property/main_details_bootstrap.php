@@ -137,10 +137,12 @@ if($property->sold_rented == 1) {?>
 		<td>Build Size </td>
 		<td><?=$property->build_size?> m<sup>2</sup></td>
 </tr>
+<?php if($property->community_fees != NULL) { ?>
 <tr>
 		<td>Community Fees</td>
 		<td><?=$property->community_fees?> &euro;</td>
 </tr>
+<?php } ?>
 
 <?php endforeach;?>
 </table>
