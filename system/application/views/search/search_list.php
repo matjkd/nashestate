@@ -45,7 +45,7 @@ if($property['sold_rented'] == 1) {?>
 					echo "" . $description . "...";
 					?><br/>
 					<a
-						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>"><span class="btn">Read
+						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>"><span class="btn btn-welcome">Read
 						More</span></a> <br />
 				</p>
 
@@ -115,7 +115,7 @@ if($property['sold_rented'] == 1) {?>
 					echo "" . $description . "...";
 					?><br/>
 					<a href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">
-						<span class="btn">Read More</span>
+						<span class="btn btn btn-welcome">Read More</span>
 						</a> <br />
 				</p>
 
@@ -201,7 +201,7 @@ if($property['sold_rented'] == 1) {?>
 					?><br/>
 					<a
 						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>">
-						<span class="btn">Read More</span></a> <br />
+						<span class="btn btn btn-welcome">Read More</span></a> <br />
 				</p>
 
 

@@ -34,7 +34,7 @@
 									echo "".$description."...";
 
 									?><br/>
-										<a href="<?=base_url()?>property/display/<?=$property['property_ref_no']?>"><span class="btn">Read
+										<a href="<?=base_url()?>property/display/<?=$property['property_ref_no']?>"><span class="btn btn btn-welcome">Read
 						More</span></a>
 									<br/>
 								</p>
