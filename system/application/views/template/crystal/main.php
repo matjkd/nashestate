@@ -180,17 +180,19 @@
 									
 										<?php foreach($latest_properties as $row): ?>
 									<li>
+										<a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>">
 										<article>
 											<div class="inner-image">
 												 <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> 
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
-													<h4 class="title"><a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>"><?=$row['property_title']?></a></h4>
+													<h4 class="title"><?=$row['property_title']?></h4>
 													
 												</div>
 											</div>
 										</article>
+										</a>
 									</li>
 									<?php endforeach; ?>
 								</ul>
