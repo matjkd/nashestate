@@ -30,20 +30,7 @@
 				</div>
 			</td>
 	</tr>
-		<tr>
-	        <td class='leftcolumn'>
-			Advertising
-	        </td>
-			<td>
-				<div class="yesnojeditable" id="advertising" style="width:150px; float:left;">
-				<?php 
-				if($row->advertising==0) {echo "No";}; 
-				if($row->advertising==1) {echo "Yes";};
-				?>
-				</div>
-			</td>
-	</tr>
-	
+		
 	<tr>
 	        <td class='leftcolumn'>
 			Signed Sales Contract

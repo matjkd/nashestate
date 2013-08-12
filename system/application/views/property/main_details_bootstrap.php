@@ -139,8 +139,8 @@ if($property->sold_rented == 1) {?>
 </tr>
 <?php if($property->community_fees != NULL) { ?>
 <tr>
-		<td>Community Fees</td>
-		<td><?=$property->community_fees?> &euro;</td>
+		<td>Community Fees Per Month</td>
+		<td><?=floor($property->community_fees)?> &euro;</td>
 </tr>
 <?php } ?>
 
