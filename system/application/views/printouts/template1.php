@@ -282,7 +282,7 @@ endforeach; }?>
 					
 					<?php if($property->community_fees > 0)  {   ?>
 					<tr>
-						<td width="233px"><strong>Community Fees:</strong></td>		<td><?=$property->community_fees?> &euro;</td>
+						<td width="233px"><strong>Community Fees Per Month:</strong></td>		<td><?=floor($property->community_fees)?> &euro;</td>
 					</tr>
 					<?php } ?>
 					

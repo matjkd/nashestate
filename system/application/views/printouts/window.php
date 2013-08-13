@@ -249,6 +249,12 @@ endforeach; }?>
 					<tr>
 						<td width="233px"><strong>Parking:</strong></td>	<td><?php if(isset($parking)) { echo $parking; } else { echo "None"; }?></td>
 					</tr>
+					
+					<?php if($property->community_fees > 0)  {   ?>
+					<tr>
+						<td width="233px"><strong>Community Fees Per Month:</strong></td>		<td><?=floor($property->community_fees)?> &euro;</td>
+					</tr>
+					<?php } ?>
 
 
 
