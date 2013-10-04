@@ -89,7 +89,7 @@
 			<div class="container">
 				<div class="row header-top">
 					<div class="span5 logo">
-						<a class="logo-img" href="./index.html" title="Nash Homes Mallorca"><img src="<?=base_url() ?>css/images/logo2.png" alt="Tabulate"></a>
+						<a class="logo-img" href="<?=base_url()?>" title="Nash Homes Mallorca"><img src="<?=base_url() ?>css/images/logo2.png" alt="Tabulate"></a>
 
 					</div>
 					<div class="span7 social-container" >
