@@ -207,6 +207,11 @@ foreach ($property_details as $key => $row):
         <div class="admin_field">
             <div  class="editarea" id="general_area"><?php echo $row->area; ?></div>
         </div>
+        
+         <div class="admin_title">Energy Rating</div>
+        <div class="admin_field">
+            <div  class="editdetails" id="energy_rating"><?php echo $row->energy_rating; ?></div>
+        </div>
 
 
     </div>
