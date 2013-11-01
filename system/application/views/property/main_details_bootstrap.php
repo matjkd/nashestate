@@ -144,6 +144,17 @@ if($property->sold_rented == 1) {?>
 </tr>
 <?php } ?>
 
+
+<tr>
+		<td>Energy Rating</td>
+		<?php if($property->energy_rating != NULL) { ?>
+		<td><?=$property->energy_rating?></td>
+		<?php } else { ?>
+			<td>In Progress</td>
+			<?php } ?>
+</tr>
+
+
 <?php endforeach;?>
 </table>
 
