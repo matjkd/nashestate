@@ -150,7 +150,7 @@ if($property->sold_rented == 1) {?>
 		<?php if($property->energy_rating != NULL) { ?>
 		<td><?=$property->energy_rating?></td>
 		<?php } else { ?>
-			<td>In Progress</td>
+			<td>In Process</td>
 			<?php } ?>
 </tr>
 
