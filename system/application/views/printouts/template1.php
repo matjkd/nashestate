@@ -355,21 +355,7 @@ break;
 
 
 <div style="clear:both; height:5px;">&nbsp;</div>
-<div style="width: 100%; text-align:justify; padding-top: 0px; margin-top:0px; ">
 
-<?php if($property->alt_description == NULL)
-{
-	echo $property->description;
-}
-else
-	{
-	echo $property->alt_description;
-	}
-
-?>
-
-
-</div> 
 
 
 <?php endforeach; ?>
