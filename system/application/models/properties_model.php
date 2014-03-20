@@ -1072,7 +1072,7 @@ class Properties_model extends Model {
         $this->db->join('general_area_link', 'general_area_link.area_id = property_main.general_area', 'left');   //link to areas-groups link table
         $this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left');   // link to images table
 
-        $this->db->order_by('property_main.sale_price', 'asc');   // order by price
+        $this->db->order_by('property_main.sale_price', 'random');   // order by price
 
         $this->db->group_by('property_main.property_ref_no');   //groups by property ref so i get a listing per property rather than per image
 
