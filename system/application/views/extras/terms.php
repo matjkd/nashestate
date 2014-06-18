@@ -15,7 +15,7 @@
 	
 	<h4>
 		 
-		 <a target="_blank" href="https://s3-eu-west-1.amazonaws.com/nashhomes/Guide+to+Selling+or+Buying+a+property+in+Mallorca+2013.pdf"><i class="icon-download-alt"></i> Download as PDF</a>
+		 <a target="_blank" href="https://s3-eu-west-1.amazonaws.com/nashhomes/Guide+to+Selling+or+Buying+a+property+in+Mallorca+2014.pdf"><i class="icon-download-alt"></i> Download as PDF</a>
 		</h4>
 </div>
 
