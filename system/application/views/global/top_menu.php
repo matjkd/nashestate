@@ -18,7 +18,7 @@
        					<ul>
 						
 						<li><a href="<?=base_url()?>index.php?welcome/content/property_management"><span>Property Management</span></a></li>
-						<li><a href="<?=base_url()?>index.php?welcome/content/project_management"><span>Project Management</span></a></li>
+						<li><a href="<?=base_url()?>index.php?welcome/content/project_management"><span>Project Administration</span></a></li>
 												
 						</ul>
         
