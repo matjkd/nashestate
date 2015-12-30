@@ -235,7 +235,7 @@ endforeach; }?>
 
 					<?php if(isset($property->build_size))  {   ?>
 					<tr>
-						<td width="233px"><strong>Build Size:</strong></td>		<td><?=$property->build_size?></td>
+						<td width="233px"><strong>Living Space:</strong></td>		<td><?=$property->build_size?></td>
 					</tr>
 					<?php } ?>
 
