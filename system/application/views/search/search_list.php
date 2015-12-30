@@ -44,7 +44,7 @@ if($property['sold_rented'] == 1) {?>
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
 					?><br/>
-					<a
+					<a target="_blank"
 						href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>"><span class="btn btn-welcome">Read
 						More</span></a> <br />
 				</p>
@@ -114,7 +114,7 @@ if($property['sold_rented'] == 1) {?>
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
 					?><br/>
-					<a href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">
+					<a  target="_blank" href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>">
 						<span class="btn btn btn-welcome">Read More</span>
 						</a> <br />
 				</p>
@@ -199,7 +199,7 @@ if($property['sold_rented'] == 1) {?>
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
 					?><br/>
-					<a
+					<a target="_blank"
 						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>">
 						<span class="btn btn btn-welcome">Read More</span></a> <br />
 				</p>
@@ -280,7 +280,7 @@ if($property['sold_rented'] == 1) {?>
 					$description = substr($description, 0, 130);
 					echo "" . $description . "...";
 					?><br/>
-					<a
+					<a target="_blank"
 						href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>"><span class="btn">Read
 						More</span></a> <br />
 				</p>
