@@ -74,22 +74,23 @@ Person or persons selling the property
      </tr>
      <tr>
         <td>
-       Telefonica
+       Movistar
         </td>
 
 
         <td>
-       Telephone supplier
+       Main Mallorca Telephone supplier
         </td>
      </tr>
+     
      <tr>
         <td>
-       Gesa
+       Endesa
         </td>
 
 
         <td>
-       Electricity & Gas supplier
+       Electricity supplier
         </td>
      </tr>
      <tr>
@@ -138,7 +139,7 @@ Person or persons selling the property
 
       <tr>
         <td>
-       Gestoria
+       Gestor
         </td>
 
 
