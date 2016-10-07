@@ -87,11 +87,11 @@ p {
 
 
 //determine features layout based on number of features
-if(count($property_features) < 6)
+if(count($property_features) < 3)
 	{
 		$featurecount = 1;
 	}
-if(count($property_features) > 5)
+if(count($property_features) > 2)
 	{
 		$featurecount = 2;
 	}
