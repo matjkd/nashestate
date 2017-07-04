@@ -15,7 +15,7 @@
     <div class="searchinput">
 <?=form_dropdown('buyto', $saleprices, "$max_sale_round")?><span class="searchlabel">Max Cost</span>
 </div> -->
-
+<?=form_hidden('search_type', '1')?>
 
     <div class="searchinput">
 <select name="location">
