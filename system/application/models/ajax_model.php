@@ -51,7 +51,7 @@ class Ajax_model extends Model {
         $data = array();
 		$this->db->from('general_area');
 		$this->db->order_by('general_area.area', 'asc');
-		$this->db->join('general_area_link', 'general_area_link.area_id = general_area.general_area_id', 'left');
+		$this->db->join('general_area_group', 'general_area_group.group_name = general_area.general_area_id', 'left');
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
 		{
