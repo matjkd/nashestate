@@ -27,8 +27,7 @@
 	
 	</select><span class="searchlabel"> Location</span>
     </div> -->
-   <?=form_hidden('rentfrom', '0')?>
-    <?=form_hidden('rentto', '0')?>
+ 
     
      <div class="searchinput">
     <select name="location">
