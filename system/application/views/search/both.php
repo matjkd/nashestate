@@ -1,6 +1,6 @@
 <form name="search" action="<?=base_url()?>search/content" method="post">
 
-    <div id="searchinput">
+  <div id="searchinput">
 <?=form_dropdown('beds', $bedsnumbers, 0)?> <span id="searchlabel">Min Bedrooms</span>
     </div>
 
