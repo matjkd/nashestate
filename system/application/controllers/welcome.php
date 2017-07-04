@@ -113,7 +113,7 @@ class Welcome extends MY_Controller {
 
 		//list general areas for search box
 		$data['general_areas'] = $this->ajax_model->get_general_area();
-
+ $data['area_groups'] = $this->ajax_model->get_area_groups();
 		 
 		//get property of the week
 		if (isset($data['search_rentals'])) {
