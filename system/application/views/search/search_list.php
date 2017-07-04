@@ -1,12 +1,13 @@
 <h1>Search Results</h1>
 <div class="search_list_heading">
-	<?= $search_desc ?> <?=$search_type?>
+	<?= $search_desc ?> 
 </div>
 
 <br style="clear: both;" />
 
 <div id="paginate">
 	<?php
+    if(£search_type == 1) {
 	if ($properties != NULL) {
 
 		// Start of list main purchase
@@ -80,6 +81,7 @@ if($property['sold_rented'] == 1) {?>
 
 	//end of list main purchase
 	}
+    
 	echo "<br/> ";
 
 	// Start of list nearby purchase
@@ -148,12 +150,13 @@ if($property['sold_rented'] == 1) {?>
 
 	endforeach;
 	}
-
+}
 	//end of list main purchase
 	
 	?>
 
 	<?php
+    if ($search_type == 2) {
 	if ($rentals != NULL) {
 
 		//start of main rentals
@@ -314,6 +317,7 @@ if($property['sold_rented'] == 1) {?>
 
 	endforeach;
 	}
+    }
 	//end of nearby rentals
 	
 	?>
