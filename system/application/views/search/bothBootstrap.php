@@ -47,7 +47,7 @@
 	
 	</select><span class="searchlabel"> Location</span>
          </div>
-    
+    <div class="searchinput">
     <select name="grouplocation">
 	<option value="any">Any</option>
 	<?php  foreach($area_groups as $areagroup):?>
