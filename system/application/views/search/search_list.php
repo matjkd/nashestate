@@ -1,6 +1,6 @@
 <h1>Search Results</h1>
 <div class="search_list_heading">
-	<?= $search_desc ?>
+	<?= $search_desc ?> <?=$search_type?>
 </div>
 
 <br style="clear: both;" />

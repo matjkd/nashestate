@@ -1,5 +1,5 @@
 <form name="search" action="<?=base_url()?>search/content" method="post">
-
+<?=form_hidden('search_type', '3')?>
    <!-- <div class="searchinput">
 <?=form_dropdown('beds', $bedsnumbers, 0)?> <span class="searchlabel">Min Bedrooms</span>
     </div>

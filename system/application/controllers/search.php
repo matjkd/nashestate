@@ -110,6 +110,7 @@ class Search extends MY_Controller {
         }
 
         // Search Both rental and purchase limited by price
+        if ($data['search_type'] == 3) {
         if ($data['rentto'] > 0 && $data['buyto'] > 0) {
             $data['list'] = 'both limited';
             //$data['search_desc'] = "Properties for Sale between " . number_format($data['buyfrom']) . "&euro; and " . number_format($data['buyto']) . "&euro; and for Rent between " . number_format($data['rentfrom']) . "&euro; and " . number_format($data['rentto']) . "&euro; per month";
@@ -120,6 +121,7 @@ class Search extends MY_Controller {
                 $data['nearby'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 1);
                 $data['nearbyrentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 1);
             }
+        }
         }
 
 
