@@ -45,6 +45,27 @@ class Ajax_model extends Model {
 		$Q->free_result();
 		return $data;
 	}
+    
+    function get_area_groups()
+    {
+        $data = array();
+		$this->db->from('general_area');
+		$this->db->order_by('general_area.area', 'asc');
+		$this->db->join('general_area_link', 'general_area_link.area_id = general_area.general_area_id', 'left');
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
+        
+    }
+    
 	function get_property_types()
 	{
 		$data = array();
