@@ -98,7 +98,7 @@ class Search extends MY_Controller {
         }
 
         // Rent Only
-        if (($data['rentto'] > 0 && $data['buyto'] == 0 ) || $data['search_type'] == 2) {
+        if ($data['search_type'] == 2) {
             $data['list'] = 'rent only';
             //$data['search_desc'] = "Properties for Rent between " . number_format($data['rentfrom']) . "&euro; and " . number_format($data['rentto']) . "&euro; per month";
                 $data['search_desc'] = "Properties for Rent";
