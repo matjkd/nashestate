@@ -15,6 +15,7 @@
     <div class="searchinput">
 <?=form_dropdown('rentto', $rentprices, $max_rent_round)?><span class="searchlabel">Max Monthly Rent</span>
 </div> -->
+    
 <?=form_hidden('search_type', '2')?>
     
   <!--  <div class="searchinput">
@@ -26,7 +27,8 @@
 	
 	</select><span class="searchlabel"> Location</span>
     </div> -->
-    
+   <?=form_hidden('rentfrom', '0')?>
+    <?=form_hidden('rentto', '0')?>
     
      <div class="searchinput">
     <select name="location">
