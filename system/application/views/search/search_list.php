@@ -7,7 +7,7 @@
 
 <div id="paginate">
 	<?php
-    if($search_type == 1) {
+    if($search_type == 1 || $search_type == 3) {
 	if ($properties != NULL) {
 
 		// Start of list main purchase
@@ -156,7 +156,7 @@ if($property['sold_rented'] == 1) {?>
 	?>
 
 	<?php
-    if ($search_type == 2) {
+    if ($search_type == 2 || $search_type == 3) {
 	if ($rentals != NULL) {
 
 		//start of main rentals
