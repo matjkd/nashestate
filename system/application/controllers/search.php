@@ -85,7 +85,7 @@ class Search extends MY_Controller {
         
         }
         // Purchase Only
-        if (($data['buyto'] > 0 && $data['rentto'] == 0) || $data['search_type'] == 1) {
+        if ($data['search_type'] == 1) {
             $data['list'] = 'purchase only';
            // $data['search_desc'] = "Properties for Sale between " . number_format($data['buyfrom']) . "&euro; and " . number_format($data['buyto']) . "&euro;";
              $data['search_desc'] = "Properties for Sale";
