@@ -7,7 +7,7 @@
 
 <div id="paginate">
 	<?php
-    if(£search_type == 1) {
+    if($search_type == 1) {
 	if ($properties != NULL) {
 
 		// Start of list main purchase
