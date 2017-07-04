@@ -136,11 +136,13 @@ class Search extends MY_Controller {
         }
         
         //get property of the week images
+        if($data['featured_property'] != NULL){}
         foreach($data['featured_property'] as $row):
             $featuredpropertyid = $row['property_id'];
             $data['featured_images'] = $this->gallery_model->get_property_images($featuredpropertyid);
+    }
             
-        endforeach;
+      //  endforeach;
         
         	$data['references'] = $this->content_model->get_testimonials();
         // Load Template
