@@ -17,7 +17,7 @@
 </div> -->
 <?=form_hidden('search_type', '2')?>
     
-    <div class="searchinput">
+  <!--  <div class="searchinput">
 <select name="location">
 	<option value="any">Any</option>
 	<?php  foreach($general_areas as $area):?>
@@ -25,7 +25,18 @@
 	<?php endforeach; ?>
 	
 	</select><span class="searchlabel"> Location</span>
-    </div>
+    </div> -->
+    
+    
+     <div class="searchinput">
+    <select name="location">
+	<option value="any">Any</option>
+	<?php  foreach($area_groups as $areagroup):?>
+	<option value="<?=$areagroup['general_area_id']?>"><?=$areagroup['area']?></option>
+	<?php endforeach; ?>
+	
+	</select><span class="searchlabel"> Location</span>
+         </div>
 
 <input class="btn btn-welcome pull-right submitsearch" type="submit" value="Submit" />
 </form>
