@@ -128,12 +128,12 @@ class Search extends MY_Controller {
         $data['rental_period'] = "month";
 
         //get property of the week
-        if ($data['search_type']  == 2) {
-            $data['featured_property'] = $this->properties_model->get_featured_rental();
+ //       if ($data['search_type']  == 2) {
+  //          $data['featured_property'] = $this->properties_model->get_featured_rental();
             
-        } else {
-            $data['featured_property'] = $this->properties_model->get_featured_property();
-        }
+ //       } else {
+ //          $data['featured_property'] = $this->properties_model->get_featured_property();
+  //      }
         
         //get property of the week images
         
