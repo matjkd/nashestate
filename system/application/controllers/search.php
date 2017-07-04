@@ -148,7 +148,7 @@ class Search extends MY_Controller {
         // Load Template
         $this->load->vars($data);
         $this->load->view('template/standard/main');
-    
+    }
 
     /**
      * 
