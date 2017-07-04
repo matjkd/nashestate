@@ -1,6 +1,6 @@
 <form name="search" action="<?=base_url()?>search/content" method="post">
     <div class="searchinput">
-<?=form_dropdown('beds', $bedsnumbers, 0)?><span class="searchlabel">Min Bedrooms</span>
+<!-- <?=form_dropdown('beds', $bedsnumbers, 0)?><span class="searchlabel">Min Bedrooms</span>
 </div>
     <div class="searchinput">
 <?=form_dropdown('maxbeds', $maxbedsnumbers, 0)?><span class="searchlabel">Max Bedrooms</span>
@@ -14,7 +14,7 @@
 
     <div class="searchinput">
 <?=form_dropdown('buyto', $saleprices, "$max_sale_round")?><span class="searchlabel">Max Cost</span>
-</div>
+</div> -->
 
 
     <div class="searchinput">
