@@ -54,6 +54,7 @@ class Gallery_model extends Model {
         //resize the images
         $config = array(
             'source_image' => $image_data['full_path'],
+            'wm_text' => 'Nash Homes 2017',
             'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
             'maintain_ratio' => true,
             'width' => 134,
@@ -61,6 +62,7 @@ class Gallery_model extends Model {
         );
 
         $this->load->library('image_lib', $config);
+        $this->image_lib->watermark();
         $this->image_lib->resize();
         $this->image_lib->clear();
 
