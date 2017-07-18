@@ -49,7 +49,18 @@ class Gallery_model extends Model {
         $this->load->library('upload', $config);
         $this->upload->do_upload();
         $image_data = $this->upload->data();
+        
+         $config0 = array(
+            'source_image' => $image_data['full_path'],
+            'image_library' => 'GD2',
+            'wm_text' => 'Nash Homes 2017',
+            'new_image' => $image_data['full_path']
+           
+        );
 
+        $this->load->library('image_lib', $config0);
+        $this->image_lib->watermark();
+        $this->image_lib->clear();
 
         //resize the images
        
