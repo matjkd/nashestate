@@ -54,7 +54,7 @@ class Gallery_model extends Model {
             'source_image' => $image_data['full_path'],
             'image_library' => 'GD2',
             'wm_text' => 'Nash Homes 2017',
-            'new_image' => $image_data['full_path']
+            'new_image' => $this->gallery_path . '/' . $id . '/',
            
         );
 
