@@ -141,15 +141,15 @@ class Gallery_model extends Model {
         }
 
 
-        $config = array(
+         $config3 = array(
             'source_image' => $fullpath,
-            'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
+            'new_image' => $this->gallery_path . '/' . $id . '/medium',
             'maintain_ratio' => true,
-            'width' => 134,
-            'height' => 100
+            'width' => 400,
+            'height' => 300
         );
 
-        $this->image_lib->initialize($config);
+        $this->image_lib->initialize($config3);
         $this->image_lib->resize();
         $this->image_lib->clear();
 
