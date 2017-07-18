@@ -143,7 +143,7 @@ class Gallery_model extends Model {
 
          $config3 = array(
             'source_image' => $fullpath,
-            'new_image' => $this->gallery_path . '/' . $id . '/medium',
+            'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
             'maintain_ratio' => true,
             'width' => 400,
             'height' => 300
