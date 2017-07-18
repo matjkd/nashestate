@@ -93,6 +93,7 @@ class Gallery_model extends Model {
             'wm_text' => 'Nash Homes 2017',
             'new_image' => $this->gallery_path . '/' . $id . '/',
             'maintain_ratio' => true,
+            'wm_vrt_alignment' => 'middle',
             'width' => 641,
             'height' => 481
         );
@@ -100,7 +101,7 @@ class Gallery_model extends Model {
         $this->image_lib->initialize($config3);
         $this->image_lib->watermark();
         $this->image_lib->resize();
-        $this->image_lib->clear();
+      
         
         
         
