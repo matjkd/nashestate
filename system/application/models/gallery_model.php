@@ -98,7 +98,7 @@ class Gallery_model extends Model {
             'height' => 481
         );
 
-        $this->image_lib->initialize($config3);
+        $this->load->library('image_lib', $config3);
         $this->image_lib->watermark();
         $this->image_lib->resize();
       
