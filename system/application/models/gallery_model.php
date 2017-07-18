@@ -52,8 +52,25 @@ class Gallery_model extends Model {
 
 
         //resize the images
+         $config = array(
+            'source_image' => $image_data['full_path'],
+            'image_library' => 'GD2';
+            'wm_text' => 'Nash Homes 2017',
+            'new_image' => $this->gallery_path . '/' . $id . '/',
+            'maintain_ratio' => true,
+            'width' => 640,
+            'height' => 480
+        );
+
+        $this->load->library('image_lib', $config);
+        $this->image_lib->watermark();
+        $this->image_lib->resize();
+        $this->image_lib->clear();
+        
+        
         $config = array(
             'source_image' => $image_data['full_path'],
+            'image_library' => 'GD2';
             'wm_text' => 'Nash Homes 2017',
             'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
             'maintain_ratio' => true,
@@ -69,6 +86,7 @@ class Gallery_model extends Model {
 
         $config2 = array(
             'source_image' => $image_data['full_path'],
+            'image_library' => 'GD2';
             'wm_text' => 'Nash Homes 2017',
             'new_image' => $this->gallery_path . '/' . $id . '/medium',
             'maintain_ratio' => true,
