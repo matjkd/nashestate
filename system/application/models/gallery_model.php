@@ -78,7 +78,7 @@ class Gallery_model extends Model {
             'height' => 100
         );
 
-        $this->load->library('image_lib', $config);
+       
         $this->image_lib->watermark();
         $this->image_lib->resize();
         $this->image_lib->clear();
