@@ -69,6 +69,7 @@ class Gallery_model extends Model {
 
         $config2 = array(
             'source_image' => $image_data['full_path'],
+            'wm_text' => 'Nash Homes 2017',
             'new_image' => $this->gallery_path . '/' . $id . '/medium',
             'maintain_ratio' => true,
             'width' => 400,
@@ -76,6 +77,7 @@ class Gallery_model extends Model {
         );
 
         $this->image_lib->initialize($config2);
+        $this->image_lib->watermark();
         $this->image_lib->resize();
 
         $upload_data = array($this->upload->data());
