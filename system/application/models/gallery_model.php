@@ -149,7 +149,7 @@ class Gallery_model extends Model {
             'height' => 100
         );
 
-        $this->load->library('image_lib', $config);
+        $this->image_lib->initialize($config);
         $this->image_lib->resize();
         $this->image_lib->clear();
 
@@ -166,15 +166,7 @@ class Gallery_model extends Model {
         $this->image_lib->resize();
         $this->image_lib->clear();
 
-        $config3 = array(
-            'source_image' => $fullpath,
-            'new_image' => $this->gallery_path . '/' . $id . '',
-            'maintain_ratio' => true,
-            'width' => 800,
-            'height' => 600
-        );
-        $this->image_lib->initialize($config3);
-        $this->image_lib->resize();
+        
 
         // add this to database $row['file_name'];
         $new_image_data = array(
