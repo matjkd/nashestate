@@ -50,6 +50,9 @@ class Gallery_model extends Model {
         $this->upload->do_upload();
         $image_data = $this->upload->data();
         
+        
+        //add watermark to initial image
+        
          $config0 = array(
             'source_image' => $image_data['full_path'],
             'image_library' => 'GD2',
@@ -65,9 +68,8 @@ class Gallery_model extends Model {
         //resize the images
        
         
-        
         $config = array(
-            'source_image' => $this->gallery_path . '/' . $id . '/',
+            'source_image' => $image_data['full_path'],
             'image_library' => 'GD2',
             'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
             'maintain_ratio' => true,
@@ -75,7 +77,7 @@ class Gallery_model extends Model {
             'height' => 100
         );
 
-        $this->load->library('image_lib', $config);
+        $this->image_lib->initialize($config2);
         
         $this->image_lib->resize();
         $this->image_lib->clear();
