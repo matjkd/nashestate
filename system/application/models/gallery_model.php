@@ -77,7 +77,7 @@ class Gallery_model extends Model {
             'height' => 100
         );
 
-        $this->image_lib->initialize($config2);
+        $this->image_lib->initialize($config);
         
         $this->image_lib->resize();
         $this->image_lib->clear();
@@ -158,8 +158,8 @@ class Gallery_model extends Model {
             'source_image' => $fullpath,
             'new_image' => $this->gallery_path . '/' . $id . '/thumbs',
             'maintain_ratio' => true,
-            'width' => 400,
-            'height' => 300
+            'width' => 134,
+            'height' => 100
         );
 
         $this->image_lib->initialize($config2);
