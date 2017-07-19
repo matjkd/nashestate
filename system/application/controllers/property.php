@@ -38,12 +38,15 @@ class Property extends MY_Controller {
             
            
             $resultid = $resultsfull['property_id']; 
+            
             if($resultid == $id) {
                 $previousproperty = $previousid;
             }
+            
             if($previousid == $id){
                 $nextproperty = $id;
             }
+            
             $previousid = $resultid;
            
             
@@ -51,11 +54,7 @@ class Property extends MY_Controller {
             endforeach;
         }
         
-         echo "<p hidden>";
-        echo $previousproperty." ";
-         echo id." ";
-         echo nextproperty;
-        echo "</p>"
+       
         // get next and previous retnal Only
         if ($storedsearchtype == 2) {
         }
