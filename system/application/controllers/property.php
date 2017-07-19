@@ -34,6 +34,7 @@ class Property extends MY_Controller {
         // get next and previous Purchase Only
         if ($storedsearchtype == 1) {
             $fullresults = $this->search_model->search_sales(0, 0, 0, 0, $storedlocation, 0);
+            $previousid = 0;
             foreach($fullresults as $resultsfull):
             
            
