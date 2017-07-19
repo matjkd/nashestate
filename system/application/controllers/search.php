@@ -73,7 +73,11 @@ class Search extends MY_Controller {
 
 
         // location, and if selected find out what group OR groups it is in
+        if($this->input->post('location')==NULL){
+            $area = $this->session->userdata('area');
+        } else {
         $area = $this->input->post('location');
+        }
         $group = $this->search_model->find_group($area);
 
 
