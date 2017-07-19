@@ -42,11 +42,11 @@ class Property extends MY_Controller {
             $resultid = $resultsfull['property_id']; 
             
             if($resultid == $id) {
-                $previousproperty = $previousid;
+                $data['previousproperty'] = $previousid;
             }
             
             if($previousid == $id){
-                $nextproperty = $resultid;
+               $data['nextproperty'] = $resultid;
             }
             
             $previousid = $resultid;
@@ -56,9 +56,9 @@ class Property extends MY_Controller {
             endforeach;
             
              echo "<p hidden>";
-            echo $previousproperty." ";
+            echo  $data['previousproperty']." ";
             echo $id." ";
-            echo $nextproperty;
+            echo $data['nextproperty'];
              echo "</p>";
                  
             
