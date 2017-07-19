@@ -79,7 +79,7 @@ if($property->sold_rented == 1) {?>
 } ?>
 <?php } ?>
 
-
+<span>PREVIOUS</span> <span>NEXT</span>
 <p style="text-align: justify;">
 
 	<?=$property->description?>
