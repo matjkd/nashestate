@@ -45,7 +45,7 @@ class Search extends MY_Controller {
         'area' => $this->input->post('location') 
         );
         
-        echo $storedsearch->search_type();
+       
 
 
 
