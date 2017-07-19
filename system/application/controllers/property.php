@@ -35,7 +35,8 @@ class Property extends MY_Controller {
         if ($storedsearchtype == 1) {
             $fullresults = $this->search_model->search_sales(0, 0, 0, 0, $storedlocation, 0);
             foreach($fullresults as $resultsfull):
-            echo "<p hidden>This paragraph should be hidden.</p>";
+            $resultid = $resultsfull['property_id']; 
+            echo "<p hidden>".$resultid."</p>";
             endforeach;
         }
         // get next and previous retnal Only
