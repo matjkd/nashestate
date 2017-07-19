@@ -53,6 +53,14 @@ class Property extends MY_Controller {
             
             
             endforeach;
+            
+             echo "<p hidden>";
+            echo $previousproperty." ";
+            echo $id." ";
+            echo $nextproperty;
+             echo "</p>"
+                 
+            
         }
         
        
