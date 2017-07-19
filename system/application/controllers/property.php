@@ -45,8 +45,8 @@ class Property extends MY_Controller {
                 $previousproperty = $previousid;
             }
             
-            if($previousid == $previousproperty){
-                $nextproperty = $id;
+            if($previousid == $id){
+                $nextproperty = $resultid;
             }
             
             $previousid = $resultid;
