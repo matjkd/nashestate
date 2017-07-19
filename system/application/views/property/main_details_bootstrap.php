@@ -79,7 +79,7 @@ if($property->sold_rented == 1) {?>
 } ?>
 <?php } ?>
 <p>
-    <?php if(isset($previousproperty)) {?>
+    <?php if(isset($nextproperty)) {?>
    <a href="<?=base_url()?>search/content"><span class="btn btn-welcome">RESULTS</span></a>
     <?php if($previousproperty != NULL) { ?><a href="<?=base_url()?>property/display/<?=$previousproperty?>"><span class="btn btn-welcome">PREVIOUS</span></a> <?php } ?>
       <?php if($nextproperty != NULL) { ?><a href="<?=base_url()?>property/display/<?=$nextproperty?>"><span class="btn btn-welcome">NEXT</span></a> <?php } ?>
