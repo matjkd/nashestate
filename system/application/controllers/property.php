@@ -66,8 +66,36 @@ class Property extends MY_Controller {
         }
         
        
-        // get next and previous retnal Only
+        // get next and previous rentals Only
         if ($storedsearchtype == 2) {
+             $fullresults = $this->search_model->search_rentals(0, 0, 0, 0, $storedlocation, 0);
+            $previousid = 0;
+            $previousproperty = 0;
+            foreach($fullresults as $resultsfull):
+            
+           
+            $resultid = $resultsfull['property_id']; 
+            
+            if($resultid == $id) {
+                $data['previousproperty'] = $previousid;
+            }
+            
+            if($previousid == $id){
+               $data['nextproperty'] = $resultid;
+            }
+            
+            $previousid = $resultid;
+           
+            
+            
+            endforeach;
+            
+             echo "<p hidden>";
+            echo  $data['previousproperty']." ";
+            echo $id." ";
+            echo $data['nextproperty'];
+             echo "</p>";
+            
         }
         // get next and previous both
         if ($storedsearchtype == 3) {
