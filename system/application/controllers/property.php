@@ -27,7 +27,7 @@ class Property extends MY_Controller {
     function display($id) {
       
         
-    if($this->session->userdata() != NULL){
+    if($this->session->userdata('area')){
         
         $storedlocation = $this->session->userdata('area');
         $storedsearchtype = $this->session->userdata('search_type');
