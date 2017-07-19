@@ -33,6 +33,10 @@ class Property extends MY_Controller {
         $storedsearchtype = $this->session->userdata('search_type');
         // get next and previous Purchase Only
         if ($storedsearchtype == 1) {
+            $fullresults = $this->search_model->search_sales(0, 0, 0, 0, $storedlocation, 0);
+            foreach($fullresults as $resultsfull):
+            echo "<p hidden>This paragraph should be hidden.</p>";
+            endforeach;
         }
         // get next and previous retnal Only
         if ($storedsearchtype == 2) {
