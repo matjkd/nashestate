@@ -79,7 +79,7 @@ if($property->sold_rented == 1) {?>
 } ?>
 <?php } ?>
 <p>
-    <span><a href="<?=baseurl()?>">PREVIOUS</a></span> <span><a href="<?=baseurl()?>">NEXT</a></span>
+    <span><a href="<?=base_url()?>">PREVIOUS</a></span> <span><a href="<?=base_url()?>">NEXT</a></span>
 </p>    
 <p style="text-align: justify;">
 
