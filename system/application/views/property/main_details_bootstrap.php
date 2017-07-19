@@ -78,8 +78,9 @@ if($property->sold_rented == 1) {?>
 		<?php }
 } ?>
 <?php } ?>
-
-<span>PREVIOUS</span> <span>NEXT</span>
+<p>
+    <span><a href="<?=baseurl()?>">PREVIOUS</a></span> <span><a href="<?=baseurl()?>">NEXT</a></span>
+</p>    
 <p style="text-align: justify;">
 
 	<?=$property->description?>
