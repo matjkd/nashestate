@@ -44,7 +44,7 @@ class Search extends MY_Controller {
         // store the search data, unless it is already stored
         if($this->input->post('location') == NULL) {
             
-         //  $this->input->post('location') = $this->session->userdata('area');
+           $area = $this->session->userdata('area');
             
         } else {
             
@@ -54,6 +54,7 @@ class Search extends MY_Controller {
               'area' => $this->input->post('location') 
               );
       $this->session->set_userdata($storedsearch);
+      $area = $this->input->post('location');
             
         }
             
@@ -84,11 +85,11 @@ class Search extends MY_Controller {
 
 
         // location, and if selected find out what group OR groups it is in
-        if($this->input->post('location')==NULL){
-            $area = $this->session->userdata('area');
-        } else {
-        $area = $this->input->post('location');
-        }
+        //if($this->input->post('location')==NULL){
+        //    $area = $this->session->userdata('area');
+       // } else {
+       // $area = $this->input->post('location');
+      // }
         $group = $this->search_model->find_group($area);
 
 
