@@ -42,15 +42,22 @@ class Search extends MY_Controller {
         
         
         // store the search data, unless it is already stored
-        if($this->session->userdata('area') == NULL){
+        if($this->input->post('location') == NULL) {
             
-             $storedsearch = array(
-        'search_type' => $this->input->post('search_type'),
-        'area' => $this->input->post('location') 
-        );
+           $this->input->post('location') = $this->session->userdata('area');
+            
+        } else {
+            $storedsearch = array(
+                'search_type' => $this->input->post('search_type'),
+                'area' => $this->input->post('location') 
+                );
         $this->session->set_userdata($storedsearch);
             
-        }    
+        }
+            
+            
+            
+       
        
         
      
