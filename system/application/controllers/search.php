@@ -58,7 +58,7 @@ class Search extends MY_Controller {
             
         }
             
-            
+           echo $area;
             
        
        
