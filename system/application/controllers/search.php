@@ -45,6 +45,7 @@ class Search extends MY_Controller {
         if($this->input->post('location') == NULL) {
             
            $area = $this->session->userdata('area');
+        $data['search_type'] = $this->session->userdata('search_type');
             
         } else {
             
