@@ -58,7 +58,7 @@ class Property extends MY_Controller {
             echo $previousproperty." ";
             echo $id." ";
             echo $nextproperty;
-             echo "</p>"
+             echo "</p>";
                  
             
         }
