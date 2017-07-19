@@ -39,7 +39,13 @@ class Search extends MY_Controller {
         $data['area_groups'] = $this->ajax_model->get_area_groups();
         $data['side2'] = 'sidebar/refine';
         $data['leftbox'] = 'search/searchbox';
-
+        
+        $storedsearch = array(
+        'search_type' => $this->input->post('search_type'),
+        'area' => $this->input->post('location') 
+        );
+        
+        echo $storedsearch->search_type();
 
 
 
