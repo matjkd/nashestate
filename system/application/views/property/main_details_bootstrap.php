@@ -80,8 +80,8 @@ if($property->sold_rented == 1) {?>
 <?php } ?>
 <p>
    <a href="<?=base_url()?>search/content"><span class="btn btn-welcome">RESULTS</span></a>
-    <?php if($previousproperty != 0) { ?><span class="btn btn-welcome"><a href="<?=base_url()?>property/display/<?=$previousproperty?>">PREVIOUS</a></span> <?php } ?>
-      <?php if($nextproperty != 0) { ?><span class="btn btn-welcome"><a href="<?=base_url()?>property/display/<?=$nextproperty?>">NEXT</a></span> <?php } ?>
+    <?php if($previousproperty != 0) { ?><a href="<?=base_url()?>property/display/<?=$previousproperty?>"><span class="btn btn-welcome">PREVIOUS</span></a> <?php } ?>
+      <?php if($nextproperty != 0) { ?><a href="<?=base_url()?>property/display/<?=$nextproperty?>"><span class="btn btn-welcome">NEXT</span></a> <?php } ?>
 </p>    
 <p style="text-align: justify;">
 
