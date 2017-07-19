@@ -28,8 +28,8 @@ class Property extends MY_Controller {
       
         
     if($this->session->userdata('area')){
-         $data['previousproperty'] = NULL;
-         $data['nextproperty'] = NULL;
+        $data['previousproperty'] = NULL;
+        $data['nextproperty'] = NULL;
         
         $storedlocation = $this->session->userdata('area');
         $storedsearchtype = $this->session->userdata('search_type');
@@ -58,11 +58,7 @@ class Property extends MY_Controller {
             
             endforeach;
             
-             echo "<p hidden>";
-            echo  $data['previousproperty']." ";
-            echo $id." ";
-            echo $data['nextproperty'];
-             echo "</p>";
+           
                  
             
         }
@@ -92,11 +88,7 @@ class Property extends MY_Controller {
             
             endforeach;
             
-             echo "<p hidden>";
-            echo  $data['previousproperty']." ";
-            echo $id." ";
-            echo $data['nextproperty'];
-             echo "</p>";
+           
             
         }
         // get next and previous both
@@ -130,7 +122,7 @@ class Property extends MY_Controller {
 
             $data['narrow'] = 1;
            
-$data['references'] = $this->content_model->get_testimonials();
+            $data['references'] = $this->content_model->get_testimonials();
             $data['content'] = 'property/main_details_bootstrap';
             $this->load->vars($data);
 
