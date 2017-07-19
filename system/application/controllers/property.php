@@ -25,9 +25,24 @@ class Property extends MY_Controller {
     }
 
     function display($id) {
+      
         
-      $storedlocation = $this->session->userdata('area');
-       
+    if($this->session->userdata() != NULL){
+        
+        $storedlocation = $this->session->userdata('area');
+        $storedsearchtype = $this->session->userdata('search_type');
+        // get next and previous Purchase Only
+        if ($storedsearchtype == 1) {
+        }
+        // get next and previous retnal Only
+        if ($storedsearchtype == 2) {
+        }
+        // get next and previous both
+        if ($storedsearchtype == 3) {
+        }
+        
+    }    
+     
         
     	$data['property_display'] = 1;
         $data['property_details'] = $this->properties_model->get_active_property($id);
