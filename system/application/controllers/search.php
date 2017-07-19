@@ -41,9 +41,7 @@ class Search extends MY_Controller {
         $data['leftbox'] = 'search/searchbox';
         
         
-        if($this->session->storedsearch() == NULL){
-            echo "null";
-        }
+        
             
         $storedsearch = array(
         'search_type' => $this->input->post('search_type'),
