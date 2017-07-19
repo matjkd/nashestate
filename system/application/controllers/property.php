@@ -30,8 +30,10 @@ class Property extends MY_Controller {
     if($this->session->userdata('area')){
          $data['previousproperty'] = NULL;
          $data['nextproperty'] = NULL;
+        
         $storedlocation = $this->session->userdata('area');
         $storedsearchtype = $this->session->userdata('search_type');
+        echo $storedsearchtype;
         // get next and previous Purchase Only
         if ($storedsearchtype == 1) {
             $fullresults = $this->search_model->search_sales(0, 0, 0, 0, $storedlocation, 0);
