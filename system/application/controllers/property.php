@@ -28,7 +28,7 @@ class Property extends MY_Controller {
       
         
     if($this->session->userdata('area')){
-         $data['previousproperty'] = 0;
+         $data['previousproperty'] = NULL;
          $data['nextproperty'] = 0;
         $storedlocation = $this->session->userdata('area');
         $storedsearchtype = $this->session->userdata('search_type');
@@ -68,7 +68,7 @@ class Property extends MY_Controller {
        
         // get next and previous rentals Only
         if ($storedsearchtype == 2) {
-             $fullresults = $this->search_model->search_rentals(0, 0, 0, 0, $storedlocation, 0);
+            $fullresults = $this->search_model->search_rentals(0, 0, 0, 0, $storedlocation, 0);
             $previousid = 0;
             $previousproperty = 0;
             foreach($fullresults as $resultsfull):
