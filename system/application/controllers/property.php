@@ -25,6 +25,10 @@ class Property extends MY_Controller {
     }
 
     function display($id) {
+        
+      $storedlocation = $this->session->userdata('area');
+        echo $storedlocation;
+        
     	$data['property_display'] = 1;
         $data['property_details'] = $this->properties_model->get_active_property($id);
         
