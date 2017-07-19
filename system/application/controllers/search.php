@@ -47,6 +47,7 @@ class Search extends MY_Controller {
         'search_type' => $this->input->post('search_type'),
         'area' => $this->input->post('location') 
         );
+        $this->session->set_userdata($storedsearch);
         
         foreach($storedsearch as $stored){
         // echo $stored['area'];
