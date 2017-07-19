@@ -59,7 +59,7 @@ class Gallery_model extends Model {
             'wm_text' => 'Nash Homes 2017',
             'wm_type' => 'overlay',
             'wm_overlay_path' => $this->config_base_path . 'images/watermark.png',
-            'wm_opacity' => '50',
+            'wm_vrt_alignment' => 'middle',
             'new_image' => $this->gallery_path . '/' . $id . '/',
            
         );
