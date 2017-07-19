@@ -40,12 +40,19 @@ class Search extends MY_Controller {
         $data['side2'] = 'sidebar/refine';
         $data['leftbox'] = 'search/searchbox';
         
+        
+        if($this->session->storedsearch() == NULL){
+            echo "null";
+        }
+            
         $storedsearch = array(
         'search_type' => $this->input->post('search_type'),
         'area' => $this->input->post('location') 
         );
         
-     
+        foreach($storedsearch as $stored){
+        // echo $stored['area'];
+        }
 
 
 
