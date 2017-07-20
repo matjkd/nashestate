@@ -50,6 +50,14 @@ class Gallery_model extends Model {
         $this->upload->do_upload();
         $image_data = $this->upload->data();
         
+        // create unedited original
+        $configlarge = array(
+            'source_image' => $image_data['full_path'],
+             'image_library' => 'GD2',
+             'new_image' => $this->gallery_path . '/' . $id . '/large',
+        );
+        $this->load->library('image_lib', $configlarge);
+        $this->image_lib->clear();
         
         //add watermark to initial image
         
