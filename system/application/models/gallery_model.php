@@ -128,20 +128,21 @@ class Gallery_model extends Model {
     }
     
     function update_watermark($property_id, $image_id) {
-        $this->db->from('property_images');
-        $this->db->where('image_id', $image_id);
-        $query = $this->db->get();
-         if ($query->num_rows == 1); {
+        
+      //  $this->db->from('property_images');
+      //  $this->db->where('image_id', $image_id);
+      //  $query = $this->db->get();
+// if ($query->num_rows == 1); {
 
-            foreach ($query->result_array() as $row):
+       //     foreach ($query->result_array() as $row):
 
-                $filename = $row['filename'];
-                $property_id = $row['property_id'];
+      //          $filename = $row['filename'];
+      //          $property_id = $row['property_id'];
 
-            endforeach;
+      //      endforeach;
         //initiate original image
-        $original_image = $this->gallery_path . '/' . $property_id . '/'. $filename;
-        echo $original_image;
+     //   $original_image = $this->gallery_path . '/' . $property_id . '/'. $filename;
+     //   echo $original_image;
         
     }
 
