@@ -174,7 +174,7 @@ class Gallery_model extends Model {
         );
 
         $this->load->library('image_lib', $config1);
-       
+        $this->image_lib->resize();
         $this->image_lib->clear();    
         
     }
