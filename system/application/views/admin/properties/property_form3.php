@@ -67,6 +67,12 @@ $.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order1 } );
 				<?=form_hidden('image_id', $image->image_id)?>
 				<?=form_submit('delete', 'Delete')?>
 				<?=form_close()?>
+                    
+                <?=form_open('admin/images/update_watermark')?>
+				<?=form_hidden('id', $image->property_id)?>
+				<?=form_hidden('image_id', $image->image_id)?>
+				<?=form_submit('update', 'update')?>
+				<?=form_close()?>
 				</div> 		
 			</div>
 			</li>
