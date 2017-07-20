@@ -95,7 +95,7 @@ class Images extends MY_Controller
 		$image_id = $this->input->post('image_id');
 		$this->Gallery_model->update_watermark($property_id, $image_id);
 		
-       // redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
+        redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
 		
     }
 	
