@@ -161,6 +161,26 @@ class Gallery_model extends Model {
         $this->image_lib->watermark();
         $this->image_lib->clear();    
         
+        
+         //watermark the medium  
+        $config0 = array(
+            'source_image' =>  $original_image,
+            'image_library' => 'GD2',
+            'wm_text' => 'Nash Homes 2017',
+            'wm_type' => 'overlay',
+            'wm_overlay_path' => $this->config_base_path . 'images/watermark.png',
+            'wm_vrt_alignment' => 'middle',
+            'new_image' => $this->gallery_path . '/' . $property_id . '/medium/',
+            'maintain_ratio' => true,
+            'width' => 400,
+            'height' => 300
+           
+        );
+
+        $this->load->library('image_lib', $config0);
+        $this->image_lib->watermark();
+        $this->image_lib->clear();    
+        
     }
 
     function do_uploader($id, $fullpath, $param1) {
