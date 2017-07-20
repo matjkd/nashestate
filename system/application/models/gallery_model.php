@@ -163,7 +163,7 @@ class Gallery_model extends Model {
         
         
          //watermark the medium  
-        $config0 = array(
+        $config1 = array(
             'source_image' =>  $this->gallery_path . '/' . $property_id . '/large/'. $filename,
            
             'new_image' => $this->gallery_path . '/' . $property_id . '/medium/',
@@ -173,7 +173,7 @@ class Gallery_model extends Model {
            
         );
 
-        $this->load->library('image_lib', $config0);
+        $this->load->library('image_lib', $config1);
        
         $this->image_lib->clear();    
         
