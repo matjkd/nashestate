@@ -183,7 +183,7 @@
 										<a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>">
 										<article>
 											<div class="inner-image">
-												 <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> 
+												 <img src="<?= base_url() ?>images/properties/<?=$row['property_ref_no']?>/medium/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> 
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
