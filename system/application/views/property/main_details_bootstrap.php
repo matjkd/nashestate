@@ -189,7 +189,7 @@ if($property->sold_rented == 1) {?>
 					?>
 				
 					
-<a href="<?=base_url()?>admin/properties/update/<?=$currentproperty?>"><span>edit</span></a>
+<a href="<?=base_url()?>admin/properties/update/<?=$currentproperty?>#tabs-3"><span>edit</span></a>
 						
 						
 					<?php 	
