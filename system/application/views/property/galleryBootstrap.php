@@ -4,7 +4,13 @@
     <?php foreach($property_images as $image):?>
     	
     	<li>
-    	<img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" alt="<?=$image->filename?>" />	
+        <?php
+          
+            $imagefilename = base_url()."images/properties/".$image->property_id."/large/".$image->filename;
+            echo $imagefilename;
+            
+        ?>    
+    	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" alt="<?=$image->filename?>" />	
     	</li>
     	<?php endforeach; ?>
     <!-- items mirrored twice, total of 12 -->
