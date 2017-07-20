@@ -131,8 +131,9 @@ class Gallery_model extends Model {
         
        $this->db->from('property_images');
        $this->db->where('image_id', $image_id);
+        
        $query = $this->db->get();
- if ($query->num_rows == 1); {
+        if ($query->num_rows == 1); {
 
            foreach ($query->result_array() as $row):
 
@@ -140,6 +141,7 @@ class Gallery_model extends Model {
                $property_id = $row['property_id'];
 
            endforeach;
+        }
         //initiate original image
        //$original_image = $this->gallery_path . '/' . $property_id . '/'. $filename;
      //   echo $original_image;
