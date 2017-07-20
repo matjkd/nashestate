@@ -88,7 +88,7 @@ class Gallery_model extends Model {
 
 
         $config2 = array(
-            'source_image' => $image_data['full_path'],
+            'source_image' =>  $this->gallery_path . '/' . $id . '/large/'.$image_data['file_name'],
             'image_library' => 'GD2',
             
             'new_image' => $this->gallery_path . '/' . $id . '/medium',
