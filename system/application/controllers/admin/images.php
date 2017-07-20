@@ -87,6 +87,16 @@ class Images extends MY_Controller
 		
 		redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
 	}
+    
+    
+    function update_watermark()
+    {
+        $property_id = $this->input->post('id');
+		$image_id = $this->input->post('image_id');
+		$this->Gallery_model->update_watermark($property_id, $image_id);
+		
+		redirect('admin/properties/update/'.$property_id.'#tabs-3'); 
+    }
 	
 	function ajaxsort()
 	{
