@@ -162,10 +162,13 @@ class Gallery_model extends Model {
         $this->image_lib->clear();    
         
         
-         //watermark the medium  
+         //watermark the medium 
+        $large_image = $this->gallery_path . '/' . $property_id . '/large/'. $filename;
+        echo $large_image; 
+        
         $config1 = array(
-            'source_image' =>  $this->gallery_path . '/' . $property_id . '/large/'. $filename,
-           
+            'source_image' =>   $large_image,
+            'image_library' => 'GD2',
             'new_image' => $this->gallery_path . '/' . $property_id . '/medium/',
             'maintain_ratio' => true,
             'width' => 400,
