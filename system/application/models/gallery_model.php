@@ -149,6 +149,7 @@ class Gallery_model extends Model {
         $config0 = array(
             'source_image' =>  $original_image,
             'image_library' => 'GD2',
+            'quality' => '100',
             'wm_text' => 'Nash Homes 2017',
             'wm_type' => 'overlay',
             'wm_overlay_path' => $this->config_base_path . 'images/watermark.png',
@@ -169,6 +170,7 @@ class Gallery_model extends Model {
         $config1 = array(
             'source_image' =>   $large_image,
             'image_library' => 'GD2',
+              'quality' => '100',
             'new_image' => $this->gallery_path . '/' . $property_id . '/medium/',
             'maintain_ratio' => true,
             'width' => 400,
@@ -176,7 +178,7 @@ class Gallery_model extends Model {
            
         );
 
-        $this->load->library('image_lib', $config1);
+         $this->image_lib->initialize($config1);
         $this->image_lib->resize();
         $this->image_lib->clear();    
         
