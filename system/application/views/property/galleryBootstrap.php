@@ -6,8 +6,12 @@
     	<li>
         <?php
           
-            $imagefilename = base_url()."images/properties/".$image->property_id."/large/".$image->filename;
-           
+            $imagefilename = "images/properties/".$image->property_id."/large/".$image->filename;
+           if(file_exists($imagefilename)){
+               echo "yes";
+           } else {
+               echo "no";
+           }
             
         ?>    
     	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" alt="<?=$image->filename?>" />	
