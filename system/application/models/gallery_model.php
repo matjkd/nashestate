@@ -50,14 +50,7 @@ class Gallery_model extends Model {
         $this->upload->do_upload();
         $image_data = $this->upload->data();
         
-        // create unedited original
-        $configlarge = array(
-            'source_image' => $image_data['full_path'],
-             'image_library' => 'GD2',
-             'new_image' => $this->gallery_path . '/' . $id . '/large',
-        );
-        $this->load->library('image_lib', $configlarge);
-        $this->image_lib->clear();
+        
         
         //add watermark to initial image
         
@@ -68,7 +61,7 @@ class Gallery_model extends Model {
             'wm_type' => 'overlay',
             'wm_overlay_path' => $this->config_base_path . 'images/watermark.png',
             'wm_vrt_alignment' => 'middle',
-            'new_image' => $this->gallery_path . '/' . $id . '/',
+            'new_image' => $this->gallery_path . '/' . $id . '/large/',
            
         );
 
