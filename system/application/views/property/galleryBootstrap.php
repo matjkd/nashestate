@@ -7,7 +7,7 @@
         <?php
           
             $imagefilename = base_url()."images/properties/".$image->property_id."/large/".$image->filename;
-            echo $imagefilename;
+           
             
         ?>    
     	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" alt="<?=$image->filename?>" />	
