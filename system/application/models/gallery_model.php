@@ -143,8 +143,8 @@ class Gallery_model extends Model {
            endforeach;
         }
         //initiate original image
-       //$original_image = $this->gallery_path . '/' . $property_id . '/'. $filename;
-     //   echo $original_image;
+      $original_image = $this->gallery_path . '/' . $property_id . '/'. $filename;
+        echo $original_image;
         
     }
 
