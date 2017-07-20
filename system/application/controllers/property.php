@@ -30,7 +30,7 @@ class Property extends MY_Controller {
     if($this->session->userdata('area')){
         $data['previousproperty'] = NULL;
         $data['nextproperty'] = NULL;
-        
+        $data['currentproperty'] = $id;
         $storedlocation = $this->session->userdata('area');
         $storedsearchtype = $this->session->userdata('search_type');
         if($storedsearchtype!=NULL){

@@ -176,3 +176,24 @@ if($property->sold_rented == 1) {?>
 	<?php endforeach; ?>
 </p>
 <h3><a href="<?=base_url()?>property/pdf/<?=$property_id?>"><sup><i class="icon-print"></i></sup></a></h3>
+
+ <?php $role = $this->session->userdata('role');
+				if(!isset($role) || $role != 1)
+					{
+						?>
+						
+					<?php 
+					}
+					else
+					{
+					?>
+				
+					
+<a href="<?=base_url()?>admin/properties/update/<?=$currentproperty?>"><span>edit</span></a>
+						
+						
+					<?php 	
+						
+					}
+						
+					?>
