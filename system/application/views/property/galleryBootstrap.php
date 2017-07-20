@@ -8,13 +8,14 @@
           
             $imagefilename = "images/properties/".$image->property_id."/large/".$image->filename;
            if(file_exists($imagefilename)){
-               echo "yes";
+              
+               $filelocation = "/large/".$image->filename;
            } else {
-               echo "no";
+               $filelocation = "/medium/".$image->filename;
            }
             
         ?>    
-    	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?>/medium/<?=$image->filename?>" alt="<?=$image->filename?>" />	
+    	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?><?=$filelocation?>" alt="<?=$image->filename?>" />	
     	</li>
     	<?php endforeach; ?>
     <!-- items mirrored twice, total of 12 -->
