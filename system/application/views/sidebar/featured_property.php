@@ -15,7 +15,7 @@ $ref = $row['property_ref_no'];
 
 				<!-- Slideshow of featured property images-->
 
-				<div class="item"><img src="<?= base_url() ?>images/properties/<?= $ref ?>/<?= $row2 -> filename ?>" alt="photo"/>
+				<div class="item"><img src="<?= base_url() ?>images/properties/<?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/>
 				</div>
 
 				<?php endforeach; ?>
