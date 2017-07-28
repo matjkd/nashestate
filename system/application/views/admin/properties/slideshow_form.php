@@ -62,13 +62,13 @@ $.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order1 } );
 				<div style="clear:both; float:left;">Order:</div> 	<div  style="float:left;" class="image_order" id="<?=$image->image_id?>" style="width:150px; float:left;"><?=$image->print_order?></div>
 				<div style="clear:both; float:left; padding-top:10px;">
 				
-				<?=form_open('admin/images/delete_image')?>
+				<?=form_open('admin/images/delete_slideshow_image')?>
 				<?=form_hidden('id', $image->property_id)?>
 				<?=form_hidden('image_id', $image->image_id)?>
 				<?=form_submit('delete', 'Delete')?>
 				<?=form_close()?></div>
                     <div style=" float:left; padding-top:10px;">
-                <?=form_open('admin/images/update_watermark')?>
+                <?=form_open('admin/images/update_slideshow_watermark')?>
 				<?=form_hidden('id', $image->property_id)?>
 				<?=form_hidden('image_id', $image->image_id)?>
 				<?=form_submit('update', 'update')?>
