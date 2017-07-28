@@ -282,6 +282,8 @@ class Properties_model extends Model {
             $this->db->where('archived', '0');
         }
 
+        $this->db->where('property_id !=', 'slideshow');
+       
         $Q = $this->db->get();
         if ($Q->num_rows() > 0) {
             foreach ($Q->result_array() as $row)
