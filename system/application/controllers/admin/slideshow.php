@@ -27,7 +27,7 @@ class Slideshow extends MY_Controller {
 
    
 
-    function update($id) {
+    function update() {
         //get uploader directory
         $id = "slideshow";
         $files = array();
