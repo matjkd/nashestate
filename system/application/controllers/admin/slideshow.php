@@ -48,7 +48,7 @@ class Slideshow extends MY_Controller {
       
 
         $data['images'] = $this->Gallery_model->get_property_images($id);
-       
+         $data['page'] = 'properties';
       
         $data['property_id'] = $id;
         $data['title'] = 'Nash Homes Edit Slides';
