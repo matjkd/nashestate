@@ -105,7 +105,7 @@ class Welcome extends MY_Controller {
 		 
         $data['latest_properties'] = $this->properties_model->get_latest_properties();
 
-
+        $data['slideshow_images'] = $this->properties_model->get_property('slideshow');
 		//load block content
 		$data['leftbox'] = 'search/searchbox';
 		$data['side1'] = 'sidebar/property_menu';
