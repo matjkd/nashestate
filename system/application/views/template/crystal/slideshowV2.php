@@ -3,7 +3,7 @@
         <?php foreach($slideshow_images as $image):?>
         
          <li>
-			<img src="<?=base_url() ?>images/properties/slideshow/large/<?=$image->filename?>" alt="" />
+			<img src="<?=base_url() ?>images/properties/slideshow/<?=$image->filename?>" alt="" />
 
 		</li>
             <?=$image->filename?>
