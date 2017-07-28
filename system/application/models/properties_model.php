@@ -268,6 +268,7 @@ class Properties_model extends Model {
 
         if ($type == 99) {
             $this->db->where('archived', '1');
+            
         }
 
         if ($type == 1) {
@@ -282,7 +283,7 @@ class Properties_model extends Model {
             $this->db->where('archived', '0');
         }
 
-        $this->db->where('property_id !=', 'slideshow');
+        $this->db->where('property_ref_no !=', 'slideshow');
        
         $Q = $this->db->get();
         if ($Q->num_rows() > 0) {
