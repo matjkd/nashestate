@@ -17,7 +17,7 @@
 		</ul>
 		
 		<div id="tabs-3">
-		<?=$this->load->view('admin/properties/property_form3')?>
+		<?=$this->load->view('admin/properties/slideshow_form')?>
 		</div>
 		
 </div>
