@@ -6,7 +6,7 @@
 			<img src="<?=base_url() ?>images/properties/slideshow/<?=$image->filename?>" alt="" />
 
 		</li>
-            <?=$image->filename?>
+            
         <?php endforeach;?>
         
 		

@@ -31,12 +31,12 @@
     
      <div class="searchinput">
     <select name="location">
-	<option value="any">Any</option>
+	<option value="any">All Areas</option>
 	<?php  foreach($area_groups as $areagroup):?>
 	<option value="<?=$areagroup['general_area_id']?>"><?=$areagroup['area']?></option>
 	<?php endforeach; ?>
 	
-	</select><span class="searchlabel"> Location</span>
+	</select><span class="searchlabel"> </span>
          </div>
 
 <input class="btn btn-welcome pull-right submitsearch" type="submit" value="Submit" />
