@@ -175,7 +175,7 @@ if($property->sold_rented == 1) {?>
 
 	<?php endforeach; ?>
 </p>
-<h3><a href="<?=base_url()?>property/pdf/<?=$property_id?>"><sup><i class="icon-pdf"></i></sup></a></h3>
+<h3><a href="<?=base_url()?>property/pdf/<?=$property_id?>"><img width="20px" src="/images/download.jpg"/></a></h3>
 
  <?php $role = $this->session->userdata('role');
 				if(!isset($role) || $role != 1)
