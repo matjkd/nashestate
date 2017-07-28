@@ -88,7 +88,7 @@ $.post("<?=base_url()?>admin/images/ajaxsort", { pageorder: order1 } );
 <div id="upload">
 	<?php 
 		echo realpath(APPPATH . '../images/properties');
-		echo form_open_multipart('admin/images/upload_image');
+		echo form_open_multipart('admin/images/upload_slideshow_image');
 		echo form_hidden('id', $property_id);
 		echo form_upload('userfile');
 		echo form_submit('upload', 'Upload');

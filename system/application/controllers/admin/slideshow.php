@@ -299,10 +299,10 @@ class Slideshow extends MY_Controller {
 
         if ($this->properties_model->change_property_ref($id, $newref)) {
             $this->session->set_flashdata('message', 'property ref changed');
-            redirect('admin/properties/update/' . $newref . '');
+            redirect('admin/slideshow/update/' . $newref . '');
         } else {
             $this->session->set_flashdata('message', 'error');
-            redirect('admin/properties/update/' . $newref . '');
+            redirect('admin/slideshow/update/' . $newref . '');
         }
     }
 

@@ -38,6 +38,22 @@ class Images extends MY_Controller
 		redirect('admin/properties/update/'.$id.'#tabs-3');   // or whatever logic needs to occur
 		
 	}
+    
+    function upload_slideshow_image()
+	{
+		
+		$id = $this->input->post('id');
+		if($this->input->post('upload'))
+		{
+			$this->Gallery_model->do_upload($id);
+		}
+		
+		
+		
+		redirect('admin/slideshow/update');   // or whatever logic needs to occur
+		
+	}
+    
 	function convert_image()
 	{
 		$id = $this->input->post('id');
