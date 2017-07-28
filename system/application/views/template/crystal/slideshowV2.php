@@ -40,5 +40,5 @@ bottom: 48px;">
 
 
 <?php foreach($slideshow_images as $image):?>
-<hidden></hidden>
+<hidden><?=$image->filename?></hidden>
 <?php endforeach;?>
