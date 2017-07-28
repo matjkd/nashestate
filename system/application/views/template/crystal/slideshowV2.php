@@ -1,29 +1,15 @@
 <div id="mainslider" class="flexslider hidden-phone">
 	<ul class="slides">
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl1.jpg" alt="" />
+        <?php foreach($slideshow_images as $image):?>
+        
+         <li>
+			<img src="<?=base_url() ?>images/slideshow/large/<?=$image->filename?>" alt="" />
 
 		</li>
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl2.jpg" alt="" />
-
-		</li>
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl3.jpg" alt="" />
-
-		</li>
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl4.jpg" alt="" />
-
-		</li>
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl5.jpg" alt="" />
-
-		</li>
-		<li>
-			<img src="<?=base_url() ?>images/slides/sl6.jpg" alt="" />
-
-		</li>
+            <?=$image->filename?>
+        <?php endforeach;?>
+        
+		
 	</ul>
 
 </div>
@@ -39,6 +25,3 @@ bottom: 48px;">
 </div>
 
 
-<?php foreach($slideshow_images as $image):?>
-<hidden><?=$image->filename?></hidden>
-<?php endforeach;?>
