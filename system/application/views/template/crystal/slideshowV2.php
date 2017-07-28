@@ -37,3 +37,8 @@ bottom: 48px;">
 	<i class="icon-arrow-left"></i> Click here to view our premiere properties
 
 </div>
+
+
+<?php foreach($slideshow_images as $image):?>
+<hidden><?=$image->filename?></hidden>
+<?php endforeach;?>
