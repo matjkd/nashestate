@@ -37,8 +37,15 @@ class Slideshow extends MY_Controller {
         );
         $data['upload_url'] = base_url() . 'images/uploads/';
         $data['files'] = $files;
+        $data['property_details'] = $this->properties_model->get_property($id);
+        
+        foreach ($data['property_details'] as $row):
 
-       
+            $data['features'] = $this->properties_model->features($row->sale_rent);
+            $company_id = $row->company_id;
+            $user_id = $row->user_id;
+			
+        endforeach;
 		
       
 
@@ -58,124 +65,7 @@ class Slideshow extends MY_Controller {
         $this->load->view('admin/admin');
     }
 
-    function create_slideshow() {
-        $this->form_validation->set_rules('sale_rent', 'For Sale or Rent', 'required|max_length[45]');
-        $this->form_validation->set_rules('property_type', 'Property Type', 'required|max_length[45]');
-        $this->form_validation->set_rules('property_address1', 'Address1', 'max_length[45]');
-        $this->form_validation->set_rules('property_address2', 'Address2', 'max_length[45]');
-        $this->form_validation->set_rules('property_address3', 'Address3', 'max_length[45]');
-        $this->form_validation->set_rules('property_address4', 'Address4', 'max_length[45]');
-        $this->form_validation->set_rules('property_address5', 'Postcode', 'max_length[45]');
-        $this->form_validation->set_rules('company_id', 'company_id', 'max_length[45]');
-        $this->form_validation->set_rules('user_id', 'user_id', 'max_length[45]');
-        $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-
-        if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
-            echo "failure of validation";
-        } else { // passed validation proceed to post success logic
-            $id_data = array('property_name' => set_value('property_type'));
-            $sale_rent = set_value('sale_rent');
-
-            // If user enters id it must remove any letters if they've added them
-            // It must then check if they selected sale or rent, if rent add R at the start
-            // It must then check if the ID already exists
-            // if not create it and  skip the id creation process
-
-            $add_id = $this->input->post('property_ref');
-            $user_id = $this->input->post('user_id');
-            $company_id = $this->input->post('company_id');
-            if ($add_id != "") {
-
-                //remove letters from $add_id
-                $id_result = preg_replace("/\D/", "", $add_id);
-
-                //if Rental property, add an R at the beginning
-                if ($sale_rent == 2) {
-                    $id_result = "R" . $id_result . "";
-                } else {
-                    $id_result = $id_result;
-                }
-
-                //check if $id_result already exists
-                $check = $this->properties_model->check_id($id_result);
-
-
-                if ($check > 0) {
-                    $this->session->set_flashdata('message', 'ID exists ' . $check . ' trying to add id ' . $id_result . ' for user ' . $user_id . '');
-                    redirect('admin/properties/add/' . $company_id . '', 'refresh');
-                }
-
-
-                $ref = $id_result;
-            } else {
-
-                if ($sale_rent == 2) {
-                    $this->properties_model->create_property_id('rental_id', $id_data);
-                    $ref = "R" . $this->db->insert_id() . "";
-                } else {
-                    $this->properties_model->create_property_id('sale_id', $id_data);
-                    $ref = $this->db->insert_id();
-                }
-                $check = $this->properties_model->check_id($ref);
-                if ($check > 0) {
-                    $this->session->set_flashdata('message', 'ID exists ' . $check . ' trying to add id ' . $ref . ' for user ' . $user_id . '');
-                    redirect('admin/properties/add/' . $company_id . '', 'refresh');
-                }
-
-                $this->properties_model->create_sales_data($ref);
-            }
-            
-            // build array for the model
-            $form_data = array(
-                'property_ref_no' => $ref,
-                'property_type' => set_value('property_type'),
-                'company_id' => set_value('company_id'),
-                'property_address1' => set_value('property_address1'),
-                'property_address2' => set_value('property_address2'),
-                'property_address3' => set_value('property_address3'),
-                'property_address4' => set_value('property_address4'),
-                'property_address5' => set_value('property_address5'),
-                'sale_rent' => set_value('sale_rent'),
-            	'rent_period' => 'Monthly',
-                'user_id' => set_value('user_id')
-            );
-
-            // run insert model to write data to db
-
-            if ($this->properties_model->create_property($form_data) == TRUE) { // the information has therefore been successfully saved in the db
-                $id = $this->db->insert_id();
-
-
-                $config['debug'] = TRUE;
-
-                mkdir('' . $this->config_base_path . 'images/properties/' . $ref . '/');
-                mkdir('' . $this->config_base_path . 'images/properties/' . $ref . '/thumbs/');
-                mkdir('' . $this->config_base_path . 'images/properties/' . $ref . '/medium/');
-                mkdir('' . $this->config_base_path . 'images/properties/' . $ref . '/large/');
-
-
-
-
-                //add default features to property
-
-                $this->load->model('features_model');
-                $default_features = $this->features_model->list_default_features();
-
-                foreach ($default_features as $row):
-
-                    $this->features_model->add_default_features($ref, $row['features_id']);
-
-                endforeach;
-
-
-                redirect('admin/properties/update/' . $ref . '#tabs-1');   // or whatever logic needs to occur
-            }
-            else {
-                echo 'An error occurred saving your information. Please try again later';
-                // Or whatever error handling is necessary
-            }
-        }
-    }
+    
 
     function update_property1() {
 

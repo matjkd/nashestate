@@ -1,4 +1,3 @@
-<?=$this->load->view('admin/properties/property_details_js')?>
 
 
 
