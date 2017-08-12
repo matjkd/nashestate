@@ -76,6 +76,17 @@ class Content extends MY_Controller
 		$this->load->view('admin/admin');
         
     }
+    
+    function add_testimonial()
+    {
+        
+           $data['page'] = 'content';
+		$data['title'] = 'Nash Homes: Add testimonial';
+		$data['right_main'] = 'admin/content/add_testimonial';
+		$data['heading'] = 'Add Testimonial';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+    }
 	
 	function update_content($id)
 	{
