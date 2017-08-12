@@ -83,6 +83,15 @@ class Content extends MY_Controller
 		$this->content_model->update_content($id); 
 		redirect('admin/content/edit_content/'.$id.'');  
 	}
+    
+    
+    function update_testimonial($id)
+	{
+		
+		$this->content_model->update_testimonial($id); 
+		redirect('admin/content/edit_testimonial/'.$id.'');  
+	}
+    
         function new_content()
         {
 

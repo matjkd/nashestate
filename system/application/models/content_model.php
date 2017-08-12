@@ -168,6 +168,28 @@ class Content_model extends Model {
 
         return $data;
     }
+    
+    function update_testimonial($id) {
+
+        $content_id = $id;
+
+        $form_data = array(
+            'testimonial' => $this->input->post('testimonial'),
+            'author' => $this->input->post('author')
+        );
+
+
+        $this->db->where('testimonial_id', $content_id);
+        $this->db->update('testimonials', $form_data);
+
+        if ($this->db->affected_rows() == '1') {
+
+            return TRUE;
+        }
+
+        return FALSE;
+    }
+
 
     /**
      *
