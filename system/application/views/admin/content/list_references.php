@@ -20,7 +20,7 @@ $(document).ready(function() {
 		</tr>
 	</thead>
 	<tbody>
-<?php foreach($list_content as $row):?>
+<?php foreach($list_references as $row):?>
 
 <tr>
 <td><?=$row['content_id']?></td>
