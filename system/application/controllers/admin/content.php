@@ -40,7 +40,7 @@ class Content extends MY_Controller
     {
         
         $data['list_references'] = $this->content_model->get_testimonials();
-        $data['page'] = 'content';
+        $data['page'] = 'references';
 		$data['title'] = 'Nash Homes: Edit Content';
 		$data['right_main'] = 'admin/content/list_references';
 		$data['heading'] = 'Edit References';
@@ -68,7 +68,7 @@ class Content extends MY_Controller
         
         $data['testimonial_id'] = $id;
         $data['edit_testimonial'] = $this->content_model->get_testimonial($id);
-        $data['page'] = 'content';
+        $data['page'] = 'references';
 		$data['title'] = 'Nash Homes: Edit Content';
 		$data['right_main'] = 'admin/content/edit_testimonial';
 		$data['heading'] = 'Edit Testimonial';
@@ -80,7 +80,7 @@ class Content extends MY_Controller
     function add_testimonial()
     {
         
-           $data['page'] = 'content';
+           $data['page'] = 'references';
 		$data['title'] = 'Nash Homes: Add testimonial';
 		$data['right_main'] = 'admin/content/add_testimonial';
 		$data['heading'] = 'Add Testimonial';
