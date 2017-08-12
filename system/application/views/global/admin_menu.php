@@ -26,16 +26,18 @@
        	 <li <?php if($page=='content'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a>
            <ul>
-              <li <?php if($page=='content'){echo "class='current'";}?>>
-	        <a href="<?=base_url()?>admin/content/list_references/"><span>References</span></a></li>   
+            <li <?php if($page=='content'){echo "class='current'";}?>>
+	        <a href="<?=base_url()?>index.php?admin/content/list_references/"><span>References</span></a></li>   
                
-           
+            <li <?php if($page=='content'){echo "class='current'";}?>>
+	        <a href="<?=base_url()?>admin/content/add_testimonial/"><span>Add Testimonial</span></a></li>   
            </ul>
            
            </li>
            
            
-           
+          <li <?php if($page=='references'){echo "class='current'";}?>>
+        <a href="<?=base_url()?>index.php?admin/content/list_references/"><span>References</span></a></li> 
            
         
          	 <li <?php if($page=='config'){echo "class='current'";}?>>
