@@ -10,7 +10,7 @@ $attributes = array('class' => 'form', 'id' => 'form');
 
 echo form_open('admin/content/add__new_testimonial/', $attributes);
 
-foreach($edit_testimonial as $row):?>
+
 
 <h2>Reference</h2><br/>
 
@@ -29,6 +29,6 @@ foreach($edit_testimonial as $row):?>
 ?>
 
 <?=form_input('author')?>
-<?php endforeach; ?>
+
 <br/> <input type="submit" class="wymupdate" />
 <?=form_close()?>
