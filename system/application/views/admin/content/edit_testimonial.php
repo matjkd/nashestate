@@ -29,7 +29,7 @@ foreach($edit_testimonial as $row):?>
 	
 ?>
 
-<?=form_input('Author', $row['author'])?>
+<?=form_input('author', $row['author'])?>
 <?php endforeach; ?>
 <br/> <input type="submit" class="wymupdate" />
 <?=form_close()?>
