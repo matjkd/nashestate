@@ -62,6 +62,20 @@ class Content extends MY_Controller
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
+    
+    function edit_testimonial($id)
+    {
+        
+        $data['testimonial_id'] = $id;
+        $data['edit_testimonial'] = $this->content_model->get_testimonial($id);
+        $data['page'] = 'content';
+		$data['title'] = 'Nash Homes: Edit Content';
+		$data['right_main'] = 'admin/content/edit_testimonial';
+		$data['heading'] = 'Edit Testimonial';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+        
+    }
 	
 	function update_content($id)
 	{

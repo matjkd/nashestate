@@ -23,7 +23,7 @@ $(document).ready(function() {
 <?php foreach($list_references as $row):?>
 
 <tr>
-<td><?=$row['content_id']?></td>
+<td><?=$row['testimonial_id']?></td>
 
 <td><?=$row['author']?></td>
 <td><?=$row['date_added']?></td>
