@@ -35,6 +35,20 @@ class Content extends MY_Controller
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
 	}
+    
+    function list_references()
+    {
+        
+        $data['list_references'] = $this->content_model->get_testimonials();
+        $data['page'] = 'content';
+		$data['title'] = 'Nash Homes: Edit Content';
+		$data['right_main'] = 'admin/content/list_references';
+		$data['heading'] = 'Edit References';
+		$this->load->vars($data);
+		$this->load->view('admin/admin');
+        
+        
+    }
 	
 	
 	function edit_content($id)
