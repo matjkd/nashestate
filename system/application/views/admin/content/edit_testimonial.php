@@ -12,7 +12,7 @@ echo form_open('admin/content/update_testimonial/'.$testimonial_id.'', $attribut
 
 foreach($edit_testimonial as $row):?>
 
-<h2><?=$row['content_title']?></h2><br/>
+<h2>Reference</h2><br/>
 
 <?php 		$textarea_data = array(
             'name'        => 'testimonial',
@@ -24,11 +24,12 @@ foreach($edit_testimonial as $row):?>
 	
 		
 		echo form_textarea($textarea_data);
+
 		
 	
 ?>
 
-<?=form_input('extra', $row['extra'])?>
+<?=form_input('Author', $row['author'])?>
 <?php endforeach; ?>
 <br/> <input type="submit" class="wymupdate" />
 <?=form_close()?>
