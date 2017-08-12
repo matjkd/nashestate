@@ -128,7 +128,7 @@ class Content_model extends Model {
 
 
 
-        $this->db->insert('testimonial', $form_data);
+        $this->db->insert('testimonials', $form_data);
 
         if ($this->db->affected_rows() == '1') {
 

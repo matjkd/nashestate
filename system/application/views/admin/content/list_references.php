@@ -8,6 +8,8 @@ $(document).ready(function() {
 
 </script>
 
+<a href="<?=base_url()?>admin/content/add_testimonial">Add New Testimonial</a>
+
 <table id="content"  width="100%" style="clear:both;">
 	<thead>
 		<tr>
