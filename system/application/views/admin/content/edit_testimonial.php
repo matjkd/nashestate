@@ -10,7 +10,7 @@ $attributes = array('class' => 'form', 'id' => 'form');
 
 echo form_open('admin/content/update_testimonial/'.$testimonial_id.'', $attributes);
 
-foreach($edit_content as $row):?>
+foreach($edit_testimonial as $row):?>
 
 <h2><?=$row['content_title']?></h2><br/>
 
