@@ -115,6 +115,28 @@ class Content_model extends Model {
 
         return FALSE;
     }
+    
+     function add_testimonial() {
+         
+        $time = time();
+         
+        $form_data = array(
+            'author' => $this->input->post('author'),
+            'testimonial' => $this->input->post('testimonial'),
+            'date_added' => $time
+        );
+
+
+
+        $this->db->insert('testimonial', $form_data);
+
+        if ($this->db->affected_rows() == '1') {
+
+            return TRUE;
+        }
+
+        return FALSE;
+    }
 
     /**
      *

@@ -87,6 +87,12 @@ class Content extends MY_Controller
 		$this->load->vars($data);
 		$this->load->view('admin/admin');
     }
+    
+    function add_new_testimonial()
+    {
+        $this->content_model->add_testimonial();
+		redirect('admin/list_references/');
+    }
 	
 	function update_content($id)
 	{
