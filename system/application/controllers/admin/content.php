@@ -91,7 +91,9 @@ class Content extends MY_Controller
     function add_new_testimonial()
     {
         $this->content_model->add_testimonial();
-		redirect('admin/list_references/');
+		redirect('admin/content/list_references/');
+        
+        
     }
 	
 	function update_content($id)

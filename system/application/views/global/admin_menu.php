@@ -24,7 +24,19 @@
           </li>  
             
        	 <li <?php if($page=='content'){echo "class='current'";}?>>
-        <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a></li>
+        <a href="<?=base_url()?>index.php?admin/content"><span>Content</span></a>
+           <ul>
+              <li <?php if($page=='content'){echo "class='current'";}?>>
+	        <a href="<?=base_url()?>admin/content/list_references/"><span>References</span></a></li>   
+               
+           
+           </ul>
+           
+           </li>
+           
+           
+           
+           
         
          	 <li <?php if($page=='config'){echo "class='current'";}?>>
         <a href="<?=base_url()?>index.php?admin/areas/area_config"><span>Config</span></a>
