@@ -8,7 +8,7 @@ jQuery(function() {
 
 $attributes = array('class' => 'form', 'id' => 'form');
 
-echo form_open('admin/content/add__new_testimonial/'.$testimonial_id.'', $attributes);
+echo form_open('admin/content/add__new_testimonial/', $attributes);
 
 foreach($edit_testimonial as $row):?>
 
