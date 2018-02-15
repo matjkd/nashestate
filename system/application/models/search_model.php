@@ -259,7 +259,7 @@ class Search_model extends Model {
 			$this->db->from('property_rooms');
 			$this->db->where('property_id', $row['property_ref_no']);
 			$this->db->where('room_type', 1);
-            $this->db->order_by('property_main.rent_price', 'asc'); 		// order by price
+          
 			$room_count = $this->db->count_all_results();
 
 			$row2 = array(
