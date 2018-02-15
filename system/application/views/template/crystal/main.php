@@ -118,7 +118,7 @@
 
 		<!--slider-->
 		 <?php if (isset($slideshow)) { ?>
-		<!-- <?=$this->load->view('template/crystal/'.$slideshow)?> -->
+		- <?=$this->load->view('template/crystal/'.$slideshow)?> 
 		<?php } ?>
 
 		<!--container-->
