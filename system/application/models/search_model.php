@@ -216,45 +216,9 @@ class Search_model extends Model {
         
         
         
-		if ($to > 0) // if a top price is selected else make it unlimited
-		{
-			
-            $search = "monthly_rent <= $to AND $from <= monthly_rent";
-			$this->db->where($search);
-		}
+		
 
-		//if area is not any, search by area also
-		if($area != "any")
-		{
-
-			//if nearby is set just search nearby locations, if not search main location
-			if($nearby == 0){
-               
-			//	$this->db->where('general_area.general_area_id', $area);
-			}
-
-			if($nearby == 1){
-				$x = 1;
-				if(isset($relatedAreas)) {
-
-					foreach($relatedAreas as $row2):
-
-					$otherAreas[] = $row2['area_id'];
-
-					endforeach;
-
-				//	$this->db->where_in('general_area.general_area_id', $otherAreas);
-
-				}
-				else
-				{
-			//	    $this->db->where('general_area.general_area_id', 'NO');
-				}
-			}
-				
-		}
-
-		$this->db->group_by('property_main.property_ref_no');
+		// $this->db->group_by('property_main.property_ref_no');
 
 
 
@@ -282,7 +246,7 @@ class Search_model extends Model {
 				
 		}
         
-		// $Q->free_result($from, $to);
+		 $Q->free_result($from, $to);
 		return $data;
 	}
 
