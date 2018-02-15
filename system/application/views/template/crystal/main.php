@@ -239,9 +239,7 @@
 							<p>
 								<i class="icon-phone"></i> +34 971 67 59 69
 							</p>
-							<p>
-								<i class="icon-print"></i> +34 971 67 59 05
-							</p>
+							
 							<p>
 								<i class="icon-envelope"></i><a href="mailto:info@nashhomesmallorca.com">info@nashhomesmallorca.com</a>
 							</p>
