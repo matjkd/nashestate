@@ -230,7 +230,7 @@ class Search_model extends Model {
 			//if nearby is set just search nearby locations, if not search main location
 			if($nearby == 0){
                
-				$this->db->where('general_area.general_area_id', $area);
+			//	$this->db->where('general_area.general_area_id', $area);
 			}
 
 			if($nearby == 1){
