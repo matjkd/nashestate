@@ -38,7 +38,7 @@
 </script> 
 <section id="map">
 			
-				<div class="row">
+				<div class="row" style="margin-bottom:80px;">
 					
 
 					
