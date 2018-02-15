@@ -210,7 +210,7 @@ class Search_model extends Model {
 
 		if ($to > 0) // if a top price is selected else make it unlimited
 		{
-			$this->db->order_by('property_main.rent_price', 'asc'); 		// order by price
+			
             $search = "monthly_rent <= $to AND $from <= monthly_rent";
 			$this->db->where($search);
 		}
@@ -221,7 +221,7 @@ class Search_model extends Model {
 
 			//if nearby is set just search nearby locations, if not search main location
 			if($nearby == 0){
-                $this->db->order_by('property_main.rent_price', 'asc'); 		// order by price
+               
 				$this->db->where('general_area.general_area_id', $area);
 			}
 
@@ -273,7 +273,7 @@ class Search_model extends Model {
 			endforeach;
 				
 		}
-
+        $this->db->order_by('property_main.rent_price', 'asc'); 		// order by price
 		$Q->free_result($from, $to);
 		return $data;
 	}
