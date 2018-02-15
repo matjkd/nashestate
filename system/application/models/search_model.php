@@ -101,50 +101,7 @@ class Search_model extends Model {
         $this->db->where('general_area_link.group_id', $groupID);
 		$this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
 
-		if ($to > 0) 			// if a top price is selected else make it unlimited
-		{
-			$search = "sale_price <= $to AND $from <= sale_price";
-			$this->db->where($search);
-
-		}
-
-
-		//if area is not "any", search by area also
-		if($area != "any")
-		{
-
-				
-
-
-			//if nearby is set just search nearby locations, if not search main location
-			if($nearby == 0){
-				$this->db->where('general_area.general_area_id', $area);
-			}
-
-			if($nearby == 1){
-				$x = 1;
-				if(isset($relatedAreas)) {
-
-					foreach($relatedAreas as $row2):
-
-					$otherAreas[] = $row2['area_id'];
-					
-					endforeach;
-
-					$this->db->where_in('general_area.general_area_id', $otherAreas);
-					
-
-				}
-				else
-				{
-					$this->db->where('general_area.general_area_id', 'NO');
-				}
-			}
-				
-		}
-
-
-
+		
 
 
 		$Q = $this->db->get();
