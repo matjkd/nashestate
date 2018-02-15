@@ -210,7 +210,7 @@ class Search_model extends Model {
 		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left'); 		// link to images table
 		
         
-         $this->db->where('general_area_link.group_id', $groupID);
+        $this->db->where('general_area_link.group_id', $groupID);
         $this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
         
         
@@ -243,12 +243,12 @@ class Search_model extends Model {
 
 					endforeach;
 
-					$this->db->where_in('general_area.general_area_id', $otherAreas);
+				//	$this->db->where_in('general_area.general_area_id', $otherAreas);
 
 				}
 				else
 				{
-					$this->db->where('general_area.general_area_id', 'NO');
+			//	    $this->db->where('general_area.general_area_id', 'NO');
 				}
 			}
 				
