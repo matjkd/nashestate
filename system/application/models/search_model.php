@@ -66,8 +66,7 @@ class Search_model extends Model {
 	{
 
 		//find out group ids. First get group idwith area id
-		if($area != "any")
-		{
+		
 			$areaGroup = $this->find_group($area);
 
 			foreach($areaGroup as $row):
@@ -80,8 +79,7 @@ class Search_model extends Model {
 			if(isset($groupID)){
 				$relatedAreas = $this->getareas($groupID);
 				
-			}
-		}
+			
 		
 
 		$data = array();
@@ -133,8 +131,7 @@ class Search_model extends Model {
 	function search_rentals($from, $to, $beds, $maxbeds, $area, $nearby)
 	{
 		//find out group ids. First get group idwith area id
-		if($area != "any")
-		{
+		
 			$areaGroup = $this->find_group($area);
 
 			foreach($areaGroup as $row):
@@ -147,8 +144,7 @@ class Search_model extends Model {
 			if(isset($groupID)){
 				$relatedAreas = $this->getareas($groupID);
 				 
-			}
-		}
+		
 
 
 		$data = array();
