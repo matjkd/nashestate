@@ -154,7 +154,12 @@
 
 					</div>
 					<div class="span8">
-
+                <!--slider-->
+                         <?php if (isset($slideshow)) { ?>
+                           <?php  $this->load->view('template/crystal/'.$slideshow)?> 
+                        <?php } ?>
+                        
+                        
 						<?=$this->load->view($content)?>
 
 					</div>
