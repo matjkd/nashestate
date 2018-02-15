@@ -238,7 +238,36 @@ if($property['sold_rented'] == 1) {?>
 
 	//end of main rentals
 	}
+	//start of nearby rentals
+
+	if (isset($nearbyrentals) && $nearbyrentals != NULL) {
+		foreach ($nearbyrentals as $rentals):
+		?>
+
+	<?php
+	//convert period if it is set
+	if ($rentals['rent_period'] == "Weekly") {
+		$rental_period = "week";
+	}
+	if ($rentals['rent_period'] == "Yearly") {
+		$rental_period = "year";
+	}
+	if ($rentals['rent_period'] == "Monthly" || $rentals['rent_period'] == NULL) {
+		$rental_period = "month";
+	}
+
+	if ($rentals['rooms'] >= $beds && $maxbeds >= $rentals['rooms']) {
+		?>
 	
+	<?php
+	} else {
+
+	}
+
+	endforeach;
+	}
+    }
+	//end of nearby rentals
 	
 	?>
 </div>
