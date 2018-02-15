@@ -282,7 +282,7 @@ class Search_model extends Model {
 				
 		}
         
-		$Q->free_result($from, $to);
+		// $Q->free_result($from, $to);
 		return $data;
 	}
 
