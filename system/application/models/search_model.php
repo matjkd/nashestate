@@ -202,12 +202,20 @@ class Search_model extends Model {
 		$this->db->order_by('monthly_rent', 'asc'); 						// order by price
 		$this->db->where('property_images.print_order', 0);
 
+       
+        
 		$this->db->join('property_types', 'property_types.property_type_id=property_main.property_type', 'left');	//link to property type table
 		$this->db->join('general_area', 'general_area.general_area_id = property_main.general_area', 'left'); 		//link to areas table
 		$this->db->join('general_area_link', 'general_area_link.area_id = property_main.general_area', 'left'); 		//link to areas-groups link table
 		$this->db->join('property_images', 'property_images.property_id = property_main.property_ref_no', 'left'); 		// link to images table
-		$this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
-        $this->db->order_by('property_main.rent_price', 'asc'); 		// order by price
+		
+        
+         $this->db->where('general_area.general_area_id', $area);
+        $this->db->group_by('property_main.property_ref_no');			//groups by property ref so i get a listing per property rather than per image
+        
+        
+        
+        
 		if ($to > 0) // if a top price is selected else make it unlimited
 		{
 			
