@@ -37,7 +37,7 @@
   }
 </script> 
 <section id="map">
-			<div class="container">
+			
 				<div class="row">
 					
 
@@ -50,5 +50,5 @@
 					</div>
 				
 			</div>
-    </div>
+   
 		</section>
