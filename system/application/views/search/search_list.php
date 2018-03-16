@@ -176,7 +176,7 @@ if($property['sold_rented'] == 1) {?>
                 if (file_exists($localfile)) {
                         $imagebase = base_url()."images/properties/";
                     } else {
-                        $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/"
+                        $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
                     }
                 ?>
                 <?=imagebase?>
