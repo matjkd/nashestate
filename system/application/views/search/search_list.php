@@ -170,6 +170,15 @@ if($property['sold_rented'] == 1) {?>
 
 			<div class="span2">
 				<?php if (isset($rentals['filename'])) { ?>
+                
+                <?php
+                if (file_exists(base_url()."images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'])) {
+                        print ".";
+                    } else {
+                        print "..";
+                    }
+                ?>
+                
 				<img width="180px" height="140px"
 					src="<?= base_url() ?>images/properties/<?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
 				<?php } ?>
