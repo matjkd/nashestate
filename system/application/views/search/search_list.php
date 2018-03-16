@@ -181,7 +181,7 @@ if($property['sold_rented'] == 1) {?>
                 ?>
                 <? echo $imagebase; ?>
 				<img width="180px" height="140px"
-					src="<?= base_url() ?>images/properties/<?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
+					src="<?=$imagebase?><?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
 				<?php } ?>
 			</div>
 			</div>
