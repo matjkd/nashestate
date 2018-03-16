@@ -172,7 +172,7 @@ if($property['sold_rented'] == 1) {?>
 				<?php if (isset($rentals['filename'])) { ?>
                 
                 <?php
-                $localfile = "/images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'];      
+                $localfile = "images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'];      
                 if (file_exists($localfile)) {
                         $imagebase = base_url()."images/properties/";
                     } else {
