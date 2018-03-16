@@ -172,10 +172,11 @@ if($property['sold_rented'] == 1) {?>
 				<?php if (isset($rentals['filename'])) { ?>
                 
                 <?php
-                if (file_exists(base_url()."images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'])) {
-                        print ".";
+                $localfile = base_url()."images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'];      
+                if (file_exists($localfile)) {
+                        print  $localfile;
                     } else {
-                        print "..";
+                        print  $localfile;
                     }
                 ?>
                 
