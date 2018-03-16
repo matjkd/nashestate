@@ -173,7 +173,7 @@ if($property['sold_rented'] == 1) {?>
                 
                 <?php
                 $localfile = base_url()."images/properties/".$rentals['property_ref_no']."/medium/".$rentals['filename'];      
-                if (file_exists($localfile)) {
+                if (!file_exists($localfile)) {
                         $imagebase = base_url()."images/properties/";
                     } else {
                         $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
