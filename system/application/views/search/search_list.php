@@ -179,7 +179,7 @@ if($property['sold_rented'] == 1) {?>
                         $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
                     }
                 ?>
-                <? echo $imagebase; ?>
+                
 				<img width="180px" height="140px"
 					src="<?=$imagebase?><?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
 				<?php } ?>
