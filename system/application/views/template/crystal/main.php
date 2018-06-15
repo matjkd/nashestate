@@ -283,7 +283,7 @@
 				<div class="row">
 					<div class="span4">
 						<p class="copyright">
-							&copy; Copyright 2013. Developed by <a href="http://www.redstudio.co.uk/">Redstudio Design Limited</a>.
+							&copy; Copyright 2018. Developed by <a href="http://www.redstudio.co.uk/">Redstudio</a>. <a href="http://www.nashhomesmallorca.com/welcome/content/privacypolicy">Legal Privacy Policy</a>
 						</p>
 						
 					<?=$this->load->view('user/modalLogin')?>
