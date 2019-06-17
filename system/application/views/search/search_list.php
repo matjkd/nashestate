@@ -198,9 +198,9 @@ if($property['sold_rented'] == 1) {?>
                     }
                 ?>
                 
-				<img width="180px" height="140px"
+				<a href="<?= base_url() ?>property/display/<?= $rentals['property_ref_no'] ?>"><img width="180px" height="140px"
 					src="<?=$imagebase?><?= $rentals['property_ref_no'] ?>/medium/<?= $rentals['filename'] ?>">
-				<?php } ?>
+				</a><?php } ?>
 			</div>
 			</div>
 		</div>
