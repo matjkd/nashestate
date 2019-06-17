@@ -76,9 +76,9 @@ if($property['sold_rented'] == 1) {?>
                 
                 
                 
-				<img width="100%" 
+				<a href="<?= base_url() ?>property/display/<?= $property['property_ref_no'] ?>"><img width="100%" 
 					src="<?=$imagebase ?><?= $property['property_ref_no'] ?>/<?= $property['filename'] ?>">
-				<?php } ?>
+				</a><?php } ?>
 			</div>
 			</div>
 		</div>
