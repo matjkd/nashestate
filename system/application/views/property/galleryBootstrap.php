@@ -14,11 +14,18 @@
                $filelocation = "/medium/".$image->filename;
            }
            $localimage = "images/properties/".$image->property_id.$filelocation;
-	   $baselocalimage = base_url().$localimage;	
+	  $baselocalimage = base_url().$localimage;
+		if(file_exists($localimage)){
+			
+		$theImage = $baselocalimage;
 		
+		} else {
+		
+			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$image->property_id."/large/".$image->filename;
+		}
         ?>
 	<!-- <?=$baselocalimage?>-->	
-    	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?><?=$filelocation?>" alt="<?=$image->filename?>" />	
+    	<img  src="<?=$theImage?>" alt="<?=$image->filename?>" />	
     	</li>
     	<?php endforeach; ?>
     <!-- items mirrored twice, total of 12 -->
