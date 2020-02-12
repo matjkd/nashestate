@@ -20,8 +20,18 @@
 		$theImage = $baselocalimage;
 		
 		} else {
+			
 		
+		$checklarge = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$image->property_id."/large/".$image->filename;
+		if(file_exists($checklarge)){
 			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$image->property_id."/large/".$image->filename;
+		} else {
+		$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$image->property_id."/medium/".$image->filename;
+		
+		
+		}
+		
+		
 		}
         ?>
 	<!-- <?=$baselocalimage?>-->	
