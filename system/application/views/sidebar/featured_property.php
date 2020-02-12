@@ -29,7 +29,7 @@ $ref = $row['property_ref_no'];
 		}
         
         ?>
-				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?=imagebase?><?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
+				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?=$imagebase?><?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
 				</div> 
 
 				<?php endforeach; ?>
