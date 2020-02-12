@@ -13,7 +13,7 @@ $ref = $row['property_ref_no'];
 				<?php foreach ($featured_images as $row2):
 				?>
 
-				<!-- Slideshow of featured property images-->
+				<!-- Slideshow of featured property images now checks s3 incoming -->
 
 				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?= base_url() ?>images/properties/<?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
 				</div>
