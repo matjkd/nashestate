@@ -11,8 +11,21 @@
         <?php foreach ($featured_images as $row2): ?>
 
                     <!-- Slideshow of featured property images-->
+        
+        <?php
+                $localfile = "images/properties/".$ref."/medium/".$row2->filename; 
+                $s3file =   "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/".$ref."/medium/".$row2->filename;;      
+                if (!file_exists($localfile)) {
+                    $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
+                        
+                    } else {
+                        
+                    $imagebase = base_url()."images/properties/";
+        
+        ?>
+        
 
-                    <img width="305px" height="227px;" src="<?= base_url() ?>images/properties/<?= $ref ?>/medium/<?= $row2->filename ?>">
+                    <img width="305px" height="227px;" src="<?=$imagebase?><?= $ref ?>/medium/<?= $row2->filename ?>">
 
 
 
