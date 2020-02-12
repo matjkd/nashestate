@@ -18,6 +18,7 @@
 		if(file_exists($localimage)){
 			
 		$theImage = $baselocalimage;
+		$imageBase = base_url()."images/properties/";
 		
 		} else {
 			
@@ -28,7 +29,7 @@
 		} else {
 		$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$image->property_id."/medium/".$image->filename;
 		
-		
+		$imageBase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
 		}
 		
 		
@@ -45,7 +46,7 @@
   <ul class="slides slidethumbs">
     <?php foreach($property_images as $image):?>
     	<li>
-    	<img  src="<?=base_url()?>/images/properties/<?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
+    	<img  src="<?=$imageBase?><?=$image->property_id?>/thumbs/<?=$image->filename?>" alt="<?=$image->filename?>" />
     	</li>
     	
     	<?php endforeach; ?>
