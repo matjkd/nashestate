@@ -58,13 +58,13 @@ if($property['sold_rented'] == 1) {?>
 					&euro;
 				</strong>
 			</div>
-
+<!-- Image thumbnail for search list-->
 			<div class="span2">
 				<?php if (isset($property['filename'])) { ?>
                   <?php
                 $localfile = "images/properties/".$property['property_ref_no']."/".$property['filename']; 
                 $s3file =   "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/".$property['property_ref_no']."/".$property['filename'];      
-                if (file_exists($s3file)) {
+                if (!file_exists($localfile)) {
                     $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
                         
                     } else {
