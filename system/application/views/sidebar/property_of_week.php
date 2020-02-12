@@ -10,7 +10,7 @@
 <div id="featuredproperty" class="featuredcycle" style="display:none; height:230px;">
         <?php foreach ($featured_images as $row2): ?>
 
-                    <!-- Slideshow of featured property images-->
+                    <!-- Slideshow of featured property images looks at s3 now-->
         
         <?php
                 $localfile = "images/properties/".$ref."/medium/".$row2->filename; 
