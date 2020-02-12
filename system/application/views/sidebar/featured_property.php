@@ -27,8 +27,8 @@ $ref = $row['property_ref_no'];
                     $imagebase = base_url()."images/properties/";
         
         ?>
-				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?=imagebase?><?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
-				</div>
+				<!--<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?=imagebase?><?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
+				</div> -->
 
 				<?php endforeach; ?>
 			</div>
