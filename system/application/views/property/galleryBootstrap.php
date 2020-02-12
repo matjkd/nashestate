@@ -13,8 +13,11 @@
            } else {
                $filelocation = "/medium/".$image->filename;
            }
-            
-        ?>    
+           $localimage = "images/properties/".$image->property_id.$filelocation;
+	   $baselocalimage = base_url().$localimage;	
+		
+        ?>
+	<!-- <?=$baselocalimage?>-->	
     	<img  src="<?=base_url()?>images/properties/<?=$image->property_id?><?=$filelocation?>" alt="<?=$image->filename?>" />	
     	</li>
     	<?php endforeach; ?>
