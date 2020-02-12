@@ -14,8 +14,20 @@ $ref = $row['property_ref_no'];
 				?>
 
 				<!-- Slideshow of featured property images now checks s3 incoming -->
-
-				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?= base_url() ?>images/properties/<?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
+        <?php
+                $localfile = "images/properties/".$ref."/medium/".$row2->filename; 
+                $s3file =   "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/".$ref."/medium/".$row2->filename;;      
+                if (!file_exists($localfile)) {
+                        
+                        echo "<!-- test1 -->";
+                    $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
+                        
+                    } else {
+                        echo "<!-- test2 -->";
+                    $imagebase = base_url()."images/properties/";
+        
+        ?>
+				<div class="item"><a href="<?= base_url() ?>property/display/<?= $ref ?>"><img src="<?=imagebase?><?= $ref ?>/medium/<?= $row2 -> filename ?>" alt="photo"/></a>
 				</div>
 
 				<?php endforeach; ?>
