@@ -16,10 +16,12 @@
                 $localfile = "images/properties/".$ref."/medium/".$row2->filename; 
                 $s3file =   "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/".$ref."/medium/".$row2->filename;;      
                 if (!file_exists($localfile)) {
+                        
+                        echo "<!-- test1 -->";
                     $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
                         
                     } else {
-                        
+                        echo "<!-- test2 -->";
                     $imagebase = base_url()."images/properties/";
         
         ?>
