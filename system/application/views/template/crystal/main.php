@@ -184,6 +184,7 @@
 								<ul class="portfolio">
 									
 										<?php foreach($latest_properties as $row): ?>
+									<!-- Add s3 check here !>
 									<li>
 										<a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>">
 										<article>
