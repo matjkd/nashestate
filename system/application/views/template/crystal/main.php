@@ -185,7 +185,7 @@
 									
 										<?php foreach($latest_properties as $row): ?>
 								
-									<!-- Add s3 check here -->
+									<!-- s3 check here -->
 									                
                 <?php
                 $localfile = "images/properties/".$row['property_ref_no']."/medium/".$row['filename']; 
@@ -204,7 +204,7 @@
 										<a href="<?=base_url()?>property/display/<?=$row['property_ref_no']?>">
 										<article>
 											<div class="inner-image">
-												 <img src="<?=$imagebase?><?=$row['property_ref_no']?>/medium/<?=$row['filename']?>" alt=""/> <span class="frame-overlay"></span> 
+												 <img src="<?=$imagebase?><?=$row['property_ref_no']?>/medium/<?=$row['filename']?>" alt="property image"/> <span class="frame-overlay"></span> 
 											</div>
 											<div class="sliding">
 												<div class="inner-text">
