@@ -189,9 +189,9 @@
 									                
                 <?php
                 $localfile = "images/properties/".$row['property_ref_no']."/medium/".$row['filename']; 
-                $s3file =   "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/".$row['property_ref_no']."/medium/".$row['filename'];      
+                $s3file =   "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$row['property_ref_no']."/medium/".$row['filename'];      
                 if (file_exists($s3file)) {
-                    $imagebase = "https://s3-eu-west-1.amazonaws.com/nashhomes/properties/";
+                    $imagebase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
                         
                     } else {
                         
