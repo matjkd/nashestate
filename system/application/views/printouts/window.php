@@ -98,20 +98,34 @@ if(count($property_features) > 2)
 ?>
 
 <?php
+	
+                
+                $localfile = "images/properties/".$mainImage[1]; 
+                $s3file =   "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$mainImage[1];      
+                if (!file_exists($localfile)) {
+                    $imagebase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
+                        
+                    } else {
+                        
+                    $imagebase = base_url()."images/properties/";
+                    }
+                	
+	
+	
 switch ($imagecount) {
 
 	case 1:
 
 		?>
 
-	<img style="width: 724px; height:500px;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+	<img style="width: 724px; height:500px;" src="<?=$imagebase?><?=$mainImage[1]?>"/>
 
 		<?php
 		break;
 
 	case 2:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$imagebase?><?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 
 		<?php
@@ -119,7 +133,7 @@ switch ($imagecount) {
 
 	case 4:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px;  padding-right:10px; padding-bottom:10px; float:left;" src="<?=$imagebase?><?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px;  padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		<img alt="<?=$mainImage[3]?>" style="width: 357px; height:223px;  padding-right:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
 		<img alt="<?=$mainImage[4]?>" style="width: 357px; height:223px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
@@ -128,7 +142,7 @@ switch ($imagecount) {
 
 	case 6:
 		?>
-		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[1]?>"/>
+		<img alt="<?=$mainImage[1]?>" style="width: 357px; height:223px; padding-right:10px; padding-bottom:10px; float:left;" src="<?=$imagebase?><?=$mainImage[1]?>"/>
 		<img alt="<?=$mainImage[2]?>" style="width: 357px; height:223px; padding-bottom:10px; float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[2]?>"/>
 		<img alt="<?=$mainImage[3]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[3]?>"/>
 		<img alt="<?=$mainImage[4]?>"  style="width: 173px; height:122px; padding-right:10px;  float:left;" src="<?=$config_base_path?>images/properties/<?=$mainImage[4]?>"/>
