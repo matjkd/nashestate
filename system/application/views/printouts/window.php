@@ -100,7 +100,7 @@ if(count($property_features) > 2)
 <?php
 	
                 
-                $localfile = "images/properties/".$mainImage[1]; 
+                $localfile = $config_base_path."images/properties/".$mainImage[1]; 
                 $s3file =   "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$mainImage[1];      
                 if (!file_exists($localfile)) {
                     $imagebase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
