@@ -107,7 +107,7 @@ if(count($property_features) > 2)
                         
                     } else {
                         
-                    $imagebase = base_url()."images/properties/";
+                    $imagebase = $config_base_path."images/properties/";
                     }
                 	
 	
