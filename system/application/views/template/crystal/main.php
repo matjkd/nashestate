@@ -250,7 +250,7 @@
 						<address>
 
 							<p>
-								<i class="icon-map-marker"></i> Local 13, Ctra. Palma Andratx 43, Portals Nous, 07181 Calvià, Mallorca, Baleares, Spain.
+								<i class="icon-map-marker"></i> WE HAVE MOVED Local no 7, Plaza Portals (1st floor office, behind the taxi rank), 07181, Portals Nous, Calvia, Mallorca
 							</p>
 							<p>
 								<i class="icon-phone"></i> +34 971 67 59 69
