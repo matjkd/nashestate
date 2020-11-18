@@ -369,8 +369,11 @@ break;
 
 
 Nash Homes Mallorca, +34 971 67 59 69 or +34 636 47 55 49, info@nashhomesmallorca.com, www.nashhomesmallorca.com<br/>
-Ctra. Palma-Andraitx 43, local 13, Portals Nous, Calvia 07181, Mallorca<br/>
-(We are in the centre of Portals village street on the corner with C. Marina)<br/>
+
+WE HAVE MOVED Local no 7, Plaza Portals (1st floor office, behind the taxi rank)
+<br/> 07181, Portals Nous, Calvia, Mallorca
+	
+<br/>
 No information contained herein constitutes the basis for a purchase/sale contract.
 
 </div>
