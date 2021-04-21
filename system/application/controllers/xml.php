@@ -38,8 +38,6 @@ class xml extends MY_Controller {
         $data['content'] = "search/search_list";
         $data['general_areas'] = $this->ajax_model->get_general_area();
         $data['area_groups'] = $this->ajax_model->get_area_groups();
-        $data['side2'] = 'sidebar/refine';
-        $data['leftbox'] = 'search/searchbox';
         
         
         // store the search data, unless it is already stored
@@ -178,7 +176,9 @@ class xml extends MY_Controller {
          }
         
         	$data['references'] = $this->content_model->get_testimonials();
-        // Load Template
+       
+	    
+	    // Load Template
         $this->load->vars($data);
 	    
 	$xml = '<root>';
@@ -190,7 +190,8 @@ class xml extends MY_Controller {
            </item>';
 
 $xml .= '</root>';
-$this->output->set_content_type('text/xml');
+echo "test";
+	    $this->output->set_content_type('text/xml');
 $this->output->set_output($xml);    
 	    
 	    
