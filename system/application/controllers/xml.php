@@ -190,9 +190,9 @@ class xml extends MY_Controller {
            </item>';
 
 $xml .= '</root>';
-echo "test";
-	    $this->output->set_content_type('text/xml');
-$this->output->set_output($xml);    
+echo "testing123";
+//	    $this->output->set_content_type('text/xml');
+//$this->output->set_output($xml);    
 $this->load->view('template/standard/xmlfeed');	    
 	    
     }
