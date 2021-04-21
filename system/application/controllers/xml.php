@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- * @name 	Search controller
+ * @name 	xml controller
  * @author 	 Mat Sadler - Redstudio Design Limited
  * @package 	Nash Estate Agents
  * @subpackage 	Controllers
@@ -22,7 +22,7 @@ class xml extends MY_Controller {
     }
 
     function index() {
-        redirect('/search/content');
+        redirect('/xml/content');
     }
 
     /**
