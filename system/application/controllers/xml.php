@@ -193,7 +193,7 @@ $xml .= '</root>';
 echo "test";
 	    $this->output->set_content_type('text/xml');
 $this->output->set_output($xml);    
-echo $xml;	    
+$this->load->view('template/standard/xmlfeed');	    
 	    
     }
 
