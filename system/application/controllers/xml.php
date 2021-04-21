@@ -190,7 +190,7 @@ class xml extends MY_Controller {
            </item>';
 
 $xml .= '</root>';
-echo "testing123";
+
 	    header('Content-type: text/xml');
 //	    $this->output->set_content_type('text/xml');
 //$this->output->set_output($xml);    
