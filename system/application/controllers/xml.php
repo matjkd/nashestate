@@ -180,7 +180,20 @@ class xml extends MY_Controller {
         	$data['references'] = $this->content_model->get_testimonials();
         // Load Template
         $this->load->vars($data);
-        $this->load->view('template/standard/main');
+	    
+	$xml = '<root>';
+
+  $xml .= '<item>
+             <name>test</name>
+             <price>test</price>
+             <image>test</image>
+           </item>';
+
+$xml .= '</root>';
+$this->output->set_content_type('text/xml');
+$this->output->set_output($xml);    
+	    
+	    
     }
 
 	
