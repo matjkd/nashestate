@@ -185,8 +185,18 @@ class Search extends MY_Controller {
 	
 	function xml_feed() {
 	
+		$xml = '<root>';
+// foreach($mysql_data as $row){
+  $xml .= '<item>
+             <name>test</name>
+             <price>test</price>
+             <image>test</image>
+           </item>';
+}
+$xml .= '</root>';
+$this->output->set_content_type('text/xml');
+$this->output->set_output($xml);
 		
-		$this->load->view('template/standard/xmlfeed');
 	}
     /**
      * 
