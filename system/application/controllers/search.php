@@ -183,7 +183,7 @@ class Search extends MY_Controller {
     }
 
 	
-	function xml_feed() {
+	function xml_feed.xml() {
 	
 		
 		$this->load->view('template/standard/xmlfeed.xml');
