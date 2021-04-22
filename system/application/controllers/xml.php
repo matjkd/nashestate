@@ -50,7 +50,7 @@ class xml extends MY_Controller {
             
             
            $storedsearch = array(
-               'search_type' => $this->input->post('search_type'),
+               'search_type' => 3,
               'area' => $this->input->post('location') 
               );
       $this->session->set_userdata($storedsearch);
