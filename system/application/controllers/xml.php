@@ -201,8 +201,9 @@ $this->load->view('template/standard/xmlfeed');
     }
 
 	function feed() {
-	$data['properties'] = $this->search_model->search_sales($data['buyfrom'], $data['buyto'], $data['beds'], $data['maxbeds'], $area, 0);
-	$data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 0);
+		
+	$data['properties'] = $this->search_model->search_sales();
+	$data['rentals'] = $this->search_model->search_rentals();
 	    $this->load->vars($data);
 		 header('Content-type: text/xml');
 		
