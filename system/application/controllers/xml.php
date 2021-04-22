@@ -30,7 +30,7 @@ class xml extends MY_Controller {
      */
     function content() {
 
-        $data['search_type'] = $this->input->post('search_type');
+        $data['search_type'] = 3;
         $data['title'] = "searchpage";
         $data['page'] = "search";
         $data['menu'] = $this->content_model->get_menus();
