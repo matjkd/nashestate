@@ -203,7 +203,7 @@ $this->load->view('template/standard/xmlfeed');
 	function feed() {
 		
 	$data['properties'] = $this->search_model->search_sales(0, 99999999999, 0, 999, NULL, 0);
-	$data['rentals'] = $this->search_model->search_rentals();
+	$data['rentals'] = $this->search_model->search_rentals(0, 99999999999, 9, 999, NULL, 0);
 	    $this->load->vars($data);
 		 header('Content-type: text/xml');
 		
