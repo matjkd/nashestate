@@ -4,7 +4,7 @@
   </kyero>
   <?php foreach ($properties as $property): ?>
 <property>
-  something
+  <id><?= $property['property_ref_no'] ?></id>
 </property>
   <?php endforeach; ?>
 
