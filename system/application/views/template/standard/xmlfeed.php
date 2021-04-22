@@ -7,5 +7,13 @@
   <id><?= $property['property_ref_no'] ?></id>
 </property>
   <?php endforeach; ?>
+  
+  
+  <?php foreach ($rentals as $rentals): ?>
+  <property>
+    <id><?= $rentals['property_ref_no']?></id>
+  </property>
+  
+  <?php endforeach; ?>
 
 </root>
