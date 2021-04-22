@@ -7,7 +7,7 @@
   <id><?= $property['property_ref_no'] ?></id>
 </property>
   <?php endforeach; ?>
-  
+  <?php echo $data;?>
   
   <?php foreach ($rentals as $rentals): ?>
   <property>
