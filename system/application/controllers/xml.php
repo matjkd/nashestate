@@ -179,7 +179,8 @@ class xml extends MY_Controller {
        
 	    
 	    // Load Template
-        $this->load->vars($data);
+        $data['rentals'] = $this->search_model->search_rentals($data['rentfrom'], $data['rentto'], $data['beds'], $data['maxbeds'], $area, 0);
+	    $this->load->vars($data);
 	    
 	$xml = '<root>';
 
@@ -193,7 +194,8 @@ $xml .= '</root>';
 
 	    header('Content-type: text/xml');
 //	    $this->output->set_content_type('text/xml');
-//$this->output->set_output($xml);    
+//$this->output->set_output($xml);  
+	    
 $this->load->view('template/standard/xmlfeed');	    
 	    
     }
