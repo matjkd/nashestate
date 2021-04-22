@@ -10,9 +10,9 @@
   
   
   
-  <?php foreach ($rentals as $rentals): ?>
+  <?php foreach ($rentals as $rental): ?>
   <property>
-    <id><?= $rentals['property_ref_no']?></id>
+    <id><?= $rental['property_ref_no']?></id>
   </property>
   
   <?php endforeach; ?>
