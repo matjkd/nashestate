@@ -229,12 +229,13 @@ $this->load->view('template/standard/xmlfeed');
 				    <property>
 				    <id>12</id>
 				    </property>
-	   		</root>";
+	   	";
 		
 		
 		foreach($data['properties'] as $row):
-		
+		echo "<property>";
 			$id = $row['property_ref_no'];
+		echo "<id>".$id."</id>";
 			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
         
         		//if property is returned, load other details
@@ -245,8 +246,10 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_id'] = $id;
 			}
 		
-		
+		echo "</property>";
 		endforeach;
+		
+		echo "</root>";
 		
 	}
 	
