@@ -249,7 +249,8 @@ $this->load->view('template/standard/xmlfeed');
 			foreach( $propertydata['property_features'] as $featureRow):
 			
 				if($featureRow['features']){
-				echo "<feature>".$featureRow['features']."</feature>";
+					$feature = str_replace('&', 'and', $featureRow['features']);
+				echo "<feature>".$feature."</feature>";
 				}
 				
 				endforeach;
