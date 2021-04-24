@@ -235,6 +235,13 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_id'] = $id;
 			}
 		
+		echo "<root>
+  		<kyero>
+	    <feed_version>3</feed_version>
+	    </kyero>
+	    <property>
+	    </property>
+	    </root>";
 		endforeach;
 		
 	}
