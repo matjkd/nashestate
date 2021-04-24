@@ -16,6 +16,7 @@ class xml extends MY_Controller {
         parent::__construct();
         $this->load->model('ajax_model');
         $this->load->model('search_model');
+	$this->load->model('properties_model');
         $this->load->library('pagination');
         $this->load->model('gallery_model');
 		
