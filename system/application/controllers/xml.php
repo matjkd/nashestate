@@ -246,7 +246,10 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_features'] = $this->properties_model->get_assigned_features($id);
 			    $propertydata['property_id'] = $id;
 				
-				echo "<test></test>";
+			foreach( $propertydata['property_features'] as $featureRow):
+
+			endforeach;
+				echo "<test>er</test>";
 			}
 		
 		
