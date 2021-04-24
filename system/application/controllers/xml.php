@@ -222,6 +222,16 @@ $this->load->view('template/standard/xmlfeed');
 	    $this->load->vars($data);
 		 header('Content-type: text/xml');
 		
+		echo "<root>
+				<kyero>
+			    		<feed_version>3</feed_version>
+			        </kyero>
+				    <property>
+				    <id>12</id>
+				    </property>
+	   		</root>";
+		
+		
 		foreach($data['properties'] as $row):
 		
 			$id = $row['property_ref_no'];
@@ -235,13 +245,7 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_id'] = $id;
 			}
 		
-		echo "<root>
-  		<kyero>
-	    <feed_version>3</feed_version>
-	    </kyero>
-	    <property>
-	    </property>
-	    </root>";
+		
 		endforeach;
 		
 	}
