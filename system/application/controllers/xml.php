@@ -215,6 +215,30 @@ $this->load->view('template/standard/xmlfeed');
 		
 	}
 	
+	function feed2() {
+		
+	$data['properties'] = $this->search_model->search_sales(0, 99999999999, 0, 999, NULL, 0);
+	$data['rentals'] = $this->search_model->search_rentals(0, 99999999999, 9, 999, NULL, 0);
+	    $this->load->vars($data);
+		 header('Content-type: text/xml');
+		
+		foreach($data['properties'] as $row):
+		
+			$id = $row['property_ref_no'];
+			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
+        
+        		//if property is returned, load other details
+			if ($propertydata['property_details']) {
+			    $propertydata['property_rooms'] = $this->properties_model->get_rooms_table($id);
+			    $propertydata['property_images'] = $this->gallery_model->get_property_images($id);
+			    $propertydata['property_features'] = $this->properties_model->get_assigned_features($id);
+			    $propertydata['property_id'] = $id;
+		
+		endforeach;
+		
+	}
+	
+	
 	
     /**
      * 
