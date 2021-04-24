@@ -249,10 +249,10 @@ $this->load->view('template/standard/xmlfeed');
 			foreach( $propertydata['property_features'] as $featureRow):
 			echo "<feature>".$featureRow['features']."</feature>";
 			endforeach;
-				echo "<test>er</test>";
+				
 			}
 	
-		
+		echo "<test>er</test>";
 		echo "</property>";
 		endforeach;
 		
