@@ -233,6 +233,7 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_images'] = $this->gallery_model->get_property_images($id);
 			    $propertydata['property_features'] = $this->properties_model->get_assigned_features($id);
 			    $propertydata['property_id'] = $id;
+			}
 		
 		endforeach;
 		
