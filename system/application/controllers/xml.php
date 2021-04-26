@@ -296,7 +296,7 @@ $this->load->view('template/standard/xmlfeed');
 				$bedrooms = 0;
 				$parking = 0;
 				$bathrooms = 0;
-			if($propertydata['property_rooms']{
+			if($propertydata['property_rooms']){
 				foreach($propertydata['property_rooms'] as $rooms):
 
 				//Count Bedrooms
