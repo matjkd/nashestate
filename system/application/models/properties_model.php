@@ -26,7 +26,7 @@ class Properties_model extends Model {
     }
     function update_date($id) {
 	  $now = time();
-	  $field = 'date_added';
+	  $field = 'date_updated';
 	  $value = $now;  
 	    $update_data = array(
             $field => $value
