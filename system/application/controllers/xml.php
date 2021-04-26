@@ -228,7 +228,9 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<currency>EUR</currency>";
 		
 		echo "<desc>";
-		$description = str_replace('&', 'and', $row['description']);
+		$description = str_replace('&nbsp;', '', $row['description']);
+		
+		$description = str_replace('&', 'and', $description);
 		echo "<en>".strip_tags($description)."</en>";
 		echo "</desc>";
 		
