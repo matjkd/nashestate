@@ -318,7 +318,7 @@ $this->load->view('template/standard/xmlfeed');
 //		}		
 				
 				
-		echo "<image id='1'>";		
+		echo "<image id='"..$imagedata->image_id"'>";		
 //		echo "<url>".$theImage;."</url>";
 		echo "</image>";
 				endforeach;
