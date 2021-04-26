@@ -301,6 +301,18 @@ $this->load->view('template/standard/xmlfeed');
 		</surface_area>";
 	
 		
+	//energy rating
+	if($row['energy_rating'] == "A") {
+		$energyrating = $row['energy_rating'];
+	} else {
+		$energyrating = "X";
+	
+	}
+		echo "<energy_rating>
+		<consumption>".$energyrating."</consumption>
+		</energy_rating>";
+			
+		
 		echo "<url>
 		<en>http://www.nashhomesmallorca.com/property/display/".$id."</en>
 		</url>";
