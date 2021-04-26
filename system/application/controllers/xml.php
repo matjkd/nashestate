@@ -290,12 +290,12 @@ $this->load->view('template/standard/xmlfeed');
 		$imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
            if(file_exists($imagefilename)){
               
-//               $filelocation = "/large/".$imagedata->filename;
-//           } else {
-//               $filelocation = "/medium/".$imagedata->filename;
+               $filelocation = "/large/".$imagedata->filename;
+           } else {
+               $filelocation = "/medium/".$imagedata->filename;
            }
-//           $localimage = "images/properties/".$imagedata->property_id.$filelocation;
-//	  $baselocalimage = base_url().$localimage;
+           $localimage = "images/properties/".$imagedata->property_id.$filelocation;
+	  $baselocalimage = base_url().$localimage;
 		
 //		if(file_exists($localimage)){
 			
