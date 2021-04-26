@@ -293,6 +293,7 @@ $this->load->view('template/standard/xmlfeed');
 				endforeach;
 			}
 	echo "<beds>".$bedrooms."</beds>";
+	echo "<baths>".$bathrooms."</baths>";
 	
 		echo "<test>er</test>";
 		echo "</property>";
