@@ -287,13 +287,13 @@ $this->load->view('template/standard/xmlfeed');
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
 				
-//		$imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
-//           if(file_exists($imagefilename)){
+		$imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+           if(file_exists($imagefilename)){
               
 //               $filelocation = "/large/".$imagedata->filename;
 //           } else {
 //               $filelocation = "/medium/".$imagedata->filename;
-//           }
+           }
 //           $localimage = "images/properties/".$imagedata->property_id.$filelocation;
 //	  $baselocalimage = base_url().$localimage;
 		
