@@ -208,9 +208,46 @@ $this->load->view('template/standard/xmlfeed');
 	    $this->load->vars($data);
 		 header('Content-type: text/xml');
 		
-		$this->load->view('template/standard/xmlfeed');	    
-
-	  
+		echo "<root>
+				<kyero>
+			    		<feed_version>3</feed_version>
+			        </kyero>
+				    <property>
+				    <id>12</id>
+				    </property>
+	   	";
+		
+		
+		foreach($data['properties'] as $row):
+		echo "<property>";
+			$id = $row['property_ref_no'];
+		echo "<id>".$id."</id>";
+			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
+        
+        		//if property is returned, load other details
+			if ($propertydata['property_details']) {
+			    $propertydata['property_rooms'] = $this->properties_model->get_rooms_table($id);
+			    $propertydata['property_images'] = $this->gallery_model->get_property_images($id);
+			    $propertydata['property_features'] = $this->properties_model->get_assigned_features($id);
+			    $propertydata['property_id'] = $id;
+				
+			foreach( $propertydata['property_features'] as $featureRow):
+			
+				if($featureRow['features']){
+					$feature = str_replace('&', 'and', $featureRow['features']);
+				echo "<feature>".$feature."</feature>";
+				}
+				
+				endforeach;
+				
+			}
+	
+		echo "<test>er</test>";
+		echo "</property>";
+		endforeach;
+		
+		echo "</root>";
+		  
 		
 		
 		
