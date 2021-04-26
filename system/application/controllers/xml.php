@@ -237,7 +237,11 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<type>villa</type>";
 		echo "<town>Test place</town>";
 		echo "<province>test</province>";
-		echo "<location>test</location>";
+		echo "<location>
+		<latitude></latitude>
+		<longitude></longitude>
+		
+		</location>";
 		echo "<location_detail></location_detail>";
 		
 		
