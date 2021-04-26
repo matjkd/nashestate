@@ -228,7 +228,8 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<currency>EUR</currency>";
 		
 		echo "<desc>";
-		echo "<en>".$row['description']."</en>";
+		$description = str_replace('&', 'and', $row['description']);
+		echo "<en>".$description."</en>";
 		echo "</desc>";
 		
 		
