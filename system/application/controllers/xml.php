@@ -222,7 +222,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<property>";
 			$id = $row['property_ref_no'];
 		echo "<id>".$id."</id>";
-		echo "<date>".date(ISO-8601, $row['date_of_instruction'])."</date>";
+		echo "<date>".date($row['date_of_instruction'])."</date>";
 		echo "<ref>".$id."</ref>";
 		echo "<price>".INTVAL($row['sale_price'])."</price>";
 		echo "<price_freq>sale</price_freq>";
