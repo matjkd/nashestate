@@ -225,6 +225,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<date>".$row['date_of_instruction']."</date>";
 		echo "<ref>".$id."</ref>";
 		echo "<price>".$row['sale_price']."</price>";
+		echo "<price_freq>sale</price_freq>";
 		echo "<currency>EUR</currency>";
 		
 		echo "<desc>";
@@ -298,9 +299,16 @@ $this->load->view('template/standard/xmlfeed');
 		<built>".$row['build_size']."</built>
 		<plot>".$row['plot_size']."</plot>
 		</surface_area>";
+	//energy rating
+	if($row['energy_rating'] == "A" || $row['energy_rating'] == "B" || $row['energy_rating'] == "C" || $row['energy_rating'] == "D" 
+	  $row['energy_rating'] == "E" || $row['energy_rating'] == "F" || $row['energy_rating'] == "G") {
+		$energyrating = $row['energy_rating'];
+	} else {
+		$energyrating = "X";
 	
+	}
 		echo "<energy_rating>
-		<consumption>".$row['energy_rating']."</consumption>
+		<consumption>".$energyrating."</consumption>
 		</energy_rating>";
 		
 		echo "<url>
