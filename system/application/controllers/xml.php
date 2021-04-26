@@ -286,7 +286,7 @@ $this->load->view('template/standard/xmlfeed');
 				
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
-		echo $imagedata['filename'];
+		echo $imagedata['image_id'];
 		endforeach;
 		
 		echo "</images>";
