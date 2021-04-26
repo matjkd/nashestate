@@ -283,7 +283,7 @@ $this->load->view('template/standard/xmlfeed');
 				endforeach;
 			echo "</features>";
 				
-				
+			$imageCount = 0;	
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
 				
@@ -318,8 +318,8 @@ $this->load->view('template/standard/xmlfeed');
 		
 		}		
 				
-				
-		echo "<image id='".$imagedata->image_id."'>";		
+		$imageCount = $imageCount+1;		
+		echo "<image id='".$imageCount."'>";		
 		echo "<url>".$theImage."</url>";
 		echo "</image>";
 				endforeach;
