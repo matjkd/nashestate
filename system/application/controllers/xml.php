@@ -236,7 +236,20 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<leasehold>0</leasehold>";
 		echo "<type>villa</type>";
 		echo "<town>Test place</town>";
+		echo "<province></province>";
+		echo "<location></location>";
+		echo "<location_detail></location_detail>";
+		
+		
+		
 		echo "<country>spain</country>";
+		
+		echo "<video_url></video_url>";
+		echo "<virtual_tour_url></virtual_tour_url>";
+		echo "<catastral></catastral>";
+		echo "<images></images>";
+		echo "<notes></notes>";
+		echo "<prime></prime>";
 		
 		echo "<desc>";
 		$description = str_replace('&nbsp;', '', $row['description']);
@@ -305,6 +318,7 @@ $this->load->view('template/standard/xmlfeed');
 			}
 	echo "<beds>".$bedrooms."</beds>";
 	echo "<baths>".$bathrooms."</baths>";
+	echo "<pool></pool>";
 	echo "<surface_area>
 		<built>".$row['build_size']."</built>
 		<plot>".$row['plot_size']."</plot>
