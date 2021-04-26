@@ -401,7 +401,8 @@ class Properties_model extends Model {
 
         $form_data = array(
             'description' => $this->input->post('description'),
-            'alt_description' => $this->input->post('alt_description')
+            'alt_description' => $this->input->post('alt_description'),
+	    'date_updated' => now()
         );
 
         $this->db->where('property_ref_no', $id);
@@ -418,7 +419,9 @@ class Properties_model extends Model {
 
     function mark_sold($id) {
         $mark_sold = array(
-            'sold_rented' => 1,
+            'sold_rented' => 1,	
+	    'date_updated' => now()
+	
         );
 
         $this->db->where('property_ref_no', $id);
@@ -450,6 +453,7 @@ class Properties_model extends Model {
         //mark main property as unsold
         $mark_unsold = array(
             'sold_rented' => 0,
+	    'date_updated' => now()
         );
 
         $this->db->where('property_ref_no', $propertyid);
@@ -461,6 +465,7 @@ class Properties_model extends Model {
          //mark main property as unrented
         $mark_unsold = array(
             'sold_rented' => 0,
+	    'date_updated' => now()
         );
 
         $this->db->where('property_ref_no', $id);
@@ -591,7 +596,8 @@ class Properties_model extends Model {
                 if ($row['rent_period'] == "Monthly") {
                     $monthly_rent = $value;
                     $rent_update = array(
-                        'monthly_rent' => $monthly_rent
+                        'monthly_rent' => $monthly_rent,
+			 'date_updated' => now()
                     );
                     $this->db->where('property_ref_no', $id);
                     $update = $this->db->update('property_main', $rent_update);
@@ -601,7 +607,8 @@ class Properties_model extends Model {
                 if ($row['rent_period'] == "Weekly") {
                     $monthly_rent = ($value * 52) / 12;
                     $rent_update = array(
-                        'monthly_rent' => $monthly_rent
+                        'monthly_rent' => $monthly_rent,
+			    'date_updated' => now()
                     );
                     $this->db->where('property_ref_no', $id);
                     $update = $this->db->update('property_main', $rent_update);
@@ -618,7 +625,8 @@ class Properties_model extends Model {
                     if ($value == "Yearly") {
                         $monthly_rent = $row['rent_price'] / 12;
                         $rent_update = array(
-                            'monthly_rent' => $monthly_rent
+                            'monthly_rent' => $monthly_rent,
+				'date_updated' => now()
                         );
                         $this->db->where('property_ref_no', $id);
                         $update = $this->db->update('property_main', $rent_update);
@@ -627,7 +635,8 @@ class Properties_model extends Model {
                 if ($value == "Monthly") {
                     $monthly_rent = $row['rent_price'];
                     $rent_update = array(
-                        'monthly_rent' => $monthly_rent
+                        'monthly_rent' => $monthly_rent,
+			    'date_updated' => now()
                     );
                     $this->db->where('property_ref_no', $id);
                     $update = $this->db->update('property_main', $rent_update);
@@ -638,7 +647,8 @@ class Properties_model extends Model {
                     $monthly_rent = ($row['rent_price'] * 52) / 12;
                     ;
                     $rent_update = array(
-                        'monthly_rent' => $monthly_rent
+                        'monthly_rent' => $monthly_rent,
+			    'date_updated' => now()
                     );
                     $this->db->where('property_ref_no', $id);
                     $update = $this->db->update('property_main', $rent_update);
@@ -647,7 +657,8 @@ class Properties_model extends Model {
         }
 
         $user_update_data = array(
-            $field => $value
+            $field => $value,
+		'date_updated' => now()
         );
         $this->db->where('property_ref_no', $id);
         $update = $this->db->update('property_main', $user_update_data);
