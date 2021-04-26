@@ -234,6 +234,11 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<price_freq>sale</price_freq>";
 		echo "<currency>EUR</currency>";
 		
+		echo "<leasehold>0</leasehold>";
+		echo "<type>villa</type>";
+		echo "<town>Test place</town>";
+		echo "<country>spain</country>";
+		
 		echo "<desc>";
 		$description = str_replace('&nbsp;', '', $row['description']);
 		$description = str_replace('&#160;', '', $description);
