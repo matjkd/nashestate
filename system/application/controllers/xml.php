@@ -222,9 +222,9 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<property>";
 			$id = $row['property_ref_no'];
 		echo "<id>".$id."</id>";
-		echo "<date>".$date_of_instruction."</date>";
+		echo "<date>".$row['date_of_instruction']."</date>";
 		echo "<ref>".$id."</ref>":
-		echo "<price>".$sale_price."</price>";
+		echo "<price>".$row['sale_price']."</price>";
 		echo "<currency>EUR</currency>";
 		
 		
