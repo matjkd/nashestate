@@ -24,7 +24,18 @@ class Properties_model extends Model {
 
         return FALSE;
     }
-
+    function update_date($id) {
+	  $now = time();
+	  $field = 'date_added';
+	  $value = $now;  
+	    $update_data = array(
+            $field => $value
+        );
+        $this->db->where('property_ref_no', $id);
+        $update = $this->db->update('property_main', $update_data);
+        return $update;
+	    
+    }
     /**
      *
      * @param type $id
