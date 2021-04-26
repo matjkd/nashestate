@@ -228,7 +228,7 @@ $this->load->view('template/standard/xmlfeed');
 		$date =	$row['date_of_instruction'];
 		}
 		
-		echo "<date>".unix_to_human($date)."</date>";
+		echo "<date>".date('Y-m-d h:i:s', $date)."</date>";
 		echo "<ref>".$id."</ref>";
 		echo "<price>".INTVAL($row['sale_price'])."</price>";
 		echo "<price_freq>sale</price_freq>";
