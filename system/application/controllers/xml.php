@@ -212,9 +212,7 @@ $this->load->view('template/standard/xmlfeed');
 				<kyero>
 			    		<feed_version>3</feed_version>
 			        </kyero>
-				    <property>
-				    <id>12</id>
-				    </property>
+				    
 	   	";
 		
 		
@@ -233,7 +231,8 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<price>".INTVAL($row['sale_price'])."</price>";
 		echo "<price_freq>sale</price_freq>";
 		echo "<currency>EUR</currency>";
-		
+		echo "<part_ownership>0</part_ownership>";
+		echo "<new_build>0</new_build>";
 		echo "<leasehold>0</leasehold>";
 		echo "<type>villa</type>";
 		echo "<town>Test place</town>";
