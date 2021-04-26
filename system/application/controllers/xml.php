@@ -248,10 +248,15 @@ $this->load->view('template/standard/xmlfeed');
 		
 		echo "<country>spain</country>";
 		
-		echo "<video_url></video_url>";
-		echo "<virtual_tour_url></virtual_tour_url>";
+		// echo "<video_url></video_url>";
+		// echo "<virtual_tour_url></virtual_tour_url>";
 		// echo "<catastral>0</catastral>";
-		echo "<images>0</images>";
+		echo "<images>
+		<image id='1'>
+		<url>http://image.com/large.jpg</url>
+		</image>
+		
+		</images>";
 		echo "<notes>0</notes>";
 		echo "<prime>0</prime>";
 		
