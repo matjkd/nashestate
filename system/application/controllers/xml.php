@@ -224,7 +224,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<id>".$id."</id>";
 		echo "<date>".$row['date_of_instruction']."</date>";
 		echo "<ref>".$id."</ref>";
-		echo "<price>".int($row['sale_price'])."</price>";
+		echo "<price>".INTVAL($row['sale_price'])."</price>";
 		echo "<price_freq>sale</price_freq>";
 		echo "<currency>EUR</currency>";
 		
