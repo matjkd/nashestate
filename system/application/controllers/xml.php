@@ -222,7 +222,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<property>";
 			$id = $row['property_ref_no'];
 		echo "<id>".$id."</id>";
-		if($row['date_of_instruction'] == NULL) {
+		if($row['date_updated'] == NULL) {
 			$date = 1619444163;}
 		else {
 		$date =	$row['date_of_instruction'];
