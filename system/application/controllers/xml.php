@@ -286,9 +286,7 @@ $this->load->view('template/standard/xmlfeed');
 				
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
-		echo "<image id='1'>
-		<url>http://image.com/".$imagedata['filename']."</url>
-		</image>";
+		
 		endforeach;
 		
 		echo "</images>";
