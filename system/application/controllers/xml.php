@@ -222,7 +222,13 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<property>";
 			$id = $row['property_ref_no'];
 		echo "<id>".$id."</id>";
-		echo "<date>".unix_to_human($row['date_of_instruction'])."</date>";
+		if($row['date_of_instruction'] == NULL) {
+			$date = 1619444163;}
+		else {
+		$date =	$row['date_of_instruction'];
+		}
+		
+		echo "<date>".unix_to_human($date)."</date>";
 		echo "<ref>".$id."</ref>";
 		echo "<price>".INTVAL($row['sale_price'])."</price>";
 		echo "<price_freq>sale</price_freq>";
