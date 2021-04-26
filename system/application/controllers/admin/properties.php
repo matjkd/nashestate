@@ -382,6 +382,7 @@ class Properties extends MY_Controller {
             // build array for the model
             $form_data = array(
                 'property_ref_no' => $ref,
+		'date_added' => now(),
                 'property_type' => set_value('property_type'),
                 'company_id' => set_value('company_id'),
                 'property_address1' => set_value('property_address1'),
