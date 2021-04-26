@@ -229,7 +229,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 		echo "<desc>";
 		$description = str_replace('&', 'and', $row['description']);
-		echo "<en>".$description."</en>";
+		echo "<en>".strip_tags($description)."</en>";
 		echo "</desc>";
 		
 		
