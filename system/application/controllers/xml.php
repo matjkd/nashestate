@@ -286,8 +286,41 @@ $this->load->view('template/standard/xmlfeed');
 				
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
-		echo $imagedata->filename;
-		endforeach;
+				
+		            $imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+           if(file_exists($imagefilename)){
+              
+               $filelocation = "/large/".$imagedata->filename;
+           } else {
+               $filelocation = "/medium/".$imagedata->filename;
+           }
+           $localimage = "images/properties/".$imagedata->property_id.$filelocation;
+	  $baselocalimage = base_url().$localimage;
+		if(file_exists($localimage)){
+			
+		$theImage = $baselocalimage;
+		$imageBase = base_url()."images/properties/";
+		
+		} else {
+			
+		
+		$checklarge = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+		if(file_exists($checklarge)){
+			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+		} else {
+		$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/medium/".$imagedata->filename;
+		
+		$imageBase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
+		}
+		
+		
+		}		
+				
+				
+		echo "<image id='".$imagedata->image_id."'>";		
+		echo "<url>".$theImage;."</url>";
+		echo "</image>";
+				endforeach;
 		
 		echo "</images>";
 
