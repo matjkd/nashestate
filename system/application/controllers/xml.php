@@ -302,7 +302,7 @@ $this->load->view('template/standard/xmlfeed');
 	
 		
 	//energy rating
-	if($row['energy_rating'] == "A") {
+	if($row['energy_rating'] == "A" || $row['energy_rating'] == "B") {
 		$energyrating = $row['energy_rating'];
 	} else {
 		$energyrating = "X";
