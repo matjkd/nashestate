@@ -251,13 +251,7 @@ $this->load->view('template/standard/xmlfeed');
 		// echo "<video_url></video_url>";
 		// echo "<virtual_tour_url></virtual_tour_url>";
 		// echo "<catastral>0</catastral>";
-		echo "<images>
-		<image id='1'>
-		<url>http://image.com/large.jpg</url>
-		</image>
-		
-		</images>";
-		echo "<notes>0</notes>";
+				echo "<notes>0</notes>";
 		echo "<prime>0</prime>";
 		
 		echo "<desc>";
@@ -288,6 +282,15 @@ $this->load->view('template/standard/xmlfeed');
 				
 				endforeach;
 			echo "</features>";
+				
+				
+				echo "<images>";
+		echo "<image id='1'>
+		<url>http://image.com/large.jpg</url>
+		</image>";
+		
+		echo "</images>";
+
 			
 		
 		
