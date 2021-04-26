@@ -299,7 +299,14 @@ $this->load->view('template/standard/xmlfeed');
 		<plot>".$row['plot_size']."</plot>
 		</surface_area>";
 	
-		echo "<test>er</test>";
+		echo "<energy_rating>
+		<consumption>".$row['energy_rating']."</consumption>
+		</energy_rating>";
+		
+		echo "<url>
+		<en>http://www.nashhomesmallorca.com/property/display/".$id."</en>
+		</url>";
+		
 		echo "</property>";
 		endforeach;
 		
