@@ -235,43 +235,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "</desc>";
 		
 		
-		//rooms
-		$data['property_rooms'] = $this->properties_model->get_rooms_table($id);
-		// Count Rooms
-$bedrooms = 0;
-$parking = 0;
-$bathrooms = 0;
-
-if(isset($data['property_rooms'])){
-	foreach($data['property_rooms'] as $rooms):
-
-	//Count Bedrooms
-	if($rooms['room_type'] == 1)
-	{
-		$bedrooms = $bedrooms + 1;
-	}
-
-	//Count Parking Spaces
-	if($rooms['room_type'] == 13)
-	{
-		$parking = $parking + 1;
-	}
-
-
-	//Count Bathrooms bathroom is room type 2 and en suite bathroom is room type 11
-	if($rooms['room_type'] == 2 || $rooms['room_type'] == 11)
-	{
-		$bathrooms = $bathrooms + 1;
-	}
-
-	//get size of terrace
-	if($rooms['room_type'] == 7 || $rooms['room_type'] == 8)
-	{
-		$terrace_size = $rooms['room_size'];
-	}
-	endforeach;
-	
-	echo "<beds>".$bedrooms."</beds>";
+		
 		
 			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
         
@@ -291,7 +255,44 @@ if(isset($data['property_rooms'])){
 				
 				endforeach;
 				
+			
+		
+		
+					//rooms
+				// Count Rooms
+				$bedrooms = 0;
+				$parking = 0;
+				$bathrooms = 0;
+
+				foreach($propertydata['property_rooms'] as $rooms):
+
+				//Count Bedrooms
+				if($rooms['room_type'] == 1)
+				{
+					$bedrooms = $bedrooms + 1;
+				}
+
+				//Count Parking Spaces
+				if($rooms['room_type'] == 13)
+				{
+					$parking = $parking + 1;
+				}
+
+
+				//Count Bathrooms bathroom is room type 2 and en suite bathroom is room type 11
+				if($rooms['room_type'] == 2 || $rooms['room_type'] == 11)
+				{
+					$bathrooms = $bathrooms + 1;
+				}
+
+				//get size of terrace
+				if($rooms['room_type'] == 7 || $rooms['room_type'] == 8)
+				{
+					$terrace_size = $rooms['room_size'];
+				}
+				endforeach;
 			}
+	echo "<beds>".$bedrooms."</beds>";
 	
 		echo "<test>er</test>";
 		echo "</property>";
