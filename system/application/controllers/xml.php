@@ -238,8 +238,8 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<town>Test place</town>";
 		echo "<province>test</province>";
 		echo "<location>
-		<latitude></latitude>
-		<longitude></longitude>
+		<latitude>0</latitude>
+		<longitude>0</longitude>
 		
 		</location>";
 		echo "<location_detail></location_detail>";
@@ -248,8 +248,8 @@ $this->load->view('template/standard/xmlfeed');
 		
 		echo "<country>spain</country>";
 		
-		echo "<video_url>0</video_url>";
-		echo "<virtual_tour_url>0</virtual_tour_url>";
+		echo "<video_url></video_url>";
+		echo "<virtual_tour_url></virtual_tour_url>";
 		echo "<catastral>0</catastral>";
 		echo "<images>0</images>";
 		echo "<notes>0</notes>";
