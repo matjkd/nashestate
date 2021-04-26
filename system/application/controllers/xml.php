@@ -227,7 +227,9 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<price>".$row['sale_price']."</price>";
 		echo "<currency>EUR</currency>";
 		
-		
+		echo "<desc>";
+		echo "<en>".$row['description']."</en>";
+		echo "</desc>";
 		
 		
 			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
