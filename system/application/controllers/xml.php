@@ -297,25 +297,26 @@ $this->load->view('template/standard/xmlfeed');
            $localimage = "images/properties/".$imagedata->property_id.$filelocation;
 	  $baselocalimage = base_url().$localimage;
 		
-//		if(file_exists($localimage)){
+		if(file_exists($localimage)){
 			
-//		$theImage = $baselocalimage;
-//		$imageBase = base_url()."images/properties/";
+		$theImage = $baselocalimage;
+		$imageBase = base_url()."images/properties/";
 		
-//		} else {
+		} else {
 			
 		
-//		$checklarge = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
-//		if(file_exists($checklarge)){
-//			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
-//		} else {
-//		$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/medium/".$imagedata->filename;
+			$checklarge = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+			
+			if(file_exists($checklarge)){
+			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+				} else {
+			$theImage = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/".$imagedata->property_id."/medium/".$imagedata->filename;
 		
-//		$imageBase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
-//		}
+			$imageBase = "https://nashhomes.s3-eu-west-1.amazonaws.com/properties/";
+			}
 		
 		
-//		}		
+		}		
 				
 				
 		echo "<image id='".$imagedata->image_id."'>";		
