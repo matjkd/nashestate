@@ -250,7 +250,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 		echo "<video_url></video_url>";
 		echo "<virtual_tour_url></virtual_tour_url>";
-		echo "<catastral>0</catastral>";
+		// echo "<catastral>0</catastral>";
 		echo "<images>0</images>";
 		echo "<notes>0</notes>";
 		echo "<prime>0</prime>";
