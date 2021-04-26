@@ -287,7 +287,7 @@ $this->load->view('template/standard/xmlfeed');
 				echo "<images>";
 		foreach($propertydata['property_images'] as $imagedata):
 				
-		            $imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
+		$imagefilename = "images/properties/".$imagedata->property_id."/large/".$imagedata->filename;
            if(file_exists($imagefilename)){
               
                $filelocation = "/large/".$imagedata->filename;
@@ -296,6 +296,7 @@ $this->load->view('template/standard/xmlfeed');
            }
            $localimage = "images/properties/".$imagedata->property_id.$filelocation;
 	  $baselocalimage = base_url().$localimage;
+		
 		if(file_exists($localimage)){
 			
 		$theImage = $baselocalimage;
@@ -317,7 +318,7 @@ $this->load->view('template/standard/xmlfeed');
 		}		
 				
 				
-		echo "<image id='".$imagedata->image_id."'>";		
+		echo "<image id='1'>";		
 		echo "<url>".$theImage;."</url>";
 		echo "</image>";
 				endforeach;
