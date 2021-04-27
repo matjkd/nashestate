@@ -15,6 +15,7 @@ class xml extends MY_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('ajax_model');
+	$this->load->model('area_model');    
         $this->load->model('search_model');
 	$this->load->model('properties_model');
         $this->load->library('pagination');
@@ -241,7 +242,7 @@ $this->load->view('template/standard/xmlfeed');
 		 foreach($propertydata['property_details'] as $propertyDetails):
 		echo "<type>".$propertyDetails->property_type_name."</type>";
 		echo "<province>".$propertyDetails->area."</province>";
-	echo $propertyDetails->group_name;
+	echo $propertyDetails->general_area_id;
 		endforeach;
 		
 		echo "<town>Test place</town>";
