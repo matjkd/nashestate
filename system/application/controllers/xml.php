@@ -241,7 +241,7 @@ $this->load->view('template/standard/xmlfeed');
 		 foreach($propertydata['property_details'] as $propertyDetails):
 		echo "<type>".$propertyDetails->property_type_name."</type>";
 		echo "<province>".$propertyDetails->area."</province>";
-	echo $propertyDetails->general_area_id;
+	echo $propertyDetails->group_name;
 		endforeach;
 		
 		echo "<town>Test place</town>";
