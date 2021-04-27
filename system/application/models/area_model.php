@@ -131,7 +131,7 @@ function __construct()
 	function get_group($id)
 	{
 	$data = array();
-		$this->db->from('general_area');
+		$this->db->from('general_area_link');
 		$this->db->join('general_area_group', 'general_area_group.general_area_group_id = general_area_link.group_id', 'left');
 		
 		$this->db->join('general_area', 'general_area.general_area_id = general_area_group.general_area_group_id', 'left');
