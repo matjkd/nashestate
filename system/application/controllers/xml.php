@@ -245,7 +245,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 		
 		$areaID = $propertyDetails->general_area_id;
-		//$groupData['group_details'] = $this->area_model->get_group($areaID);
+		$groupData['group_details'] = $this->area_model->get_group($areaID);
 		
 		endforeach;
 		
@@ -270,7 +270,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<desc>";
 		$description = str_replace('&nbsp;', '', $row['description']);
 		$description = str_replace('&#160;', '', $description);
-		$description = str_replace('&', 'and', $description
+		$description = str_replace('&', 'and', $description;
 		echo "<en>".strip_tags($description)."</en>";
 		echo "</desc>";
 		
