@@ -132,7 +132,7 @@ function __construct()
 	{
 	$data = array();
 		$this->db->from('general_area_link');
-		$this->db->where('general_area_link.area_id' == $id); 
+		$this->db->where('general_area_link.area_id', $id); 
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
 		{
