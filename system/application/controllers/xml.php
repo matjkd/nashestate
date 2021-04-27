@@ -266,7 +266,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
         foreach($propertydata['property_details'] as $propertyDetails):
-		echo $propertyDetails->type;
+		echo "<type>".$propertyDetails->property_type_name."</type>;
 	endforeach;
         		//if property is returned, load other details
 			if ($propertydata['property_details']) {
