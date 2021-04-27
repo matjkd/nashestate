@@ -246,7 +246,9 @@ $this->load->view('template/standard/xmlfeed');
 		
 		$areaID = $propertyDetails->general_area_id;
 		$groupData['group_details'] = $this->area_model->get_group($areaID);
-		
+			foreach($groupData['group_details'] as $groupRow):
+				echo $groupRow['area'];
+			endforeach;
 		endforeach;
 		
 		echo "<town>Test place</town>";
