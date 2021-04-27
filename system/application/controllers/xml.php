@@ -241,18 +241,17 @@ $this->load->view('template/standard/xmlfeed');
 		
 		 foreach($propertydata['property_details'] as $propertyDetails):
 		echo "<type>".$propertyDetails->property_type_name."</type>";
-		echo "<province>".$propertyDetails->area."</province>";
+		echo "<town>".$propertyDetails->area."</town>";
 		
 		
 		$areaID = $propertyDetails->general_area_id;
 		$groupData['group_details'] = $this->area_model->get_group($areaID);
 			foreach($groupData['group_details'] as $groupRow):
-				echo $groupRow['area'];
-				print_r($groupRow);
+				echo "<province>".$groupRow['area']."</province>";
+				
 			endforeach;
 		endforeach;
 		
-		echo "<town>Test place</town>";
 		echo "<location>
 		<latitude>0</latitude>
 		<longitude>0</longitude>
