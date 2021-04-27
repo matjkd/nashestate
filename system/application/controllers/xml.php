@@ -215,6 +215,8 @@ $this->load->view('template/standard/xmlfeed');
 				    
 	   	";
 		
+		$propertydata['property_details'] = $this->properties_model->get_active_property($id);
+
 		
 		foreach($data['properties'] as $row):
 		echo "<property>";
@@ -234,9 +236,13 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<part_ownership>0</part_ownership>";
 		echo "<new_build>0</new_build>";
 		echo "<leasehold>0</leasehold>";
-		echo "<type>villa</type>";
+		
+		 foreach($propertydata['property_details'] as $propertyDetails):
+		echo "<type>".$propertyDetails->property_type_name."</type>";
+		echo "<province>".$propertyDetails->area."</province";
+	endforeach;
+		
 		echo "<town>Test place</town>";
-		echo "<province>test</province>";
 		echo "<location>
 		<latitude>0</latitude>
 		<longitude>0</longitude>
@@ -264,10 +270,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 		
 		
-			  $propertydata['property_details'] = $this->properties_model->get_active_property($id);
-        foreach($propertydata['property_details'] as $propertyDetails):
-		echo "<type>".$propertyDetails->property_type_name."</type>";
-	endforeach;
+			         
         		//if property is returned, load other details
 			if ($propertydata['property_details']) {
 			    $propertydata['property_rooms'] = $this->properties_model->get_rooms_table($id);
