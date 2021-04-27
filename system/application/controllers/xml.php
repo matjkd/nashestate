@@ -215,8 +215,7 @@ $this->load->view('template/standard/xmlfeed');
 				    
 	   	";
 		
-		$propertydata['property_details'] = $this->properties_model->get_active_property($id);
-
+		
 		
 		foreach($data['properties'] as $row):
 		echo "<property>";
@@ -228,6 +227,8 @@ $this->load->view('template/standard/xmlfeed');
 		$date =	$row['date_of_instruction'];
 		}
 		
+		$propertydata['property_details'] = $this->properties_model->get_active_property($id);
+
 		echo "<date>".date('Y-m-d h:i:s', $date)."</date>";
 		echo "<ref>".$id."</ref>";
 		echo "<price>".INTVAL($row['sale_price'])."</price>";
@@ -239,7 +240,7 @@ $this->load->view('template/standard/xmlfeed');
 		
 		 foreach($propertydata['property_details'] as $propertyDetails):
 		echo "<type>".$propertyDetails->property_type_name."</type>";
-		//echo "<province>".$propertyDetails->area."</province>";
+		echo "<province>".$propertyDetails->area."</province>";
 	endforeach;
 		
 		echo "<town>Test place</town>";
