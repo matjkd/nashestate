@@ -127,6 +127,25 @@ function __construct()
     	
     
     }
+	
+	function get_group($id)
+	{
+	$data = array();
+		$this->db->from('general_area_group');
+		$this->db->join('general_area', 'general_area.general_area_id = general_area_group.group_name', 'left');
+		$this->db->where('general_area.general_area_id' == $id); 
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0)
+		{
+			foreach ($Q->result_array() as $row)
+			
+			$data[] = $row;
+			
+		}
+		
+		$Q->free_result();
+		return $data;
+	}
     
  	function list_groups()
     {
