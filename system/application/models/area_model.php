@@ -135,7 +135,7 @@ function __construct()
 		$this->db->join('general_area_group', 'general_area_group.general_area_group_id = general_area_link.group_id', 'left');
 		
 		$this->db->join('general_area', 'general_area.general_area_id = general_area_group.group_name', 'left');
-		
+		$this->db->limit(1);
 		$this->db->where('general_area_link.area_id', $id); 
 		$Q = $this->db->get();
 		if ($Q->num_rows() > 0)
