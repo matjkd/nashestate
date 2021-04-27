@@ -248,7 +248,7 @@ $this->load->view('template/standard/xmlfeed');
 		$groupData['group_details'] = $this->area_model->get_group($areaID);
 			foreach($groupData['group_details'] as $groupRow):
 				echo $groupRow['area'];
-				echo $groupRow;
+				print_r($groupRow);
 			endforeach;
 		endforeach;
 		
