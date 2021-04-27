@@ -242,7 +242,9 @@ $this->load->view('template/standard/xmlfeed');
 		 foreach($propertydata['property_details'] as $propertyDetails):
 		echo "<type>".$propertyDetails->property_type_name."</type>";
 		echo "<province>".$propertyDetails->area."</province>";
-	echo $propertyDetails->general_area_id;
+	$areaID = $propertyDetails->general_area_id;
+		$groupData['group_details'] = $this->area_model->get_group($areaID);
+		
 		endforeach;
 		
 		echo "<town>Test place</town>";
@@ -266,7 +268,7 @@ $this->load->view('template/standard/xmlfeed');
 		echo "<desc>";
 		$description = str_replace('&nbsp;', '', $row['description']);
 		$description = str_replace('&#160;', '', $description);
-		$description = str_replace('&', 'and', $description);
+		$description = str_replace('&', 'and', $description
 		echo "<en>".strip_tags($description)."</en>";
 		echo "</desc>";
 		
