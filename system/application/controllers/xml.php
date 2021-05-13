@@ -294,9 +294,12 @@ $this->load->view('template/standard/xmlfeed');
 					$feature = str_replace('&', 'and', $featureRow['features']);
 					
 					//find pool
+$find_letters = array('pool', 'Pool');
+$string = $feature;
+$pos = (str_replace($find_letters, '', $string) != $string);
 					
-$findme   = 'pool';
-$pos = strpos($feature, $findme);
+//$findme   = 'pool';
+//$pos = strpos($feature, $findme);
 
 // Note our use of ===.  Simply == would not work as expected
 // because the position of 'a' was the 0th (first) character.
