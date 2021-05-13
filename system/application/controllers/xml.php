@@ -286,11 +286,29 @@ $this->load->view('template/standard/xmlfeed');
 			    $propertydata['property_images'] = $this->gallery_model->get_property_images($id);
 			    $propertydata['property_features'] = $this->properties_model->get_assigned_features($id);
 			    $propertydata['property_id'] = $id;
-			echo "<features>";	
+			echo "<features>";
+				$poolQ = 0;
 			foreach( $propertydata['property_features'] as $featureRow):
 			
 				if($featureRow['features']){
 					$feature = str_replace('&', 'and', $featureRow['features']);
+					
+					//find pool
+					
+$findme   = 'pool';
+$pos = strpos($feature, $findme);
+
+// Note our use of ===.  Simply == would not work as expected
+// because the position of 'a' was the 0th (first) character.
+if ($pos === false) {
+    
+} else {
+    // The string '$findme' was found in the string 
+    $poolQ = 1;
+}
+					
+					
+					
 				echo "<feature>".$feature."</feature>";
 				}
 				
@@ -380,7 +398,7 @@ $this->load->view('template/standard/xmlfeed');
 			}
 	echo "<beds>".$bedrooms."</beds>";
 	echo "<baths>".$bathrooms."</baths>";
-	echo "<pool></pool>";
+	echo "<pool>".$poolQ."</pool>";
 	echo "<surface_area>
 		<built>".$row['build_size']."</built>
 		<plot>".$row['plot_size']."</plot>
