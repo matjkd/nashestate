@@ -327,6 +327,7 @@ class Gallery_model extends Model {
 
             unlink('./images/properties/' . $property_id . '/' . $filename . '');
             unlink('./images/properties/' . $property_id . '/medium/' . $filename . '');
+            unlink('./images/properties/' . $property_id . '/large/' . $filename . '');
             unlink('./images/properties/' . $property_id . '/thumbs/' . $filename . '');
         }
     }
